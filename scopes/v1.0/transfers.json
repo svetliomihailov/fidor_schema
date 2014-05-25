@@ -1,0 +1,15 @@
+{
+  "readwrite_transfer" : {
+    "context" : "users",
+    "privileges" : ["index", "show", "create", "update"],
+    "fields" : ["_all"]
+  },
+
+   // are there mtan fields?? or different create endpoint
+  "readwrite_transfer_mtan" : {
+    "context" : "users",
+    "privileges" : ["index", "show", "create", "update"],
+    "fields" : ["_all"]
+  }
+
+}

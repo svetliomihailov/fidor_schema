@@ -1,0 +1,25 @@
+{
+  "read_transaction_full" : {
+    "context" : "transactions",
+    "privileges" : ["index", "show"],
+    "fields" : ["_all"]
+  },
+
+  "read_transaction_subject" : {
+    "context" : "transactions",
+    "privileges" : ["index", "show"],
+    "fields" : ["subject"]
+  },
+
+  "read_transaction_remote" : {
+    "context" : "transactions",
+    "privileges" : ["index", "show"],
+    "fields" : ["remote_holder", "remote_iban", "remote_bic", "remote_fidor_id"]
+  },
+
+  "read_transaction_credit_card" : {
+    "context" : "transactions",
+    "privileges" : ["index", "show"],
+    "fields" : ["cc_merchant_name", "cc_merchant_category", "cc_type", "cc_category"]
+  }
+}

@@ -6,7 +6,7 @@ module Fidor
       @registry ||= {}
     end
 
-    def self.read
+    def self.init
       return @registry if @registry
       file_path = File.join( self.scopes_path, '*.json')
       Dir.glob( file_path ).each do |file|
