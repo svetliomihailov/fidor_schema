@@ -1,3 +1,5 @@
-module FidorAcl
-  VERSION = '0.0.1'
+module Fidor
+  class Acl
+    VERSION = '0.0.1'
+  end
 end

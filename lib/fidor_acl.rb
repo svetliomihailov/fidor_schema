@@ -1,5 +1,5 @@
-require 'fidor_acl/version'
-require 'fidor_acl/scopes'
+require 'fidor/version'
+require 'fidor/acl'
 
 module FidorAcl
 

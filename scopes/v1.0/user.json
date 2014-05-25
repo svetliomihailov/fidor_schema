@@ -1,0 +1,8 @@
+{
+  "read_user_email" : {
+    "context" : "users",
+    "privileges" : ["current", "show"],
+    "fields" : ["email"]
+  }
+
+}
