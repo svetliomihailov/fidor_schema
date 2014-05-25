@@ -11,6 +11,25 @@ describe Fidor::Acl do
       res.keys.should include 'read_user_email'
     end
 
+  end
+
+  context 'validate fields' do
+
+    it 'should only contain fields defined in schema' do
+      schemas = SchemaTools::Reader.read_all(Fidor::Schema.path)
+      Fidor::Acl.read
+      Fidor::Acl.registry.each do |scope_name, scope|
+        # find matching json schema
+        schema = schemas.detect{|schema| schema['name'] == scope['context'].singularize }
+        schema_fields = schema['properties'].keys
+
+        scope['fields'].each do |scope_field|
+          schema_fields.should include(scope_field)
+        end
+
+      end
+    end
 
   end
+
 end

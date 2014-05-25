@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'fidor/version'
+require 'fidor_acl_version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fidor'
@@ -22,4 +22,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'activesupport'
+  spec.add_development_dependency 'json_schema_tools'
+  spec.add_development_dependency 'activemodel' # required by above
+  # spec.add_development_dependency 'fidor_schema'
 end
