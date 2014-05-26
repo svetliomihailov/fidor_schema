@@ -13,37 +13,37 @@
 
   "read_customer_address" :  {
     "context": "customers",
-    "privilege": ["current","show"],
+    "privileges": ["current","show"],
     "fields": ["adr_street", "adr_street_number", "adr_city", "adr_country"]
   },
 
   "read_customer_phone" :  {
     "context": "customers",
-    "privilege": ["current","show"],
+    "privileges": ["current","show"],
     "fields": ["adr_phone", "adr_mobile", "adr_businessphone"]
   },
 
   "read_customer_birthday" :  {
     "context": "customers",
-    "privilege": ["current","show"],
+    "privileges": ["current","show"],
     "fields": ["birthday"]
   },
 
   "read_customer_is_verified" :  {
     "context": "customers",
-    "privilege": ["current","show"],
+    "privileges": ["current","show"],
     "fields": ["is_verified"]
   },
 
   "read_customer_nationality" :  {
     "context": "customers",
-    "privilege": ["current","show"],
+    "privileges": ["current","show"],
     "fields": ["nationality"]
   },
 
   "read_customer_kyc_information" :  {
     "context": "customers",
-    "privilege": ["current","show"],
+    "privileges": ["current","show"],
     "fields": ["nationality", "id_card_registration_city", "id_card_number", "id_card_valid_until", "birthday"]
   }
 
