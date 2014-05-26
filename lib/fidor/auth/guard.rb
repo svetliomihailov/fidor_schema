@@ -1,12 +1,28 @@
 module Fidor::Auth
-  # The Guard class looks inside a permission-set hash which holds
+  # A Guard looks inside a permission-set hash which holds
   # contexts(controller) as keys and privileges(actions) as values. It returns
   # true/false for a given key/value to lookup.
-  #
+  # BEWARE This does not work in Ruby 1.8 since we rely on sorted hashes
   class Guard
-    # <Hash[Array[Symbol]]>::set on init. Roles are checked in their order
-    # inside the top lvl ary
-    attr_reader :permissions, :effective_permissions
+    # @return [Hash{Integer=>{String=><Array<String|Symbol>] Permissions on
+    # each level. Permissions are checked in their order inside the top level
+    # hash key e.g.
+    # {
+    #   1 => { {'users' => ['show']}, {'accounts'=>['show, 'destroy'] } },
+    #   2 => { {'users' => ['show']} },
+    # }
+    attr_reader :permissions
+
+    # @return <Hash[Array[String|Symbol]]>:: effective flattened permissions.
+    # permissions bubble down: each level must define the allowed ones e.g
+    # permissions with level:
+    # {
+    #   1 => { {'users' => ['show']}, {'accounts'=>['show, 'destroy'] } },
+    #   2 => { {'users' => ['show']} },
+    # }
+    # => effective permissions
+    # {'users' => ['show']}
+    attr_reader :effective_permissions
 
     def initialize
       @permissions = {} # ruby 1.8.7 ActiveSupport::OrderedHash.new
@@ -14,7 +30,9 @@ module Fidor::Auth
     end
 
     # @param [Integer] lvl level
-    # @param [Object] permissions
+    # @param [Array<>] permissions
+    # @return <Hash[Array[String|Symbol]]>
+
     def add_permissions(lvl, permissions)
       new_lvl = !@permissions[lvl]
       @permissions[lvl] ||= {}
@@ -26,7 +44,7 @@ module Fidor::Auth
         @permissions[lvl][key] += value
         @permissions[lvl][key] = @permissions[lvl][key].uniq
       end
-      # If we got a new lvl, let's sort the permissions array
+      # If we got a new level, let's sort the permissions array
       if new_lvl
         new_permissions = {} #ActiveSupport::OrderedHash.new
         @permissions.sort_by { |k,v| k.to_s }.each {|lvl|
@@ -41,8 +59,8 @@ module Fidor::Auth
 
     # Checks the existence of a permission set(privilege+context)
     # @return [Boolean] true if permitted, false if not found on ALL levels
-    # @param [Symbol] privilege The privilege(action name) to search for
-    # @param [Symbol] context  The context(controller name) to look in
+    # @param [String|Symbol] privilege The privilege(action name) to search for
+    # @param [String|Symbol] context  The context(controller name) to look in
     def check(privilege, context)
       @effective_permissions.empty? || (@effective_permissions[context].present? && @effective_permissions[context].include?(privilege))
     end
@@ -53,14 +71,13 @@ module Fidor::Auth
       started = false
       @effective_permissions = {}
       @permissions.each do |lvl, perms|
-        if perms.present?
-          if started
-            @effective_permissions.delete_if { |key, current_perms| perms[key].blank? }
-            @effective_permissions.each { | key, current_perms | @effective_permissions[key] &= perms[key] }
-          else
-            @effective_permissions = perms.dup
-            started = true
-          end
+        next unless perms.present?
+        if started
+          @effective_permissions.delete_if { |key, current_perms| perms[key].blank? }
+          @effective_permissions.each { | key, current_perms | @effective_permissions[key] &= perms[key] }
+        else
+          @effective_permissions = perms.dup
+          started = true
         end
       end
       @effective_permissions
