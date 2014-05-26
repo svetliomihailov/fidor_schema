@@ -2,6 +2,20 @@ require 'active_support'
 module Fidor
   class Acl
 
+
+    def self.flat_perms_hash
+      init unless @registry
+      permissions_hash = Hash.new
+      registry.each do |name, permission|
+        context = permission['context']
+        permissions_hash[context] ||= []
+        permission['privileges'].each do |privilege|
+          (permissions_hash[context] << privilege) unless permissions_hash[context].include?(privilege)
+        end
+      end
+      permissions_hash
+    end
+
     def self.registry
       @registry ||= {}
     end

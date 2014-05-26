@@ -11,6 +11,13 @@ describe Fidor::Acl do
       res.keys.should include 'read_user_email'
     end
 
+    it 'should flatten permissions' do
+      res = Fidor::Acl.flat_perms_hash
+      Fidor::Acl.registry.should_not be_empty
+      res.keys.should include 'transfers', 'transactions', 'users'
+      res['customers'].should include 'current', 'show'
+    end
+
   end
 
   context 'validate fields' do
