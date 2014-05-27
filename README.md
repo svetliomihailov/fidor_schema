@@ -1,6 +1,10 @@
 # FidorAcl
 
+This gem holds the available permissions for Fidor apps. Permissions are 
+referenced as scopes during oAuth app registration.
 
+If you are not using Ruby, take a look into the /scopes folder, where you can 
+find the raw json files with the definitions.
 
 ## Installation
 
@@ -17,6 +21,7 @@ Or install it yourself as:
     $ gem install fidor_acl
 
 ## Usage
+
 
 
 

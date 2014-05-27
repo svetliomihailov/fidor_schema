@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'fidor_acl_version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'fidor'
+  spec.name          = 'fidor_acl'
   spec.version       = Fidor::Acl::VERSION
   spec.authors       = ['Georg Leciejewski']
   spec.email         = ['dev@fidortecs.de']
   spec.summary       = %q{Permissions for Fidor oAuth clients}
   spec.description   = %q{This gem keeps our permissions/scopes for oAuth apps and api clients. It further provides helper methods for Ruby apps to show and check permissions.}
-  spec.homepage      = ""
+  spec.homepage      = 'http://www.fidortecs.de'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
