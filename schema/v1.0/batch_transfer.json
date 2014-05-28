@@ -1,0 +1,130 @@
+{ "type":"object",
+  "title": "Batch transfer",
+  "name": "batch_transfer",
+  "description": "A transfer batch contains multiple transfers which are processed asynchronous.",
+  "properties":{
+    "id":{
+      "description":"Unique identifier",
+      "identity":true,
+      "readonly":true,
+      "type":"integer"
+    },
+    "account_id":{
+      "description": "Fidor account this transaction belongs to.",
+      "required" : true,
+      "type":"integer"
+    },
+    "user_id":{
+      "description": "User who created the transfer.",
+      "readonly":true,
+      "type":"integer"
+    },
+    "transfers":{
+      "description": "The transfers to process.",
+      "type":"array",
+      "properties":{"$ref":"./transfer.json#properties"}
+    },
+    "external_uid":{
+      "description": "State of the batch operation. pending: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution",
+      "default": "pending",
+      "enum":["received", "processing", "error"],
+      "readonly":true,
+      "type":"string"
+    },
+    "state":{
+      "description": "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution in at least one of the transfers. In this case you should check the transfers.",
+      "default": "pending",
+      "enum":["received", "processing", "success", "error"],
+      "readonly":true,
+      "type":"string"
+    },
+    "success_url":{
+      "description": "Url receiving a POST with the batch object after processing is finished.",
+      "type":"string"
+    },
+    "started_at":{
+      "description": "Time the batch processing started.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    },
+    "finished_at":{
+      "description": "Time the batch processing finished.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    },
+    "created_at":{
+      "description": "Creation date-time, never changes.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    },
+    "updated_at":{
+      "description": "Last update date-time.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    }
+  },
+  "links":[
+    { "rel": "self",
+      "href": "batch_transfers/{id}"
+    },
+    { "rel": "instances",
+      "href": "batch_transfers",
+      "properties" : {
+        "filter[q]":{
+          "title" : "Search",
+          "description": "Wildcard search in subject",
+          "type":"string"
+        },
+        "filter[created_at_from]":{
+          "title" : "Creation date filter from >= date",
+          "format":"date",
+          "type":"string"
+        },
+        "filter[created_at_to]":{
+          "title" : "Creation date filter to <= date",
+          "format":"date",
+          "type":"string"
+        },
+        "filter[states]":{
+          "title" : "Filter by single or multiple csv delimited states",
+          "enum":["pending", "processing", "error"],
+          "type":"string"
+        },
+        "page":{
+          "title" : "Page",
+          "description": "In paginated results set the page to look for",
+          "type":"number"
+        },
+        "per_page":{
+          "title" : "Per page",
+          "description": "Results per page. Default is 10, max is 100",
+          "type":"number"
+        },
+        "sort_by":{
+          "title" : "Sort by",
+          "description": "Sort the results by the given field => number",
+          "enum":["amount","subject", "created_at", "updated_at"],
+          "type": "string"
+        },
+        "sort":{
+          "title" : "Sort",
+          "enum":["ASC","DESC"],
+          "description": "Sort the results in ASC or DESC",
+          "type": "string"
+        }
+      }
+    },
+
+    { "rel": "create",
+      "href": "transfers",
+      "method": "POST"
+    },
+    { "rel": "transaction",
+      "href": "transfers/{id}/transaction"
+    }
+  ]
+}

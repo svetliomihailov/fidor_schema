@@ -1,0 +1,49 @@
+{ "type":"object",
+  "title": "user",
+  "name": "user",
+  "description": "",
+  "properties":{
+    "id":{
+      "description":"Unique identifier",
+      "identity":true,
+      "readonly":true,
+      "type":"integer"
+    },
+    "email":{
+      "description": "Email, also used for login",
+      "type":"string",
+      "format":"email",
+      "required":true,
+      "maxLength": 100
+    },
+    "last_login_at":{
+      "description": "Last time the user accessed fidor.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    },
+    "created_at":{
+      "description": "Creation date-time, never changes.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    },
+    "updated_at":{
+      "description": "Last update date-time.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    }
+  },
+  "links":[
+    { "rel": "self",
+      "href": "users/current"
+    },
+    { "rel": "customers",
+      "href": "users/current/customers"
+    },
+    { "rel": "accounts",
+      "href": "users/current/accounts"
+    }
+  ]
+}

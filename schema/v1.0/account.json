@@ -1,0 +1,108 @@
+{ "type":"object",
+  "title": "Account",
+  "name": "account",
+  "description": "An fidor bank account. ",
+
+  "properties":{
+    "id":{
+      "readonly":true,
+      "identity":true,
+      "description": "The ID is also referenced as Fidor ID e.g in the web interface.",
+      "type":"string",
+      "maxLength": 255
+    },
+    "number":{
+      "description": "The bank account number.",
+      "type":"string",
+      "maxLength": 255,
+      "readonly" : true
+    },
+    "iban":{
+      "description": "IBAN",
+      "type":"string",
+      "maxLength": 40,
+      "readonly" : true
+    },
+    "balance":{
+      "description": "Account balance",
+      "type":"number",
+      "readonly" : true
+    },
+    "balance_available":{
+      "description": "Account balance available.",
+      "type":"number",
+      "readonly" : true
+    },
+    "preauth_amount":{
+      "description": "Amount available to pre-authorisation.",
+      "type":"number",
+      "readonly" : true
+    },
+    "cash_flow_per_year":{
+      "description": "Amount available for yearly cash flow. If it reaches a limit the account holder must pass enhanced authentication vai Post-ident in DE.",
+      "type":"number",
+      "readonly" : true
+    },
+    "is_debit_note_enabled":{
+      "description": "Account can request money via automated debit notes from others.",
+      "type":"boolean",
+      "default" : false,
+      "readonly" : true
+    },
+    "is_trust":{
+      "description": "",
+      "type":"boolean",
+      "default" : false,
+      "readonly" : true
+    },
+    "is_locked":{
+      "description": "Is the account is locked",
+      "type":"boolean"
+    },
+    "currency":{
+      "description": "Account currency.",
+      "type":"string",
+      "default" : "EUR",
+      "readonly" : true
+    },
+    "customers" : {
+      "description": "The owners of the account",
+      "readonly":true,
+      "type":"array",
+      "properties":{"$ref":"./customer.json#properties"}
+    },
+    "created_at":{
+      "description": "Creation date-time, never changes.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    },
+    "updated_at":{
+      "description": "Last update date-time.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    }
+  },
+  "links":[
+    { "rel": "self",
+      "href": "accounts/{id}"
+    },
+    { "rel": "instances",
+      "href": "accounts",
+      "properties" : {
+        "filter[customer_ids]":{
+          "title" : "Find account belonging to the given customer ids. Single id or multiple ids comma-separated.",
+          "format":"date",
+          "type":"string"
+        }
+      }
+    },
+    { "rel": "transactions",
+      "href": "accounts/{id}/transactions"
+    },
+    { "rel": "transfers",
+      "href": "transfers/{id}/transfers"
+    }
+  ]
+}

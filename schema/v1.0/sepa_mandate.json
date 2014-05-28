@@ -1,0 +1,166 @@
+{ "type":"object",
+  "title": "Sepa Mandate",
+  "name": "sepa_mandate",
+  "description": "A transfer initiates a transaction e.g get / send money. Depending on its state a transfer can be edited, deleted. If the transfer fails no transaction is created!",
+  "properties":{
+    "id":{
+      "description":"Unique identifier",
+      "identity":true,
+      "readonly":true,
+      "type":"integer"
+    },
+    "user_id":{
+      "description": "User who created the mandate.",
+      "readonly":true,
+      "type":"integer"
+    },
+    "mandate_reference":{
+      "description": "Unique reference of the mandate.",
+      "type":"string",
+      "required" : true,
+      "maxLength": 35
+    },
+    "sequence":{
+      "description": "Recurring or One-Time",
+      "type":"string",
+      "default": "RCUR",
+      "enum": ["RCUR","OOFF"]
+    },
+    "cor1_option":{
+      "description": "COR-1 option",
+      "type":"string",
+      "default": "1",
+      "enum": ["0","1"]
+    },
+    "debtor_title":{
+      "description": "title of the debtor e.g Dr. Prof.",
+      "type":"string",
+      "required" : true,
+      "maxLength": 35
+    },
+    "debtor_name":{
+      "description": "Full name of debtor",
+      "type":"string",
+      "required" : true,
+      "maxLength": 70
+    },
+    "debtor_email":{
+      "description": "Debtor email",
+      "type":"string",
+      "required" : true,
+      "maxLength": 70
+    },
+    "debtor_address_line1":{
+      "description": "Address street.",
+      "type":"string",
+      "required" : true,
+      "maxLength": 35
+    },
+    "debtor_address_line2":{
+      "description": "ZIP and City",
+      "type":"string",
+      "required" : true,
+      "maxLength": 70
+    },
+    "debtor_country":{
+      "description": "2 digit country code, ISO 3166",
+      "type":"string",
+      "required" : true,
+      "maxLength": 2
+    },
+    "debtor_iban":{
+      "description": "IBAN of debtor account",
+      "type":"string",
+      "required" : true,
+      "maxLength": 35
+    },
+    "debtor_bic":{
+      "description": "BIC of debtor bank",
+      "type":"string",
+      "required" : true,
+      "maxLength": 11
+    },
+    "debtor_ultimate_name":{
+      "description": "Ultimate name",
+      "type":"string",
+      "maxLength": 70
+    },
+    "debtor_signature_location":{
+      "description": "Location where debtor signed the mandate.",
+      "type":"string",
+      "maxLength": 70
+    },
+    "signature_date":{
+      "description": "Date the mandate started to be valid.",
+      "format":"date",
+      "required" : true,
+      "type":"string"
+    },
+    "valid_from_date":{
+      "description": "Date the mandate was signed of by the debtor",
+      "format":"date",
+      "type":"string"
+    },
+    "created_at":{
+      "description": "Creation date-time, never changes.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    },
+    "updated_at":{
+      "description": "Last update date-time.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    }
+  },
+  "links":[
+    { "rel": "self",
+      "href": "sepa_mandates/{id}"
+    },
+    { "rel": "instances",
+      "href": "sepa_mandates",
+      "properties" : {
+        "filter[q]":{
+          "title" : "Search",
+          "description": "Wildcard search in subject",
+          "type":"string"
+        },
+        "page":{
+          "title" : "Page",
+          "description": "In paginated results set the page to look for",
+          "type":"number"
+        },
+        "per_page":{
+          "title" : "Per page",
+          "description": "Results per page. Default is 10, max is 100",
+          "type":"number"
+        },
+        "sort_by":{
+          "title" : "Sort by",
+          "description": "Sort the results by the given field => number",
+          "enum":["amount","subject", "created_at", "updated_at"],
+          "type": "string"
+        },
+        "sort":{
+          "title" : "Sort",
+          "enum":["ASC","DESC"],
+          "description": "Sort the results in ASC or DESC",
+          "type": "string"
+        }
+      }
+    },
+    { "rel": "destroy",
+      "href": "sepa_mandates/{id}",
+      "method": "DELETE"
+    },
+    { "rel": "update",
+      "href": "sepa_mandates/{id}",
+      "method": "PUT"
+    },
+    { "rel": "create",
+      "href": "sepa_mandates",
+      "method": "POST"
+    }
+  ]
+}

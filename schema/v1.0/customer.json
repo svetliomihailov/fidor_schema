@@ -1,0 +1,153 @@
+{ "type":"object",
+  "title": "customer",
+  "name": "customer",
+  "description": "",
+  "properties":{
+    "id":{
+      "description":"Unique identifier",
+      "identity":true,
+      "readonly":true,
+      "type":"integer"
+    },
+    "email":{
+      "description": "Email, also used for login",
+      "type":"string",
+      "format":"email",
+      "required":true,
+      "maxLength": 100
+    },
+    "firstname":{
+      "description": "First name",
+      "type":"string",
+      "required":true,
+      "maxLength": 30
+    },
+    "lastname":{
+      "description": "Last name",
+      "type":"string",
+      "maxLength": 30
+    },
+    "title":{
+      "description": "Title e.g Dr. Prof.",
+      "type":"string",
+      "maxLength": 30
+    },
+    "nick":{
+      "description": "Nickname used in community.",
+      "type":"string",
+      "maxLength": 40,
+      "minLength": 2
+    },
+    "birthlastname":{
+      "description": "Name at birth, maiden name.",
+      "type":"string",
+      "maxLength": 30
+    },
+    "adr_street":{
+      "description": "Address street",
+      "type":"string",
+      "maxLength": 100
+    },
+    "adr_street_number":{
+      "description": "Address street number",
+      "type":"string",
+      "maxLength": 10
+    },
+    "adr_zip":{
+      "description": "Address Zip",
+      "type":"string",
+      "maxLength": 5
+    },
+    "adr_city":{
+      "description": "Address City",
+      "type":"string",
+      "maxLength": 100
+    },
+    "adr_country":{
+      "description": "Address Country",
+      "type":"string",
+      "maxLength": 100
+    },
+    "adr_phone":{
+      "description": "Phone home",
+      "type":"string",
+      "maxLength": 30
+    },
+    "adr_mobile":{
+      "description": "Phone mobile",
+      "type":"string",
+      "maxLength": 30
+    },
+    "adr_fax":{
+      "description": "Phone fax",
+      "type":"string",
+      "maxLength": 30
+    },
+    "adr_businessphone":{
+      "description": "Phone business",
+      "type":"string",
+      "maxLength": 30
+    },
+    "birthday":{
+      "description": "Date of birth",
+      "format":"date",
+      "type":"string"
+    },
+    "is_verified":{
+      "description": "Account owner has been verified by post-ident.",
+      "type":"boolean"
+    },
+    "nationality":{
+      "description": "Country code as defined in ISO3166 alpha2. e.d DE, GB",
+      "type":"string",
+      "minLength": 2,
+      "maxLength": 2
+    },
+    "family_state":{
+      "description": "Family status, e.g married",
+      "enum":["", ""],
+      "type":"string"
+    },
+    "religion":{
+      "description": "Religion code. You can request the associated string via API call",
+      "enum":[1,2,3,4,5,6,8,9,10,11],
+      "type":"integer"
+    },
+    "id_card_registration_city":{
+      "description": "City where the id card is registered.",
+      "type":"string"
+    },
+    "id_card_number":{
+      "description": "ID card number",
+      "type":"string"
+    },
+    "id_card_valid_until":{
+      "description": "Expiration date of id card",
+      "format":"date",
+      "type":"string"
+    },
+    "created_at":{
+      "description": "Creation date-time, never changes.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    },
+    "updated_at":{
+      "description": "Last update date-time.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    }
+  },
+  "links":[
+    { "rel": "self",
+      "href": "customers/{id}"
+    },
+    { "rel": "instances",
+      "href": "customers"
+    },
+    { "rel": "accounts",
+      "href": "customers/{id}/accounts"
+    }
+  ]
+}

@@ -1,0 +1,215 @@
+
+{ "type":"object",
+  "title": "transaction",
+  "name": "transaction",
+  "description": "A transaction is the result of a successful transfer.",
+  "properties":{
+    "id":{
+      "description":"Unique identifier",
+      "identity":true,
+      "readonly":true,
+      "type":"integer"
+    },
+    "account_id":{
+      "description": "Fidor account this transaction belongs to.",
+      "readonly":true,
+      "type":"integer"
+    },
+    "transfer_id":{
+      "description": "Id of transfer if transaction was created by a transfer. Refunded transactions dont have those",
+      "readonly":true,
+      "type":"integer"
+    },
+    "kind":{
+      "description": "Type of the transaction",
+      "enum":["payin_giropay", "payin_paymentnetwork", "payin_credit_note", "payin_debit_note_eze",
+              "payin_debit_note_aba", "payin_credit_note_sepa", "payin_debit_note_sepa_core",
+              "payin_debit_note_sepa_b2b", "payin_fidorpay", "payout_ogone",
+              "payout_paymentnetwork", "payout_credit_note", "payout_debit_note_eze",
+              "payout_credit_note_sepa", "payout_fidorpay", "payout_creditcard", "payout_fee"],
+      "readonly":true,
+      "type":"string"
+    },
+    "subject":{
+      "description": "Transfer subject",
+      "type":"string",
+      "maxLength": 255,
+      "readonly":true
+    },
+    "amount":{
+      "description": "The transferred amount in account currency, two decimal places. (positive: credit, negative: debit)",
+      "type":"number",
+      "readonly":true
+    },
+    "remote_holder":{
+      "description": "Receiving/Sending account holder name",
+      "type":"string",
+      "maxLength": 70
+    },
+    "remote_iban":{
+      "description": "Receiving/Sending IBAN",
+      "type":"string",
+      "maxLength": 40
+    },
+    "remote_bic":{
+      "description": "Receiving/Sending BIC / Swift",
+      "type":"string",
+      "maxLength": 15
+    },
+    "remote_fidor_id":{
+      "description": "Receiving/Sending Fidor-Id, if available",
+      "readonly":true,
+      "type":"integer"
+    },
+    "cc_merchant_name":{
+      "description": "CreditCard merchant, set in CreditCard transaction",
+      "type":"string",
+      "maxLength": 255,
+      "readonly":true
+    },
+    "cc_merchant_category":{
+      "description": "CreditCard merchant category, set in CreditCard transaction",
+      "type":"string",
+      "maxLength": 255,
+      "readonly":true
+    },
+    "cc_type":{
+      "description": "CreditCard type, set in CreditCard transaction",
+      "type":"string",
+      "maxLength": 255,
+      "readonly":true
+    },
+    "cc_category":{
+      "description": "CreditCard category, set in CreditCard transaction",
+      "type":"string",
+      "maxLength": 255,
+      "readonly":true
+    },
+    "book_date":{
+      "description": "Date the transaction was booked.",
+      "format":"date",
+      "readonly":true,
+      "type":"string"
+    },
+    "value_date":{
+      "description": "Date the amount was credited to the account (Wertstellung).",
+      "format":"date",
+      "readonly":true,
+      "type":"string"
+    },
+    "book_code":{
+      "description": "Accounting Transaction code in the central banking system",
+      "readonly":true,
+      "type":"string"
+    },
+    "sepa_eref":{
+      "description": "SEPA End-to-End reference",
+      "type":"string",
+      "readonly":true,
+      "maxLength": 255
+    },
+    "return_transaction_id":{
+      "description": "If the transaction was marked for return, this references the new return transaction.",
+      "readonly":true,
+      "type":"integer"
+    },
+    "external_ref":{
+      "description": "Some external ID, settable by user.",
+      "type":"string",
+      "maxLength": 255
+    },
+    "created_at":{
+      "description": "Creation date-time, never changes.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    },
+    "updated_at":{
+      "description": "Last update date-time.",
+      "format":"date-time",
+      "readonly":true,
+      "type":"string"
+    }
+  },
+  "links":[
+    { "rel": "self",
+      "href": "transactions/{id}"
+    },
+    { "rel": "instances",
+      "href": "transactions",
+      "properties" : {
+        "filter[account_ids]":{
+          "title" : "Find transactions belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format":"date",
+          "type":"string"
+        },
+        "filter[id_from]":{
+          "title" : "Find transactions with an id greater than given one.",
+          "format":"date",
+          "type":"string"
+        },
+        "filter[book_date_from]":{
+          "title" : "Date filter from >= date",
+          "format":"date",
+          "type":"string"
+        },
+        "filter[book_date_to]":{
+          "title" : "Date filter to <= date",
+          "format":"date",
+          "type":"string"
+        },
+        "filter[external_ref]":{
+          "title" : "Match full external reference",
+          "type":"string"
+        },
+        "filter[kinds]":{
+          "title" : "By transaction types",
+          "description": "Search by single transaction type",
+          "enum":["payin_giropay", "payin_paymentnetwork", "payin_credit_note", "payin_debit_note_eze",
+                  "payin_debit_note_aba", "payin_credit_note_sepa", "payin_debit_note_sepa_core",
+                  "payin_debit_note_sepa_b2b", "payin_fidorpay", "payout_ogone",
+                  "payout_paymentnetwork", "payout_credit_note", "payout_debit_note_eze",
+                  "payout_credit_note_sepa", "payout_fidorpay", "payout_creditcard", "payout_fee"],
+          "type":"string"
+        },
+        "page":{
+          "title" : "Page",
+          "description": "In paginated results set the page to look for",
+          "type":"number"
+        },
+        "per_page":{
+          "title" : "Per page",
+          "description": "Results per page. Default is 10, max is 100",
+          "type":"number"
+        },
+        "sort_by":{
+          "title" : "Sort by",
+          "description": "Sort the results by the given field => number",
+          "enum":["name","number", "created_at", "updated_at"],
+          "type": "string"
+        },
+        "sort":{
+          "title" : "Sort",
+          "enum":["ASC","DESC"],
+          "description": "Sort the results in ASC or DESC",
+          "type": "string"
+        }
+      }
+    },
+    { "rel": "update",
+      "href": "transactions/{id}",
+      "method": "PUT"
+    },
+    { "rel": "return",
+      "method" : "POST",
+      "href": "transactions/{id}/return",
+      "properties" : {
+        "return_reason":{
+          "title" : "Reason for the return",
+          "limit": 255,
+          "type":"string"
+        }
+      }
+    }
+  ]
+}
