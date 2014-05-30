@@ -107,11 +107,8 @@
     },
 
     { "rel": "create",
-      "href": "transfers",
+      "href": "batch_transfers",
       "method": "POST"
-    },
-    { "rel": "transaction",
-      "href": "transfers/{id}/transaction"
     }
   ]
 }
