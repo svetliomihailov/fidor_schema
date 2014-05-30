@@ -25,16 +25,19 @@
     "lastname":{
       "description": "Last name",
       "type":"string",
+      "required":true,
       "maxLength": 30
     },
     "title":{
       "description": "Title e.g Dr. Prof.",
       "type":"string",
+      "required":true,
       "maxLength": 30
     },
     "nick":{
       "description": "Nickname used in community.",
       "type":"string",
+      "required":true,
       "maxLength": 40,
       "minLength": 2
     },
@@ -104,13 +107,13 @@
       "maxLength": 2
     },
     "family_state":{
-      "description": "Family status, e.g married",
-      "enum":["", ""],
+      "description": "1: single, 2: married, 3: widowed, 4: divorced, 5: seperated, 6: de facto",
+      "enum":[1,2,3,4,5,6],
       "type":"string"
     },
-    "religion":{
-      "description": "Religion code. You can request the associated string via API call",
-      "enum":[1,2,3,4,5,6,8,9,10,11],
+    "denomination":{
+      "description": "Denomination for tax reasons. 0: no information, 1: no denomination, 2: Protestant, 3: Roman-Catholic, 4-18: Other denominations",
+      "enum":[0, 1,2,3,4,5,6,8,9,10,11,12,13,14,15,16,17,18],
       "type":"integer"
     },
     "id_card_registration_city":{
