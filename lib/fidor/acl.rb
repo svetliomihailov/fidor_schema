@@ -20,6 +20,9 @@ module Fidor
       def registry
         @registry ||= {}
       end
+      def object_registry
+        @object_registry ||= []
+      end
 
       # Read all scope json files and populate global registry. Second call
       # returns cached registry.
@@ -32,6 +35,18 @@ module Fidor
           registry.merge!(res)
         end
         registry
+      end
+
+      # Initialize all permissions as object structure, instead of init with
+      # plain hash
+      # @return [Array<Fidor::Permission>]
+      def init_objects
+        return @object_registry if @object_registry
+        perms = init
+        perms.each do |key, val|
+          object_registry << Fidor::Permission.from_hash(key, val)
+        end
+        object_registry
       end
 
       def scopes_path(version='v1.0')

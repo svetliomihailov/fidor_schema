@@ -20,10 +20,10 @@ describe Fidor::Acl do
 
   end
 
-  context 'translate' do
-    it 'translates scope names' do
-      res = Fidor::Acl.init
-
+  context 'init_objects' do
+    it 'builds permission objects' do
+      res = Fidor::Acl.init_objects
+      Fidor::Acl.object_registry.should_not be_empty
     end
   end
 

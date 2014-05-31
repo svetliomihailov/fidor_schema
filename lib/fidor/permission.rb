@@ -2,6 +2,7 @@ module Fidor
   class Permission
     # add locale path to global i18n path
     I18n.load_path += Dir.glob( File.dirname(__FILE__) + '/../locales/*.{rb,yml}' )
+
     # @return [String]
     attr_accessor :name
     # @return [String]
