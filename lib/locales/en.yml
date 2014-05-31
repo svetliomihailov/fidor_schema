@@ -1,38 +1,38 @@
 en:
   permission_names:
-    read_account_balance:
+    read_account_balance: Read account balance
     read_account_balance_info:
-    read_account_number:
+    read_account_number: Read account number/iban
     read_account_number_info:
-    read_account_state:
-    read_account_state_info:
-    read_customer_address:
-    read_customer_address_info:
-    read_customer_birthday:
+    read_account_state: Read account state
+    read_account_state_info: Wether an account is locked or trusted
+    read_customer_address: Read customer address
+    read_customer_address_info: Read all address related fields
+    read_customer_birthday: Read customer birthday
     read_customer_birthday_info:
-    read_customer_is_verified:
+    read_customer_is_verified: Read customer verification status
     read_customer_is_verified_info:
-    read_customer_kyc_information:
+    read_customer_kyc_information: Read customer KYC informations
     read_customer_kyc_information_info:
-    read_customer_name:
+    read_customer_name: Read customer name
     read_customer_name_info:
-    read_customer_nationality:
+    read_customer_nationality: Read customer nationality
     read_customer_nationality_info:
-    read_customer_nick:
+    read_customer_nick: Read customer nickname
     read_customer_nick_info:
-    read_customer_phone:
+    read_customer_phone: Read customer phone numbers
     read_customer_phone_info:
-    read_transaction_credit_card:
+    read_transaction_credit_card: Read transaction caredit card information
     read_transaction_credit_card_info:
-    read_transaction_full:
+    read_transaction_full: Read transactions with all fields
     read_transaction_full_info:
-    read_transaction_remote:
+    read_transaction_remote: Read transactions only receiver fields
     read_transaction_remote_info:
-    read_transaction_subject:
+    read_transaction_subject: Read transactions subject
     read_transaction_subject_info:
-    read_user_email:
+    read_user_email: Read user email
     read_user_email_info:
     readwrite_transfer: Read and Create Transfers
     readwrite_transfer_info: The app has full access to create new transfers and read existing ones.
-    readwrite_transfer_mtan:
+    readwrite_transfer_mtan: Read and Create Transfers via mTan
     readwrite_transfer_mtan_info:
