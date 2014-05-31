@@ -20,6 +20,13 @@ describe Fidor::Acl do
 
   end
 
+  context 'translate' do
+    it 'translates scope names' do
+      res = Fidor::Acl.init
+
+    end
+  end
+
   context 'validate fields' do
 
     it 'should only contain fields defined in schema' do
