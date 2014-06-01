@@ -1,4 +1,9 @@
 module Fidor
+  # A Permission defines what a user can do in a given context. In the view of
+  # a web app: which actions one can execute within an endpoint
+  # Additionally our permissions keep the fields a user is allowed to
+  # see.
+  # Atm. this class is a tiny helper so one does not need to work with hashes
   class Permission
     # add locale path to global i18n path
     I18n.load_path += Dir.glob( File.dirname(__FILE__) + '/../locales/*.{rb,yml}' )

@@ -1,5 +1,7 @@
 require 'active_support'
 module Fidor
+  # Base class with methods to read permissions from scope json files and setup
+  # ruby object structures from them
   class Acl
 
     class << self
@@ -37,8 +39,8 @@ module Fidor
         registry
       end
 
-      # Initialize all permissions as object structure, instead of init with
-      # plain hash
+      # Initialize all permissions as object structure, instead of .init which
+      # uses a plain hash
       # @return [Array<Fidor::Permission>]
       def init_objects
         return @object_registry if @object_registry
@@ -49,12 +51,15 @@ module Fidor
         object_registry
       end
 
+      # @param [String] version which simply maps to a sub-folder name in the
+      # /scopes/ directory
+      # @return [String]
       def scopes_path(version='v1.0')
         File.expand_path( File.join('../../scopes', version), File.dirname(__FILE__))
       end
 
-      # Tiny helper to generate i18n keys for all permission names and _info
-      # fields
+      # Tiny helper to generate i18n keys for all permission names and
+      # additionally an [xy_name]_info for a longer description
       def i18n_permission_keys
         perms = init
         res = []
