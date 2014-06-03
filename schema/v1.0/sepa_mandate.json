@@ -9,6 +9,17 @@
       "readonly":true,
       "type":"integer"
     },
+    "external_uid":{
+      "description": "Unique ID of the creator of the transaction",
+      "type":"string",
+      "required" : true
+    },
+    "customer_id":{
+      "description": "Customer for which this mandate is valid.",
+      "readonly":true,
+      "type":"integer",
+      "required" : true
+    },
     "user_id":{
       "description": "User who created the mandate.",
       "readonly":true,
@@ -121,9 +132,9 @@
     { "rel": "instances",
       "href": "sepa_mandates",
       "properties" : {
-        "filter[q]":{
+        "filter[mandate_reference]":{
           "title" : "Search",
-          "description": "Wildcard search in subject",
+          "description": "Search by mandate reference",
           "type":"string"
         },
         "page":{

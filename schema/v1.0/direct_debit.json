@@ -1,6 +1,6 @@
 { "type":"object",
-  "title": "Debit transfer",
-  "name": "debit_transfer",
+  "title": "Direct Debit",
+  "name": "direct_debit",
   "description": "A direct debit can only be performed with a valid sepa mandate, which holds the paying party",
   "properties":{
     "id":{
@@ -8,6 +8,11 @@
       "identity":true,
       "readonly":true,
       "type":"integer"
+    },
+    "external_uid":{
+      "description": "Unique ID of the creator of the transaction",
+      "type":"string",
+      "required" : true
     },
     "account_id":{
       "description": "Fidor account this transaction belongs to.",
@@ -18,17 +23,6 @@
       "description": "User who created the transfer.",
       "readonly":true,
       "type":"integer"
-    },
-    "transaction_id":{
-      "description": "For successful transfers, the reference to the transaction",
-      "readonly":true,
-      "type":"integer"
-    },
-    "transaction":{
-      "description": "The related transaction if the transfer was processed.",
-      "readonly":true,
-      "type":"object",
-      "properties":{"$ref":"./transaction.json#properties"}
     },
     "mandate_id":{
       "description": "The sepa mandate used by the debit",
@@ -57,8 +51,8 @@
       "type":"string"
     },
     "state":{
-      "description": "State of the transfer. pending: Order has not been approved yet | in_clearance: Order is currently being processed | cleared: Order was handed to third party system but booking was not confirmed | processed: Third party system confirmed booking of order | rejected: Order was rejected | error: An error occurred during execution",
-      "enum":["pending", "in_clearance", "cleared", "processed", "rejected", "error"],
+      "description": "State of the transfer. in_clearance: Order is currently being processed | processed: Third party system confirmed booking of order | rejected: Order was rejected | error: An error occurred during execution",
+      "enum":["in_clearance", "processed", "rejected", "error"],
       "readonly":true,
       "type":"string"
     },
@@ -76,11 +70,6 @@
     { "rel": "instances",
       "href": "debit_transfers",
       "properties" : {
-        "filter[q]":{
-          "title" : "Search",
-          "description": "Wildcard search in subject",
-          "type":"string"
-        },
         "filter[account_ids]":{
           "title" : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
           "format":"date",
@@ -115,12 +104,6 @@
           "description": "Results per page. Default is 10, max is 100",
           "type":"number"
         },
-        "sort_by":{
-          "title" : "Sort by",
-          "description": "Sort the results by the given field => number",
-          "enum":["amount","subject", "created_at"],
-          "type": "string"
-        },
         "sort":{
           "title" : "Sort",
           "enum":["ASC","DESC"],
@@ -128,21 +111,6 @@
           "type": "string"
         }
       }
-    },
-    { "rel": "destroy",
-      "href": "debit_transfers/{id}",
-      "method": "DELETE"
-    },
-    { "rel": "update",
-      "href": "debit_transfers/{id}",
-      "method": "PUT"
-    },
-    { "rel": "create",
-      "href": "debit_transfers",
-      "method": "POST"
-    },
-    { "rel": "transaction",
-      "href": "debit_transfers/{id}/transaction"
     }
   ]
 }

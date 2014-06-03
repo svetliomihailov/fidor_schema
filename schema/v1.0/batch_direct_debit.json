@@ -1,7 +1,7 @@
 { "type":"object",
-  "title": "Batch transfer",
-  "name": "batch_transfer",
-  "description": "A transfer batch contains multiple transfers which are processed asynchronous.",
+  "title": "Batch direct debit",
+  "name": "batch_direct_debit",
+  "description": "A direct debit batch contains multiple direct debits which are processed asynchronous.",
   "properties":{
     "id":{
       "description":"Unique identifier",
@@ -15,7 +15,7 @@
       "required" : true
     },
     "account_id":{
-      "description": "Fidor account this transaction belongs to.",
+      "description": "Fidor account this direct debit belongs to.",
       "required" : true,
       "type":"integer"
     },
@@ -24,10 +24,10 @@
       "readonly":true,
       "type":"integer"
     },
-    "transfers":{
-      "description": "The transfers to process.",
+    "direct_debits":{
+      "description": "The direct_debits to process.",
       "type":"array",
-      "properties":{"$ref":"./transfer.json#properties"}
+      "properties":{"$ref":"./direct_debit.json#properties"}
     },
     "state":{
       "description": "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution in at least one of the transfers. In this case you should check the transfers.",
@@ -67,10 +67,10 @@
   },
   "links":[
     { "rel": "self",
-      "href": "batch_transfers/{id}"
+      "href": "batch_direct_debits/{id}"
     },
     { "rel": "instances",
-      "href": "batch_transfers",
+      "href": "batch_direct_debits",
       "properties" : {
         "filter[created_at_from]":{
           "title" : "Creation date filter from >= date",
@@ -107,7 +107,7 @@
     },
 
     { "rel": "create",
-      "href": "batch_transfers",
+      "href": "batch_direct_debits",
       "method": "POST"
     }
   ]

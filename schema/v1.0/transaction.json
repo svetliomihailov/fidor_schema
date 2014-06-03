@@ -145,7 +145,12 @@
         },
         "filter[id_from]":{
           "title" : "Find transactions with an id greater than given one.",
-          "format":"date",
+          "format":"integer",
+          "type":"string"
+        },
+        "filter[id_to]":{
+          "title" : "Find transactions with an id smaller than given one.",
+          "format":"integer",
           "type":"string"
         },
         "filter[book_date_from]":{
@@ -182,32 +187,11 @@
           "description": "Results per page. Default is 10, max is 100",
           "type":"number"
         },
-        "sort_by":{
-          "title" : "Sort by",
-          "description": "Sort the results by the given field => number",
-          "enum":["name","number", "created_at", "updated_at"],
-          "type": "string"
-        },
         "sort":{
           "title" : "Sort",
           "enum":["ASC","DESC"],
           "description": "Sort the results in ASC or DESC",
           "type": "string"
-        }
-      }
-    },
-    { "rel": "update",
-      "href": "transactions/{id}",
-      "method": "PUT"
-    },
-    { "rel": "return",
-      "method" : "POST",
-      "href": "transactions/{id}/return",
-      "properties" : {
-        "return_reason":{
-          "title" : "Reason for the return",
-          "limit": 255,
-          "type":"string"
         }
       }
     }

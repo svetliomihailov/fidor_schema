@@ -14,13 +14,13 @@
     "number":{
       "description": "The bank account number.",
       "type":"string",
-      "maxLength": 255,
+      "maxLength": 10,
       "readonly" : true
     },
     "iban":{
       "description": "IBAN",
       "type":"string",
-      "maxLength": 40,
+      "maxLength": 31,
       "readonly" : true
     },
     "balance":{
@@ -89,20 +89,16 @@
       "href": "accounts/{id}"
     },
     { "rel": "instances",
-      "href": "accounts",
-      "properties" : {
-        "filter[customer_ids]":{
-          "title" : "Find account belonging to the given customer ids. Single id or multiple ids comma-separated.",
-          "format":"date",
-          "type":"string"
-        }
-      }
+      "href": "accounts"
     },
     { "rel": "transactions",
       "href": "accounts/{id}/transactions"
     },
     { "rel": "transfers",
       "href": "transfers/{id}/transfers"
+    },
+    { "rel": "batch_transfers",
+      "href": "accounts/{id}/batch_transfers"
     }
   ]
 }
