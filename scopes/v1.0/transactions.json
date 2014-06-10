@@ -2,7 +2,11 @@
   "read_transaction_full" : {
     "context" : "transactions",
     "privileges" : ["index", "show"],
-    "fields" : ["_all"]
+    "fields" : ["id","account_id","transfer_id","kind","subject","amount",
+                "remote_holder", "remote_iban","remote_bic","remote_fidor_id",
+                "cc_merchant_name","cc_merchant_category","cc_type",
+                "cc_category","book_date","value_date","book_code","sepa_eref",
+                "return_transaction_id","external_ref","created_at","updated_at"]
   },
 
   "read_transaction_subject" : {

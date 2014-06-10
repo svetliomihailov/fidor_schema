@@ -6,16 +6,15 @@ describe Fidor::Acl do
 
     it 'should read all json files' do
       res = Fidor::Acl.init
-      Fidor::Acl.registry.should_not be_empty
-      res.keys.should include 'read_customer_address'
-      res.keys.should include 'read_user_email'
+      expect(Fidor::Acl.registry).to_not be_empty
+      expect(res.keys).to include 'read_customer_address'
+      expect(res.keys).to include 'read_user_email'
     end
 
     it 'should flatten permissions' do
       res = Fidor::Acl.flat_perms_hash
-      Fidor::Acl.registry.should_not be_empty
-      res.keys.should include 'transfers', 'transactions', 'users'
-      res['customers'].should include 'current', 'show'
+      expect(res.keys).to include 'transfers', 'transactions', 'users'
+      expect(res['customers']).to include 'current', 'show'
     end
 
   end
@@ -23,7 +22,7 @@ describe Fidor::Acl do
   context 'init_objects' do
     it 'builds permission objects' do
       res = Fidor::Acl.init_objects
-      Fidor::Acl.object_registry.should_not be_empty
+      expect(Fidor::Acl.object_registry).to_not be_empty
     end
   end
 
@@ -38,8 +37,7 @@ describe Fidor::Acl do
         schema_fields = schema['properties'].keys
 
         scope['fields'].each do |scope_field|
-          next if scope_field == '_all'
-          schema_fields.should include(scope_field)
+          expect(schema_fields).to include(scope_field)
         end
 
       end
