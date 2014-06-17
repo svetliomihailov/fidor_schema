@@ -59,7 +59,7 @@ de:
     cc_type: Kreditkartentyp
     created_at: Erstellt am
     email: Email
-    external_ref: Exterene Referenz
+    external_ref: Externe Referenz
     firstname: Vorname
     iban: IBAN
     id: ID
