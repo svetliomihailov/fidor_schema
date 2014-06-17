@@ -8,10 +8,10 @@ describe Fidor::Permission do
   context 'from_hash' do
     it 'returns new object' do
       permission = Fidor::Permission.from_hash 'readwrite_transfer', @acls['readwrite_transfer']
-      permission.name.should == 'readwrite_transfer'
-      permission.context.should == 'transfers'
-      permission.privileges.should be
-      permission.fields.should be
+      expect(permission.name).to eq 'readwrite_transfer'
+      expect(permission.context).to eq 'transfers'
+      expect(permission.privileges).to be
+      expect(permission.fields).to be
     end
   end
 
@@ -19,7 +19,13 @@ describe Fidor::Permission do
     it 'translates name' do
       res = Fidor::Acl.init
       permission = Fidor::Permission.from_hash 'readwrite_transfer', @acls['readwrite_transfer']
-      permission.translated_name.should == I18n.t('permission_names.readwrite_transfer')
+      expect(permission.translated_name).to eq I18n.t('permission_names.readwrite_transfer')
+    end
+
+    it 'translates fields' do
+      res = Fidor::Acl.init
+      permission = Fidor::Permission.from_hash 'readwrite_transfer', @acls['readwrite_transfer']
+      expect(permission.translated_fields).to include 'Account ID'
     end
   end
 

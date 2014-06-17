@@ -38,55 +38,55 @@ en:
     readwrite_transfer_mtan_info:
 
   permission_field_names:
-    account_id:
+    account_id: Account ID
     adr_businessphone:
-    adr_city:
-    adr_country:
-    adr_mobile:
-    adr_phone:
-    adr_street:
-    adr_street_number:
-    amount:
-    balance:
-    balance_available:
-    birthday:
-    book_code:
-    book_date:
-    cash_flow_per_year:
-    cc_category:
-    cc_merchant_category:
-    cc_merchant_name:
-    cc_type:
-    created_at:
-    email:
-    external_ref:
-    firstname:
-    iban:
-    id:
-    id_card_number:
-    id_card_registration_city:
-    id_card_valid_until:
-    is_locked:
-    is_trust:
-    is_verified:
-    kind:
-    lastname:
-    nationality:
-    nick:
-    number:
-    preauth_amount:
-    remote_bic:
-    remote_fidor_id:
-    remote_holder:
-    remote_iban:
-    return_transaction_id:
-    sepa_eref:
-    state:
-    subject:
-    title:
-    transaction:
-    transaction_id:
-    transfer_id:
-    updated_at:
-    user_id:
-    value_date:
+    adr_city: City
+    adr_country: Country
+    adr_mobile: Mobile
+    adr_phone: Phone
+    adr_street: Street
+    adr_street_number: Street number
+    amount: Amount
+    balance: Balance
+    balance_available: Balance available
+    birthday: Birthday
+    book_code: Book Code
+    book_date: Booking date
+    cash_flow_per_year: Cash flow per year
+    cc_category: CC Category
+    cc_merchant_category: CC merchant category
+    cc_merchant_name: CC merchant name
+    cc_type: CC Type
+    created_at: Created at
+    email: Email
+    external_ref: external ref
+    firstname: Firstname
+    iban: IBAN
+    id: ID
+    id_card_number: ID Card number
+    id_card_registration_city: ID Card Registration City
+    id_card_valid_until: ID Card valid until
+    is_locked: Lock Status
+    is_trust: Is trust
+    is_verified: Verification status
+    kind: Kind
+    lastname: Lastname
+    nationality: Nationality
+    nick: Nickname
+    number: Number
+    preauth_amount: Preauthorisation amount
+    remote_bic: Receiver BIC
+    remote_fidor_id: Receiver Fidor ID
+    remote_holder: Receiver name
+    remote_iban: Receiver IBAN
+    return_transaction_id: Returned transaction id
+    sepa_eref: SEPA EndToEnd reference
+    state: Status
+    subject: Subject
+    title: Title
+    transaction: Transaction
+    transaction_id: Transaction ID
+    transfer_id: Transfer ID
+    updated_at: Updated at
+    user_id: User ID
+    value_date: Value date

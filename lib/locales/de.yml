@@ -39,7 +39,7 @@ de:
 
   permission_field_names:
     account_id: Kontonummer
-    adr_businessphone:
+    adr_businessphone: Tel. Büro
     adr_city: Stadt
     adr_country: Land
     adr_mobile: Tel. Mobil

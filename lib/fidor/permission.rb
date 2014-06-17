@@ -39,5 +39,8 @@ module Fidor
       I18n.t(self.name, scope: :permission_names)
     end
 
+    def translated_fields
+      fields.map{|i| I18n.t(i, scope: :permission_field_names) }.sort
+    end
   end
 end
