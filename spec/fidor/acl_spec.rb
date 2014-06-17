@@ -45,4 +45,12 @@ describe Fidor::Acl do
 
   end
 
+  context 'i18n' do
+    it 'has all fields' do
+      res = Fidor::Acl.i18n_field_keys
+      expect(res.length).to be 52
+      expect(res).to include 'email:'
+    end
+  end
+
 end

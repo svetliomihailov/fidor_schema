@@ -36,3 +36,57 @@ en:
     readwrite_transfer_info: The app has full access to create new transfers and read existing ones.
     readwrite_transfer_mtan: Read and Create Transfers via mTan
     readwrite_transfer_mtan_info:
+
+  permission_field_names:
+    account_id:
+    adr_businessphone:
+    adr_city:
+    adr_country:
+    adr_mobile:
+    adr_phone:
+    adr_street:
+    adr_street_number:
+    amount:
+    balance:
+    balance_available:
+    birthday:
+    book_code:
+    book_date:
+    cash_flow_per_year:
+    cc_category:
+    cc_merchant_category:
+    cc_merchant_name:
+    cc_type:
+    created_at:
+    email:
+    external_ref:
+    firstname:
+    iban:
+    id:
+    id_card_number:
+    id_card_registration_city:
+    id_card_valid_until:
+    is_locked:
+    is_trust:
+    is_verified:
+    kind:
+    lastname:
+    nationality:
+    nick:
+    number:
+    preauth_amount:
+    remote_bic:
+    remote_fidor_id:
+    remote_holder:
+    remote_iban:
+    return_transaction_id:
+    sepa_eref:
+    state:
+    subject:
+    title:
+    transaction:
+    transaction_id:
+    transfer_id:
+    updated_at:
+    user_id:
+    value_date:

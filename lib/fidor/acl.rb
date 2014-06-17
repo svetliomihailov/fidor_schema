@@ -69,6 +69,16 @@ module Fidor
         end
         res.sort
       end
+            # Tiny helper to generate i18n keys for all permission names and
+      # additionally an [xy_name]_info for a longer description
+      def i18n_field_keys
+        perms = init
+        res = []
+        perms.each do |name, val|
+          res +=val["fields"]
+        end
+        res.uniq.sort.map{|i| "#{i}:"}
+      end
     end
   end
 end
