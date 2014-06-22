@@ -1,6 +1,6 @@
 
 { "type":"object",
-  "title": "transaction",
+  "title": "Transaction",
   "name": "transaction",
   "description": "A transaction is the result of a successful transfer.",
   "properties":{
@@ -49,7 +49,7 @@
     "remote_iban":{
       "description": "Receiving/Sending IBAN",
       "type":"string",
-      "maxLength": 40
+      "maxLength": 31
     },
     "remote_bic":{
       "description": "Receiving/Sending BIC / Swift",

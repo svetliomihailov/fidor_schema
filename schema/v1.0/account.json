@@ -8,7 +8,7 @@
       "readonly":true,
       "identity":true,
       "description": "The ID is also referenced as Fidor ID e.g in the web interface.",
-      "type":"string",
+      "type":"integer",
       "maxLength": 255
     },
     "number":{

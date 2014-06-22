@@ -1,5 +1,5 @@
 { "type":"object",
-  "title": "transfer",
+  "title": "Transfer",
   "name": "transfer",
   "description": "A transfer initiates a transaction e.g get / send money. Depending on its state a transfer can be edited, deleted. If the transfer fails no transaction is created!",
   "properties":{
@@ -58,7 +58,7 @@
     "remote_iban":{
       "description": "Receiver IBAN",
       "type":"string",
-      "maxLength": 40
+      "maxLength": 31
     },
     "remote_bic":{
       "description": "Receiver BIC / Swift",
@@ -107,7 +107,7 @@
           "type":"string"
         },
         "filter[states]":{
-          "title" : "Filter by single or multiple csv delimeted states",
+          "title" : "Filter by single or multiple csv delimited states",
           "enum":["pending", "in_clearance", "cleared", "processed", "rejected", "error"],
           "type":"string"
         },

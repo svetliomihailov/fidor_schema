@@ -1,5 +1,5 @@
 { "type":"object",
-  "title": "customer",
+  "title": "Customer",
   "name": "customer",
   "description": "",
   "properties":{
