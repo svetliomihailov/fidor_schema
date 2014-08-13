@@ -10,7 +10,7 @@
       "type":"integer"
     },
     "external_uid":{
-      "description": "Unique ID of the creator of the transaction",
+      "description": "Unique ID of the creator of the transfer",
       "type":"string",
       "required" : true
     },
@@ -108,7 +108,7 @@
         },
         "filter[states]":{
           "title" : "Filter by single or multiple csv delimited states",
-          "enum":["pending", "in_clearance", "cleared", "processed", "rejected", "error"],
+          "enum":["in_clearance", "processed", "rejected", "error"],
           "type":"string"
         },
         "filter[external_ref]":{

@@ -8,8 +8,7 @@
       "readonly":true,
       "identity":true,
       "description": "The ID is also referenced as Fidor ID e.g in the web interface.",
-      "type":"integer",
-      "maxLength": 255
+      "type":"integer"
     },
     "number":{
       "description": "The bank account number.",
@@ -39,7 +38,7 @@
       "readonly" : true
     },
     "cash_flow_per_year":{
-      "description": "Amount available for yearly cash flow. If it reaches a limit the account holder must pass enhanced authentication vai Post-ident in DE.",
+      "description": "Amount available for yearly cash flow. If it reaches a limit the account holder must pass enhanced authentication via Postident in Germany.",
       "type":"number",
       "readonly" : true
     },
@@ -60,7 +59,7 @@
       "type":"boolean"
     },
     "currency":{
-      "description": "Account currency.",
+      "description": "Account currency. ISO 4217 alpha-3 - 3 letter upcase e.g EUR",
       "type":"string",
       "default" : "EUR",
       "readonly" : true

@@ -1,7 +1,7 @@
 { "type":"object",
   "title": "Sepa Mandate",
   "name": "sepa_mandate",
-  "description": "A transfer initiates a transaction e.g get / send money. Depending on its state a transfer can be edited, deleted. If the transfer fails no transaction is created!",
+  "description": "",
   "properties":{
     "id":{
       "description":"Unique identifier",

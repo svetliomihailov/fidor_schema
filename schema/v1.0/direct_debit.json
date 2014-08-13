@@ -1,7 +1,7 @@
 { "type":"object",
   "title": "Direct Debit",
   "name": "direct_debit",
-  "description": "A direct debit can only be performed with a valid sepa mandate, which holds the paying party",
+  "description": "A direct debit can only be performed with a valid sepa mandate, authorizing access to the debtor's account.",
   "properties":{
     "id":{
       "description":"Unique identifier",
@@ -111,6 +111,11 @@
           "type": "string"
         }
       }
+    },
+    { "rel": "create",
+      "href": "transfers",
+      "method": "POST"
     }
+
   ]
 }
