@@ -11,12 +11,12 @@
       "type":"integer"
     },
     "account_id":{
-      "description": "Fidor account this transaction belongs to.",
+      "description": "The Fidor account associated with this transaction.",
       "readonly":true,
       "type":"integer"
     },
     "transfer_id":{
-      "description": "Id of transfer if transaction was created by a transfer. Refunded transactions dont have those",
+      "description": "Id of transfer if transaction was created by a transfer. Refunded transactions have no id",
       "readonly":true,
       "type":"integer"
     },
@@ -98,7 +98,7 @@
       "type":"string"
     },
     "book_code":{
-      "description": "Accounting Transaction code in the central banking system",
+      "description": "Accounting transaction code in the central banking system",
       "readonly":true,
       "type":"string"
     },

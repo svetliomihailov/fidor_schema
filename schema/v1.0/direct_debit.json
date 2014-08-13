@@ -10,7 +10,7 @@
       "type":"integer"
     },
     "external_uid":{
-      "description": "Unique ID of the creator of the transaction",
+      "description": "Unique ID provided by the initiator of the transaction",
       "type":"string",
       "required" : true
     },
@@ -91,12 +91,12 @@
           "type":"string"
         },
         "filter[eref]":{
-          "title" : "Match full external reference",
+          "title" : "Match full end to end reference",
           "type":"string"
         },
         "page":{
           "title" : "Page",
-          "description": "In paginated results set the page to look for",
+          "description": "In paginated results set the page to retrieve",
           "type":"number"
         },
         "per_page":{

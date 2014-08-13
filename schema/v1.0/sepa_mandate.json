@@ -102,13 +102,13 @@
       "maxLength": 70
     },
     "signature_date":{
-      "description": "Date the mandate started to be valid.",
+      "description": "Date the mandate was signed of by the debtor.",
       "format":"date",
       "required" : true,
       "type":"string"
     },
     "valid_from_date":{
-      "description": "Date the mandate was signed of by the debtor",
+      "description": "Date the mandate started to be valid.",
       "format":"date",
       "type":"string"
     },

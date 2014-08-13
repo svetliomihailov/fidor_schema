@@ -1,7 +1,7 @@
 { "type":"object",
   "title": "Account",
   "name": "account",
-  "description": "An fidor bank account. ",
+  "description": "A fidor bank account. ",
 
   "properties":{
     "id":{
@@ -11,7 +11,7 @@
       "type":"integer"
     },
     "number":{
-      "description": "The bank account number.",
+      "description": "The account number.",
       "type":"string",
       "maxLength": 10,
       "readonly" : true
@@ -28,22 +28,22 @@
       "readonly" : true
     },
     "balance_available":{
-      "description": "Account balance available.",
+      "description": "Available account balance.",
       "type":"number",
       "readonly" : true
     },
     "preauth_amount":{
-      "description": "Amount available to pre-authorisation.",
+      "description": "Amount available for pre-authorization.",
       "type":"number",
       "readonly" : true
     },
     "cash_flow_per_year":{
-      "description": "Amount available for yearly cash flow. If it reaches a limit the account holder must pass enhanced authentication via Postident in Germany.",
+      "description": "Amount available for yearly cash flow. This is the limit of funds an account holder has at their disposal without fulfilling Germany KYC requirements.",
       "type":"number",
       "readonly" : true
     },
     "is_debit_note_enabled":{
-      "description": "Account can request money via automated debit notes from others.",
+      "description": "Whether this account is authorized to initiate direct debit transactions.",
       "type":"boolean",
       "default" : false,
       "readonly" : true
