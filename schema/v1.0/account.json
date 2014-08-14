@@ -57,6 +57,7 @@
     "is_locked":{
       "description": "Is the account is locked",
       "type":"boolean"
+      "readonly" : true
     },
     "currency":{
       "description": "Account currency. ISO 4217 alpha-3 - 3 letter upcase e.g EUR",
@@ -100,7 +101,7 @@
       "href": "accounts/{id}/batch_transfers"
     },
     { "rel": "batch_direct_debit",
-      "href": "accounts/{id}/batch_direct_debit"
+      "href": "accounts/{id}/batch_direct_debits"
     }
   ]
 }
