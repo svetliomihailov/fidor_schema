@@ -38,12 +38,6 @@
   "links":[
     { "rel": "self",
       "href": "users/current"
-    },
-    { "rel": "customers",
-      "href": "users/current/customers"
-    },
-    { "rel": "accounts",
-      "href": "users/current/accounts"
     }
   ]
 }
