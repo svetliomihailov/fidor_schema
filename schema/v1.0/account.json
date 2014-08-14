@@ -97,6 +97,9 @@
     { "rel": "transfers",
       "href": "accounts/{id}/transfers"
     },
+    { "rel": "direct_debits",
+      "href": "accounts/{id}/direct_debits"
+    },
     { "rel": "batch_transfers",
       "href": "accounts/{id}/batch_transfers"
     },
