@@ -94,10 +94,13 @@
       "href": "accounts/{id}/transactions"
     },
     { "rel": "transfers",
-      "href": "transfers/{id}/transfers"
+      "href": "accounts/{id}/transfers"
     },
     { "rel": "batch_transfers",
       "href": "accounts/{id}/batch_transfers"
+    },
+    { "rel": "batch_direct_debit",
+      "href": "accounts/{id}/batch_direct_debit"
     }
   ]
 }
