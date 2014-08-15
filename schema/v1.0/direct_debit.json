@@ -14,6 +14,11 @@
       "type":"string",
       "required" : true
     },
+    "external_ref":{
+      "description": "A customer provided reference to identify the debit in their system",
+      "type":"string",
+      "required" : true
+    },
     "account_id":{
       "description": "Fidor account this transaction belongs to.",
       "required" : true,
@@ -73,6 +78,10 @@
         "filter[account_ids]":{
           "title" : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
           "format":"date",
+          "type":"string"
+        },
+        "filter[external_ref]":{
+          "title" : "Match full external reference",
           "type":"string"
         },
         "filter[created_at_from]":{
