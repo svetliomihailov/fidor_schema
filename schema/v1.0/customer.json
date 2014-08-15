@@ -15,24 +15,28 @@
       "format":"email",
       "required":true,
       "maxLength": 100
+      "readonly":true,
     },
     "firstname":{
       "description": "First name",
       "type":"string",
       "required":true,
       "maxLength": 30
+      "readonly":true,
     },
     "lastname":{
       "description": "Last name",
       "type":"string",
       "required":true,
       "maxLength": 30
+      "readonly":true,
     },
     "title":{
       "description": "Title e.g Dr. Prof.",
       "type":"string",
       "required":true,
       "maxLength": 30
+      "readonly":true,
     },
     "nick":{
       "description": "Nickname used in community.",
@@ -40,94 +44,113 @@
       "required":true,
       "maxLength": 40,
       "minLength": 2
+      "readonly":true,
     },
     "birthlastname":{
       "description": "Name at birth, maiden name.",
       "type":"string",
       "maxLength": 30
+      "readonly":true,
     },
     "adr_street":{
       "description": "Address street",
       "type":"string",
       "maxLength": 100
+      "readonly":true,
     },
     "adr_street_number":{
       "description": "Address street number",
       "type":"string",
+      "readonly":true,
       "maxLength": 10
     },
     "adr_zip":{
       "description": "Address Zip",
       "type":"string",
       "maxLength": 5
+      "readonly":true,
     },
     "adr_city":{
       "description": "Address City",
       "type":"string",
       "maxLength": 100
+      "readonly":true,
     },
     "adr_country":{
       "description": "Address Country",
       "type":"string",
       "maxLength": 100
+      "readonly":true,
     },
     "adr_phone":{
       "description": "Phone home",
       "type":"string",
       "maxLength": 30
+      "readonly":true,
     },
     "adr_mobile":{
       "description": "Phone mobile",
       "type":"string",
       "maxLength": 30
+      "readonly":true,
     },
     "adr_fax":{
       "description": "Phone fax",
       "type":"string",
       "maxLength": 30
+      "readonly":true,
     },
     "adr_businessphone":{
       "description": "Phone business",
       "type":"string",
       "maxLength": 30
+      "readonly":true,
     },
     "birthday":{
       "description": "Date of birth",
       "format":"date",
       "type":"string"
+      "readonly":true,
     },
     "is_verified":{
       "description": "Account owner has been verified by post-ident.",
       "type":"boolean"
+      "readonly":true,
     },
     "nationality":{
       "description": "Country code as defined in ISO3166 alpha2. e.d DE, GB",
       "type":"string",
       "minLength": 2,
       "maxLength": 2
+      "readonly":true,
     },
     "family_state":{
       "description": "1: single, 2: married, 3: widowed, 4: divorced, 5: seperated, 6: de facto",
       "enum":[1,2,3,4,5,6],
       "type":"string"
+      "readonly":true,
     },
     "denomination":{
       "description": "Denomination for tax reasons. 0: no information, 1: no denomination, 2: Protestant, 3: Roman-Catholic, 4-18: Other denominations",
       "enum":[0, 1,2,3,4,5,6,8,9,10,11,12,13,14,15,16,17,18],
       "type":"integer"
+      "readonly":true,
     },
     "id_card_registration_city":{
       "description": "City where the id card is registered.",
       "type":"string"
+      "readonly":true,
     },
     "id_card_number":{
       "description": "ID card number",
       "type":"string"
+      "readonly":true,
     },
     "id_card_valid_until":{
       "description": "Expiration date of id card",
       "format":"date",
       "type":"string"
+      "readonly":true,
     },
     "created_at":{
       "description": "Creation date-time, never changes.",
