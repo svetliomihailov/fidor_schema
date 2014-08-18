@@ -17,22 +17,22 @@
       "maxLength": 100
       "readonly":true,
     },
-    "firstname":{
-      "description": "First name",
+    "first_name":{
+      "description": "The given name of the customer",
       "type":"string",
       "required":true,
       "maxLength": 30
       "readonly":true,
     },
-    "lastname":{
-      "description": "Last name",
+    "last_name":{
+      "description": "The family name of the customer",
       "type":"string",
       "required":true,
       "maxLength": 30
       "readonly":true,
     },
     "title":{
-      "description": "Title e.g Dr. Prof.",
+      "description": "Title or salutation e.g Dr. Prof.",
       "type":"string",
       "required":true,
       "maxLength": 30
@@ -46,7 +46,7 @@
       "minLength": 2
       "readonly":true,
     },
-    "birthlastname":{
+    "maiden_name":{
       "description": "Name at birth, maiden name.",
       "type":"string",
       "maxLength": 30
@@ -61,13 +61,13 @@
     "adr_street_number":{
       "description": "Address street number",
       "type":"string",
-      "readonly":true,
       "maxLength": 10
+      "readonly":true,
     },
-    "adr_zip":{
-      "description": "Address Zip",
+    "adr_post_code":{
+      "description": "Address post code",
       "type":"string",
-      "maxLength": 5
+      "maxLength": 10
       "readonly":true,
     },
     "adr_city":{
@@ -124,13 +124,13 @@
       "maxLength": 2
       "readonly":true,
     },
-    "family_state":{
+    "marital_status":{
       "description": "1: single, 2: married, 3: widowed, 4: divorced, 5: seperated, 6: de facto",
       "enum":[1,2,3,4,5,6],
       "type":"string"
       "readonly":true,
     },
-    "denomination":{
+    "religion":{
       "description": "Denomination for tax reasons. 0: no information, 1: no denomination, 2: Protestant, 3: Roman-Catholic, 4-18: Other denominations",
       "enum":[0, 1,2,3,4,5,6,8,9,10,11,12,13,14,15,16,17,18],
       "type":"integer"
