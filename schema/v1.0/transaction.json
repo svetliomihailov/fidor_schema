@@ -20,7 +20,7 @@
       "readonly":true,
       "type":"integer"
     },
-    "kind":{
+    "transaction_type":{
       "description": "Type of the transaction",
       "enum":["payin_giropay", "payin_paymentnetwork", "payin_credit_note", "payin_debit_note_eze",
               "payin_debit_note_aba", "payin_credit_note_sepa", "payin_debit_note_sepa_core",
@@ -30,8 +30,13 @@
       "readonly":true,
       "type":"string"
     },
+    "transaction_type_details": {
+      "description":"Details specific to this transaction type are collected here.",
+      "readonly":true,
+      "type":object
+    }
     "subject":{
-      "description": "Transfer subject",
+      "description": "Transfer subject (reference)",
       "type":"string",
       "maxLength": 255,
       "readonly":true
@@ -88,7 +93,7 @@
       "maxLength": 255,
       "readonly":true
     },
-    "book_date":{
+    "entry_date":{
       "description": "Date the transaction was booked.",
       "format":"date",
       "readonly":true,
@@ -105,7 +110,7 @@
       "readonly":true,
       "type":"string"
     },
-    "sepa_eref":{
+    "eref":{
       "description": "SEPA End-to-End reference",
       "type":"string",
       "readonly":true,
