@@ -93,7 +93,7 @@
       "maxLength": 255,
       "readonly":true
     },
-    "entry_date":{
+    "booking_date":{
       "description": "Date the transaction was booked.",
       "format":"date",
       "readonly":true,
@@ -105,7 +105,7 @@
       "readonly":true,
       "type":"string"
     },
-    "book_code":{
+    "booking_code":{
       "description": "Accounting transaction code in the central banking system",
       "readonly":true,
       "type":"string"
