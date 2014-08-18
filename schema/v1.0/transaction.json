@@ -33,8 +33,8 @@
     "transaction_type_details": {
       "description":"Details specific to this transaction type are collected here.",
       "readonly":true,
-      "type":object
-    }
+      "type":"object"
+    },
     "subject":{
       "description": "Transfer subject (reference)",
       "type":"string",
@@ -49,19 +49,19 @@
     "remote_holder":{
       "description": "Receiving/Sending account holder name",
       "type":"string",
-      "readonly":true
+      "readonly":true,
       "maxLength": 70
     },
     "remote_iban":{
       "description": "Receiving/Sending IBAN",
       "type":"string",
-      "readonly":true
+      "readonly":true,
       "maxLength": 31
     },
     "remote_bic":{
       "description": "Receiving/Sending BIC / Swift",
       "type":"string",
-      "readonly":true
+      "readonly":true,
       "maxLength": 15
     },
     "remote_fidor_id":{
@@ -124,7 +124,7 @@
     "external_ref":{
       "description": "Some external ID, settable by user.",
       "type":"string",
-      "readonly":true
+      "readonly":true,
       "maxLength": 255
     },
     "created_at":{

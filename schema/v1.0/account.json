@@ -56,7 +56,7 @@
     },
     "is_locked":{
       "description": "Is the account is locked",
-      "type":"boolean"
+      "type":"boolean",
       "readonly" : true
     },
     "currency":{
