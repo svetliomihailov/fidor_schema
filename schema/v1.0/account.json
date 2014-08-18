@@ -10,8 +10,8 @@
       "description": "The ID is also referenced as Fidor ID e.g in the web interface.",
       "type":"integer"
     },
-    "number":{
-      "description": "The account number.",
+    "account_number":{
+      "description": "The bank account number.",
       "type":"string",
       "maxLength": 10,
       "readonly" : true
@@ -48,7 +48,7 @@
       "default" : false,
       "readonly" : true
     },
-    "is_trust":{
+    "is_trusted":{
       "description": "",
       "type":"boolean",
       "default" : false,
@@ -67,21 +67,21 @@
     },
     "customers" : {
       "description": "The owners of the account",
-      "readonly":true,
       "type":"array",
-      "properties":{"$ref":"./customer.json#properties"}
+      "properties":{"$ref":"./customer.json#properties"},
+      "readonly":true
     },
     "created_at":{
       "description": "Creation date-time, never changes.",
       "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "type":"string",
+      "readonly":true
     },
     "updated_at":{
       "description": "Last update date-time.",
       "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "type":"string",
+      "readonly":true
     }
   },
   "links":[

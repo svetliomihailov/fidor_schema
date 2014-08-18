@@ -1,6 +1,6 @@
 { "type":"object",
-  "title": "Direct Debit",
-  "name": "direct_debit",
+  "title": "Sepa Direct Debit",
+  "name": "sepa_direct_debit",
   "description": "A direct debit can only be performed with a valid sepa mandate, authorizing access to the debtor's account.",
   "properties":{
     "id":{
@@ -45,12 +45,12 @@
       "maxLength": 255
     },
     "subject":{
-      "description": "Transfer subject",
+      "description": "Transfer subject/reference",
       "type":"string",
       "maxLength": 255
     },
-    "debit_note_date":{
-      "description": "Date the debit will be withdrawn from the foreign account.",
+    "collection_date":{
+      "description": "Requested date for the debit to be withdrawn from the foreign account.",
       "format":"date",
       "required":true,
       "type":"string"
@@ -76,7 +76,7 @@
       "href": "debit_transfers",
       "properties" : {
         "filter[account_ids]":{
-          "title" : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "title" : "Find direct debits belonging to the given account ids. Single id or multiple ids comma-separated.",
           "format":"date",
           "type":"string"
         },
