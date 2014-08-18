@@ -31,6 +31,13 @@
       "maxLength": 30
       "readonly":true,
     },
+    "gender":{
+      "description": "The gender of the customer",
+      "enum":["m","f"],
+      "type":"string",
+      "required":true,
+      "readonly":true,
+    },
     "title":{
       "description": "Title or salutation e.g Dr. Prof.",
       "type":"string",
