@@ -2,7 +2,7 @@
 { "type":"object",
   "title": "Transaction",
   "name": "transaction",
-  "description": "A transaction is the result of a successful transfer.",
+  "description": "A transaction is the result of a successful transfer or debit.",
   "properties":{
     "id":{
       "description":"Unique identifier",
