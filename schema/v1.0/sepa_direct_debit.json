@@ -70,10 +70,10 @@
   },
   "links":[
     { "rel": "self",
-      "href": "debit_transfers/{id}"
+      "href": "sepa_direct_debits/{id}"
     },
     { "rel": "instances",
-      "href": "debit_transfers",
+      "href": "sepa_direct_debits",
       "properties" : {
         "filter[account_ids]":{
           "title" : "Find direct debits belonging to the given account ids. Single id or multiple ids comma-separated.",

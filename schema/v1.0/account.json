@@ -94,11 +94,11 @@
     { "rel": "transactions",
       "href": "accounts/{id}/transactions"
     },
-    { "rel": "transfers",
-      "href": "accounts/{id}/transfers"
+    { "rel": "sepa_credit_transfers",
+      "href": "accounts/{id}/sepa_credit_transfers"
     },
-    { "rel": "direct_debits",
-      "href": "accounts/{id}/direct_debits"
+    { "rel": "sepa_direct_debits",
+      "href": "accounts/{id}/sepa_direct_debits"
     },
     { "rel": "batch_transfers",
       "href": "accounts/{id}/batch_transfers"
