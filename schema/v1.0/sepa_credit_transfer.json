@@ -1,6 +1,6 @@
 { "type":"object",
-  "title": "Transfer",
-  "name": "transfer",
+  "title": "SepaCreditTransfer",
+  "name": "sepa_credit_transfer",
   "description": "A transfer initiates a transaction e.g get / send money. Depending on its state a transfer can be edited, deleted. If the transfer fails no transaction is created!",
   "properties":{
     "id":{
@@ -29,14 +29,8 @@
       "readonly":true,
       "type":"integer"
     },
-    "transaction":{
-      "description": "The related transaction if the transfer was processed.",
-      "readonly":true,
-      "type":"object",
-      "properties":{"$ref":"./transaction.json#properties"}
-    },
     "subject":{
-      "description": "Transfer subject",
+      "description": "Transfer subject (reference)",
       "type":"string",
       "maxLength": 255
     },
@@ -50,17 +44,21 @@
       "type":"string",
       "maxLength": 255
     },
-    "remote_holder":{
+    "creditor_fidor_id":{
+      "description": "Receiving Fidor-Id, if available",
+      "type":"integer"
+    },
+    "creditor_name":{
       "description": "Receiving account holder name",
       "type":"string",
       "maxLength": 70
     },
-    "remote_iban":{
+    "creditor_iban":{
       "description": "Receiver IBAN",
       "type":"string",
       "maxLength": 31
     },
-    "remote_bic":{
+    "creditor_bic":{
       "description": "Receiver BIC / Swift",
       "type":"string",
       "maxLength": 15
@@ -86,10 +84,10 @@
   },
   "links":[
     { "rel": "self",
-      "href": "transfers/{id}"
+      "href": "sepa_credit_transfers/{id}"
     },
     { "rel": "instances",
-      "href": "transfers",
+      "href": "sepa_credit_transfers",
       "properties" : {
         "filter[account_ids]":{
           "title" : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
@@ -134,19 +132,19 @@
       }
     },
     { "rel": "destroy",
-      "href": "transfers/{id}",
+      "href": "sepa_credit_transfers/{id}",
       "method": "DELETE"
     },
     { "rel": "update",
-      "href": "transfers/{id}",
+      "href": "sepa_credit_transfers/{id}",
       "method": "PUT"
     },
     { "rel": "create",
-      "href": "transfers",
+      "href": "sepa_credit_transfers",
       "method": "POST"
     },
     { "rel": "transaction",
-      "href": "transfers/{id}/transaction"
+      "href": "sepa_credit_transfers/{id}/transaction"
     }
   ]
 }
