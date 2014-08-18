@@ -1,7 +1,7 @@
 { "type":"object",
   "title": "Account",
   "name": "account",
-  "description": "A fidor bank account. ",
+  "description": "A fidor bank account.",
 
   "properties":{
     "id":{

@@ -1,5 +1,5 @@
 { "type":"object",
-  "title": "Batch transfer",
+  "title": "Batch Transfer",
   "name": "batch_transfer",
   "description": "A transfer batch contains multiple transfers which are processed asynchronous.",
   "properties":{

@@ -1,5 +1,5 @@
 { "type":"object",
-  "title": "Batch direct debit",
+  "title": "Batch Direct Debit",
   "name": "batch_direct_debit",
   "description": "A direct debit batch contains multiple direct debits which are processed asynchronous.",
   "properties":{
