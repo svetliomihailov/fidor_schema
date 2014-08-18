@@ -38,7 +38,8 @@
     },
     "success_url":{
       "description": "Url receiving a POST with the batch object after processing is finished.",
-      "type":"string"
+      "type":"string",
+      "format":"uri"
     },
     "started_at":{
       "description": "Time the batch processing started.",
