@@ -47,7 +47,7 @@
     "subject":{
       "description": "Transfer subject/reference",
       "type":"string",
-      "maxLength": 255
+      "maxLength": 140
     },
     "collection_date":{
       "description": "Requested date for the debit to be withdrawn from the foreign account.",

@@ -32,7 +32,7 @@
     "subject":{
       "description": "Transfer subject (reference)",
       "type":"string",
-      "maxLength": 255
+      "maxLength": 140
     },
     "amount":{
       "description": "The transferred amount in account currency, two decimal places",
@@ -44,21 +44,17 @@
       "type":"string",
       "maxLength": 255
     },
-    "creditor_fidor_id":{
-      "description": "Receiving Fidor-Id, if available",
-      "type":"integer"
-    },
-    "creditor_name":{
+    "remote_name":{
       "description": "Receiving account holder name",
       "type":"string",
       "maxLength": 70
     },
-    "creditor_iban":{
+    "remote_iban":{
       "description": "Receiver IBAN",
       "type":"string",
       "maxLength": 31
     },
-    "creditor_bic":{
+    "remote_bic":{
       "description": "Receiver BIC / Swift",
       "type":"string",
       "maxLength": 15

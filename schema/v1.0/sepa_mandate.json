@@ -43,60 +43,60 @@
       "default": "1",
       "enum": ["0","1"]
     },
-    "debtor_title":{
+    "remote_title":{
       "description": "title of the debtor e.g Dr. Prof.",
       "type":"string",
       "required" : true,
       "maxLength": 35
     },
-    "debtor_name":{
+    "remote_name":{
       "description": "Full name of debtor",
       "type":"string",
       "required" : true,
       "maxLength": 70
     },
-    "debtor_email":{
+    "remote_email":{
       "description": "Debtor email",
       "type":"string",
       "required" : true,
       "maxLength": 70
     },
-    "debtor_address_line1":{
+    "remote_address_line1":{
       "description": "Address street.",
       "type":"string",
       "required" : true,
       "maxLength": 35
     },
-    "debtor_address_line2":{
+    "remote_address_line2":{
       "description": "ZIP and City",
       "type":"string",
       "required" : true,
       "maxLength": 70
     },
-    "debtor_country":{
+    "remote_country":{
       "description": "2 digit country code, ISO 3166",
       "type":"string",
       "required" : true,
       "maxLength": 2
     },
-    "debtor_iban":{
+    "remote_iban":{
       "description": "IBAN of debtor account",
       "type":"string",
       "required" : true,
       "maxLength": 35
     },
-    "debtor_bic":{
+    "remote_bic":{
       "description": "BIC of debtor bank",
       "type":"string",
       "required" : true,
       "maxLength": 11
     },
-    "debtor_ultimate_name":{
+    "remote_ultimate_name":{
       "description": "Ultimate name",
       "type":"string",
       "maxLength": 70
     },
-    "debtor_signature_location":{
+    "remote_signature_location":{
       "description": "Location where debtor signed the mandate.",
       "type":"string",
       "maxLength": 70
