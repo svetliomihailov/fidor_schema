@@ -1,0 +1,84 @@
+{
+  "definitions": {
+      "id": {
+        "description": "Unique identifier of the object",
+        "identity": true,
+        "readonly": true,
+        "type": "integer"
+      },
+      "phone" : {
+        "description" : "A phone or fax number, formatted with country code: +49 123 1233213",
+        "type"        : "string",
+        "TODO"        : "create a regexp"
+      },
+      "email" : {
+        "description": "Email address",
+        "type":"string",
+        "format":"email",
+        "maxLength": 100
+      },
+      "created_at" : {
+        "description": "Creation date-time, never changes.",
+        "format":"date-time",
+        "type":"string",
+        "readonly":true
+      },
+      "updated_at" : {
+        "description": "Last update date-time.",
+        "format":"date-time",
+        "type":"string",
+        "readonly":true
+      },
+      "external_uid" : {
+        "description": "Unique ID of the creator of the transaction",
+        "type":"string",
+        "required" : true,
+        "TODO"  : "used to prevent double transactions, describe mechanism"
+      },
+      "external_ref" : {
+        "description": "A customer provided reference to identify the transaction in their system.",
+        "type":"string",
+        "maxLength": 255
+      },
+      "iban" : {
+        "description" : "IBAN",
+        "type"        : "string",
+        "maxLength"   : 34,
+        "TODO"        : "Add regexp and description of checksum (?)"
+      },
+      "bic" : {
+        "description": "BIC / Swift code of bank",
+        "type":"string",
+        "maxLength": 11
+      },
+      "eref" : {
+        "description": "End-to-end reference.",
+        "type":"string",
+        "maxLength": 255
+      },
+      "country" : {
+        "description": "Country code as defined in ISO3166 alpha2. e.g DE, GB",
+        "type":"string",
+        "minLength": 2,
+        "maxLength": 2
+      },
+      "currency" : {
+        "description": "Account currency. ISO 4217 alpha-3 - 3 letter upcase e.g EUR",
+        "type":"string",
+        "maxLength" : 3,
+        "minLength" : 3,
+        "default" : "EUR"
+
+      },
+      "subject" : {
+        "description": "Transfer subject (reference)",
+        "type":"string",
+        "maxLength": 140
+      },
+      "amount" : {
+        "description": "The transferred amount in account currency, two decimal places",
+        "type":"number"
+      }
+
+  }
+}

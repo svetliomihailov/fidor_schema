@@ -4,17 +4,11 @@
   "description": "",
   "properties":{
     "id":{
-      "description":"Unique identifier",
-      "identity":true,
-      "readonly":true,
-      "type":"integer"
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "email":{
-      "description": "Email, also used for login",
-      "type":"string",
-      "format":"email",
+      "$ref" : "./base_types/base_types.json#definitions/email",
       "required":true,
-      "maxLength": 100,
       "readonly":true
     },
     "first_name":{
@@ -115,8 +109,8 @@
     },
     "birthday":{
       "description": "Date of birth",
-      "format":"date",
       "type":"string",
+      "format":"date",
       "readonly":true
     },
     "is_verified":{
@@ -125,10 +119,7 @@
       "readonly":true
     },
     "nationality":{
-      "description": "Country code as defined in ISO3166 alpha2. e.d DE, GB",
-      "type":"string",
-      "minLength": 2,
-      "maxLength": 2,
+      "$ref" : "./base_types/base_types.json#definitions/country",
       "readonly":true
     },
     "marital_status":{
@@ -160,16 +151,10 @@
       "readonly":true
     },
     "created_at":{
-      "description": "Creation date-time, never changes.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
     "updated_at":{
-      "description": "Last update date-time.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
   },
   "links":[

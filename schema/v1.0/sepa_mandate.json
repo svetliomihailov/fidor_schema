@@ -4,14 +4,10 @@
   "description": "",
   "properties":{
     "id":{
-      "description":"Unique identifier",
-      "identity":true,
-      "readonly":true,
-      "type":"integer"
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "external_uid":{
-      "description": "Unique ID of the creator of the transaction",
-      "type":"string",
+      "$ref" : "./base_types/base_types.json#definitions/external_uid",
       "required" : true
     },
     "customer_id":{
@@ -80,16 +76,12 @@
       "maxLength": 2
     },
     "remote_iban":{
-      "description": "IBAN of debtor account",
-      "type":"string",
-      "required" : true,
-      "maxLength": 35
+      "$ref" : "./base_types/base_types.json#definitions/iban",
+      "required" : true
     },
     "remote_bic":{
-      "description": "BIC of debtor bank",
-      "type":"string",
-      "required" : true,
-      "maxLength": 11
+      "$ref" : "./base_types/base_types.json#definitions/bic",
+      "required" : true
     },
     "remote_ultimate_name":{
       "description": "Ultimate name",
@@ -113,16 +105,10 @@
       "type":"string"
     },
     "created_at":{
-      "description": "Creation date-time, never changes.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
     "updated_at":{
-      "description": "Last update date-time.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
   },
   "links":[

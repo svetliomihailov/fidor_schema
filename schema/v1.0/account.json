@@ -5,10 +5,7 @@
 
   "properties":{
     "id":{
-      "readonly":true,
-      "identity":true,
-      "description": "The ID is also referenced as Fidor ID e.g in the web interface.",
-      "type":"integer"
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "account_number":{
       "description": "The bank account number.",
@@ -17,9 +14,7 @@
       "readonly" : true
     },
     "iban":{
-      "description": "IBAN",
-      "type":"string",
-      "maxLength": 31,
+      "$ref" : "./base_types/base_types.json#definitions/iban",
       "readonly" : true
     },
     "balance":{
@@ -60,9 +55,7 @@
       "readonly" : true
     },
     "currency":{
-      "description": "Account currency. ISO 4217 alpha-3 - 3 letter upcase e.g EUR",
-      "type":"string",
-      "default" : "EUR",
+      "$ref" : "./base_types/base_types.json#definitions/currency",
       "readonly" : true
     },
     "customers" : {
@@ -72,16 +65,10 @@
       "readonly":true
     },
     "created_at":{
-      "description": "Creation date-time, never changes.",
-      "format":"date-time",
-      "type":"string",
-      "readonly":true
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
     "updated_at":{
-      "description": "Last update date-time.",
-      "format":"date-time",
-      "type":"string",
-      "readonly":true
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
   },
   "links":[

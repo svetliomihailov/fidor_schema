@@ -4,17 +4,11 @@
   "description": "",
   "properties":{
     "id":{
-      "description":"Unique identifier",
-      "identity":true,
-      "readonly":true,
-      "type":"integer"
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "email":{
-      "description": "Email, also used as login",
-      "type":"string",
-      "format":"email",
+      "$ref" : "./base_types/base_types.json#definitions/email",
       "required":true,
-      "maxLength": 100,
       "readonly":true
     },
     "last_login_at":{
@@ -24,16 +18,10 @@
       "type":"string"
     },
     "created_at":{
-      "description": "Creation date-time, never changes.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
     "updated_at":{
-      "description": "Last update date-time.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
   },
   "links":[

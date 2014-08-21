@@ -5,10 +5,7 @@
   "description": "A transaction is the result of a successful transfer or debit.",
   "properties":{
     "id":{
-      "description":"Unique identifier",
-      "identity":true,
-      "readonly":true,
-      "type":"integer"
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "account_id":{
       "description": "The Fidor account associated with this transaction.",
@@ -36,14 +33,14 @@
       "type":"object"
     },
     "subject":{
+      "$ref" : "./base_types/base_types.json#definitions/subject",
       "description": "Transfer subject (reference)",
       "type":"string",
       "maxLength": 140,
       "readonly":true
     },
     "amount":{
-      "description": "The transferred amount in account currency, two decimal places. (positive: credit, negative: debit)",
-      "type":"number",
+      "$ref" : "./base_types/base_types.json#definitions/amount",
       "readonly":true
     },
     "remote_holder":{
@@ -53,16 +50,12 @@
       "maxLength": 70
     },
     "remote_iban":{
-      "description": "Receiving/Sending IBAN",
-      "type":"string",
-      "readonly":true,
-      "maxLength": 31
+      "$ref" : "./base_types/base_types.json#definitions/iban",
+      "readonly":true
     },
     "remote_bic":{
-      "description": "Receiving/Sending BIC / Swift",
-      "type":"string",
-      "readonly":true,
-      "maxLength": 15
+      "$ref" : "./base_types/base_types.json#definitions/bic",
+      "readonly":true
     },
     "remote_fidor_id":{
       "description": "Receiving/Sending Fidor-Id, if available",
@@ -111,10 +104,8 @@
       "type":"string"
     },
     "eref":{
-      "description": "SEPA End-to-End reference",
-      "type":"string",
-      "readonly":true,
-      "maxLength": 255
+      "$ref" : "./base_types/base_types.json#definitions/eref",
+      "readonly":true
     },
     "return_transaction_id":{
       "description": "If the transaction was marked for return, this references the new return transaction.",
@@ -122,22 +113,14 @@
       "type":"integer"
     },
     "external_ref":{
-      "description": "Some external ID, settable by user.",
-      "type":"string",
-      "readonly":true,
-      "maxLength": 255
+      "$ref" : "./base_types/base_types.json#definitions/external_ref",
+      "readonly":true
     },
     "created_at":{
-      "description": "Creation date-time, never changes.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
     "updated_at":{
-      "description": "Last update date-time.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
   },
   "links":[
