@@ -43,7 +43,7 @@
       "$ref" : "./base_types/base_types.json#definitions/amount",
       "readonly":true
     },
-    "remote_holder":{
+    "remote_name":{
       "description": "Receiving/Sending account holder name",
       "type":"string",
       "readonly":true,
