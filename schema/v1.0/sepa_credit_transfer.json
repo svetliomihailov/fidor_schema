@@ -107,14 +107,6 @@
         }
       }
     },
-    { "rel": "destroy",
-      "href": "sepa_credit_transfers/{id}",
-      "method": "DELETE"
-    },
-    { "rel": "update",
-      "href": "sepa_credit_transfers/{id}",
-      "method": "PUT"
-    },
     { "rel": "create",
       "href": "sepa_credit_transfers",
       "method": "POST"
