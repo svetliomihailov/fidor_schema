@@ -12,7 +12,6 @@
     },
     "customer_id":{
       "description": "Customer for which this mandate is valid.",
-      "readonly":true,
       "type":"integer",
       "required" : true
     },
