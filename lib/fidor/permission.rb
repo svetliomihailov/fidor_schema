@@ -35,7 +35,15 @@ module Fidor
     end
 
     def <=>(other)
-      name <=> other.name
+      if self.name == other.name
+        return 0
+      elsif self.name.nil?
+        return -1
+      elsif other.name.nil?
+        return 1
+      else
+        return self.name <=> other.name
+      end
     end
 
     def to_s
