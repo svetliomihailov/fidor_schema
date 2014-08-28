@@ -5,6 +5,8 @@ module Fidor
   # see.
   # Atm. this class is a tiny helper so one does not need to work with hashes
   class Permission
+    include Comparable
+
     # add locale path to global i18n path
     I18n.load_path += Dir.glob( File.dirname(__FILE__) + '/../locales/*.{rb,yml}' )
 
@@ -30,6 +32,10 @@ module Fidor
       context == other.context &&
       privileges.sort == other.privileges.sort &&
       fields.sort == other.fields.sort
+    end
+
+    def <=>(other)
+      name <=> other.name
     end
 
     def to_s
