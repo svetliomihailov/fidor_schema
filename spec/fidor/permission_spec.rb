@@ -1,20 +1,44 @@
 require 'spec_helper'
+require 'json'
 
 describe Fidor::Permission do
 
-  before do
-    @acls = Fidor::Acl.init
-  end
-
-  let(:permission) { Fidor::Permission.from_hash 'readwrite_transfer', @acls['readwrite_transfer'] }
+  let(:acls) { Fidor::Acl.init }
+  let(:readwrite_transfer) { acls['readwrite_transfer'] }
+  let(:permission) { Fidor::Permission.from_hash 'readwrite_transfer', readwrite_transfer }
 
   describe '.from_hash' do
-    it 'returns new object' do
-      expect(permission.name).to eq 'readwrite_transfer'
-      expect(permission.context).to eq 'transfers'
-      expect(permission.privileges).to be
-      expect(permission.fields).to be
+    describe 'permission.name' do
+      subject { permission.name }
+
+      it { should eq 'readwrite_transfer' }
     end
+
+    describe 'permission.context' do
+      subject { permission.context }
+
+      it { should eq readwrite_transfer['context'] }
+    end
+
+    describe 'permission.privileges' do
+      subject { permission.privileges }
+
+      it { should eq readwrite_transfer['privileges'] }
+    end
+
+    describe 'permission.fields' do
+      subject { permission.fields }
+
+      it { should eq readwrite_transfer['fields'] }
+    end
+  end
+
+  describe '.to_json' do
+    subject { JSON.parse permission.to_json }
+
+    let(:expectation) { { 'name' => 'readwrite_transfer' }.merge readwrite_transfer }
+
+    it { should eql expectation }
   end
 
   describe 'translation' do
