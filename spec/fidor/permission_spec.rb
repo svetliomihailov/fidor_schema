@@ -8,28 +8,12 @@ describe Fidor::Permission do
   let(:permission) { Fidor::Permission.from_hash 'readwrite_transfer', readwrite_transfer }
 
   describe '.from_hash' do
-    describe 'permission.name' do
-      subject { permission.name }
+    it 'includes the acls values' do
+      expect(permission.name).to eq 'readwrite_transfer'
 
-      it { should eq 'readwrite_transfer' }
-    end
-
-    describe 'permission.context' do
-      subject { permission.context }
-
-      it { should eq readwrite_transfer['context'] }
-    end
-
-    describe 'permission.privileges' do
-      subject { permission.privileges }
-
-      it { should eq readwrite_transfer['privileges'] }
-    end
-
-    describe 'permission.fields' do
-      subject { permission.fields }
-
-      it { should eq readwrite_transfer['fields'] }
+      ['context', 'privileges', 'fields'].each do |field|
+        expect(permission.send(field)).to eq readwrite_transfer[field]
+      end
     end
   end
 
