@@ -150,10 +150,6 @@
       "href": "sepa_mandates/{id}",
       "method": "DELETE"
     },
-    { "rel": "update",
-      "href": "sepa_mandates/{id}",
-      "method": "PUT"
-    },
     { "rel": "create",
       "href": "sepa_mandates",
       "method": "POST"
