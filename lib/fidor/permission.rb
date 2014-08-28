@@ -12,11 +12,6 @@ module Fidor
     attr_accessor :name
     # @return [String]
     attr_accessor :context
-    # @return [Array<String>]
-    attr_accessor :privileges
-    # @return [Array<String>]
-    attr_accessor :fields
-
 
     # @param [String] name of permission, e.g. key of scope hash
     # @param [Hash{String=>String|Array<String>}] opts permission options, see
@@ -30,6 +25,13 @@ module Fidor
       perm
     end
 
+    def ==(other)
+      name == other.name &&
+      context == other.context &&
+      privileges.sort == other.privileges.sort &&
+      fields.sort == other.fields.sort
+    end
+
     def to_s
       self.name
     end
@@ -41,6 +43,22 @@ module Fidor
 
     def translated_fields
       fields.map{|i| I18n.t(i, scope: :permission_field_names) }.sort
+    end
+
+    def privileges
+      @privileges || []
+    end
+
+    def fields
+      @fields || []
+    end
+
+    def privileges=(privileges)
+      @privileges = privileges
+    end
+
+    def fields=(fields)
+      @fields = fields
     end
   end
 end

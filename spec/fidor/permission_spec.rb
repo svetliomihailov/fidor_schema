@@ -39,4 +39,111 @@ describe Fidor::Permission do
     end
   end
 
+  describe '.fields' do
+    subject { permission.fields }
+
+    let(:permission) { Fidor::Permission.new }
+
+
+    context 'with an undefined value' do
+
+      it { should eql [] }
+    end
+
+    context 'with ["bar"] as value' do
+      before { permission.fields = ['bar'] }
+
+      it { should eql ['bar'] }
+    end
+  end
+
+  describe '.privileges' do
+    subject { permission.privileges }
+
+    let(:permission) { Fidor::Permission.new }
+
+
+    context 'with an undefined value' do
+
+      it { should eql [] }
+    end
+
+    context 'with ["bar"] as value' do
+      before { permission.privileges = ['bar'] }
+
+      it { should eql ['bar'] }
+    end
+  end
+
+  describe '.==' do
+    let(:one) { Fidor::Permission.new }
+    let(:two) { Fidor::Permission.new }
+    subject { one == two }
+
+    context 'with two new instances' do
+      it { should be true }
+    end
+
+    context 'name' do
+      context 'with different names' do
+        before do
+          one.name = 'Foo'
+          two.name = 'Bar'
+        end
+
+        it { should be false }
+      end
+
+      context 'with same names' do
+        before do
+          one.name = 'Foo'
+          two.name = 'Foo'
+        end
+
+        it { should be true }
+      end
+    end
+
+    context 'fields' do
+      context 'with same fields in different order' do
+        before do
+          one.fields = ['Foo', 'Bar', 'Baz']
+          two.fields = ['Bar', 'Foo', 'Baz']
+        end
+
+        it { should be true }
+      end
+
+      context 'with different fields' do
+        before do
+          one.fields = ['Foo', 'Bar', 'Baz']
+          two.fields = ['Bar', 'ZAP', 'Baz']
+        end
+
+        it { should be false }
+      end
+    end
+
+    context 'privileges' do
+      context 'with same privileges in different order' do
+        before do
+          one.privileges = ['Foo', 'Bar', 'Baz']
+          two.privileges = ['Bar', 'Foo', 'Baz']
+        end
+
+        it { should be true }
+      end
+
+      context 'with different privileges' do
+        before do
+          one.privileges = ['Foo', 'Bar', 'Baz']
+          two.privileges = ['Bar', 'ZAP', 'Baz']
+        end
+
+        it { should be false }
+      end
+    end
+
+  end
+
 end
