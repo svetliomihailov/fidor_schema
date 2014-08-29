@@ -122,6 +122,11 @@
           "description": "Search by mandate reference",
           "type":"string"
         },
+        "filter[remote_iban]":{
+          "title" : "Search",
+          "description": "Search by remote iban",
+          "type":"string"
+        },
         "page":{
           "title" : "Page",
           "description": "In paginated results set the page to look for",
