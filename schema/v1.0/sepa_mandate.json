@@ -12,7 +12,6 @@
     },
     "customer_id":{
       "description": "Customer for which this mandate is valid.",
-      "readonly":true,
       "type":"integer",
       "required" : true
     },
@@ -123,6 +122,11 @@
           "description": "Search by mandate reference",
           "type":"string"
         },
+        "filter[remote_iban]":{
+          "title" : "Search",
+          "description": "Search by remote iban",
+          "type":"string"
+        },
         "page":{
           "title" : "Page",
           "description": "In paginated results set the page to look for",
@@ -150,10 +154,6 @@
     { "rel": "destroy",
       "href": "sepa_mandates/{id}",
       "method": "DELETE"
-    },
-    { "rel": "update",
-      "href": "sepa_mandates/{id}",
-      "method": "PUT"
     },
     { "rel": "create",
       "href": "sepa_mandates",
