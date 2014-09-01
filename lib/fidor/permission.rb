@@ -50,6 +50,14 @@ module Fidor
       self.name
     end
 
+    def to_hash
+      {
+        'name' => name,
+        'context' => context,
+        'privileges' => privileges,
+        'fields' => fields
+      }
+    end
     # @return [String]
     def translated_name
       I18n.t(self.name, scope: :permission_names)
