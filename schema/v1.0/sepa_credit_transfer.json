@@ -1,7 +1,7 @@
 { "type":"object",
   "title": "Sepa Credit Transfer",
   "name": "sepa_credit_transfer",
-  "description": "A transfer initiates a transaction e.g get / send money. Depending on its state a transfer can be edited, deleted. If the transfer fails no transaction is created!",
+  "description": "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
   "properties":{
     "id":{
       "$ref" : "./base_types/base_types.json#definitions/id"
