@@ -1,0 +1,124 @@
+{
+  "type": "object",
+  "title": "Internal Transfer",
+  "name": "internal_credit_transfer",
+  "description": "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
+  "properties": {
+    "id": {
+      "$ref": "./base_types/base_types.json#definitions/id"
+    },
+    "account_id": {
+      "description": "Fidor account this transaction belongs to.",
+      "required": true,
+      "type": "integer"
+    },
+		"receiver": {
+			"type": "object",
+      "description": "The transaction's receiver.",
+      "required": true,
+			"properties": {
+				"oneOf": [
+					{ "$ref": "./base_types/base_types.json#definitions/fidor_id" },
+          { "$ref": "./base_types/base_types.json#definitions/twitter" },
+          { "$ref": "./base_types/base_types.json#definitions/email" },
+          { "$ref": "./base_types/base_types.json#definitions/phone" }
+				]
+			}
+    },
+    "amount": {
+      "$ref": "./base_types/base_types.json#definitions/amount",
+      "required": true
+    },
+    "subject": {
+      "$ref": "./base_types/base_types.json#definitions/subject"
+    },
+    "state": {
+      "description": "State of the transfer. in_clearance: Order is currently being processed | processed: Third party system confirmed booking of order | rejected: Order was rejected | error: An error occurred during execution",
+      "enum": [
+        "created",
+				"mobile_tan_sent",
+        "pending_receiver_message",
+				"pending_receiver",
+        "completed",
+        "expired"
+      ],
+      "readonly": true,
+      "type": "string"
+    },
+    "created_at": {
+      "$ref": "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at": {
+      "$ref": "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links": [
+    {
+      "rel": "self",
+      "href": "internal_transfers/{id}"
+    },
+    {
+      "rel": "instances",
+      "href": "internal_transfers",
+      "properties": {
+        "filter[account_ids]": {
+          "title": "Find internal transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format": "date",
+          "type": "string"
+        },
+        "filter[created_at_from]": {
+          "title": "Creation date filter from >= date",
+          "format": "date",
+          "type": "string"
+        },
+        "filter[created_at_to]": {
+          "title": "Creation date filter to <= date",
+          "format": "date",
+          "type": "string"
+        },
+        "filter[states]": {
+          "title": "Filter by single or multiple csv delimited states",
+          "enum": [
+            "in_clearance",
+            "processed",
+            "rejected",
+            "error"
+          ],
+          "type": "string"
+        },
+        "filter[external_ref]": {
+          "title": "Match full external reference",
+          "type": "string"
+        },
+        "page": {
+          "title": "Page",
+          "description": "In paginated results set the page to look for",
+          "type": "number"
+        },
+        "per_page": {
+          "title": "Per page",
+          "description": "Results per page. Default is 10, max is 100",
+          "type": "number"
+        },
+        "sort": {
+          "title": "Sort",
+          "enum": [
+            "ASC",
+            "DESC"
+          ],
+          "description": "Sort the results in ASC or DESC",
+          "type": "string"
+        }
+      }
+    },
+    {
+      "rel": "create",
+      "href": "internal_transfers",
+      "method": "POST"
+    },
+    {
+      "rel": "transaction",
+      "href": "internal_transfers/{id}/transaction"
+    }
+  ]
+}
