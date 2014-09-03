@@ -82,14 +82,17 @@
 
       },
       "subject" : {
+				"_comment": "Would be great to keep a base object and override it in sepa_direct_transfer.json or internal_transfer.json according to required validations - see pattern and maxLength",
         "description": "Transfer subject (reference)",
         "type":["string", "null"],
 				"pattern": "/^[\w\,\. &-\/\+\*\$\%@üöäÜÖÄß€]+$/",
         "maxLength": 300
       },
       "amount" : {
+				"_comment": "must be greater than 0 e.g. > 0",
         "description": "The transferred amount in account currency, two decimal places",
         "type":"number"
+				
       }
 
   }

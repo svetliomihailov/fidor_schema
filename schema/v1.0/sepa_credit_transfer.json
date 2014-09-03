@@ -47,7 +47,7 @@
     },
     "state":{
       "description": "State of the transfer. in_clearance: Order is currently being processed | processed: Third party system confirmed booking of order | rejected: Order was rejected | error: An error occurred during execution",
-      "enum":["in_clearance", "processed", "rejected", "error"],
+      "enum":["created", "mobile_tan_sent", "completed", "expired"],
       "readonly":true,
       "type":"string"
     },
