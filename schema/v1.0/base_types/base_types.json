@@ -6,22 +6,33 @@
         "readonly": true,
         "type": "integer"
       },
+      "fidor_id" : {
+        "description" : "A fidor's user id",
+        "type"        : "string",
+        "maxLength"		: 8,
+        "TODO"        : "create a regexp - only numbers are allowed, max length 8 digits"
+      },
       "phone" : {
         "description" : "A phone or fax number, formatted with country code: +49 123 1233213",
         "type"        : "string",
         "TODO"        : "create a regexp"
       },
       "email" : {
-        "description": "Email address",
-        "type":"string",
-        "format":"email",
-        "maxLength": 100
+        "description"	: "Email address",
+        "type"				: "string",
+        "format"			: "email",
+        "maxLength"		: 100
       },
+			"twitter" : {
+        "description"	: "Twitter's username",
+        "type"				:"string",
+				"TODO"        : "create a regexp"
+			},
       "created_at" : {
-        "description": "Creation date-time, never changes.",
-        "format":"date-time",
-        "type":"string",
-        "readonly":true
+        "description"	: "Creation date-time, never changes.",
+        "format"			: "date-time",
+        "type"				: "string",
+        "readonly"		:true
       },
       "updated_at" : {
         "description": "Last update date-time.",
@@ -72,8 +83,9 @@
       },
       "subject" : {
         "description": "Transfer subject (reference)",
-        "type":"string",
-        "maxLength": 140
+        "type":["string", "null"],
+				"pattern": "/^[\w\,\. &-\/\+\*\$\%@üöäÜÖÄß€]+$/",
+        "maxLength": 300
       },
       "amount" : {
         "description": "The transferred amount in account currency, two decimal places",
