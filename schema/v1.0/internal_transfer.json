@@ -39,6 +39,7 @@
 				"mobile_tan_sent",
         "pending_receiver_message",
 				"pending_receiver",
+        "pending_backoffice_transfer",
         "completed",
         "expired"
       ],
