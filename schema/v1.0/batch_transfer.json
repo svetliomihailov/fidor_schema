@@ -15,9 +15,8 @@
       "required" : true
     },
     "account_id":{
-      "description": "Fidor account this transaction belongs to.",
-      "required" : true,
-      "type":"integer"
+      "$ref": "./base_types/base_types.json#definitions/account_id",
+      "required": true
     },
     "user_id":{
       "description": "User who created the transfer.",
@@ -28,15 +27,11 @@
 			"_comment": "we have to check whether it actually works",
       "description": "The transfers to process.",
       "type":"array",
-			"items" : { 
-		     "type" : [ 
-		       { "type" : "object", "properties" : {"$ref":"./internal_transfer.json#properties"}},
-		       { "type" : "object", "properties" : {"$ref":"./sepa_credit_transfer.json#properties"}}
-		    ]
-			}
+			"items" : [{"$ref":"./internal_transfer.json#properties"},
+								 {"$ref":"./sepa_credit_transfer.json#properties"}]
     },
     "state":{
-      "description": "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution in at least one of the transfers. In this case you should check the transfers.",
+      "description": "State of the batch operation. created: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution of the batch. In this case you should check the transfers. | completed: Batch execution has been completed.",
       "default": "pending",
       "enum":["created", "processing", "completed", "error"],
       "readonly":true,

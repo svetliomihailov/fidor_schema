@@ -15,9 +15,8 @@
       "required" : true
     },
     "account_id":{
-      "description": "Fidor account this direct debit belongs to.",
-      "required" : true,
-      "type":"integer"
+      "$ref": "./base_types/base_types.json#definitions/account_id",
+      "required": true
     },
     "user_id":{
       "description": "User who created the transfer.",

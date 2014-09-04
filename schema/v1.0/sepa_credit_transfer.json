@@ -10,9 +10,8 @@
       "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
     "account_id":{
-      "description": "Fidor account this transaction belongs to.",
-      "required" : true,
-      "type":"integer"
+      "$ref": "./base_types/base_types.json#definitions/account_id",
+      "required": true
     },
     "user_id":{
       "description": "User who initiated the transfer.",

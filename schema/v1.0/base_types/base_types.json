@@ -6,9 +6,9 @@
         "readonly": true,
         "type": "integer"
       },
-      "fidor_id" : {
-        "description" : "A fidor's user id",
-        "type"        : "string",
+      "account_id":{
+        "description" : "Fidor account the transaction belongs to.",
+        "type"        : "integer",
         "maxLength"		: 8,
         "TODO"        : "create a regexp - only numbers are allowed, max length 8 digits"
       },
@@ -82,6 +82,7 @@
 
       },
       "subject" : {
+				"_comment": "regex for internal fidor transfer",
 				"_comment": "Would be great to keep a base object and override it in sepa_direct_transfer.json or internal_transfer.json according to required validations - see pattern and maxLength",
         "description": "Transfer subject (reference)",
         "type":["string", "null"],
