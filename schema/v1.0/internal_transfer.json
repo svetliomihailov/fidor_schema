@@ -8,21 +8,21 @@
       "$ref": "./base_types/base_types.json#definitions/id"
     },
     "account_id": {
-      "TODO": "Not sure whether we need the account_id multiple times here. There is a ref to account_id below in receiver",
+      "description": "Sending account.",
       "$ref": "./base_types/base_types.json#definitions/account_id",
       "required": true
     },
 		"receiver": {
-			"_comment": "we have to check whether it actually works",
-			"type": "object",
-      "description": "The transaction's receiver.",
+      "description": "The transaction's receiver can be defined as a numerical fidor account id, a twitter name, an email or a phone number.",
       "required": true,
-				"oneOf": [
-					{ "$ref": "./base_types/base_types.json#definitions/account_id" },
-          { "$ref": "./base_types/base_types.json#definitions/twitter" },
-          { "$ref": "./base_types/base_types.json#definitions/email" },
-          { "$ref": "./base_types/base_types.json#definitions/phone" }
-				]
+			"TODO": "we have to check whether multiple type with multiple formats are valid. Or if we define custom formats",
+//			"type": ["string", "number"],//			"format": ["email", "twitter", "phone"], VS: oneOf
+      "oneOf": [
+        { "$ref": "./base_types/base_types.json#definitions/account_id" },
+        { "$ref": "./base_types/base_types.json#definitions/twitter" },
+        { "$ref": "./base_types/base_types.json#definitions/email" },
+        { "$ref": "./base_types/base_types.json#definitions/phone" }
+      ]
     },
     "amount": {
       "$ref": "./base_types/base_types.json#definitions/amount",
