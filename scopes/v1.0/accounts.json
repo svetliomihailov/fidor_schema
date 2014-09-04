@@ -1,19 +1,20 @@
-{
-  "read_account_number" : {
+[
+  {
+    "name" : "read_account_number",
     "context" : "accounts",
     "privileges" : ["index", "show"],
     "fields" : ["iban", "number"]
   },
-
-  "read_account_balance" : {
+  {
+    "name" : "read_account_balance",
     "context" : "accounts",
     "privileges" : ["index", "show"],
     "fields" : ["balance", "balance_available", "preauth_amount", "cash_flow_per_year"]
   },
-
-  "read_account_state" : {
+  {
+    "name" : "read_account_state",
     "context" : "accounts",
     "privileges" : ["index", "show"],
     "fields" : ["is_trust", "is_locked"]
   }
-}
+]
