@@ -1,5 +1,5 @@
-
-{ "type":"object",
+{ 
+  "type":"object",
   "title": "Transaction",
   "name": "transaction",
   "description": "A transaction is the result of a successful transfer or debit.",
@@ -34,8 +34,8 @@
     },
     "subject":{
       "$ref" : "./base_types/base_types.json#definitions/subject",
-      "description": "Transfer subject (reference)",
       "type":"string",
+      "TODO": "I assume we have to validate against the 'maxLength: 300' because of internal transfer",
       "maxLength": 140,
       "readonly":true
     },
