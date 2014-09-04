@@ -82,12 +82,9 @@
 
       },
       "subject" : {
-				"_comment": "regex for internal fidor transfer",
-				"_comment": "Would be great to keep a base object and override it in sepa_direct_transfer.json or internal_transfer.json according to required validations - see pattern and maxLength",
         "description": "Transfer subject (reference)",
         "type":["string", "null"],
-				"pattern": "/^[\w\,\. &-\/\+\*\$\%@üöäÜÖÄß€]+$/",
-        "maxLength": 300
+        "pattern": "/\A[\w\,\. &-\/\+\*\$\%@üöäÜÖÄß€]+\z/"
       },
       "amount" : {
 				"_comment": "must be greater than 0 e.g. > 0",

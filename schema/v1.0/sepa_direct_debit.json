@@ -34,7 +34,8 @@
       "$ref" : "./base_types/base_types.json#definitions/eref"
     },
     "subject":{
-      "$ref" : "./base_types/base_types.json#definitions/subject"
+      "$ref" : "./base_types/base_types.json#definitions/subject",
+      "maxLength": 140
     },
     "collection_date":{
       "description": "Requested date for the debit to be withdrawn from the foreign account.",

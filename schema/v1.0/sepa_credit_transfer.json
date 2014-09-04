@@ -24,7 +24,8 @@
       "type":"integer"
     },
     "subject":{
-      "$ref" : "./base_types/base_types.json#definitions/subject"
+      "$ref" : "./base_types/base_types.json#definitions/subject",
+      "maxLength": 140
     },
     "amount":{
       "$ref" : "./base_types/base_types.json#definitions/amount",
