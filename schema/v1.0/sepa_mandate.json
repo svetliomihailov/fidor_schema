@@ -39,7 +39,7 @@
       "enum"        : ["0","1"]
     },
     "remote_title" : {
-      "description" : "title of the debtor e.g Dr. Prof.",
+      "description" : "Title of the debtor e.g Dr. Prof.",
       "type"        : "string",
       "required"    : true,
       "maxLength"   : 35
@@ -51,7 +51,7 @@
       "maxLength"   : 70
     },
     "remote_email" : {
-      "description" : "Debtor email",
+      "description" : "Debtor's email",
       "type"        : "string",
       "required"    : true,
       "maxLength"   : 70

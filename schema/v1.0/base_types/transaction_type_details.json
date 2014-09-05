@@ -1,0 +1,97 @@
+{
+  "definitions": {
+    "transaction_type" : {
+      "description": "Type of the transaction",
+      "enum":["payin_giropay", "payin_paymentnetwork", "payin_credit_note", "payin_debit_note_eze",
+              "payin_debit_note_aba", "payin_credit_note_sepa", "payin_debit_note_sepa_core",
+              "payin_debit_note_sepa_b2b", "payin_fidorpay", "payout_ogone",
+              "payout_paymentnetwork", "payout_credit_note", "payout_debit_note_eze",
+              "payout_credit_note_sepa", "payout_fidorpay", "payout_creditcard", "payout_fee"],
+      "type":"string"
+    }
+    "credit_card_details" : {
+      "type"             : "object",
+      "cc_merchant_name" : {
+        "description" : "CreditCard merchant, set in CreditCard transaction",
+        "type"        : "string",
+        "maxLength"   : 255,
+        "readonly"    : true
+      },
+      "cc_merchant_category" : {
+        "description" : "CreditCard merchant category, set in CreditCard transaction",
+        "type"        : "string",
+        "maxLength"   : 255,
+        "readonly"    : true
+      },
+      "cc_type":{
+        "description" : "CreditCard type, set in CreditCard transaction",
+        "type"        : "string",
+        "maxLength"   : 255,
+        "readonly"    : true
+      },
+      "cc_category" : {
+        "description" : "CreditCard category, set in CreditCard transaction",
+        "type"        : "string",
+        "maxLength"   : 255,
+        "readonly"    : true
+      }
+    },
+    "sepa_credit_transfer_details" : {
+      "type"        : "object",
+      "transfer_id" : {
+        "description" : "Id of transfer if transaction was created by a transfer. Refunded transactions have no id",
+        "readonly"    : true,
+        "type"        : "integer"
+      },
+      "remote_name" : {
+        "description" : "Receiving/Sending account holder name",
+        "type"        : "string",
+        "readonly"    : true,
+        "maxLength"   : 70
+      },
+      "remote_iban" : {
+        "$ref"     : "./base_types.json#definitions/iban",
+        "readonly" : true
+      },
+      "remote_bic" : {
+        "$ref"     : "./base_types.json#definitions/bic",
+        "readonly" : true
+      },
+      "subject" : {
+        "$ref" : ".base_types.json#definitions/id"
+      }
+    },
+    "sepa_direct_debit_details" : {
+      "type" : "object",
+      "remote_iban":{
+        "$ref"     : "./base_types.json#definitions/iban",
+        "readonly" :true
+      },
+      "remote_bic":{
+        "$ref"     : "./base_types.json#definitions/bic",
+        "readonly" : true
+      },
+      "subject":{
+        "$ref" : ".base_types.json#definitions/id"
+      },
+      "mandate_id":{
+        "description" : "The sepa mandate used by the debit",
+        "type"        : "number",
+        "required"    : true
+      },
+      "eref":{
+        "$ref" : "./base_types/base_types.json#definitions/eref"
+      }
+    },
+    "internal_transfer_details" : {
+      "type" : "object",
+      "remote_account_id" : {
+        "$ref"     : "./base_types/base_types.json#definitions/account_id",
+        "readonly" : true
+      },
+      "subject":{
+        "$ref" : ".base_types.json#definitions/id"
+      }
+    }
+  }
+}
