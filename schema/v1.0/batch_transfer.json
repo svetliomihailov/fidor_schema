@@ -1,115 +1,112 @@
-{ "type":"object",
-  "title": "Batch Transfer",
-  "name": "batch_transfer",
-  "description": "A transfer batch contains multiple transfers which are processed asynchronous.",
-  "properties":{
-    "id":{
-      "description":"Unique identifier",
-      "identity":true,
-      "readonly":true,
-      "type":"integer"
+{ "type"        : "object",
+  "title"       : "Batch Transfer",
+  "name"        : "batch_transfer",
+  "description" : "A transfer batch contains multiple transfers which are processed asynchronous.",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
-    "external_uid":{
-      "description": "Unique ID of the creator of the transaction",
-      "type":"string",
+    "external_uid" : {
+      "description" : "Unique ID of the creator of the transaction",
+      "type"        : "string",
+      "required"    : true
+    },
+    "account_id" : {
+      "$ref"     : "./base_types/base_types.json#definitions/account_id",
       "required" : true
     },
-    "account_id":{
-      "$ref": "./base_types/base_types.json#definitions/account_id",
-      "required": true
+    "user_id" : {
+      "description" : "User who created the transfer.",
+      "readonly"    : true,
+      "type"        : "integer"
     },
-    "user_id":{
-      "description": "User who created the transfer.",
-      "readonly":true,
-      "type":"integer"
+    "transfers" : {
+			"_comment"    : "we have to check whether it actually works",
+      "description" : "The transfers to process.",
+      "type"        : "array",
+			"items"       : [ {"$ref" : "./internal_transfer.json#properties"},
+								        {"$ref" : "./sepa_credit_transfer.json#properties"} ]
     },
-    "transfers":{
-			"_comment": "we have to check whether it actually works",
-      "description": "The transfers to process.",
-      "type":"array",
-			"items" : [{"$ref":"./internal_transfer.json#properties"},
-								 {"$ref":"./sepa_credit_transfer.json#properties"}]
+    "state" : {
+      "description" : "State of the batch operation. created: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution of the batch. In this case you should check the transfers. | completed: Batch execution has been completed.",
+      "default"     : "pending",
+      "enum"        : ["created", "processing", "completed", "error"],
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "state":{
-      "description": "State of the batch operation. created: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution of the batch. In this case you should check the transfers. | completed: Batch execution has been completed.",
-      "default": "pending",
-      "enum":["created", "processing", "completed", "error"],
-      "readonly":true,
-      "type":"string"
-    },
-    "success_url":{
+    "success_url" : {
       "description": "Url receiving a POST with the batch object after processing is finished.",
-      "type":"string"
+      "type"       : "string"
     },
-    "started_at":{
-      "description": "Time the batch processing started.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+    "started_at" : {
+      "description" : "Time the batch processing started.",
+      "format"      : "date-time",
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "finished_at":{
-      "description": "Time the batch processing finished.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+    "finished_at" : {
+      "description" : "Time the batch processing finished.",
+      "format"      : "date-time",
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "created_at":{
-      "description": "Creation date-time, never changes.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+    "created_at" : {
+      "description" : "Creation date-time, never changes.",
+      "format"      : "date-time",
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "updated_at":{
-      "description": "Last update date-time.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+    "updated_at" : {
+      "description" : "Last update date-time.",
+      "format"      : "date-time",
+      "readonly"    : true,
+      "type"        : "string"
     }
   },
   "links":[
-    { "rel": "self",
-      "href": "batch_transfers/{id}"
+    { "rel"  : "self",
+      "href" : "batch_transfers/{id}"
     },
-    { "rel": "instances",
-      "href": "batch_transfers",
+    { "rel"        : "instances",
+      "href"       : "batch_transfers",
       "properties" : {
-        "filter[created_at_from]":{
-          "title" : "Creation date filter from >= date",
-          "format":"date",
-          "type":"string"
+        "filter[created_at_from]" : {
+          "title"  : "Creation date filter from >= date",
+          "format" : "date",
+          "type"   : "string"
         },
-        "filter[created_at_to]":{
-          "title" : "Creation date filter to <= date",
-          "format":"date",
-          "type":"string"
+        "filter[created_at_to]" : {
+          "title"  : "Creation date filter to <= date",
+          "format" : "date",
+          "type"   : "string"
         },
-        "filter[states]":{
+        "filter[states]" : {
           "title" : "Filter by single or multiple csv delimited states",
-          "enum":["pending", "processing", "error"],
-          "type":"string"
+          "enum"  : ["created", "processing", "completed", "error"],
+          "type"  : "string"
         },
-        "page":{
-          "title" : "Page",
-          "description": "In paginated results set the page to look for",
-          "type":"number"
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "number"
         },
-        "per_page":{
-          "title" : "Per page",
-          "description": "Results per page. Default is 10, max is 100",
-          "type":"number"
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "number"
         },
-        "sort":{
-          "title" : "Sort",
-          "enum":["ASC","DESC"],
-          "description": "Sort the results in ASC or DESC",
-          "type": "string"
+        "sort" : {
+          "title"       : "Sort",
+          "enum"        : ["ASC","DESC"],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
         }
       }
     },
 
-    { "rel": "create",
-      "href": "batch_transfers",
-      "method": "POST"
+    { "rel"    : "create",
+      "href"   : "batch_transfers",
+      "method" : "POST"
     }
   ]
 }

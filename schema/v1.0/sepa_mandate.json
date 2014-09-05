@@ -1,163 +1,164 @@
-{ "type":"object",
-  "title": "Sepa Mandate",
-  "name": "sepa_mandate",
-  "description": "",
-  "properties":{
-    "id":{
+{ "type"        : "object",
+  "title"       : "Sepa Mandate",
+  "name"        : "sepa_mandate",
+  "description" : "",
+  "properties"  : {
+    "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
     },
-    "external_uid":{
-      "$ref" : "./base_types/base_types.json#definitions/external_uid",
+    "external_uid" : {
+      "$ref"     : "./base_types/base_types.json#definitions/external_uid",
       "required" : true
     },
-    "customer_id":{
-      "description": "Customer for which this mandate is valid.",
-      "type":"integer",
+    "customer_id" : {
+      "description" : "Customer for which this mandate is valid.",
+      "type"        : "integer",
+      "required"    : true
+    },
+    "user_id" : {
+      "description" : "User who created the mandate.",
+      "readonly"    : true,
+      "type"        : "integer"
+    },
+    "mandate_reference" : {
+      "description" : "Unique reference of the mandate.",
+      "type"        : "string",
+      "required"    : true,
+      "maxLength"   : 35
+    },
+    "sequence" : {
+      "description" : "Recurring or One-Time",
+      "type"        : "string",
+      "default"     : "RCUR",
+      "enum"        : ["RCUR","OOFF"]
+    },
+    "cor1_option" : {
+      "description" : "COR-1 option",
+      "type"        : "string",
+      "default"     : "1",
+      "enum"        : ["0","1"]
+    },
+    "remote_title" : {
+      "description" : "title of the debtor e.g Dr. Prof.",
+      "type"        : "string",
+      "required"    : true,
+      "maxLength"   : 35
+    },
+    "remote_name" : {
+      "description" : "Full name of debtor",
+      "type"        : "string",
+      "required"    : true,
+      "maxLength"   : 70
+    },
+    "remote_email" : {
+      "description" : "Debtor email",
+      "type"        : "string",
+      "required"    : true,
+      "maxLength"   : 70
+    },
+    "remote_address_line1" : {
+      "description" : "Address street.",
+      "type"        : "string",
+      "required"    : true,
+      "maxLength"   : 35
+    },
+    "remote_address_line2" : {
+      "description" : "ZIP and City",
+      "type"        : "string",
+      "required"    : true,
+      "maxLength"   : 70
+    },
+    "remote_country" : {
+      "description" : "2 digit country code, ISO 3166",
+      "type"        : "string",
+      "required"    : true,
+      "maxLength"   : 2
+    },
+    "remote_iban" : {
+      "$ref"     : "./base_types/base_types.json#definitions/iban",
       "required" : true
     },
-    "user_id":{
-      "description": "User who created the mandate.",
-      "readonly":true,
-      "type":"integer"
-    },
-    "mandate_reference":{
-      "description": "Unique reference of the mandate.",
-      "type":"string",
-      "required" : true,
-      "maxLength": 35
-    },
-    "sequence":{
-      "description": "Recurring or One-Time",
-      "type":"string",
-      "default": "RCUR",
-      "enum": ["RCUR","OOFF"]
-    },
-    "cor1_option":{
-      "description": "COR-1 option",
-      "type":"string",
-      "default": "1",
-      "enum": ["0","1"]
-    },
-    "remote_title":{
-      "description": "title of the debtor e.g Dr. Prof.",
-      "type":"string",
-      "required" : true,
-      "maxLength": 35
-    },
-    "remote_name":{
-      "description": "Full name of debtor",
-      "type":"string",
-      "required" : true,
-      "maxLength": 70
-    },
-    "remote_email":{
-      "description": "Debtor email",
-      "type":"string",
-      "required" : true,
-      "maxLength": 70
-    },
-    "remote_address_line1":{
-      "description": "Address street.",
-      "type":"string",
-      "required" : true,
-      "maxLength": 35
-    },
-    "remote_address_line2":{
-      "description": "ZIP and City",
-      "type":"string",
-      "required" : true,
-      "maxLength": 70
-    },
-    "remote_country":{
-      "description": "2 digit country code, ISO 3166",
-      "type":"string",
-      "required" : true,
-      "maxLength": 2
-    },
-    "remote_iban":{
-      "$ref" : "./base_types/base_types.json#definitions/iban",
+    "remote_bic" : {
+      "$ref"     : "./base_types/base_types.json#definitions/bic",
       "required" : true
     },
-    "remote_bic":{
-      "$ref" : "./base_types/base_types.json#definitions/bic",
-      "required" : true
+    "remote_ultimate_name" : {
+      "description" : "Ultimate name",
+      "type"        : "string",
+      "maxLength"   : 70
     },
-    "remote_ultimate_name":{
-      "description": "Ultimate name",
-      "type":"string",
-      "maxLength": 70
+    "remote_signature_location" : {
+      "description" : "Location where debtor signed the mandate.",
+      "type"        : "string",
+      "maxLength"   : 70
     },
-    "remote_signature_location":{
-      "description": "Location where debtor signed the mandate.",
-      "type":"string",
-      "maxLength": 70
+    "signature_date" : {
+      "description" : "Date the mandate was signed of by the debtor.",
+      "format"      : "date",
+      "required"    : true,
+      "type"        : "string"
     },
-    "signature_date":{
-      "description": "Date the mandate was signed of by the debtor.",
-      "format":"date",
-      "required" : true,
-      "type":"string"
+    "valid_from_date" : {
+      "description" : "Date the mandate started to be valid.",
+      "format"      : "date",
+      "type"        : "string"
     },
-    "valid_from_date":{
-      "description": "Date the mandate started to be valid.",
-      "format":"date",
-      "type":"string"
-    },
-    "created_at":{
+    "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
-    "updated_at":{
+    "updated_at" : {
       "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
   },
-  "links":[
-    { "rel": "self",
-      "href": "sepa_mandates/{id}"
+  "links" :[
+    { "rel"  : "self",
+      "href" : "sepa_mandates/{id}"
     },
-    { "rel": "instances",
-      "href": "sepa_mandates",
+    { "rel"  : "instances",
+      "href" : "sepa_mandates",
       "properties" : {
-        "filter[mandate_reference]":{
-          "title" : "Search",
-          "description": "Search by mandate reference",
-          "type":"string"
+        "filter[mandate_reference]" : {
+          "title"       : "Search",
+          "description" : "Search by mandate reference",
+          "type"        : "string"
         },
-        "filter[remote_iban]":{
-          "title" : "Search",
-          "description": "Search by remote iban",
-          "type":"string"
+        "filter[remote_iban]" : {
+          "title"       : "Search",
+          "description" : "Search by remote iban",
+          "type"        : "string"
         },
-        "page":{
-          "title" : "Page",
-          "description": "In paginated results set the page to look for",
-          "type":"number"
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "number"
         },
-        "per_page":{
-          "title" : "Per page",
-          "description": "Results per page. Default is 10, max is 100",
-          "type":"number"
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "number"
         },
-        "sort_by":{
-          "title" : "Sort by",
-          "description": "Sort the results by the given field => number",
-          "enum":["amount","subject", "created_at", "updated_at"],
-          "type": "string"
+        "sort_by" : {
+          "title"       : "Sort by",
+          "description" : "Sort the results by the given field => number",
+          "enum"        : ["amount","subject", "created_at", "updated_at"],
+          "TODO"        : "provide a sensible sort_by list",
+          "type" : "string"
         },
-        "sort":{
-          "title" : "Sort",
-          "enum":["ASC","DESC"],
-          "description": "Sort the results in ASC or DESC",
-          "type": "string"
+        "sort" : {
+          "title"       : "Sort",
+          "enum"        : ["ASC","DESC"],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
         }
       }
     },
-    { "rel": "destroy",
-      "href": "sepa_mandates/{id}",
-      "method": "DELETE"
+    { "rel"    : "destroy",
+      "href"   : "sepa_mandates/{id}",
+      "method" : "DELETE"
     },
-    { "rel": "create",
-      "href": "sepa_mandates",
-      "method": "POST"
+    { "rel"    : "create",
+      "href"   : "sepa_mandates",
+      "method" : "POST"
     }
   ]
 }

@@ -1,114 +1,113 @@
-{ "type":"object",
-  "title": "Batch Direct Debit",
-  "name": "batch_direct_debit",
-  "description": "A direct debit batch contains multiple direct debits which are processed asynchronous.",
-  "properties":{
-    "id":{
-      "description":"Unique identifier",
-      "identity":true,
-      "readonly":true,
-      "type":"integer"
+{ "type"        : "object",
+  "title"       : "Batch Direct Debit",
+  "name"        : "batch_direct_debit",
+  "description" : "A direct debit batch contains multiple direct debits which are processed asynchronous.",
+  "properties"  : {
+    "id" : {
+      "description" : "Unique identifier",
+      "identity"    : true,
+      "readonly"    : true,
+      "type"        : "integer"
     },
-    "external_uid":{
-      "description": "Unique ID of the creator of the transaction",
-      "type":"string",
+    "external_uid" : {
+      "description" : "Unique ID of the creator of the transaction",
+      "type"        : "string",
+      "required"    : true
+    },
+    "account_id" : {
+      "$ref"     : "./base_types/base_types.json#definitions/account_id",
       "required" : true
     },
-    "account_id":{
-      "$ref": "./base_types/base_types.json#definitions/account_id",
-      "required": true
+    "user_id" : {
+      "description" : "User who created the transfer.",
+      "readonly"    : true,
+      "type"        : "integer"
     },
-    "user_id":{
-      "description": "User who created the transfer.",
-      "readonly":true,
-      "type":"integer"
+    "direct_debits" : {
+      "description" : "The direct_debits to process.",
+      "type"        : "array",
+      "properties"  : {"$ref" : "./direct_debit.json#properties"}
     },
-    "direct_debits":{
-      "description": "The direct_debits to process.",
-      "type":"array",
-      "properties":{"$ref":"./direct_debit.json#properties"}
+    "state" : {
+      "description" : "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution in at least one of the transfers. In this case you should check the transfers.",
+      "enum"        : ["received", "processing", "success", "error"],
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "state":{
-      "description": "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution in at least one of the transfers. In this case you should check the transfers.",
-      "default": "pending",
-      "enum":["received", "processing", "success", "error"],
-      "readonly":true,
-      "type":"string"
+    "success_url" : {
+      "description" : "Url receiving a POST with the batch object after processing is finished.",
+      "type"        : "string",
+      "format"      : "uri"
     },
-    "success_url":{
-      "description": "Url receiving a POST with the batch object after processing is finished.",
-      "type":"string",
-      "format":"uri"
+    "started_at" : {
+      "description" : "Time the batch processing started.",
+      "format"      : "date-time",
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "started_at":{
-      "description": "Time the batch processing started.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+    "finished_at" : {
+      "description" : "Time the batch processing finished.",
+      "format"      : "date-time",
+      "readonly"    :true,
+      "type"        : "string"
     },
-    "finished_at":{
-      "description": "Time the batch processing finished.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+    "created_at" : {
+      "description" : "Creation date-time, never changes.",
+      "format"      : "date-time",
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "created_at":{
-      "description": "Creation date-time, never changes.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
-    },
-    "updated_at":{
-      "description": "Last update date-time.",
-      "format":"date-time",
-      "readonly":true,
-      "type":"string"
+    "updated_at" : {
+      "description" : "Last update date-time.",
+      "format"      : "date-time",
+      "readonly"    : true,
+      "type"        : "string"
     }
   },
   "links":[
-    { "rel": "self",
+    { "rel" : "self",
       "href": "batch_direct_debits/{id}"
     },
-    { "rel": "instances",
-      "href": "batch_direct_debits",
+    { "rel"        : "instances",
+      "href"       : "batch_direct_debits",
       "properties" : {
-        "filter[created_at_from]":{
-          "title" : "Creation date filter from >= date",
-          "format":"date",
-          "type":"string"
+        "filter[created_at_from]" : {
+          "title"  : "Creation date filter from >= date",
+          "format" : "date",
+          "type"   : "string"
         },
-        "filter[created_at_to]":{
-          "title" : "Creation date filter to <= date",
-          "format":"date",
-          "type":"string"
+        "filter[created_at_to]" : {
+          "title"  : "Creation date filter to <= date",
+          "format" : "date",
+          "type"   : "string"
         },
-        "filter[states]":{
+        "filter[states]" : {
           "title" : "Filter by single or multiple csv delimited states",
-          "enum":["pending", "processing", "error"],
-          "type":"string"
+          "enum"  : ["received", "processing", "success", "error"],
+          "type"  : "string"
         },
-        "page":{
-          "title" : "Page",
-          "description": "In paginated results set the page to look for",
-          "type":"number"
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "number"
         },
-        "per_page":{
-          "title" : "Per page",
-          "description": "Results per page. Default is 10, max is 100",
-          "type":"number"
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "number"
         },
-        "sort":{
-          "title" : "Sort",
-          "enum":["ASC","DESC"],
-          "description": "Sort the results in ASC or DESC",
-          "type": "string"
+        "sort" : {
+          "title"       : "Sort",
+          "enum"        : ["ASC","DESC"],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
         }
       }
     },
 
-    { "rel": "create",
-      "href": "batch_direct_debits",
-      "method": "POST"
+    { "rel"    : "create",
+      "href"   : "batch_direct_debits",
+      "method" : "POST"
     }
   ]
 }

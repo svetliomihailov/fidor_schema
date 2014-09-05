@@ -1,122 +1,61 @@
 { 
-  "type":"object",
-  "title": "Transaction",
-  "name": "transaction",
+  "type"       : "object",
+  "title"      : "Transaction",
+  "name"       : "transaction",
   "description": "A transaction is the result of a successful transfer or debit.",
-  "properties":{
-    "id":{
+  "properties" : {
+    "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
     },
-    "account_id":{
-      "description": "The Fidor account associated with this transaction.",
-      "readonly":true,
-      "type":"integer"
+    "account_id" : {
+      "$ref"     : "./base_types/base_types.json#definitions/account_id",
+      "required" : true
     },
-    "transfer_id":{
-      "description": "Id of transfer if transaction was created by a transfer. Refunded transactions have no id",
-      "readonly":true,
-      "type":"integer"
+    "transaction_type" : {
+      "$ref" : "./base_types/transaction_type_details.json/#definitions/transaction_type",
+      "readonly" : true,
     },
-    "transaction_type":{
-      "description": "Type of the transaction",
-      "enum":["payin_giropay", "payin_paymentnetwork", "payin_credit_note", "payin_debit_note_eze",
-              "payin_debit_note_aba", "payin_credit_note_sepa", "payin_debit_note_sepa_core",
-              "payin_debit_note_sepa_b2b", "payin_fidorpay", "payout_ogone",
-              "payout_paymentnetwork", "payout_credit_note", "payout_debit_note_eze",
-              "payout_credit_note_sepa", "payout_fidorpay", "payout_creditcard", "payout_fee"],
-      "readonly":true,
-      "type":"string"
+    "transaction_type_details" : {
+      "description" : "Details specific to this transaction type are collected here.",
+      "readonly" : true,
+      "oneOf" : [
+        { "$ref" : "./base_types/transaction_type_details.json#definitions/credit_card_details" },
+        { "$ref" : "./base_types/transaction_type_details.json#definitions/sepa_credit_transfer_details" },
+        { "$ref" : "./base_types/transaction_type_details.json#definitions/sepa_direct_debit_details" },
+        { "$ref" : "./base_types/transaction_type_details.json#definitions/internal_transfer_details" },
+      ] 
     },
-    "transaction_type_details": {
-      "description":"Details specific to this transaction type are collected here.",
-      "readonly":true,
-      "type":"object"
+    "amount" : {
+      "$ref"     : "./base_types/base_types.json#definitions/amount",
+      "readonly" : true
     },
-    "subject":{
-      "$ref" : "./base_types/base_types.json#definitions/subject",
-      "type":"string",
-      "TODO": "I assume we have to validate against the 'maxLength: 300' because of internal transfer",
-      "maxLength": 140,
-      "readonly":true
+    "booking_date" : {
+      "description" : "Date the transaction was booked.",
+      "format"      : "date-time",
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "amount":{
-      "$ref" : "./base_types/base_types.json#definitions/amount",
-      "readonly":true
+    "value_date" : {
+      "description" : "Date the amount was credited to the account (Wertstellung).",
+      "format"      : "date",
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "remote_name":{
-      "description": "Receiving/Sending account holder name",
-      "type":"string",
-      "readonly":true,
-      "maxLength": 70
+    "booking_code" : {
+      "description" : "Accounting transaction code in the central banking system",
+      "readonly"    : true,
+      "type"        : "string"
     },
-    "remote_iban":{
-      "$ref" : "./base_types/base_types.json#definitions/iban",
-      "readonly":true
+    "return_transaction_id" : {
+      "description" : "If the transaction was marked for return, this references the new return transaction.",
+      "readonly"    : true,
+      "type"        : "integer"
     },
-    "remote_bic":{
-      "$ref" : "./base_types/base_types.json#definitions/bic",
-      "readonly":true
+    "external_ref" : {
+      "$ref"     : "./base_types/base_types.json#definitions/external_ref",
+      "readonly" : true
     },
-    "remote_fidor_id":{
-      "description": "Receiving/Sending Fidor-Id, if available",
-      "readonly":true,
-      "type":"integer"
-    },
-    "cc_merchant_name":{
-      "description": "CreditCard merchant, set in CreditCard transaction",
-      "type":"string",
-      "maxLength": 255,
-      "readonly":true
-    },
-    "cc_merchant_category":{
-      "description": "CreditCard merchant category, set in CreditCard transaction",
-      "type":"string",
-      "maxLength": 255,
-      "readonly":true
-    },
-    "cc_type":{
-      "description": "CreditCard type, set in CreditCard transaction",
-      "type":"string",
-      "maxLength": 255,
-      "readonly":true
-    },
-    "cc_category":{
-      "description": "CreditCard category, set in CreditCard transaction",
-      "type":"string",
-      "maxLength": 255,
-      "readonly":true
-    },
-    "booking_date":{
-      "description": "Date the transaction was booked.",
-      "format":"date",
-      "readonly":true,
-      "type":"string"
-    },
-    "value_date":{
-      "description": "Date the amount was credited to the account (Wertstellung).",
-      "format":"date",
-      "readonly":true,
-      "type":"string"
-    },
-    "booking_code":{
-      "description": "Accounting transaction code in the central banking system",
-      "readonly":true,
-      "type":"string"
-    },
-    "eref":{
-      "$ref" : "./base_types/base_types.json#definitions/eref",
-      "readonly":true
-    },
-    "return_transaction_id":{
-      "description": "If the transaction was marked for return, this references the new return transaction.",
-      "readonly":true,
-      "type":"integer"
-    },
-    "external_ref":{
-      "$ref" : "./base_types/base_types.json#definitions/external_ref",
-      "readonly":true
-    },
-    "created_at":{
+    "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
     "updated_at":{
@@ -124,66 +63,60 @@
     }
   },
   "links":[
-    { "rel": "self",
-      "href": "transactions/{id}"
+    { "rel"  : "self",
+      "href" : "transactions/{id}"
     },
-    { "rel": "instances",
-      "href": "transactions",
+    { "rel"  : "instances",
+      "href" : "transactions",
       "properties" : {
-        "filter[account_ids]":{
-          "title" : "Find transactions belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format":"date",
-          "type":"string"
+        "filter[account_ids]" : {
+          "title"  : "Find transactions belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format" : "date",
+          "type"   : "string"
         },
-        "filter[id_from]":{
-          "title" : "Find transactions with an id greater than given one.",
-          "format":"integer",
-          "type":"string"
+        "filter[id_from]" : {
+          "title"  : "Find transactions with an id greater than given one.",
+          "format" : "integer",
+          "type"   : "string"
         },
-        "filter[id_to]":{
-          "title" : "Find transactions with an id smaller than given one.",
-          "format":"integer",
-          "type":"string"
+        "filter[id_to]" : {
+          "title"  : "Find transactions with an id smaller than given one.",
+          "format" : "integer",
+          "type"   : "string"
         },
-        "filter[book_date_from]":{
-          "title" : "Date filter from >= date",
-          "format":"date",
-          "type":"string"
+        "filter[booking_date_from]" : {
+          "title"  : "Date filter from >= date",
+          "format" : "date-time",
+          "type"   : "string"
         },
-        "filter[book_date_to]":{
-          "title" : "Date filter to <= date",
-          "format":"date",
-          "type":"string"
+        "filter[booking_date_to]" : {
+          "title"  : "Date filter to <= date",
+          "format" : "date-time",
+          "type"   : "string"
         },
-        "filter[external_ref]":{
+        "filter[external_ref]" : {
           "title" : "Match full external reference",
-          "type":"string"
+          "type"  : "string"
         },
-        "filter[kinds]":{
+        "filter[kinds]" : {
+          "$ref"  : "./base_types/transaction_type_details.json/#definitions/transaction_type",
           "title" : "By transaction types",
-          "description": "Search by single transaction type",
-          "enum":["payin_giropay", "payin_paymentnetwork", "payin_credit_note", "payin_debit_note_eze",
-                  "payin_debit_note_aba", "payin_credit_note_sepa", "payin_debit_note_sepa_core",
-                  "payin_debit_note_sepa_b2b", "payin_fidorpay", "payout_ogone",
-                  "payout_paymentnetwork", "payout_credit_note", "payout_debit_note_eze",
-                  "payout_credit_note_sepa", "payout_fidorpay", "payout_creditcard", "payout_fee"],
-          "type":"string"
         },
-        "page":{
-          "title" : "Page",
-          "description": "In paginated results set the page to look for",
-          "type":"number"
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "number"
         },
-        "per_page":{
-          "title" : "Per page",
-          "description": "Results per page. Default is 10, max is 100",
-          "type":"number"
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "number"
         },
-        "sort":{
-          "title" : "Sort",
-          "enum":["ASC","DESC"],
-          "description": "Sort the results in ASC or DESC",
-          "type": "string"
+        "sort" : {
+          "title"       : "Sort",
+          "enum"        :["ASC","DESC"],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
         }
       }
     }
