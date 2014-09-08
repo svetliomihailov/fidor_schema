@@ -14,7 +14,7 @@ describe Fidor::Acl do
 
     it 'should flatten permissions' do
       res = Fidor::Acl.flat_perms_hash
-      expect(res.keys).to include 'transfers', 'transactions', 'users'
+      expect(res.keys).to include 'customers', 'transactions', 'users'
       expect(res['customers']).to include 'current', 'show'
     end
 
@@ -35,10 +35,14 @@ describe Fidor::Acl do
       Fidor::Acl.registry.each do |scope|
         # find matching json schema
         schema = schemas.detect{|schema| schema['name'] == scope['context'].singularize }
+        unless schema
+          expect(schema).to be, "Field validation failed!! Schema for #{scope['context']} could not be found"
+          next
+        end
         schema_fields = schema['properties'].keys
 
         scope['fields'].each do |scope_field|
-          expect(schema_fields).to include(scope_field)
+          expect(schema_fields).to include(scope_field), "expected '#{schema['name']}' json schema to have a '#{scope_field}' property in permission: '#{scope['name']}'.\nAvailable #{schema['name']} fields: #{schema_fields}\n Please check the field-names in scopes/#{schema['name']}.json"
         end
 
       end
@@ -49,7 +53,7 @@ describe Fidor::Acl do
   context 'i18n' do
     it 'has all fields' do
       res = Fidor::Acl.i18n_field_keys
-      expect(res.length).to be 52
+      expect(res.length).to be 51
       expect(res).to include 'email:'
     end
   end

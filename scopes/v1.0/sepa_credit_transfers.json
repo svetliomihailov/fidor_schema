@@ -1,0 +1,21 @@
+[
+  {
+    "name" : "readwrite_sepa_credit_transfer",
+    "context" : "sepa_credit_transfers",
+    "privileges" : ["index", "show", "create", "update"],
+    "fields" : ["id","account_id","user_id","transaction_id",
+                "subject","amount","external_ref","remote_name","remote_iban",
+                "remote_bic","state","created_at","updated_at"]
+  },
+
+   // are there mtan fields?? or different create endpoint
+  {
+    "name" : "readwrite_sepa_credit_transfer_mtan",
+    "context" : "sepa_credit_transfers",
+    "privileges" : ["index", "show", "create", "update"],
+    "fields" : ["id","account_id","user_id","transaction_id",
+                "subject","amount","external_ref","remote_name","remote_iban",
+                "remote_bic","state","created_at","updated_at"]
+  }
+
+]

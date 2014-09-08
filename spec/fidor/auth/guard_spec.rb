@@ -11,7 +11,7 @@ describe Fidor::Auth do
   end
 
   it 'should reduce permissions on lower level' do
-    reduced_perms = {'transfers'=>['index', 'show'],
+    reduced_perms = {'sepa_credit_transfers'=>['index', 'show'],
                      'users' =>['show'],
                      'dropped'=>['key_not_on_level_above']}
     guard.add_permissions(1, all_perms)
@@ -20,6 +20,6 @@ describe Fidor::Auth do
 
     expect(guard.effective_permissions.length).to be 2
     expect(guard.effective_permissions).not_to have_key 'dropped'
-    expect(guard.effective_permissions['transfers']).to eql ['index', 'show']
+    expect(guard.effective_permissions['sepa_credit_transfers']).to eql ['index', 'show']
   end
 end

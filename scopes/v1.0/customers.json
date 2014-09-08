@@ -3,7 +3,7 @@
     "name" : "read_customer_name",
     "context" : "customers",
     "privileges" : ["current", "show"],
-    "fields" : ["title", "firstname","lastname"]
+    "fields" : ["title", "first_name","last_name"]
   },
 
   {

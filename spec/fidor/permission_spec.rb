@@ -5,13 +5,13 @@ describe Fidor::Permission do
 
   let(:readwrite_transfer) {
     Fidor::Acl.init
-    Fidor::Acl['readwrite_transfer']
+    Fidor::Acl['readwrite_sepa_credit_transfer']
   }
   let(:permission) { Fidor::Permission.from_hash readwrite_transfer }
 
   describe '.from_hash' do
     it 'includes the acls values' do
-      expect(permission.name).to eq 'readwrite_transfer'
+      expect(permission.name).to eq 'readwrite_sepa_credit_transfer'
 
       ['context', 'privileges', 'fields'].each do |field|
         expect(permission.send(field)).to eq readwrite_transfer[field]
@@ -31,7 +31,7 @@ describe Fidor::Permission do
     describe '.translated_name' do
       subject { permission.translated_name }
 
-      it { should eq I18n.t('permission_names.readwrite_transfer') }
+      it { should eq I18n.t('permission_names.readwrite_sepa_credit_transfer') }
     end
 
     describe '.translated_fields' do
