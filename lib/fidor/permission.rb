@@ -18,9 +18,9 @@ module Fidor
     # @param [String] name of permission, e.g. key of scope hash
     # @param [Hash{String=>String|Array<String>}] opts permission options, see
     # values in scopes json files
-    def self.from_hash(name, opts)
+    def self.from_hash(opts)
       perm = new
-      perm.name = name
+      perm.name = opts['name']
       perm.context = opts['context']
       perm.privileges = opts['privileges']
       perm.fields = opts['fields']

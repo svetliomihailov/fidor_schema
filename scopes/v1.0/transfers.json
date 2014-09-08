@@ -1,5 +1,6 @@
-{
-  "readwrite_transfer" : {
+[
+  {
+    "name" : "readwrite_transfer",
     "context" : "transfers",
     "privileges" : ["index", "show", "create", "update"],
     "fields" : ["id","account_id","user_id","transaction_id","transaction",
@@ -8,7 +9,8 @@
   },
 
    // are there mtan fields?? or different create endpoint
-  "readwrite_transfer_mtan" : {
+  {
+    "name" : "readwrite_transfer_mtan",
     "context" : "transfers",
     "privileges" : ["index", "show", "create", "update"],
     "fields" : ["id","account_id","user_id","transaction_id","transaction",
@@ -16,4 +18,4 @@
                 "remote_bic","state","created_at","updated_at"]
   }
 
-}
+]

@@ -7,8 +7,9 @@ describe Fidor::Acl do
     it 'should read all json files' do
       res = Fidor::Acl.init
       expect(Fidor::Acl.registry).to_not be_empty
-      expect(res.keys).to include 'read_customer_address'
-      expect(res.keys).to include 'read_user_email'
+      scope_names = res.map{|i| i['name']}
+      expect(scope_names).to include 'read_customer_address'
+      expect(scope_names).to include 'read_user_email'
     end
 
     it 'should flatten permissions' do
@@ -31,7 +32,7 @@ describe Fidor::Acl do
     it 'should only contain fields defined in schema' do
       schemas = SchemaTools::Reader.read_all(Fidor::Schema.path)
       Fidor::Acl.init
-      Fidor::Acl.registry.each do |scope_name, scope|
+      Fidor::Acl.registry.each do |scope|
         # find matching json schema
         schema = schemas.detect{|schema| schema['name'] == scope['context'].singularize }
         schema_fields = schema['properties'].keys
