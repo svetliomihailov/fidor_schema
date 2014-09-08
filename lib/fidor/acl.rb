@@ -6,10 +6,21 @@ module Fidor
 
     class << self
 
+      # Collect all contexts with their privileges.
+      #
+      #   {
+      #     'accounts': ['index', 'show'],
+      #     'transfers': ['index', 'show', 'create']
+      #   }
+      # Can be used in controller filter to check if someone can access a
+      # controller and the given action. Simply check if the controller name is
+      # present in the keys and than if the array includes the current controller
+      # action.
+      # @return [Hash{String=>Array<String>}]
       def flat_perms_hash
-        init unless @registry
-        permissions_hash = Hash.new
-        registry.each do |name, permission|
+        init
+        permissions_hash = {}
+        registry.each do |permission|
           context = permission['context']
           permissions_hash[context] ||= []
           permission['privileges'].each do |privilege|
@@ -20,10 +31,18 @@ module Fidor
       end
 
       def registry
-        @registry ||= {}
+        @registry ||= []
       end
       def object_registry
         @object_registry ||= []
+      end
+
+      # Get a permission hash by permission name from the registry
+      #     Fidor::Acl['read_account_number']
+      # @param [String] name of permission to get from registry
+      def [](name)
+        init
+        registry.detect{|permission| permission['name'] == name}
       end
 
       # Read all scope json files and populate global registry. Second call
@@ -34,7 +53,7 @@ module Fidor
         file_path = File.join( self.scopes_path, '*.json')
         Dir.glob( file_path ).each do |file|
           res = ActiveSupport::JSON.decode( File.open(file, 'r'){|f| f.read} )
-          registry.merge!(res)
+          registry.push(*res)
         end
         registry
       end
@@ -45,8 +64,8 @@ module Fidor
       def init_objects
         return @object_registry if @object_registry
         perms = init
-        perms.each do |key, val|
-          object_registry << Fidor::Permission.from_hash(key, val)
+        perms.each do |perm|
+          object_registry << Fidor::Permission.from_hash(perm)
         end
         object_registry
       end
@@ -62,22 +81,14 @@ module Fidor
       # additionally an [xy_name]_info for a longer description
       def i18n_permission_keys
         perms = init
-        res = []
-        perms.keys.each do |i|
-          res << "#{i}:"
-          res << "#{i}_info:"
-        end
-        res.sort
+        perms.flat_map{|i| [ "#{i['name']}:", "#{i['name']}_info:" ] }.sort
       end
-            # Tiny helper to generate i18n keys for all permission names and
+
+      # Tiny helper to generate i18n keys for all permission names and
       # additionally an [xy_name]_info for a longer description
       def i18n_field_keys
         perms = init
-        res = []
-        perms.each do |name, val|
-          res +=val["fields"]
-        end
-        res.uniq.sort.map{|i| "#{i}:"}
+        perms.flat_map{|i| i['fields'] }.uniq.sort.map{|i| "#{i}:"}
       end
     end
   end

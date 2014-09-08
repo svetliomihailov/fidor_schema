@@ -3,9 +3,11 @@ require 'json'
 
 describe Fidor::Permission do
 
-  let(:acls) { Fidor::Acl.init }
-  let(:readwrite_transfer) { acls['readwrite_transfer'] }
-  let(:permission) { Fidor::Permission.from_hash 'readwrite_transfer', readwrite_transfer }
+  let(:readwrite_transfer) {
+    Fidor::Acl.init
+    Fidor::Acl['readwrite_transfer']
+  }
+  let(:permission) { Fidor::Permission.from_hash readwrite_transfer }
 
   describe '.from_hash' do
     it 'includes the acls values' do
