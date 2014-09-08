@@ -1,4 +1,4 @@
-{ 
+{
   "type"       : "object",
   "title"      : "Transaction",
   "name"       : "transaction",
@@ -13,7 +13,7 @@
     },
     "transaction_type" : {
       "$ref" : "./base_types/transaction_type_details.json/#definitions/transaction_type",
-      "readonly" : true,
+      "readonly" : true
     },
     "transaction_type_details" : {
       "description" : "Details specific to this transaction type are collected here.",
@@ -22,8 +22,8 @@
         { "$ref" : "./base_types/transaction_type_details.json#definitions/credit_card_details" },
         { "$ref" : "./base_types/transaction_type_details.json#definitions/sepa_credit_transfer_details" },
         { "$ref" : "./base_types/transaction_type_details.json#definitions/sepa_direct_debit_details" },
-        { "$ref" : "./base_types/transaction_type_details.json#definitions/internal_transfer_details" },
-      ] 
+        { "$ref" : "./base_types/transaction_type_details.json#definitions/internal_transfer_details" }
+      ]
     },
     "amount" : {
       "$ref"     : "./base_types/base_types.json#definitions/amount",
@@ -100,7 +100,7 @@
         },
         "filter[kinds]" : {
           "$ref"  : "./base_types/transaction_type_details.json/#definitions/transaction_type",
-          "title" : "By transaction types",
+          "title" : "By transaction types"
         },
         "page" : {
           "title"       : "Page",
