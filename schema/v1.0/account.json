@@ -27,6 +27,11 @@
       "type"        : "number",
       "readonly"    : true
     },
+    "overdraft" : {
+      "description" : "Available account overdraft",
+      "type"        : "number",
+      "readonly"    : true
+    },
     "preauth_amount" : {
       "description" : "Amount available for pre-authorization.",
       "type"        : "number",
