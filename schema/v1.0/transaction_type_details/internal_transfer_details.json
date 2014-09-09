@@ -7,9 +7,6 @@
     "remote_account_id" : {
       "$ref"     : "./base_types/base_types.json#definitions/account_id",
       "readonly" : true
-    },
-    "subject":{
-      "$ref" : ".base_types.json#definitions/id"
     }
   }
 }

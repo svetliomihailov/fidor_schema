@@ -22,9 +22,6 @@
     "remote_bic" : {
       "$ref"     : "./base_types.json#definitions/bic",
       "readonly" : true
-    },
-    "subject" : {
-      "$ref" : ".base_types.json#definitions/id"
     }
   }
 }
