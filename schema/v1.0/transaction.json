@@ -12,7 +12,7 @@
       "required" : true
     },
     "transaction_type" : {
-      "$ref"     : "./base_types/transaction_type_details.json/#definitions/transaction_type",
+      "$ref"     : "./base_types/base_types.json#definitions/transaction_type",
       "readonly" : true
     },
     "transaction_type_details" : {
@@ -103,7 +103,7 @@
           "type"  : "string"
         },
         "filter[kinds]" : {
-          "$ref"  : "./base_types/transaction_type_details.json/#definitions/transaction_type",
+          "$ref"  : "./base_types/base_types.json#definitions/transaction_type",
           "title" : "By transaction types"
         },
         "page" : {
