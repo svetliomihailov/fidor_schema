@@ -18,6 +18,7 @@
     "transaction_type_details" : {
       "description" : "Details specific to this transaction type are collected here.",
       "readonly" : true,
+      "type": "object",
       "oneOf" : [
         { "$ref" : "./base_types/transaction_type_details.json#definitions/credit_card_details" },
         { "$ref" : "./base_types/transaction_type_details.json#definitions/sepa_credit_transfer_details" },
