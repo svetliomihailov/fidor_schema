@@ -53,7 +53,8 @@ describe Fidor::Acl do
   context 'i18n' do
     it 'has all fields' do
       res = Fidor::Acl.i18n_field_keys
-      expect(res.length).to be 51
+      # number changes whenever we add/remove fields from acl
+      expect(res.length).to be 45
       expect(res).to include 'email:'
     end
   end

@@ -7,6 +7,7 @@
                 "amount", "booking_date", "value_date", "booking_code",
                 "return_transaction_id", "external_ref", "created_at", "updated_at"]
   }
+  /* TODO commented due to new nested transaction_type_details which we must handle differently
   ,
 
   {
@@ -29,4 +30,5 @@
     "privileges" : ["index", "show"],
     "fields" : ["cc_merchant_name", "cc_merchant_category", "cc_type", "cc_category"]
   }
+  */
 ]
