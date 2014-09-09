@@ -12,7 +12,14 @@
       "required" : true
     },
     "transaction_type" : {
-      "$ref" : "./base_types/transaction_type_details.json/#definitions/transaction_type",
+      "description": "Type of the transaction",
+      // TODO rethink naming to match detail object names
+      "enum":["payin_giropay", "payin_paymentnetwork", "payin_credit_note", "payin_debit_note_eze",
+              "payin_debit_note_aba", "payin_credit_note_sepa", "payin_debit_note_sepa_core",
+              "payin_debit_note_sepa_b2b", "payin_fidorpay", "payout_ogone",
+              "payout_paymentnetwork", "payout_credit_note", "payout_debit_note_eze",
+              "payout_credit_note_sepa", "payout_fidorpay", "payout_creditcard", "payout_fee"],
+      "type":"string",
       "readonly" : true
     },
     "transaction_type_details" : {
@@ -20,10 +27,10 @@
       "readonly" : true,
       "type": "object",
       "oneOf" : [
-        { "$ref" : "./base_types/transaction_type_details.json#definitions/credit_card_details" },
-        { "$ref" : "./base_types/transaction_type_details.json#definitions/sepa_credit_transfer_details" },
-        { "$ref" : "./base_types/transaction_type_details.json#definitions/sepa_direct_debit_details" },
-        { "$ref" : "./base_types/transaction_type_details.json#definitions/internal_transfer_details" }
+        { "$ref" : "./transaction_type_details/credit_card_details.json#properties" },
+        { "$ref" : "./transaction_type_details/internal_transfer_details.json.json#properties" },
+        { "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json.json#properties" },
+        { "$ref" : "./transaction_type_details/sepa_direct_debit_details.json.json#properties" }
       ]
     },
     "amount" : {
