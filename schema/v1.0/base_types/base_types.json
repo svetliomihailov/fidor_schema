@@ -12,6 +12,11 @@
         "maxLength"   : 8,
         "TODO"        : "create a regexp - only numbers are allowed, max length 8 digits"
       },
+      "user_id" : {
+        "description" : "Identifies the user who created this object",
+        "readonly"    : true,
+        "type"        : "integer"
+      },
       "phone" : {
         "description" : "A phone or fax number, formatted with country code: +49 123 1233213",
         "type"        : "string",

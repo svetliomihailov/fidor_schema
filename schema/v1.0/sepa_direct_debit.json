@@ -17,9 +17,7 @@
       "required" : true
     },
     "user_id" : {
-      "description" : "User who created the transfer.",
-      "readonly"    : true,
-      "type"        : "integer"
+      "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
     "mandate_id" : {
       "description" : "The sepa mandate used by the debit",

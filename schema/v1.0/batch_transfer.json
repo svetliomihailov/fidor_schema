@@ -16,9 +16,7 @@
       "required" : true
     },
     "user_id" : {
-      "description" : "User who created the transfer.",
-      "readonly"    : true,
-      "type"        : "integer"
+      "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
     "transfers" : {
 			"_comment"    : "we have to check whether it actually works",

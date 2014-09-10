@@ -16,9 +16,7 @@
       "required"    : true
     },
     "user_id" : {
-      "description" : "User who created the mandate.",
-      "readonly"    : true,
-      "type"        : "integer"
+      "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
     "mandate_reference" : {
       "description" : "Unique reference of the mandate.",
