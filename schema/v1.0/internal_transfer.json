@@ -7,6 +7,12 @@
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
     },
+    "external_uid" : {
+      "$ref" : "./base_types/base_types.json#definitions/external_uid"
+    },
+    "external_ref" : {
+      "$ref" : "./base_types/base_types.json#definitions/external_ref"
+    },
     "account_id" : {
       "description" : "Sending account.",
       "$ref"        : "./base_types/base_types.json#definitions/account_id",
