@@ -14,9 +14,7 @@
       "required" : true
     },
     "user_id" : {
-      "description" : "User who initiated the transfer.",
-      "readonly"    : true,
-      "type"        : "integer"
+      "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
     "transaction_id" : {
       "description" : "For successful transfers, the reference to the transaction",

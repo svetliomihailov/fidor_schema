@@ -12,6 +12,9 @@
       "$ref"        : "./base_types/base_types.json#definitions/account_id",
       "required"    : true
     },
+    "user_id" : {
+      "$ref" : "./base_types/base_types.json#definitions/user_id"
+    },
 		"receiver" : {
       "description" : "The transaction's receiver can be defined as a numerical fidor account id, a twitter name, an email or a phone number.",
       "required"    : true,
