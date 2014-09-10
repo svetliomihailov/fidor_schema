@@ -5,7 +5,7 @@
   "description" : "Remote account information for a SEPA direct debit",
   "properties" : {
     "remote_iban":{
-      "$ref"     : "./base_types.json#definitions/iban",
+      "$ref"     : "./base_types/base_types.json#definitions/iban",
       "readonly" :true
     },
     "remote_bic":{
