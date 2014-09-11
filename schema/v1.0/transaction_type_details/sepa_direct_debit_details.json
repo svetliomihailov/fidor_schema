@@ -6,7 +6,7 @@
   "properties" : {
     "remote_iban":{
       "$ref"     : "./base_types/base_types.json#definitions/iban",
-      "readonly" :true
+      "readonly" : true
     },
     "remote_bic":{
       "$ref"     : "./base_types/base_types.json#definitions/bic",
@@ -15,10 +15,11 @@
     "mandate_id":{
       "description" : "The sepa mandate used by the debit",
       "type"        : "number",
-      "required"    : true
+      "readonly"    : true
     },
     "eref":{
-      "$ref" : "./base_types/base_types.json#definitions/eref"
+      "$ref"      : "./base_types/base_types.json#definitions/eref",
+      "readonly"  : true
     }
   }
 }
