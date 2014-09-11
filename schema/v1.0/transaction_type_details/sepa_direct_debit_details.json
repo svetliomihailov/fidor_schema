@@ -9,7 +9,7 @@
       "readonly" :true
     },
     "remote_bic":{
-      "$ref"     : "./base_types.json#definitions/bic",
+      "$ref"     : "./base_types/base_types.json#definitions/bic",
       "readonly" : true
     },
     "mandate_id":{
