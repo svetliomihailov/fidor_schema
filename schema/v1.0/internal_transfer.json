@@ -1,7 +1,7 @@
 {
   "type"        : "object",
   "title"       : "Internal Transfer",
-  "name"        : "internal_credit_transfer",
+  "name"        : "internal_transfer",
   "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
   "properties"  : {
     "id" : {
