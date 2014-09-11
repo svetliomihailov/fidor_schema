@@ -21,9 +21,9 @@
       "type": "object",
       "oneOf" : [
         { "$ref" : "./transaction_type_details/credit_card_details.json#properties" },
-        { "$ref" : "./transaction_type_details/internal_transfer_details.json.json#properties" },
-        { "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json.json#properties" },
-        { "$ref" : "./transaction_type_details/sepa_direct_debit_details.json.json#properties" }
+        { "$ref" : "./transaction_type_details/internal_transfer_details.json#properties" },
+        { "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#properties" },
+        { "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#properties" }
       ]
     },
     "subject":{
