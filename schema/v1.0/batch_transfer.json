@@ -68,6 +68,11 @@
     { "rel"        : "instances",
       "href"       : "batch_transfers",
       "properties" : {
+        "filter[account_ids]" : {
+          "title" : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format" : "date",
+          "type" : "string"
+        },
         "filter[created_at_from]" : {
           "title"  : "Creation date filter from >= date",
           "format" : "date",
