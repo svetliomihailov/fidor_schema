@@ -4,15 +4,10 @@
   "description" : "A direct debit batch contains multiple direct debits which are processed asynchronous.",
   "properties"  : {
     "id" : {
-      "description" : "Unique identifier",
-      "identity"    : true,
-      "readonly"    : true,
-      "type"        : "integer"
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "external_uid" : {
-      "description" : "Unique ID of the creator of the transaction",
-      "type"        : "string",
-      "required"    : true
+      "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
     "account_id" : {
       "$ref"     : "./base_types/base_types.json#definitions/account_id",
