@@ -17,7 +17,6 @@
       "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
     "transfers" : {
-			"_comment"    : "we have to check whether it actually works",
       "description" : "The transfers to process.",
       "type"        : "array",
 			"items"       : [ {"$ref" : "./internal_transfer.json#properties"},
