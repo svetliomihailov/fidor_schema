@@ -29,9 +29,6 @@
       "$ref"     : "./base_types/base_types.json#definitions/amount",
       "required" : true
     },
-    "external_ref" : {
-      "$ref" : "./base_types/base_types.json#definitions/external_ref"
-    },
     "remote_name" : {
       "description" : "Receiving account holder name",
       "type"        : "string",
@@ -81,10 +78,6 @@
         "filter[states]" : {
           "title" : "Filter by single or multiple csv delimited states",
           "enum"  : ["created", "mobile_tan_sent", "completed", "expired"],
-          "type"  : "string"
-        },
-        "filter[external_ref]" : {
-          "title" : "Match full external reference",
           "type"  : "string"
         },
         "page" : {

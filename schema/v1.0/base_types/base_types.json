@@ -51,11 +51,6 @@
         "required"    : true,
         "TODO"        : "used to prevent double transactions, describe mechanism"
       },
-      "external_ref" : {
-        "description" : "A customer provided reference to identify the transaction in their system.",
-        "type"        : "string",
-        "maxLength"   : 255
-      },
       "iban" : {
         "description" : "IBAN",
         "type"        : "string",

@@ -95,10 +95,6 @@
           "format" : "date-time",
           "type"   : "string"
         },
-        "filter[external_ref]" : {
-          "title" : "Match full external reference",
-          "type"  : "string"
-        },
         "filter[kinds]" : {
           "$ref"  : "./base_types/base_types.json#definitions/transaction_type",
           "title" : "By transaction types"
