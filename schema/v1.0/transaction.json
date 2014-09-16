@@ -56,10 +56,6 @@
       "readonly"    : true,
       "type"        : "integer"
     },
-    "external_ref" : {
-      "$ref"     : "./base_types/base_types.json#definitions/external_ref",
-      "readonly" : true
-    },
     "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
