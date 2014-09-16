@@ -129,13 +129,6 @@
           "description" : "Results per page. Default is 10, max is 100",
           "type"        : "number"
         },
-        "sort_by" : {
-          "title"       : "Sort by",
-          "description" : "Sort the results by the given field => number",
-          "enum"        : ["amount","subject", "created_at", "updated_at"],
-          "TODO"        : "provide a sensible sort_by list",
-          "type" : "string"
-        },
         "sort" : {
           "title"       : "Sort",
           "enum"        : ["ASC","DESC"],
