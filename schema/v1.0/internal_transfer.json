@@ -96,10 +96,6 @@
           ],
           "type" : "string"
         },
-        "filter[external_ref]" : {
-          "title" : "Match full external reference",
-          "type"  : "string"
-        },
         "page" : {
           "title"       : "Page",
           "description" : "In paginated results set the page to look for",

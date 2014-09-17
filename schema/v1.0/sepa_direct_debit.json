@@ -9,9 +9,6 @@
     "external_uid" : {
       "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
-    "external_ref" : {
-      "$ref" : "./base_types/base_types.json#definitions/external_ref"
-    },
     "account_id" : {
       "$ref"     : "./base_types/base_types.json#definitions/account_id",
       "required" : true
@@ -49,7 +46,7 @@
     },
     "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"
-    }, 
+    },
     "updated_at" : {
       "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
