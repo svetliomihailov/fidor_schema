@@ -4,7 +4,7 @@ describe Fidor::Schema do
 
   context 'path' do
     it 'should provide path to schema files' do
-      Fidor::Schema.path.should == File.expand_path( File.join('../schema/v1.0'), File.dirname(__FILE__))
+      expect(Fidor::Schema.path).to eq(File.expand_path( File.join('../schema/v1.0'), File.dirname(__FILE__)))
     end
   end
 
@@ -13,7 +13,7 @@ describe Fidor::Schema do
     it 'should read all json files' do
       SchemaTools.schema_path = Fidor::Schema.path
       SchemaTools::Reader.read_all
-      SchemaTools::Reader.registry.should_not be_empty
+      expect(SchemaTools::Reader.registry).to_not be_empty
     end
 
   end
