@@ -63,10 +63,6 @@
           "format" : "date",
           "type" : "string"
         },
-        "filter[external_ref]" : {
-          "title" : "Match full external reference",
-          "type" : "string"
-        },
         "filter[created_at_from]" : {
           "title" : "Creation date filter from >= date",
           "format" : "date",
