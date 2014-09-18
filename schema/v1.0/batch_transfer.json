@@ -16,12 +16,82 @@
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
-    "transfers" : {
-      "description" : "The transfers to process.",
+    "sepa_credit_transfers" : {
+      "description" : "SEPA credit transfers to process",
       "type"        : "array",
-			"items"       : [ {"$ref" : "./internal_transfer.json#properties"},
-								        {"$ref" : "./sepa_credit_transfer.json#properties"} ]
+      "items"       : {
+        "type"       : "object",
+        "properties" : {
+          "$ref" : "./sepa_credit_transfer.json#properties"
+        }
+      }
     },
+    "internal_transfers" : {
+      "description" : "Interal transfers to process",
+      "type"        : "array",
+      "items"       : {
+        "type"       : "object",
+        "properties" : {
+          "$ref" : "./internal_transfer.json#properties"
+        }
+      }
+    },
+    "sepa_credit_transfer_ids" : {
+      "description" : "ids of successfully executed SEPA credit transfers",
+      "type"        : "array",
+      "items"       : { 
+        "$ref" : "./base_types/base_types.json#definitions/id"
+      }
+    },
+    "internal_transfer_ids" : {
+      "description" : "ids of successfully executed internal transfers",
+      "type"        : "array",
+      "items"       : { 
+        "$ref" : "./base_types/base_types.json#definitions/id"
+      }
+    },
+    "sepa_credit_transfer_errors" : {
+      "description" : "contains a list of errors encountered in nested debits contained in this batch. Transfers are identified by external_uid contained in the original transfer json",
+      "type"        : "array",
+      "items"       : {
+        "type" : "object",
+        "properties" : {
+          "external_uid" : {
+            "type" : "string"
+          },
+          "error" : {
+            "type" : "object",
+            "properties" : {
+              "$ref" : "./error.json#properties"
+            }
+          }
+        }
+      }
+    },
+    "internal_transfer_errors" : {
+      "description" : "contains a list of errors encountered in nested debits contained in this batch. Transfers are identified by external_uid contained in the original transfer json",
+      "type"        : "array",
+      "items"       : {
+        "type" : "object",
+        "properties" : {
+          "external_uid" : {
+            "type" : "string"
+          },
+          "error" : {
+            "type" : "object",
+            "properties" : {
+              "$ref" : "./error.json#properties"
+            }
+          }
+        }
+      }
+    },
+    "number_of_transfers" : {
+      "description" : "count of transfers (internal and sepa) transactions received in this batch",
+      "readonly"    : true,
+      "type"        : "number"
+    },
+
     "state" : {
       "description" : "State of the batch operation. created: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution of the batch. In this case you should check the transfers. | completed: Batch execution has been completed.",
       "default"     : "pending",

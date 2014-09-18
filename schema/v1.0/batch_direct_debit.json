@@ -16,12 +16,46 @@
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
-    "direct_debits" : {
+    "sepa_direct_debits" : {
       "description" : "The direct_debits to process.",
       "type"        : "array",
-      "properties"  : {
-        "$ref" : "./direct_debit.json#properties"
+      "required"    : false,
+      "items"  : {
+        "type" : "object",
+        "properties" : {
+          "$ref" : "./direct_debit.json#properties"
+        }
       }
+    },
+    "sepa_direct_debit_ids" : {
+      "description" : "ids of successfully executed direct debit transactions",
+      "type"        : "array",
+      "items"       : { 
+        "$ref" : "./base_types/base_types.json#definitions/id"
+      }
+    },
+    "sepa_direct_debit_errors" : {
+      "description" : "contains a list of errors encountered in nested debits contained in this batch. Debits are identified by external_uid",
+      "type"        : "array",
+      "items"       : {
+        "type" : "object",
+        "properties" : {
+          "external_uid" : {
+            "type" : "string"
+          },
+          "error" : {
+            "type" : "object",
+            "properties" : {
+              "$ref" : "./error.json#properties"
+            }
+          }
+        }
+      }
+    },
+    "number_of_debits" : {
+      "description" : "count of debits transactions received in this batch",
+      "readonly"    : true,
+      "type"        : "number"
     },
     "state" : {
       "description" : "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution in at least one of the transfers. In this case you should check the transfers.",
