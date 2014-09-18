@@ -55,7 +55,7 @@
     "number_of_debits" : {
       "description" : "count of debits transactions received in this batch",
       "readonly"    : true,
-      "type"        : "number"
+      "type"        : "integer"
     },
     "state" : {
       "description" : "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution in at least one of the transfers. In this case you should check the transfers.",

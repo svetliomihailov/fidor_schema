@@ -89,7 +89,7 @@
     "number_of_transfers" : {
       "description" : "count of transfers (internal and sepa) transactions received in this batch",
       "readonly"    : true,
-      "type"        : "number"
+      "type"        : "integer"
     },
 
     "state" : {
