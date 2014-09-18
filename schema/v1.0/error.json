@@ -1,0 +1,43 @@
+{
+  "type"  : "object",
+  "title" : "Error", 
+  "name"  : "error",
+  "description" : "A standard error object",
+  "properties" : {
+    "message" : {
+      "description" : "a human readable representation of the error",
+      "required"    : true,
+      "type"        : "string",
+      "readonly"    : true
+    },
+    "code" : {
+      "description" : "a numeric code identifying the error",
+      "required"    : false,
+      "type"        : "number",
+      "readonly"    : true
+    },
+    "errors" : {
+      "description" : "error details, if applicable",
+      "required"    : false,
+      "type"        : "array",
+      "items"       : {
+        "type"       : "object",
+        "properties"  : {
+          "field"   : {
+            "description" : "identifies the field that caused this error",
+            "type"        : "string",
+            "required"    : false,
+            "readonly"    : true
+          },
+          "message" : {
+            "description" : "provide more information about the cause of this error",
+            "type"        : "string",
+            "required"    : false,
+            "readonly"    : true
+          
+          }
+        }
+      }
+    }
+  }
+}
