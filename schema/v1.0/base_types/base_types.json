@@ -1,106 +1,120 @@
 {
-  "definitions": {
-      "id": {
-        "description": "Unique identifier of the object",
-        "identity"   : true,
-        "readonly"   : true,
-        "type"       : "integer"
-      },
-      "account_id":{
-        "description" : "Fidor account the transaction belongs to.",
-        "type"        : "integer",
-        "maxLength"   : 8,
-        "TODO"        : "create a regexp - only numbers are allowed, max length 8 digits"
-      },
-      "user_id" : {
-        "description" : "Identifies the user who created this object",
-        "readonly"    : true,
-        "type"        : "integer"
-      },
-      "phone" : {
-        "description" : "A phone or fax number, formatted with country code: +49 123 1233213",
-        "type"        : "string",
-        "TODO"        : "create a regexp"
-      },
-      "email" : {
-        "description" : "Email address",
-        "type"        : "string",
-        "format"      : "email",
-        "maxLength"   : 100
-      },
-      "twitter" : {
-        "description" : "Twitter's username",
-        "type"        : "string",
-        "TODO"        : "create a regexp"
-      },
-      "created_at" : {
-        "description" : "Creation date-time, never changes.",
-        "format"      : "date-time",
-        "type"        : "string",
-        "readonly"    : true
-      },
-      "updated_at" : {
-        "description" : "Last update date-time.",
-        "format"      : "date-time",
-        "type"        : "string",
-        "readonly"    : true
-      },
-      "external_uid" : {
-        "description" : "Unique ID of the creator of the transaction",
-        "type"        : "string",
-        "required"    : true,
-        "TODO"        : "used to prevent double transactions, describe mechanism"
-      },
-      "iban" : {
-        "description" : "IBAN",
-        "type"        : "string",
-        "maxLength"   : 34,
-        "TODO"        : "Add regexp and description of checksum (?)"
-      },
-      "bic" : {
-        "description" : "BIC / Swift code of bank",
-        "type"        : "string",
-        "maxLength"   : 11
-      },
-      "eref" : {
-        "description" : "End-to-end reference.",
-        "type"        : "string",
-        "maxLength"   : 255
-      },
-      "country" : {
-        "description" : "Country code as defined in ISO3166 alpha2. e.g DE, GB",
-        "type"        : "string",
-        "minLength"   : 2,
-        "maxLength"   : 2
-      },
-      "currency" : {
-        "description" : "Account currency. ISO 4217 alpha-3 - 3 letter upcase e.g EUR",
-        "type"        : "string",
-        "maxLength"   : 3,
-        "minLength"   : 3,
-        "default"     : "EUR"
-
-      },
-      "subject" : {
-        "description" : "Transfer subject (reference)",
-        "type"        : ["string", "null"],
-        "pattern"     : "/\A[\w\,\. &-\/\+\*\$\%@üöäÜÖÄß€]+\z/"
-      },
-      "amount" : {
-        "_comment"    : "must be greater than 0 e.g. > 0",
-        "description" : "The transferred amount in account currency, two decimal places",
-        "type"        : "number"
-      },
-      "transaction_type" : {
-        "description" : "Type of the transaction",
-        "enum"        : [ "payin_giropay", "payin_paymentnetwork", "payin_credit_note", 
-                          "payin_debit_note_eze", "payin_debit_note_aba", "payin_credit_note_sepa", 
-                          "payin_debit_note_sepa_core", "payin_debit_note_sepa_b2b", "payin_fidorpay", 
-                          "payout_ogone", "payout_paymentnetwork", "payout_credit_note", 
-                          "payout_debit_note_eze", "payout_credit_note_sepa", "payout_fidorpay", 
-                          "payout_creditcard", "payout_fee"],
-        "type"        : "string"
-      }
-
-  }
+    "definitions" : {
+        "id" : {
+            "description" : "Unique identifier of the object",
+            "identity"    : true,
+            "readonly"    : true,
+            "type"        : "integer"
+        },
+        "account_id" : {
+            "description" : "Fidor account the transaction belongs to.",
+            "type"        : "integer",
+            "maxLength"   : 8,
+            "TODO"        : "create a regexp - only numbers are allowed, max length 8 digits"
+        },
+        "user_id" : {
+            "description" : "Identifies the user who created this object",
+            "readonly"    : true,
+            "type"        : "integer"
+        },
+        "phone" : {
+            "description" : "A phone or fax number, formatted with country code: +49 123 1233213",
+            "type"        : "string",
+            "TODO"        : "create a regexp"
+        },
+        "email" : {
+            "description" : "Email address",
+            "type"        : "string",
+            "format"      : "email",
+            "maxLength"   : 100
+        },
+        "twitter" : {
+            "description" : "Twitter's username",
+            "type"        : "string",
+            "TODO"        : "create a regexp"
+        },
+        "created_at" : {
+            "description" : "Creation date-time, never changes.",
+            "format"      : "date-time",
+            "type"        : "string",
+            "readonly"    : true
+        },
+        "updated_at" : {
+            "description" : "Last update date-time.",
+            "format"      : "date-time",
+            "type"        : "string",
+            "readonly"    : true
+        },
+        "external_uid" : {
+            "description" : "Unique ID of the creator of the transaction",
+            "type"        : "string",
+            "required"    : true,
+            "TODO"        : "used to prevent double transactions, describe mechanism"
+        },
+        "iban" : {
+            "description" : "IBAN",
+            "type"        : "string",
+            "maxLength"   : 34,
+            "TODO"        : "Add regexp and description of checksum (?)"
+        },
+        "bic" : {
+            "description" : "BIC / Swift code of bank",
+            "type"        : "string",
+            "maxLength"   : 11
+        },
+        "eref" : {
+            "description" : "End-to-end reference.",
+            "type"        : "string",
+            "maxLength"   : 255
+        },
+        "country" : {
+            "description" : "Country code as defined in ISO3166 alpha2. e.g DE, GB",
+            "type"        : "string",
+            "minLength"   : 2,
+            "maxLength"   : 2
+        },
+        "currency" : {
+            "description" : "Account currency. ISO 4217 alpha-3 - 3 letter upcase e.g EUR",
+            "type"        : "string",
+            "maxLength"   : 3,
+            "minLength"   : 3,
+            "default"     : "EUR"
+        },
+        "subject" : {
+            "description" : "Transfer subject (reference)",
+            "type"        : [
+                "string",
+                "null"
+            ],
+            "pattern" : "TODO"
+        },
+        "amount" : {
+            "_comment"    : "must be greater than 0 e.g. > 0",
+            "description" : "The transferred amount in account currency, two decimal places",
+            "type"        : "number"
+        },
+        "transaction_type" : {
+            "description" : "Type of the transaction",
+            "enum"        : [
+                "payin_giropay",
+                "payin_paymentnetwork",
+                "payin_credit_note",
+                "payin_debit_note_eze",
+                "payin_debit_note_aba",
+                "payin_credit_note_sepa",
+                "payin_debit_note_sepa_core",
+                "payin_debit_note_sepa_b2b",
+                "payin_fidorpay",
+                "payout_ogone",
+                "payout_paymentnetwork",
+                "payout_credit_note",
+                "payout_debit_note_eze",
+                "payout_credit_note_sepa",
+                "payout_fidorpay",
+                "payout_creditcard",
+                "payout_fee"
+            ],
+            "type" : "string"
+        }
+    }
 }

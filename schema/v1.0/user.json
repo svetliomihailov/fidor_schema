@@ -1,32 +1,34 @@
-{ "type"        : "object",
-  "title"       : "User",
-  "name"        : "user",
-  "description" : "",
-  "properties": {
-    "id": {
-      "$ref" : "./base_types/base_types.json#definitions/id"
+{
+    "type"        : "object",
+    "title"       : "User",
+    "name"        : "user",
+    "description" : "",
+    "properties"  : {
+        "id" : {
+            "$ref" : "./base_types/base_types.json#definitions/id"
+        },
+        "email" : {
+            "$ref"     : "./base_types/base_types.json#definitions/email",
+            "required" : true,
+            "readonly" : true
+        },
+        "last_login_at" : {
+            "description" : "Last time the user accessed fidor.",
+            "format"      : "date-time",
+            "readonly"    : true,
+            "type"        : "string"
+        },
+        "created_at" : {
+            "$ref" : "./base_types/base_types.json#definitions/created_at"
+        },
+        "updated_at" : {
+            "$ref" : "./base_types/base_types.json#definitions/updated_at"
+        }
     },
-    "email": {
-      "$ref"     : "./base_types/base_types.json#definitions/email",
-      "required" : true,
-      "readonly" : true
-    },
-    "last_login_at": {
-      "description" : "Last time the user accessed fidor.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
-    },
-    "created_at": {
-      "$ref" : "./base_types/base_types.json#definitions/created_at"
-    },
-    "updated_at": {
-      "$ref" : "./base_types/base_types.json#definitions/updated_at"
-    }
-  },
-  "links":[
-    { "rel" : "self",
-      "href": "users/current"
-    }
-  ]
+    "links" : [
+        {
+            "rel"  : "self",
+            "href" : "users/current"
+        }
+    ]
 }

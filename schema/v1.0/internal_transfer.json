@@ -1,131 +1,138 @@
 {
-  "type"        : "object",
-  "title"       : "Internal Transfer",
-  "name"        : "internal_transfer",
-  "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
-  "properties"  : {
-    "id" : {
-      "$ref" : "./base_types/base_types.json#definitions/id"
-    },
-    "external_uid" : {
-      "$ref" : "./base_types/base_types.json#definitions/external_uid"
-    },
-    "account_id" : {
-      "description" : "Sending account.",
-      "$ref"        : "./base_types/base_types.json#definitions/account_id",
-      "required"    : true
-    },
-    "user_id" : {
-      "$ref" : "./base_types/base_types.json#definitions/user_id"
-    },
-		"receiver" : {
-      "description" : "The transaction's receiver can be defined as a numerical fidor account id, a twitter name, an email or a phone number.",
-      "required"    : true,
-			"TODO"        : "we have to check whether multiple type with multiple formats are valid. Or if we define custom formats",
-//			"type" : ["string", "number"],//			"format": ["email", "twitter", "phone"], VS: oneOf
-      "oneOf" : [
-        { "$ref" : "./base_types/base_types.json#definitions/account_id" },
-        { "$ref" : "./base_types/base_types.json#definitions/twitter" },
-        { "$ref" : "./base_types/base_types.json#definitions/email" },
-        { "$ref" : "./base_types/base_types.json#definitions/phone" }
-      ]
-    },
-    "amount" : {
-      "$ref"     : "./base_types/base_types.json#definitions/amount",
-      "required" : true
-    },
-    "subject" : {
-      "$ref"      : "./base_types/base_types.json#definitions/subject",
-      "maxLength" : 300
-    },
-    "state" : {
-      "description" : "State of the transfer. received: Order accepted by system | mobile_tan_sent: mtan for order processing was sent | pending_receiver_message: ??? | pending_receiver : ??? | pending_backoffice_transfer: ??? | success: transfer successfully executed | failure: An error occurred during execution | expired : mtan or receiver response expired",
-      "enum" : [
-        "received",
-        "mobile_tan_sent",
-        "pending_receiver_message",
-        "pending_receiver",
-        "pending_backoffice_transfer",
-        "success",
-        "failure",
-        "expired"
-      ],
-      "readonly" : true,
-      "type"     : "string"
-    },
-    "created_at" : {
-      "$ref" : "./base_types/base_types.json#definitions/created_at"
-    },
-    "updated_at" : {
-      "$ref" : "./base_types/base_types.json#definitions/updated_at"
-    }
-  },
-  "links" : [
-    {
-      "rel" : "self",
-      "href" : "internal_transfers/{id}"
-    },
-    {
-      "rel" : "instances",
-      "href" : "internal_transfers",
-      "properties" : {
-        "filter[account_ids]" : {
-          "title" : "Find internal transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date",
-          "type" : "string"
+    "type"        : "object",
+    "title"       : "Internal Transfer",
+    "name"        : "internal_transfer",
+    "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
+    "properties"  : {
+        "id" : {
+            "$ref" : "./base_types/base_types.json#definitions/id"
         },
-        "filter[created_at_from]" : {
-          "title" : "Creation date filter from >= date",
-          "format" : "date",
-          "type" : "string"
+        "external_uid" : {
+            "$ref" : "./base_types/base_types.json#definitions/external_uid"
         },
-        "filter[created_at_to]" : {
-          "title" : "Creation date filter to <= date",
-          "format" : "date",
-          "type" : "string"
+        "account_id" : {
+            "description" : "Sending account.",
+            "$ref"        : "./base_types/base_types.json#definitions/account_id",
+            "required"    : true
         },
-        "filter[states]" : {
-          "title" : "Filter by single or multiple csv delimited states",
-          "enum" : [
-            "created",
-            "mobile_tan_sent",
-            "pending_receiver_message",
-            "pending_receiver",
-            "pending_backoffice_transfer",
-            "completed",
-            "expired"
-          ],
-          "type" : "string"
+        "user_id" : {
+            "$ref" : "./base_types/base_types.json#definitions/user_id"
         },
-        "page" : {
-          "title"       : "Page",
-          "description" : "In paginated results set the page to look for",
-          "type"        : "number"
+        "receiver" : {
+            "description" : "The transaction's receiver can be defined as a numerical fidor account id, a twitter name, an email or a phone number.",
+            "required"    : true,
+            "TODO"        : "we have to check whether multiple type with multiple formats are valid. Or if we define custom formats",
+            "oneOf"       : [
+                {
+                    "$ref" : "./base_types/base_types.json#definitions/account_id"
+                },
+                {
+                    "$ref" : "./base_types/base_types.json#definitions/twitter"
+                },
+                {
+                    "$ref" : "./base_types/base_types.json#definitions/email"
+                },
+                {
+                    "$ref" : "./base_types/base_types.json#definitions/phone"
+                }
+            ]
         },
-        "per_page" : {
-          "title"       : "Per page",
-          "description" : "Results per page. Default is 10, max is 100",
-          "type"        : "number"
+        "amount" : {
+            "$ref"     : "./base_types/base_types.json#definitions/amount",
+            "required" : true
         },
-        "sort" : {
-          "title" : "Sort",
-          "enum"  : [
-            "ASC",
-            "DESC"
-          ],
-          "description" : "Sort the results in ASC or DESC",
-          "type"        : "string"
+        "subject" : {
+            "$ref"      : "./base_types/base_types.json#definitions/subject",
+            "maxLength" : 300
+        },
+        "state" : {
+            "description" : "State of the transfer. received: Order accepted by system | mobile_tan_sent: mtan for order processing was sent | pending_receiver_message: ??? | pending_receiver : ??? | pending_backoffice_transfer: ??? | success: transfer successfully executed | failure: An error occurred during execution | expired : mtan or receiver response expired",
+            "enum"        : [
+                "received",
+                "mobile_tan_sent",
+                "pending_receiver_message",
+                "pending_receiver",
+                "pending_backoffice_transfer",
+                "success",
+                "failure",
+                "expired"
+            ],
+            "readonly" : true,
+            "type"     : "string"
+        },
+        "created_at" : {
+            "$ref" : "./base_types/base_types.json#definitions/created_at"
+        },
+        "updated_at" : {
+            "$ref" : "./base_types/base_types.json#definitions/updated_at"
         }
-      }
     },
-    {
-      "rel"    : "create",
-      "href"   : "internal_transfers",
-      "method" : "POST"
-    },
-    {
-      "rel"  : "transaction",
-      "href" : "internal_transfers/{id}/transaction"
-    }
-  ]
+    "links" : [
+        {
+            "rel"  : "self",
+            "href" : "internal_transfers/{id}"
+        },
+        {
+            "rel"        : "instances",
+            "href"       : "internal_transfers",
+            "properties" : {
+                "filter[account_ids]" : {
+                    "title"  : "Find internal transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+                    "format" : "date",
+                    "type"   : "string"
+                },
+                "filter[created_at_from]" : {
+                    "title"  : "Creation date filter from >= date",
+                    "format" : "date",
+                    "type"   : "string"
+                },
+                "filter[created_at_to]" : {
+                    "title"  : "Creation date filter to <= date",
+                    "format" : "date",
+                    "type"   : "string"
+                },
+                "filter[states]" : {
+                    "title" : "Filter by single or multiple csv delimited states",
+                    "enum"  : [
+                        "created",
+                        "mobile_tan_sent",
+                        "pending_receiver_message",
+                        "pending_receiver",
+                        "pending_backoffice_transfer",
+                        "completed",
+                        "expired"
+                    ],
+                    "type" : "string"
+                },
+                "page" : {
+                    "title"       : "Page",
+                    "description" : "In paginated results set the page to look for",
+                    "type"        : "number"
+                },
+                "per_page" : {
+                    "title"       : "Per page",
+                    "description" : "Results per page. Default is 10, max is 100",
+                    "type"        : "number"
+                },
+                "sort" : {
+                    "title" : "Sort",
+                    "enum"  : [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "description" : "Sort the results in ASC or DESC",
+                    "type"        : "string"
+                }
+            }
+        },
+        {
+            "rel"    : "create",
+            "href"   : "internal_transfers",
+            "method" : "POST"
+        },
+        {
+            "rel"  : "transaction",
+            "href" : "internal_transfers/{id}/transaction"
+        }
+    ]
 }

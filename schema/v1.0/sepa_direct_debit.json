@@ -1,109 +1,125 @@
-{ "type"        : "object",
-  "title"       : "Sepa Direct Debit",
-  "name"        : "sepa_direct_debit",
-  "description" : "A direct debit can only be performed with a valid sepa mandate, authorizing access to the debtor's account.",
-  "properties"  : {
-    "id" : {
-      "$ref" : "./base_types/base_types.json#definitions/id"
-    },
-    "external_uid" : {
-      "$ref" : "./base_types/base_types.json#definitions/external_uid"
-    },
-    "account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "required" : true
-    },
-    "user_id" : {
-      "$ref" : "./base_types/base_types.json#definitions/user_id"
-    },
-    "mandate_id" : {
-      "description" : "The sepa mandate used by the debit",
-      "type"        :  "number",
-      "required"    : true
-    },
-    "amount" : {
-      "$ref"     : "./base_types/base_types.json#definitions/amount",
-      "required" : true
-    },
-    "eref" : {
-      "$ref" : "./base_types/base_types.json#definitions/eref"
-    },
-    "subject" : {
-      "$ref"      : "./base_types/base_types.json#definitions/subject",
-      "maxLength" : 140
-    },
-    "collection_date" : {
-      "description" : "Requested date for the debit to be withdrawn from the foreign account.",
-      "format"      : "date",
-      "required"    : true,
-      "type"        : "string"
-    },
-    "state" : {
-      "description" : "State of the transfer. received: Order is currently being processed | processing: the transaction is being processed | failure: Order was rejected | error: An error occurred during execution | success: debit was successfully completed",
-      "enum"     : ["received", "processing", "success", "failure"],
-      "readonly" : true,
-      "type"     : "string"
-    },
-    "created_at" : {
-      "$ref" : "./base_types/base_types.json#definitions/created_at"
-    },
-    "updated_at" : {
-      "$ref" : "./base_types/base_types.json#definitions/updated_at"
-    }
-  },
-  "links" :[
-    { "rel" : "self",
-      "href" : "sepa_direct_debits/{id}"
-    },
-    { "rel" : "instances",
-      "href" : "sepa_direct_debits",
-      "properties" : {
-        "filter[account_ids]" : {
-          "title" : "Find direct debits belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date",
-          "type" : "string"
+{
+    "type"        : "object",
+    "title"       : "Sepa Direct Debit",
+    "name"        : "sepa_direct_debit",
+    "description" : "A direct debit can only be performed with a valid sepa mandate, authorizing access to the debtor's account.",
+    "properties"  : {
+        "id" : {
+            "$ref" : "./base_types/base_types.json#definitions/id"
         },
-        "filter[created_at_from]" : {
-          "title" : "Creation date filter from >= date",
-          "format" : "date",
-          "type" : "string"
+        "external_uid" : {
+            "$ref" : "./base_types/base_types.json#definitions/external_uid"
         },
-        "filter[created_at_to]" : {
-          "title" : "Creation date filter to <= date",
-          "format" : "date",
-          "type" : "string"
+        "account_id" : {
+            "$ref"     : "./base_types/base_types.json#definitions/account_id",
+            "required" : true
         },
-        "filter[states]" : {
-          "title" : "Filter by single or multiple csv delimited states",
-          "enum"  : ["in_clearance", "processed", "rejected", "error"],
-          "type"  : "string"
+        "user_id" : {
+            "$ref" : "./base_types/base_types.json#definitions/user_id"
         },
-        "filter[eref]" : {
-          "title" : "Match full end to end reference",
-          "type"  : "string"
+        "mandate_id" : {
+            "description" : "The sepa mandate used by the debit",
+            "type"        : "number",
+            "required"    : true
         },
-        "page" : {
-          "title"       : "Page",
-          "description" : "In paginated results set the page to retrieve",
-          "type"        : "number"
+        "amount" : {
+            "$ref"     : "./base_types/base_types.json#definitions/amount",
+            "required" : true
         },
-        "per_page" : {
-          "title"       : "Per page",
-          "description" : "Results per page. Default is 10, max is 100",
-          "type"        : "number"
+        "eref" : {
+            "$ref" : "./base_types/base_types.json#definitions/eref"
         },
-        "sort" : {
-          "title"       : "Sort",
-          "enum"        : ["ASC","DESC"],
-          "description" : "Sort the results in ASC or DESC",
-          "type"        : "string"
+        "subject" : {
+            "$ref"      : "./base_types/base_types.json#definitions/subject",
+            "maxLength" : 140
+        },
+        "collection_date" : {
+            "description" : "Requested date for the debit to be withdrawn from the foreign account.",
+            "format"      : "date",
+            "required"    : true,
+            "type"        : "string"
+        },
+        "state" : {
+            "description" : "State of the transfer. received: Order is currently being processed | processing: the transaction is being processed | failure: Order was rejected | error: An error occurred during execution | success: debit was successfully completed",
+            "enum"        : [
+                "received",
+                "processing",
+                "success",
+                "failure"
+            ],
+            "readonly" : true,
+            "type"     : "string"
+        },
+        "created_at" : {
+            "$ref" : "./base_types/base_types.json#definitions/created_at"
+        },
+        "updated_at" : {
+            "$ref" : "./base_types/base_types.json#definitions/updated_at"
         }
-      }
     },
-    { "rel"    : "create",
-      "href"   : "sepa_direct_debits",
-      "method" : "POST"
-    }
-
-  ]
+    "links" : [
+        {
+            "rel"  : "self",
+            "href" : "sepa_direct_debits/{id}"
+        },
+        {
+            "rel"        : "instances",
+            "href"       : "sepa_direct_debits",
+            "properties" : {
+                "filter[account_ids]" : {
+                    "title"  : "Find direct debits belonging to the given account ids. Single id or multiple ids comma-separated.",
+                    "format" : "date",
+                    "type"   : "string"
+                },
+                "filter[created_at_from]" : {
+                    "title"  : "Creation date filter from >= date",
+                    "format" : "date",
+                    "type"   : "string"
+                },
+                "filter[created_at_to]" : {
+                    "title"  : "Creation date filter to <= date",
+                    "format" : "date",
+                    "type"   : "string"
+                },
+                "filter[states]" : {
+                    "title" : "Filter by single or multiple csv delimited states",
+                    "enum"  : [
+                        "in_clearance",
+                        "processed",
+                        "rejected",
+                        "error"
+                    ],
+                    "type" : "string"
+                },
+                "filter[eref]" : {
+                    "title" : "Match full end to end reference",
+                    "type"  : "string"
+                },
+                "page" : {
+                    "title"       : "Page",
+                    "description" : "In paginated results set the page to retrieve",
+                    "type"        : "number"
+                },
+                "per_page" : {
+                    "title"       : "Per page",
+                    "description" : "Results per page. Default is 10, max is 100",
+                    "type"        : "number"
+                },
+                "sort" : {
+                    "title" : "Sort",
+                    "enum"  : [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "description" : "Sort the results in ASC or DESC",
+                    "type"        : "string"
+                }
+            }
+        },
+        {
+            "rel"    : "create",
+            "href"   : "sepa_direct_debits",
+            "method" : "POST"
+        }
+    ]
 }

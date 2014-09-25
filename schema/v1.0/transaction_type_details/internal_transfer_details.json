@@ -1,12 +1,12 @@
 {
-  "type" : "object",
-  "title"       : "Internal Transfer Details",
-  "name"        : "internal_transfer_details",
-  "description" : "Remote account for a Fidor internal transfer",
-  "properties" : {
-    "remote_account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "readonly" : true
+    "type"        : "object",
+    "title"       : "Internal Transfer Details",
+    "name"        : "internal_transfer_details",
+    "description" : "Remote account for a Fidor internal transfer",
+    "properties"  : {
+        "remote_account_id" : {
+            "$ref"     : "./base_types/base_types.json#definitions/account_id",
+            "readonly" : true
+        }
     }
-  }
 }

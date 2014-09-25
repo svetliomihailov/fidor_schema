@@ -1,142 +1,158 @@
-{ "type"        : "object",
-  "title"       : "Batch Direct Debit",
-  "name"        : "batch_direct_debit",
-  "description" : "A direct debit batch contains multiple direct debits which are processed asynchronous.",
-  "properties"  : {
-    "id" : {
-      "$ref" : "./base_types/base_types.json#definitions/id"
-    },
-    "external_uid" : {
-      "$ref" : "./base_types/base_types.json#definitions/external_uid"
-    },
-    "account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "required" : true
-    },
-    "user_id" : {
-      "$ref" : "./base_types/base_types.json#definitions/user_id"
-    },
-    "sepa_direct_debits" : {
-      "description" : "The direct_debits to process.",
-      "type"        : "array",
-      "required"    : false,
-      "items"  : {
-        "type" : "object",
-        "properties" : {
-          "$ref" : "./direct_debit.json#properties"
-        }
-      }
-    },
-    "sepa_direct_debit_ids" : {
-      "description" : "ids of successfully executed direct debit transactions",
-      "type"        : "array",
-      "items"       : { 
-        "$ref" : "./base_types/base_types.json#definitions/id"
-      }
-    },
-    "sepa_direct_debit_errors" : {
-      "description" : "contains a list of errors encountered in nested debits contained in this batch. Debits are identified by external_uid",
-      "type"        : "array",
-      "items"       : {
-        "type" : "object",
-        "properties" : {
-          "external_uid" : {
-            "type" : "string"
-          },
-          "error" : {
-            "type" : "object",
-            "properties" : {
-              "$ref" : "./error.json#properties"
+{
+    "type"        : "object",
+    "title"       : "Batch Direct Debit",
+    "name"        : "batch_direct_debit",
+    "description" : "A direct debit batch contains multiple direct debits which are processed asynchronous.",
+    "properties"  : {
+        "id" : {
+            "$ref" : "./base_types/base_types.json#definitions/id"
+        },
+        "external_uid" : {
+            "$ref" : "./base_types/base_types.json#definitions/external_uid"
+        },
+        "account_id" : {
+            "$ref"     : "./base_types/base_types.json#definitions/account_id",
+            "required" : true
+        },
+        "user_id" : {
+            "$ref" : "./base_types/base_types.json#definitions/user_id"
+        },
+        "sepa_direct_debits" : {
+            "description" : "The direct_debits to process.",
+            "type"        : "array",
+            "required"    : false,
+            "items"       : {
+                "type"       : "object",
+                "properties" : {
+                    "$ref" : "./direct_debit.json#properties"
+                }
             }
-          }
+        },
+        "sepa_direct_debit_ids" : {
+            "description" : "ids of successfully executed direct debit transactions",
+            "type"        : "array",
+            "items"       : {
+                "$ref" : "./base_types/base_types.json#definitions/id"
+            }
+        },
+        "sepa_direct_debit_errors" : {
+            "description" : "contains a list of errors encountered in nested debits contained in this batch. Debits are identified by external_uid",
+            "type"        : "array",
+            "items"       : {
+                "type"       : "object",
+                "properties" : {
+                    "external_uid" : {
+                        "type" : "string"
+                    },
+                    "error" : {
+                        "type"       : "object",
+                        "properties" : {
+                            "$ref" : "./error.json#properties"
+                        }
+                    }
+                }
+            }
+        },
+        "number_of_debits" : {
+            "description" : "count of debits transactions received in this batch",
+            "readonly"    : true,
+            "type"        : "integer"
+        },
+        "state" : {
+            "description" : "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | failure: An error occurred during execution in at least one of the transfers. In this case you should check the transfers. | success: batch successfully processed",
+            "enum"        : [
+                "received",
+                "processing",
+                "success",
+                "failure"
+            ],
+            "readonly" : true,
+            "type"     : "string"
+        },
+        "success_url" : {
+            "description" : "Url receiving a POST with the batch object after processing is finished.",
+            "type"        : "string",
+            "format"      : "uri"
+        },
+        "started_at" : {
+            "description" : "Time the batch processing started.",
+            "format"      : "date-time",
+            "readonly"    : true,
+            "type"        : "string"
+        },
+        "finished_at" : {
+            "description" : "Time the batch processing finished.",
+            "format"      : "date-time",
+            "readonly"    : true,
+            "type"        : "string"
+        },
+        "created_at" : {
+            "description" : "Creation date-time, never changes.",
+            "format"      : "date-time",
+            "readonly"    : true,
+            "type"        : "string"
+        },
+        "updated_at" : {
+            "description" : "Last update date-time.",
+            "format"      : "date-time",
+            "readonly"    : true,
+            "type"        : "string"
         }
-      }
     },
-    "number_of_debits" : {
-      "description" : "count of debits transactions received in this batch",
-      "readonly"    : true,
-      "type"        : "integer"
-    },
-    "state" : {
-      "description" : "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | failure: An error occurred during execution in at least one of the transfers. In this case you should check the transfers. | success: batch successfully processed",
-      "enum"        : ["received", "processing", "success", "failure"],
-      "readonly"    : true,
-      "type"        : "string"
-    },
-    "success_url" : {
-      "description" : "Url receiving a POST with the batch object after processing is finished.",
-      "type"        : "string",
-      "format"      : "uri"
-    },
-    "started_at" : {
-      "description" : "Time the batch processing started.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
-    },
-    "finished_at" : {
-      "description" : "Time the batch processing finished.",
-      "format"      : "date-time",
-      "readonly"    :true,
-      "type"        : "string"
-    },
-    "created_at" : {
-      "description" : "Creation date-time, never changes.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
-    },
-    "updated_at" : {
-      "description" : "Last update date-time.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
-    }
-  },
-  "links":[
-    { "rel" : "self",
-      "href": "batch_direct_debits/{id}"
-    },
-    { "rel"        : "instances",
-      "href"       : "batch_direct_debits",
-      "properties" : {
-        "filter[created_at_from]" : {
-          "title"  : "Creation date filter from >= date",
-          "format" : "date",
-          "type"   : "string"
+    "links" : [
+        {
+            "rel"  : "self",
+            "href" : "batch_direct_debits/{id}"
         },
-        "filter[created_at_to]" : {
-          "title"  : "Creation date filter to <= date",
-          "format" : "date",
-          "type"   : "string"
+        {
+            "rel"        : "instances",
+            "href"       : "batch_direct_debits",
+            "properties" : {
+                "filter[created_at_from]" : {
+                    "title"  : "Creation date filter from >= date",
+                    "format" : "date",
+                    "type"   : "string"
+                },
+                "filter[created_at_to]" : {
+                    "title"  : "Creation date filter to <= date",
+                    "format" : "date",
+                    "type"   : "string"
+                },
+                "filter[states]" : {
+                    "title" : "Filter by single or multiple csv delimited states",
+                    "enum"  : [
+                        "received",
+                        "processing",
+                        "success",
+                        "failure"
+                    ],
+                    "type" : "string"
+                },
+                "page" : {
+                    "title"       : "Page",
+                    "description" : "In paginated results set the page to look for",
+                    "type"        : "number"
+                },
+                "per_page" : {
+                    "title"       : "Per page",
+                    "description" : "Results per page. Default is 10, max is 100",
+                    "type"        : "number"
+                },
+                "sort" : {
+                    "title" : "Sort",
+                    "enum"  : [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "description" : "Sort the results in ASC or DESC",
+                    "type"        : "string"
+                }
+            }
         },
-        "filter[states]" : {
-          "title" : "Filter by single or multiple csv delimited states",
-          "enum"  : ["received", "processing", "success", "failure"],
-          "type"  : "string"
-        },
-        "page" : {
-          "title"       : "Page",
-          "description" : "In paginated results set the page to look for",
-          "type"        : "number"
-        },
-        "per_page" : {
-          "title"       : "Per page",
-          "description" : "Results per page. Default is 10, max is 100",
-          "type"        : "number"
-        },
-        "sort" : {
-          "title"       : "Sort",
-          "enum"        : ["ASC","DESC"],
-          "description" : "Sort the results in ASC or DESC",
-          "type"        : "string"
+        {
+            "rel"    : "create",
+            "href"   : "batch_direct_debits",
+            "method" : "POST"
         }
-      }
-    },
-
-    { "rel"    : "create",
-      "href"   : "batch_direct_debits",
-      "method" : "POST"
-    }
-  ]
+    ]
 }
