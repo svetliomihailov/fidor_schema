@@ -39,14 +39,15 @@
       "maxLength" : 300
     },
     "state" : {
-      "description" : "State of the transfer. in_clearance: Order is currently being processed | processed: Third party system confirmed booking of order | rejected: Order was rejected | error: An error occurred during execution",
+      "description" : "State of the transfer. received: Order accepted by system | mobile_tan_sent: mtan for order processing was sent | pending_receiver_message: ??? | pending_receiver : ??? | pending_backoffice_transfer: ??? | success: transfer successfully executed | failure: An error occurred during execution | expired : mtan or receiver response expired",
       "enum" : [
-        "created",
+        "received",
         "mobile_tan_sent",
         "pending_receiver_message",
         "pending_receiver",
         "pending_backoffice_transfer",
-        "completed",
+        "success",
+        "failure",
         "expired"
       ],
       "readonly" : true,

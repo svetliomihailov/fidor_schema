@@ -58,8 +58,8 @@
       "type"        : "integer"
     },
     "state" : {
-      "description" : "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | error: An error occurred during execution in at least one of the transfers. In this case you should check the transfers.",
-      "enum"        : ["received", "processing", "success", "error"],
+      "description" : "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | failure: An error occurred during execution in at least one of the transfers. In this case you should check the transfers. | success: batch successfully processed",
+      "enum"        : ["received", "processing", "success", "failure"],
       "readonly"    : true,
       "type"        : "string"
     },
@@ -112,7 +112,7 @@
         },
         "filter[states]" : {
           "title" : "Filter by single or multiple csv delimited states",
-          "enum"  : ["received", "processing", "success", "error"],
+          "enum"  : ["received", "processing", "success", "failure"],
           "type"  : "string"
         },
         "page" : {

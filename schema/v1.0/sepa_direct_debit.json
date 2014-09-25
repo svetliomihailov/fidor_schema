@@ -39,8 +39,8 @@
       "type"        : "string"
     },
     "state" : {
-      "description" : "State of the transfer. in_clearance: Order is currently being processed | processed: Third party system confirmed booking of order | rejected: Order was rejected | error: An error occurred during execution",
-      "enum"     : ["in_clearance", "processed", "rejected", "error"],
+      "description" : "State of the transfer. received: Order is currently being processed | processing: the transaction is being processed | failure: Order was rejected | error: An error occurred during execution | success: debit was successfully completed",
+      "enum"     : ["received", "processing", "success", "failure"],
       "readonly" : true,
       "type"     : "string"
     },
