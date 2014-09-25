@@ -4,6 +4,11 @@
     "context" : "users",
     "privileges" : ["current", "show"],
     "fields" : ["email"]
+  },
+  {
+    "name" : "read_user_last_sign_in_at",
+    "context" : "users",
+    "privileges" : ["current", "show"],
+    "fields" : ["last_sign_in_at"]
   }
-
 ]
