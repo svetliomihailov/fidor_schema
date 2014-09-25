@@ -1,27 +1,27 @@
 {
-    "type"        : "object",
-    "title"       : "Sepa Credit Transfer Details",
-    "name"        : "sepa_credit_transfer_details",
-    "description" : "Remote account information available in a SEPA credit transfer",
-    "properties"  : {
-        "transfer_id" : {
-            "description" : "Id of transfer if transaction was created by a transfer. Refunded transactions have no id",
-            "readonly"    : true,
-            "type"        : "integer"
-        },
-        "remote_name" : {
-            "description" : "Receiving/Sending account holder name",
-            "type"        : "string",
-            "readonly"    : true,
-            "maxLength"   : 70
-        },
-        "remote_iban" : {
-            "$ref"     : "./base_types/base_types.json#definitions/iban",
-            "readonly" : true
-        },
-        "remote_bic" : {
-            "$ref"     : "./base_types/base_types.json#definitions/bic",
-            "readonly" : true
-        }
+  "type"        : "object",
+  "title"       : "Sepa Credit Transfer Details",
+  "name"        : "sepa_credit_transfer_details",
+  "description" : "Remote account information available in a SEPA credit transfer",
+  "properties"  : {
+    "transfer_id" : {
+      "description" : "Id of transfer if transaction was created by a transfer. Refunded transactions have no id",
+      "readonly"    : true,
+      "type"        : "integer"
+    },
+    "remote_name" : {
+      "description" : "Receiving/Sending account holder name",
+      "type"        : "string",
+      "readonly"    : true,
+      "maxLength"   : 70
+    },
+    "remote_iban" : {
+      "$ref"     : "./base_types/base_types.json#definitions/iban",
+      "readonly" : true
+    },
+    "remote_bic" : {
+      "$ref"     : "./base_types/base_types.json#definitions/bic",
+      "readonly" : true
     }
+  }
 }

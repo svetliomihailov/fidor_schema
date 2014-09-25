@@ -1,134 +1,134 @@
 {
-    "type"        : "object",
-    "title"       : "Transaction",
-    "name"        : "transaction",
-    "description" : "A transaction is the result of a successful transfer or debit.",
-    "properties"  : {
-        "id" : {
-            "$ref" : "./base_types/base_types.json#definitions/id"
-        },
-        "account_id" : {
-            "$ref"     : "./base_types/base_types.json#definitions/account_id",
-            "readonly" : true
-        },
-        "transaction_type" : {
-            "$ref"     : "./base_types/base_types.json#definitions/transaction_type",
-            "readonly" : true
-        },
-        "transaction_type_details" : {
-            "description" : "Details specific to this transaction type are collected here.",
-            "readonly"    : true,
-            "type"        : "object",
-            "oneOf"       : [
-                {
-                    "$ref" : "./transaction_type_details/credit_card_details.json#properties"
-                },
-                {
-                    "$ref" : "./transaction_type_details/internal_transfer_details.json#properties"
-                },
-                {
-                    "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#properties"
-                },
-                {
-                    "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#properties"
-                }
-            ]
-        },
-        "subject" : {
-            "$ref"     : "./base_types/base_types.json#definitions/subject",
-            "readonly" : true
-        },
-        "amount" : {
-            "$ref"     : "./base_types/base_types.json#definitions/amount",
-            "readonly" : true
-        },
-        "booking_date" : {
-            "description" : "Date the transaction was booked.",
-            "format"      : "date-time",
-            "readonly"    : true,
-            "type"        : "string"
-        },
-        "value_date" : {
-            "description" : "Date the amount was credited to the account (Wertstellung).",
-            "format"      : "date",
-            "readonly"    : true,
-            "type"        : "string"
-        },
-        "booking_code" : {
-            "description" : "Accounting transaction code in the central banking system",
-            "readonly"    : true,
-            "type"        : "string"
-        },
-        "return_transaction_id" : {
-            "description" : "If the transaction was marked for return, this references the new return transaction.",
-            "readonly"    : true,
-            "type"        : "integer"
-        },
-        "created_at" : {
-            "$ref" : "./base_types/base_types.json#definitions/created_at"
-        },
-        "updated_at" : {
-            "$ref" : "./base_types/base_types.json#definitions/updated_at"
-        }
+  "type"        : "object",
+  "title"       : "Transaction",
+  "name"        : "transaction",
+  "description" : "A transaction is the result of a successful transfer or debit.",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
-    "links" : [
+    "account_id" : {
+      "$ref"     : "./base_types/base_types.json#definitions/account_id",
+      "readonly" : true
+    },
+    "transaction_type" : {
+      "$ref"     : "./base_types/base_types.json#definitions/transaction_type",
+      "readonly" : true
+    },
+    "transaction_type_details" : {
+      "description" : "Details specific to this transaction type are collected here.",
+      "readonly"    : true,
+      "type"        : "object",
+      "oneOf"       : [
         {
-            "rel"  : "self",
-            "href" : "transactions/{id}"
+          "$ref" : "./transaction_type_details/credit_card_details.json#properties"
         },
         {
-            "rel"        : "instances",
-            "href"       : "transactions",
-            "properties" : {
-                "filter[account_ids]" : {
-                    "title"  : "Find transactions belonging to the given account ids. Single id or multiple ids comma-separated.",
-                    "format" : "date",
-                    "type"   : "string"
-                },
-                "filter[id_from]" : {
-                    "title"  : "Find transactions with an id greater than given one.",
-                    "format" : "integer",
-                    "type"   : "string"
-                },
-                "filter[id_to]" : {
-                    "title"  : "Find transactions with an id smaller than given one.",
-                    "format" : "integer",
-                    "type"   : "string"
-                },
-                "filter[booking_date_from]" : {
-                    "title"  : "Date filter from >= date",
-                    "format" : "date-time",
-                    "type"   : "string"
-                },
-                "filter[booking_date_to]" : {
-                    "title"  : "Date filter to <= date",
-                    "format" : "date-time",
-                    "type"   : "string"
-                },
-                "filter[kinds]" : {
-                    "$ref"  : "./base_types/base_types.json#definitions/transaction_type",
-                    "title" : "By transaction types"
-                },
-                "page" : {
-                    "title"       : "Page",
-                    "description" : "In paginated results set the page to look for",
-                    "type"        : "number"
-                },
-                "per_page" : {
-                    "title"       : "Per page",
-                    "description" : "Results per page. Default is 10, max is 100",
-                    "type"        : "number"
-                },
-                "sort" : {
-                    "title" : "Sort",
-                    "enum"  : [
-                        "ASC",
-                        "DESC"
-                    ],
-                    "description" : "Sort the results in ASC or DESC",
-                    "type"        : "string"
-                }
-            }
+          "$ref" : "./transaction_type_details/internal_transfer_details.json#properties"
+        },
+        {
+          "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#properties"
+        },
+        {
+          "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#properties"
         }
-    ]
+      ]
+    },
+    "subject" : {
+      "$ref"     : "./base_types/base_types.json#definitions/subject",
+      "readonly" : true
+    },
+    "amount" : {
+      "$ref"     : "./base_types/base_types.json#definitions/amount",
+      "readonly" : true
+    },
+    "booking_date" : {
+      "description" : "Date the transaction was booked.",
+      "format"      : "date-time",
+      "readonly"    : true,
+      "type"        : "string"
+    },
+    "value_date" : {
+      "description" : "Date the amount was credited to the account (Wertstellung).",
+      "format"      : "date",
+      "readonly"    : true,
+      "type"        : "string"
+    },
+    "booking_code" : {
+      "description" : "Accounting transaction code in the central banking system",
+      "readonly"    : true,
+      "type"        : "string"
+    },
+    "return_transaction_id" : {
+      "description" : "If the transaction was marked for return, this references the new return transaction.",
+      "readonly"    : true,
+      "type"        : "integer"
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "transactions/{id}"
+    },
+    {
+      "rel"        : "instances",
+      "href"       : "transactions",
+      "properties" : {
+        "filter[account_ids]" : {
+          "title"  : "Find transactions belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "filter[id_from]" : {
+          "title"  : "Find transactions with an id greater than given one.",
+          "format" : "integer",
+          "type"   : "string"
+        },
+        "filter[id_to]" : {
+          "title"  : "Find transactions with an id smaller than given one.",
+          "format" : "integer",
+          "type"   : "string"
+        },
+        "filter[booking_date_from]" : {
+          "title"  : "Date filter from >= date",
+          "format" : "date-time",
+          "type"   : "string"
+        },
+        "filter[booking_date_to]" : {
+          "title"  : "Date filter to <= date",
+          "format" : "date-time",
+          "type"   : "string"
+        },
+        "filter[kinds]" : {
+          "$ref"  : "./base_types/base_types.json#definitions/transaction_type",
+          "title" : "By transaction types"
+        },
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "number"
+        },
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "number"
+        },
+        "sort" : {
+          "title" : "Sort",
+          "enum"  : [
+            "ASC",
+            "DESC"
+          ],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
+        }
+      }
+    }
+  ]
 }

@@ -1,128 +1,128 @@
 {
-    "type"        : "object",
-    "title"       : "Sepa Credit Transfer",
-    "name"        : "sepa_credit_transfer",
-    "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
-    "properties"  : {
-        "id" : {
-            "$ref" : "./base_types/base_types.json#definitions/id"
-        },
-        "external_uid" : {
-            "$ref" : "./base_types/base_types.json#definitions/external_uid"
-        },
-        "account_id" : {
-            "$ref"     : "./base_types/base_types.json#definitions/account_id",
-            "required" : true
-        },
-        "user_id" : {
-            "$ref" : "./base_types/base_types.json#definitions/user_id"
-        },
-        "transaction_id" : {
-            "description" : "For successful transfers, the reference to the transaction",
-            "readonly"    : true,
-            "type"        : "integer"
-        },
-        "subject" : {
-            "$ref"      : "./base_types/base_types.json#definitions/subject",
-            "maxLength" : 140
-        },
-        "amount" : {
-            "$ref"     : "./base_types/base_types.json#definitions/amount",
-            "required" : true
-        },
-        "remote_name" : {
-            "description" : "Receiving account holder name",
-            "type"        : "string",
-            "maxLength"   : 70
-        },
-        "remote_iban" : {
-            "$ref" : "./base_types/base_types.json#definitions/iban"
-        },
-        "remote_bic" : {
-            "$ref" : "./base_types/base_types.json#definitions/bic"
-        },
-        "state" : {
-            "description" : "State of the transfer. received: Order was accepted by the system | processing: Order is being processed | mobile_tan_sent: awaiting tan entry | expired : mtan entry expired | failure: transfer could not be completed | success: transfer successfully executed",
-            "enum"        : [
-                "received",
-                "mobile_tan_sent",
-                "success",
-                "expired",
-                "failure"
-            ],
-            "readonly" : true,
-            "type"     : "string"
-        },
-        "created_at" : {
-            "$ref" : "./base_types/base_types.json#definitions/created_at"
-        },
-        "updated_at" : {
-            "$ref" : "./base_types/base_types.json#definitions/updated_at"
-        }
+  "type"        : "object",
+  "title"       : "Sepa Credit Transfer",
+  "name"        : "sepa_credit_transfer",
+  "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
-    "links" : [
-        {
-            "rel"  : "self",
-            "href" : "sepa_credit_transfers/{id}"
+    "external_uid" : {
+      "$ref" : "./base_types/base_types.json#definitions/external_uid"
+    },
+    "account_id" : {
+      "$ref"     : "./base_types/base_types.json#definitions/account_id",
+      "required" : true
+    },
+    "user_id" : {
+      "$ref" : "./base_types/base_types.json#definitions/user_id"
+    },
+    "transaction_id" : {
+      "description" : "For successful transfers, the reference to the transaction",
+      "readonly"    : true,
+      "type"        : "integer"
+    },
+    "subject" : {
+      "$ref"      : "./base_types/base_types.json#definitions/subject",
+      "maxLength" : 140
+    },
+    "amount" : {
+      "$ref"     : "./base_types/base_types.json#definitions/amount",
+      "required" : true
+    },
+    "remote_name" : {
+      "description" : "Receiving account holder name",
+      "type"        : "string",
+      "maxLength"   : 70
+    },
+    "remote_iban" : {
+      "$ref" : "./base_types/base_types.json#definitions/iban"
+    },
+    "remote_bic" : {
+      "$ref" : "./base_types/base_types.json#definitions/bic"
+    },
+    "state" : {
+      "description" : "State of the transfer. received: Order was accepted by the system | processing: Order is being processed | mobile_tan_sent: awaiting tan entry | expired : mtan entry expired | failure: transfer could not be completed | success: transfer successfully executed",
+      "enum"        : [
+        "received",
+        "mobile_tan_sent",
+        "success",
+        "expired",
+        "failure"
+      ],
+      "readonly" : true,
+      "type"     : "string"
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "sepa_credit_transfers/{id}"
+    },
+    {
+      "rel"        : "instances",
+      "href"       : "sepa_credit_transfers",
+      "properties" : {
+        "filter[account_ids]" : {
+          "title"  : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format" : "date",
+          "type"   : "string"
         },
-        {
-            "rel"        : "instances",
-            "href"       : "sepa_credit_transfers",
-            "properties" : {
-                "filter[account_ids]" : {
-                    "title"  : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
-                    "format" : "date",
-                    "type"   : "string"
-                },
-                "filter[created_at_from]" : {
-                    "title"  : "Creation date filter from >= date",
-                    "format" : "date",
-                    "type"   : "string"
-                },
-                "filter[created_at_to]" : {
-                    "title"  : "Creation date filter to <= date",
-                    "format" : "date",
-                    "type"   : "string"
-                },
-                "filter[states]" : {
-                    "title" : "Filter by single or multiple csv delimited states",
-                    "enum"  : [
-                        "created",
-                        "mobile_tan_sent",
-                        "completed",
-                        "expired"
-                    ],
-                    "type" : "string"
-                },
-                "page" : {
-                    "title"       : "Page",
-                    "description" : "In paginated results set the page to look for",
-                    "type"        : "number"
-                },
-                "per_page" : {
-                    "title"       : "Per page",
-                    "description" : "Results per page. Default is 10, max is 100",
-                    "type"        : "number"
-                },
-                "sort" : {
-                    "title" : "Sort",
-                    "enum"  : [
-                        "ASC",
-                        "DESC"
-                    ],
-                    "description" : "Sort the results in ASC or DESC",
-                    "type"        : "string"
-                }
-            }
+        "filter[created_at_from]" : {
+          "title"  : "Creation date filter from >= date",
+          "format" : "date",
+          "type"   : "string"
         },
-        {
-            "rel"    : "create",
-            "href"   : "sepa_credit_transfers",
-            "method" : "POST"
+        "filter[created_at_to]" : {
+          "title"  : "Creation date filter to <= date",
+          "format" : "date",
+          "type"   : "string"
         },
-        {
-            "rel"  : "transaction",
-            "href" : "sepa_credit_transfers/{id}/transaction"
+        "filter[states]" : {
+          "title" : "Filter by single or multiple csv delimited states",
+          "enum"  : [
+            "created",
+            "mobile_tan_sent",
+            "completed",
+            "expired"
+          ],
+          "type" : "string"
+        },
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "number"
+        },
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "number"
+        },
+        "sort" : {
+          "title" : "Sort",
+          "enum"  : [
+            "ASC",
+            "DESC"
+          ],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
         }
-    ]
+      }
+    },
+    {
+      "rel"    : "create",
+      "href"   : "sepa_credit_transfers",
+      "method" : "POST"
+    },
+    {
+      "rel"  : "transaction",
+      "href" : "sepa_credit_transfers/{id}/transaction"
+    }
+  ]
 }
