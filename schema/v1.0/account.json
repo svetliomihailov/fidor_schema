@@ -95,6 +95,10 @@
       "href" : "accounts/{id}/transactions"
     },
     {
+      "rel"  : "transactions",
+      "href" : "accounts/{id}/internal_transfers"
+    },
+    {
       "rel"  : "sepa_credit_transfers",
       "href" : "accounts/{id}/sepa_credit_transfers"
     },
