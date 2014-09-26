@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "readwrite_batch_transfer",
+    "context" : "batch_transfers",
+    "privileges" : ["index", "show", "create", "update"],
+    "fields" : ["id","external_uid", "account_id",
+                "state","created_at","updated_at"]
+  }
+]

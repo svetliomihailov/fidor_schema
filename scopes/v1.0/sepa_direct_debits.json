@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "readwrite_sepa_direct_debit",
+    "context" : "sepa_direct_debits",
+    "privileges" : ["index", "show", "create", "update"],
+    "fields" : ["id","external_uid", "account_id","mandate_id",
+                "eref","amount","state","created_at","updated_at"]
+  }
+]

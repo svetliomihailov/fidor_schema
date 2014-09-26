@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "readwrite_internal_transfer",
+    "context" : "internal_transfers",
+    "privileges" : ["index", "show", "create", "update"],
+    "fields" : ["id","external_uid", "account_id","user_id","twitter","email","phone",
+                "subject","amount","state","created_at","updated_at"]
+  }
+]

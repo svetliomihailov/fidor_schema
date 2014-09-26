@@ -1,0 +1,9 @@
+[
+  {
+    "name" : "readwrite_batch_direct_debit",
+    "context" : "batch_direct_debits",
+    "privileges" : ["index", "show", "create", "update"],
+    "fields" : ["id","external_uid", "account_id","user_id",
+                "state","created_at","updated_at"]
+  }
+]
