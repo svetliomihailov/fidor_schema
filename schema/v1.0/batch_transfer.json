@@ -106,7 +106,7 @@
     "success_url" : {
       "description" : "Url receiving a POST with the batch object after processing is finished.",
       "type"        : "string",
-      "format"      : "uri
+      "format"      : "uri"
     },
     "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"
