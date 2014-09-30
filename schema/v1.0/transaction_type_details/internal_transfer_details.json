@@ -8,5 +8,10 @@
       "$ref"     : "./base_types/base_types.json#definitions/account_id",
       "readonly" : true
     }
+    "internal_transfer_id" : {
+      "description" : "Id of transfer if transaction was created by a transfer. Refunded transactions have no id",
+      "readonly"    : true,
+      "type"        : "integer"
+    },
   }
 }
