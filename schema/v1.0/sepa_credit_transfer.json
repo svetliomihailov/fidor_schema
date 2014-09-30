@@ -18,9 +18,7 @@
       "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
     "transaction_id" : {
-      "description" : "For successful transfers, the reference to the transaction",
-      "readonly"    : true,
-      "type"        : "integer"
+      "$ref" : "./base_types/base_types.json#definitions/transaction_id"
     },
     "subject" : {
       "$ref"      : "./base_types/base_types.json#definitions/subject",
@@ -87,10 +85,11 @@
         "filter[states]" : {
           "title" : "Filter by single or multiple csv delimited states",
           "enum"  : [
-            "created",
+            "received",
             "mobile_tan_sent",
-            "completed",
-            "expired"
+            "success",
+            "expired",
+            "failure"
           ],
           "type" : "string"
         },
