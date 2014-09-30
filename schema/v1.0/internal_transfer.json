@@ -133,10 +133,6 @@
       "rel"    : "create",
       "href"   : "internal_transfers",
       "method" : "POST"
-    },
-    {
-      "rel"  : "transaction",
-      "href" : "internal_transfers/{id}/transaction"
     }
   ]
 }

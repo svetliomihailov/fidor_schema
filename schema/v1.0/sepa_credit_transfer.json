@@ -118,10 +118,6 @@
       "rel"    : "create",
       "href"   : "sepa_credit_transfers",
       "method" : "POST"
-    },
-    {
-      "rel"  : "transaction",
-      "href" : "sepa_credit_transfers/{id}/transaction"
     }
   ]
 }
