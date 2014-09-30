@@ -18,6 +18,9 @@
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
+    "transaction_id" : {
+      "$ref" : "./base_types/base_types.json#definitions/transaction_id"
+    },
     "receiver" : {
       "description" : "The transaction's receiver can be defined as a numerical fidor account id, a twitter name, an email or a phone number.",
       "required"    : true,
@@ -94,12 +97,13 @@
         "filter[states]" : {
           "title" : "Filter by single or multiple csv delimited states",
           "enum"  : [
-            "created",
+            "received",
             "mobile_tan_sent",
             "pending_receiver_message",
             "pending_receiver",
             "pending_backoffice_transfer",
-            "completed",
+            "success",
+            "failure",
             "expired"
           ],
           "type" : "string"
