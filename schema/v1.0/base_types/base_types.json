@@ -29,7 +29,7 @@
       "maxLength"   : 100
     },
     "twitter" : {
-      "description" : "Twitter's username",
+      "description" : "Twitter username",
       "type"        : "string",
       "pattern"     : "^@(\\w){1,15}$",
       "TODO"        : "create a regexp"
@@ -53,13 +53,15 @@
     },
     "iban" : {
       "description" : "IBAN",
+      "checksum"    : "Checksum is calculated as described in ISO 13616-1, 2 digits MOD97 inserted after the country code",
       "type"        : "string",
       "maxLength"   : 34,
-      "TODO"        : "Add regexp and description of checksum (?)"
+      "pattern"     : "^[A-Z]{2}[0-9]{2}[A-Z0-9]{11,30}$"
     },
     "bic" : {
       "description" : "BIC / Swift code of bank",
       "type"        : "string",
+      "pattern"     : "^([A-Z0-9]{8}|[A-Z0-9]{8})$",
       "maxLength"   : 11
     },
     "eref" : {
@@ -82,11 +84,8 @@
     },
     "subject" : {
       "description" : "Transfer subject (reference)",
-      "type"        : [
-        "string",
-        "null"
-      ],
-      "pattern" : "TODO"
+      "type"        : "string",
+      "pattern"     : "TODO"
     },
     "amount" : {
       "_comment"    : "must be greater than 0 e.g. > 0",
