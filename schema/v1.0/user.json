@@ -12,7 +12,7 @@
       "required" : true,
       "readonly" : true
     },
-    "last_login_at" : {
+    "last_sign_in_at" : {
       "description" : "Last time the user accessed fidor.",
       "format"      : "date-time",
       "readonly"    : true,
