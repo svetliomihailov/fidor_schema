@@ -36,8 +36,7 @@
     "twitter" : {
       "description" : "Twitter username",
       "type"        : "string",
-      "pattern"     : "^@(\\w){1,15}$",
-      "TODO"        : "create a regexp"
+      "pattern"     : "^@(\\w){1,15}$"
     },
     "created_at" : {
       "description" : "Creation date-time, never changes.",
@@ -90,7 +89,7 @@
     "subject" : {
       "description" : "Transfer subject (reference)",
       "type"        : "string",
-      "pattern"     : "TODO"
+      "TODO"        : "precise charset description..."
     },
     "amount" : {
       "_comment"    : "must be greater than 0 e.g. > 0",
