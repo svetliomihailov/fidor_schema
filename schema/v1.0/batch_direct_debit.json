@@ -2,7 +2,7 @@
   "type"        : "object",
   "title"       : "Batch Direct Debit",
   "name"        : "batch_direct_debit",
-  "description" : "A direct debit batch contains multiple direct debits which are processed asynchronous.",
+  "description" : "A direct debit batch contains multiple direct debits which are processed asynchronously.",
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -75,16 +75,10 @@
       "format"      : "uri"
     },
     "created_at" : {
-      "description" : "Creation date-time, never changes.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
     "updated_at" : {
-      "description" : "Last update date-time.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
   },
   "links" : [
