@@ -4,7 +4,7 @@
     "context" : "sepa_credit_transfers",
     "privileges" : ["index", "show", "create"],
     "fields" : ["id","account_id","user_id","transaction_id", "external_uid",
-                "subject","amount","remote_name","remote_iban",
+                "subject","amount","remote_name","remote_iban", "transaction_id",
                 "remote_bic","state","created_at","updated_at"]
   },
 

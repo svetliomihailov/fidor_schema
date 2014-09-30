@@ -30,7 +30,8 @@ describe Fidor::Acl do
   context 'validate fields' do
 
     before do
-      @schemas = SchemaTools::Reader.read_all(Fidor::Schema.path)
+      SchemaTools.schema_path = Fidor::Schema.path
+      @schemas = SchemaTools::Reader.read_all Fidor::Schema.path
       Fidor::Acl.init
     end
 
