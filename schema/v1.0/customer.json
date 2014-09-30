@@ -118,7 +118,7 @@
       "readonly"    : true
     },
     "is_verified" : {
-      "description" : "Account owner has been verified by post-ident.",
+      "description" : "Indicates whether KYC has been performed.",
       "type"        : "boolean",
       "readonly"    : true
     },
