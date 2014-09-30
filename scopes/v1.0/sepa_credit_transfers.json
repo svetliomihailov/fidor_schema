@@ -2,9 +2,9 @@
   {
     "name" : "readwrite_sepa_credit_transfer",
     "context" : "sepa_credit_transfers",
-    "privileges" : ["index", "show", "create", "update"],
-    "fields" : ["id","account_id","user_id","transaction_id",
-                "subject","amount","external_ref","remote_name","remote_iban",
+    "privileges" : ["index", "show", "create"],
+    "fields" : ["id","account_id","user_id","transaction_id", "external_uid",
+                "subject","amount","remote_name","remote_iban", "transaction_id",
                 "remote_bic","state","created_at","updated_at"]
   },
 
@@ -12,9 +12,9 @@
   {
     "name" : "readwrite_sepa_credit_transfer_mtan",
     "context" : "sepa_credit_transfers",
-    "privileges" : ["index", "show", "create", "update"],
+    "privileges" : ["index", "show", "create"],
     "fields" : ["id","account_id","user_id","transaction_id",
-                "subject","amount","external_ref","remote_name","remote_iban",
+                "subject","amount","remote_name","remote_iban",
                 "remote_bic","state","created_at","updated_at"]
   }
 

@@ -1,0 +1,14 @@
+[
+  {
+    "name" : "readwrite_batch_transfer",
+    "context" : "batch_transfers",
+    "privileges" : ["index", "show", "create"],
+    "fields" : ["id","external_uid", "account_id", "state","created_at",
+                "updated_at", "user_id", "sepa_credit_transfers", "internal_transfers",
+      "sepa_credit_transfer_ids",  "internal_transfer_ids", "sepa_credit_transfer_errors",
+      "internal_transfer_errors", "number_of_transfers", "success_url"]
+
+//    "write_fields" : ["id","external_uid", "account_id",
+//                "state","created_at","updated_at", "user_id"]
+  }
+]

@@ -4,8 +4,8 @@
     "context" : "transactions",
     "privileges" : ["index", "show"],
     "fields" : ["id", "account_id", "transaction_type", "transaction_type_details",
-                "amount", "booking_date", "value_date", "booking_code",
-                "return_transaction_id", "external_ref", "created_at", "updated_at"]
+                "amount", "booking_date", "value_date", "booking_code", "subject",
+                "return_transaction_id", "created_at", "updated_at"]
   }
   /* TODO commented due to new nested transaction_type_details which we must handle differently
   ,
