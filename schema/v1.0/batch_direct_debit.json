@@ -74,18 +74,6 @@
       "type"        : "string",
       "format"      : "uri"
     },
-    "started_at" : {
-      "description" : "Time the batch processing started.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
-    },
-    "finished_at" : {
-      "description" : "Time the batch processing finished.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
-    },
     "created_at" : {
       "description" : "Creation date-time, never changes.",
       "format"      : "date-time",
