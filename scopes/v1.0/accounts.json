@@ -3,7 +3,7 @@
     "name" : "read_account_full",
     "context" : "accounts",
     "privileges" : ["index", "show"],
-    "fields" : ["id", "account_number", "iban", "balance", "balance_available",
+    "fields_r" : ["id", "account_number", "iban", "balance", "balance_available",
                 "overdraft","preauth_amount", "cash_flow_per_year", "is_debit_note_enabled",
                 "is_trusted", "is_locked", "currency", "customers", "created_at",
                 "updated_at"]
@@ -12,18 +12,18 @@
     "name" : "read_account_number",
     "context" : "accounts",
     "privileges" : ["index", "show"],
-    "fields" : ["iban", "account_number"]
+    "fields_r" : ["iban", "account_number"]
   },
   {
     "name" : "read_account_balance",
     "context" : "accounts",
     "privileges" : ["index", "show"],
-    "fields" : ["balance", "balance_available", "preauth_amount", "cash_flow_per_year"]
+    "fields_r" : ["balance", "balance_available", "preauth_amount", "cash_flow_per_year"]
   },
   {
     "name" : "read_account_state",
     "context" : "accounts",
     "privileges" : ["index", "show"],
-    "fields" : ["is_trusted", "is_locked"]
+    "fields_r" : ["is_trusted", "is_locked"]
   }
 ]

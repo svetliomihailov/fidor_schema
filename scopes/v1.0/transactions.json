@@ -3,25 +3,28 @@
     "name" : "read_transaction_full",
     "context" : "transactions",
     "privileges" : ["index", "show"],
-    "fields" : ["id", "account_id", "transaction_type", "transaction_type_details",
+    "fields_r" : ["id", "account_id", "transaction_type", "transaction_type_details",
                 "amount", "booking_date", "value_date", "booking_code", "subject",
                 "return_transaction_id", "created_at", "updated_at"]
-  }
-  /* TODO commented due to new nested transaction_type_details which we must handle differently
-  ,
-
+  },
   {
     "name" : "read_transaction_subject",
     "context" : "transactions",
     "privileges" : ["index", "show"],
-    "fields" : ["subject"]
-  },
+    "fields_r" : ["subject"]
+  }
+  /* TODO commented due to new nested transaction_type_details which we must handle differently
+  ,
+
 
   {
     "name" : "read_transaction_remote",
     "context" : "transactions",
     "privileges" : ["index", "show"],
-    "fields" : ["remote_holder", "remote_iban", "remote_bic", "remote_fidor_id"]
+    "fields" : ["transaction_type_details.remote_holder",
+                  "transaction_type_details.remote_iban",
+                  "transaction_type_detailsremote_bic",
+                  "remote_fidor_id.transaction_type_details"]
   },
 
   {
