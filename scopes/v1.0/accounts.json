@@ -1,5 +1,14 @@
 [
   {
+    "name" : "read_account_full",
+    "context" : "accounts",
+    "privileges" : ["index", "show"],
+    "fields" : ["id", "account_number", "iban", "balance", "balance_available",
+                "overdraft","preauth_amount", "cash_flow_per_year", "is_debit_note_enabled",
+                "is_trusted", "is_locked", "currency", "customers", "created_at",
+                "updated_at"]
+  },
+  {
     "name" : "read_account_number",
     "context" : "accounts",
     "privileges" : ["index", "show"],
