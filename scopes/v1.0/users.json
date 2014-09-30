@@ -12,9 +12,9 @@
     "fields" : ["email"]
   },
   {
-    "name" : "read_user_last_login_at",
+    "name" : "read_user_last_sign_in_at",
     "context" : "users",
     "privileges" : ["show"],
-    "fields" : ["last_login_at"]
+    "fields" : ["last_sign_in_at"]
   }
 ]
