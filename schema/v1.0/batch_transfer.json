@@ -2,7 +2,7 @@
   "type"        : "object",
   "title"       : "Batch Transfer",
   "name"        : "batch_transfer",
-  "description" : "A transfer batch contains multiple transfers which are processed asynchronous.",
+  "description" : "A transfer batch contains multiple transfers which are processed asynchronously.",
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -105,19 +105,14 @@
     },
     "success_url" : {
       "description" : "Url receiving a POST with the batch object after processing is finished.",
-      "type"        : "string"
+      "type"        : "string",
+      "format"      : "uri
     },
     "created_at" : {
-      "description" : "Creation date-time, never changes.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
     "updated_at" : {
-      "description" : "Last update date-time.",
-      "format"      : "date-time",
-      "readonly"    : true,
-      "type"        : "string"
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
   },
   "links" : [
@@ -147,10 +142,10 @@
         "filter[states]" : {
           "title" : "Filter by single or multiple csv delimited states",
           "enum"  : [
-            "created",
+            "received",
             "processing",
-            "completed",
-            "error"
+            "success",
+            "failure"
           ],
           "type" : "string"
         },
