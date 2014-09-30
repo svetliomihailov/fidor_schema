@@ -55,7 +55,7 @@
       "readonly"    : true
     },
     "is_locked" : {
-      "description" : "Is the account locked",
+      "description" : "Indicates whether the account is locked",
       "type"        : "boolean",
       "readonly"    : true
     },
@@ -95,7 +95,7 @@
       "href" : "accounts/{id}/transactions"
     },
     {
-      "rel"  : "transactions",
+      "rel"  : "internal_transfers",
       "href" : "accounts/{id}/internal_transfers"
     },
     {
