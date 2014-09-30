@@ -24,7 +24,7 @@
       "items"       : {
         "type"       : "object",
         "properties" : {
-          "$ref" : "./direct_debit.json#properties"
+          "$ref" : "./sepa_direct_debit.json#properties"
         }
       }
     },
