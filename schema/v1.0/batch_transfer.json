@@ -94,7 +94,6 @@
     },
     "state" : {
       "description" : "State of the batch operation. received: We received the batch | processing: Batch is currently being processed | failure: An error occurred during execution of the batch. In this case you should check the transfers. | success: Batch execution has been completed.",
-      "default"     : "pending",
       "enum"        : [
         "received",
         "processing",
