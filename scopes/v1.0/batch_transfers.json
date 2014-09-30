@@ -2,8 +2,11 @@
   {
     "name" : "readwrite_batch_transfer",
     "context" : "batch_transfers",
-    "privileges" : ["index", "show", "create", "update"],
+    "privileges" : ["index", "show", "create"],
     "fields" : ["id","external_uid", "account_id",
-                "state","created_at","updated_at"]
+                "state","created_at","updated_at", "user_id"]
+
+//    "write_fields" : ["id","external_uid", "account_id",
+//                "state","created_at","updated_at", "user_id"]
   }
 ]

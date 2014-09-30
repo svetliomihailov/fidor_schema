@@ -2,56 +2,56 @@
   {
     "name" : "read_customer_name",
     "context" : "customers",
-    "privileges" : ["current", "show"],
+    "privileges" : ["show"],
     "fields" : ["title", "first_name","last_name"]
   },
 
   {
     "name" : "read_customer_nick",
     "context" : "customers",
-    "privileges" : ["current", "show"],
+    "privileges" : ["show"],
     "fields" : ["nick"]
   },
 
   {
     "name": "read_customer_address",
     "context": "customers",
-    "privileges": ["current","show"],
+    "privileges": ["show"],
     "fields": ["adr_street", "adr_street_number", "adr_city", "adr_country"]
   },
 
   {
     "name": "read_customer_phone",
     "context": "customers",
-    "privileges": ["current","show"],
+    "privileges": ["show"],
     "fields": ["adr_phone", "adr_mobile", "adr_businessphone"]
   },
 
    {
     "name": "read_customer_birthday",
     "context": "customers",
-    "privileges": ["current","show"],
+    "privileges": ["show"],
     "fields": ["birthday"]
   },
 
    {
     "name": "read_customer_is_verified",
     "context": "customers",
-    "privileges": ["current","show"],
+    "privileges": ["show"],
     "fields": ["is_verified"]
   },
 
   {
     "name": "read_customer_nationality",
     "context": "customers",
-    "privileges": ["current","show"],
+    "privileges": ["show"],
     "fields": ["nationality"]
   },
 
   {
     "name": "read_customer_kyc_information",
     "context": "customers",
-    "privileges": ["current","show"],
+    "privileges": ["show"],
     "fields": ["nationality", "id_card_registration_city", "id_card_number", "id_card_valid_until", "birthday"]
   }
 
