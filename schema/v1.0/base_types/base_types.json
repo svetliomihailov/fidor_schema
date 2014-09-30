@@ -8,13 +8,14 @@
     },
     "account_id" : {
       "description" : "Fidor account the transaction belongs to.",
-      "type"        : "integer",
-      "maxLength"   : 8,
+      "type"        : "string",
+      "pattern"     : "\\d{8}"
     },
     "user_id" : {
       "description" : "Identifies the user who created this object",
       "readonly"    : true,
-      "type"        : "integer"
+      "type"        : "string",
+      "pattern"     : "\\d{8}"
     },
     "phone" : {
       "description" : "A phone or fax number, formatted with country code: +49 123 1233213",
@@ -30,7 +31,7 @@
     "twitter" : {
       "description" : "Twitter's username",
       "type"        : "string",
-      "pattern"     : "^@?(\\w){1,15}$"
+      "pattern"     : "^@(\\w){1,15}$",
       "TODO"        : "create a regexp"
     },
     "created_at" : {
@@ -48,7 +49,7 @@
     "external_uid" : {
       "description" : "Unique ID of the creator of the transaction. In case a uid is reused for a transaction, it is not executed, this mechanism can be used to prevent double bookings in case of network failure or similar event where transaction status is unknown",
       "type"        : "string",
-      "required"    : true,
+      "required"    : true
     },
     "iban" : {
       "description" : "IBAN",

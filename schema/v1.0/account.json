@@ -49,7 +49,7 @@
       "readonly"    : true
     },
     "is_trusted" : {
-      "description" : "Indicates whether account holder has fulfilled KYC requirements.",
+      "description" : "Indicates if this is an escrow account",
       "type"        : "boolean",
       "default"     : false,
       "readonly"    : true
