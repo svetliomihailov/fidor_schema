@@ -89,6 +89,7 @@
     "subject" : {
       "description" : "Transfer subject (reference)",
       "type"        : "string",
+      "pattern"     : "^[A-Za-z0-9_\\.\\, &\\-\\/\\+\\*\\$\\%@üöäÜÖÄß€]*$",
       "TODO"        : "precise charset description..."
     },
     "amount" : {
