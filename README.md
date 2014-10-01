@@ -22,6 +22,47 @@ Or install it yourself as:
 
 ## Usage
 
+Initialize & read the global acl registry as plain ruby hash
+    
+    Fidor::Acl.init         # reads the json definitions
+    Fidor::Acl.registry     # returns array of ruby hashes
+
+Init permissions as objects
+
+    Fidor::Acl.init_objects       # reads the json definitions
+    Fidor::Acl.object_registry    # return array of Permission objects
+    
+Work with permissions objects    
+
+    permission = Fidor::Acl.object_registry.first
+    permission.name
+    permission.context
+    permission.privileges
+    permission.fields_r
+    permission.fields_rw
+
+Compare permissions
+
+    perm1 = Fidor::Acl.object_registry[0]
+    perm2 = Fidor::Acl.object_registry[1]
+    # a permission equals another if name, context, privileges and fields are the same
+    perm1 == perm2
+
+Convert a permission to & from hash
+
+  p = Permission.new
+  p.context = 'accounts'
+  p.name = 'read_accounts'
+  p.to_hash
+  
+  p1 = Fidor::Acl::Permission.from_hash( 'context'=> 'users', 'name' => 'read users' )
+  p1.context => 'users'
+  
+Translations are kept in lib/locales and there are helper methods for a permission to use them:
+
+    permission.translated_name
+    permission.translated_fields_r   #=> read-only fields sorted in the current language 
+    permission.translated_fields_rw  #=> read/write fields  
 
 
 
