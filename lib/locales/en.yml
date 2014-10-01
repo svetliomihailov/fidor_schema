@@ -1,49 +1,69 @@
+---
 en:
   permission_names:
     read_account_balance: Read account balance
-    read_account_balance_info:
+    read_account_balance_info: 
+    read_account_full: 
+    read_account_full_info: 
     read_account_number: Read account number/iban
-    read_account_number_info:
+    read_account_number_info: 
     read_account_state: Read account state
     read_account_state_info: Wether an account is locked or trusted
     read_customer_address: Read customer address
     read_customer_address_info: Read all address related fields
     read_customer_birthday: Read customer birthday
-    read_customer_birthday_info:
+    read_customer_birthday_info: 
+    read_customer_full: 
+    read_customer_full_info: 
     read_customer_is_verified: Read customer verification status
-    read_customer_is_verified_info:
+    read_customer_is_verified_info: 
     read_customer_kyc_information: Read customer KYC informations
-    read_customer_kyc_information_info:
+    read_customer_kyc_information_info: 
     read_customer_name: Read customer name
-    read_customer_name_info:
+    read_customer_name_info: 
     read_customer_nationality: Read customer nationality
-    read_customer_nationality_info:
+    read_customer_nationality_info: 
     read_customer_nick: Read customer nickname
-    read_customer_nick_info:
+    read_customer_nick_info: 
     read_customer_phone: Read customer phone numbers
-    read_customer_phone_info:
+    read_customer_phone_info: 
     read_transaction_credit_card: Read transaction caredit card information
-    read_transaction_credit_card_info:
+    read_transaction_credit_card_info: 
     read_transaction_full: Read transactions with all fields
-    read_transaction_full_info:
+    read_transaction_full_info: 
     read_transaction_remote: Read transactions only receiver fields
-    read_transaction_remote_info:
+    read_transaction_remote_info: 
     read_transaction_subject: Read transactions subject
-    read_transaction_subject_info:
+    read_transaction_subject_info: 
     read_user_email: Read user email
-    read_user_email_info:
+    read_user_email_info: 
+    read_user_full: 
+    read_user_full_info: 
+    read_user_last_login_at: 
+    read_user_last_login_at_info: 
+    readwrite_batch_direct_debit: 
+    readwrite_batch_direct_debit_info: 
+    readwrite_batch_transfer: 
+    readwrite_batch_transfer_info: 
+    readwrite_internal_transfer: 
+    readwrite_internal_transfer_info: 
     readwrite_sepa_credit_transfer: Read and Create Transfers
-    readwrite_sepa_credit_transfer_info: The app has full access to create new transfers and read existing ones.
+    readwrite_sepa_credit_transfer_info: The app has full access to create new transfers
+      and read existing ones.
     readwrite_sepa_credit_transfer_mtan: Read and Create Transfers via mTan
-    readwrite_sepa_credit_transfer_mtan_info:
-
+    readwrite_sepa_credit_transfer_mtan_info: 
+    readwrite_sepa_direct_debit: 
+    readwrite_sepa_direct_debit_info: 
   permission_field_names:
     account_id: Account ID
-    adr_businessphone:
+    account_number: 
+    adr_businessphone: 
     adr_city: City
     adr_country: Country
+    adr_fax: 
     adr_mobile: Mobile
     adr_phone: Phone
+    adr_post_code: 
     adr_street: Street
     adr_street_number: Street number
     amount: Amount
@@ -52,40 +72,71 @@ en:
     birthday: Birthday
     book_code: Book Code
     book_date: Booking date
+    booking_code: 
+    booking_date: 
     cash_flow_per_year: Cash flow per year
     cc_category: CC Category
     cc_merchant_category: CC merchant category
     cc_merchant_name: CC merchant name
     cc_type: CC Type
+    collection_date: 
     created_at: Created at
+    currency: 
+    customers: 
     email: Email
+    eref: 
     external_ref: external ref
+    external_uid: 
     first_name: Firstname
+    gender: 
     iban: IBAN
     id: ID
     id_card_number: ID Card number
     id_card_registration_city: ID Card Registration City
     id_card_valid_until: ID Card valid until
+    internal_transfer_errors: 
+    internal_transfer_ids: 
+    internal_transfers: 
+    is_debit_note_enabled: 
     is_locked: Lock Status
     is_trust: Is trust
+    is_trusted: 
     is_verified: Verification status
     kind: Kind
+    last_login_at: 
     last_name: Lastname
+    maiden_name: 
+    mandate_id: 
+    marital_status: 
     nationality: Nationality
     nick: Nickname
     number: Number
+    number_of_debits: 
+    number_of_transfers: 
+    overdraft: 
     preauth_amount: Preauthorisation amount
+    receiver: 
+    religion: 
     remote_bic: Receiver BIC
     remote_fidor_id: Receiver Fidor ID
-    remote_name: Receiver name
     remote_iban: Receiver IBAN
+    remote_name: Receiver name
     return_transaction_id: Returned transaction id
+    sepa_credit_transfer_errors: 
+    sepa_credit_transfer_ids: 
+    sepa_credit_transfers: 
+    sepa_direct_debit_errors: 
+    sepa_direct_debit_ids: 
+    sepa_direct_debits: 
     sepa_eref: SEPA EndToEnd reference
     state: Status
     subject: Subject
+    success_url: 
     title: Title
     transaction: Transaction
     transaction_id: Transaction ID
+    transaction_type: 
+    transaction_type_details: 
     transfer_id: Transfer ID
     updated_at: Updated at
     user_id: User ID
