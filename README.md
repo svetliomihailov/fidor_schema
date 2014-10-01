@@ -48,15 +48,17 @@ Compare permissions
     # a permission equals another if name, context, privileges and fields are the same
     perm1 == perm2
 
-Convert a permission to & from hash
+Convert a permission to hash
 
-  p = Permission.new
-  p.context = 'accounts'
-  p.name = 'read_accounts'
-  p.to_hash
-  
-  p1 = Fidor::Acl::Permission.from_hash( 'context'=> 'users', 'name' => 'read users' )
-  p1.context => 'users'
+    p = Permission.new
+    p.context = 'accounts'
+    p.name = 'read_accounts'
+    p.to_hash
+    
+Convert a permission from hash
+
+    p1 = Fidor::Acl::Permission.from_hash( 'context'=> 'users', 'name' => 'read users' )
+    p1.context => 'users'
   
 Translations are kept in lib/locales and there are helper methods for a permission to use them:
 
