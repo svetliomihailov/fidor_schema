@@ -1,4 +1,5 @@
 require 'active_support'
+require 'yaml'
 module Fidor
   # Base class with methods to read permissions from scope json files and setup
   # ruby object structures from them
@@ -77,6 +78,10 @@ module Fidor
         File.expand_path( File.join('../../scopes', version), File.dirname(__FILE__))
       end
 
+      def i18n_files
+        Dir.glob( File.dirname(__FILE__) + '/../locales/*.{rb,yml}' )
+      end
+
       # Tiny helper to generate i18n keys for all permission names and
       # additionally an [xy_name]_info for a longer description
       def i18n_permission_keys
@@ -90,6 +95,51 @@ module Fidor
         perms = init
         perms.flat_map{|i| [*i['fields_r'], *i['fields_rw']] }.uniq.sort.map{|i| "#{i}:"}
       end
+
+      def i18n_find_missing
+        perm_keys = i18n_permission_keys.map{|i| i.gsub(':', '')}
+        field_keys = i18n_field_keys.map{|i| i.gsub(':', '')}
+
+        res = { new_fields: [], new_perms: [] }
+
+        # read all lang files into hash
+        existing = {}
+        i18n_files.each { |file| existing.merge!(YAML.load_file file) }
+        # just use first language found to get missing keys
+        existing.first[1].each do |key, transl|
+          if key == 'permission_names'
+            res[:new_perms] = perm_keys - transl.keys
+          end
+          if key == 'permission_field_names'
+            res[:new_fields] = field_keys - transl.keys
+          end
+        end
+        res
+      end
+
+      def i18n_add_missing
+        new_keys = i18n_find_missing
+        # add missing keys and write yaml files
+        existing = {}
+        i18n_files.each { |file| existing.merge!(YAML.load_file file) }
+        existing.each do |lang, transl|
+          # add new keys to the existing hashes
+          new_keys[:new_perms].each do |fld|
+            existing[lang]['permission_names'][fld] = nil
+          end
+          new_keys[:new_fields].each do |fld|
+            existing[lang]['permission_field_names'][fld] = nil
+          end
+          # sort by key
+          existing[lang]['permission_names'] = Hash[ existing[lang]['permission_names'].sort_by{|k,v| k} ]
+          existing[lang]['permission_field_names'] = Hash[ existing[lang]['permission_field_names'].sort_by{|k,v| k} ]
+
+          # write file
+          path = File.dirname(__FILE__) + "/../locales/#{lang}.yml"
+          File.open(path, 'w') {|f| f.write( {lang => existing[lang] }.to_yaml) }
+        end
+      end
+
     end
   end
 end

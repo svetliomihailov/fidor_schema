@@ -64,8 +64,15 @@ Translations are kept in lib/locales and there are helper methods for a permissi
     permission.translated_fields_r   #=> read-only fields sorted in the current language 
     permission.translated_fields_rw  #=> read/write fields  
 
+Update language files with new permissions names or fields:
 
-
+    rake i18n:add 
+    # or manually
+    # => show new keys
+    Fidor::Acl.i18n_find_missing 
+    # write file with new keys
+    Fidor::Acl.i18n_add_missing
+  
 ## Contributing
 
 1. Fork it ( http://github.com/<my-github-username>/fidor_acl/fork )

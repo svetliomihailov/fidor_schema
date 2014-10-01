@@ -113,6 +113,15 @@ describe Fidor::Acl do
       expect(res.length).to be 72
       expect(res).to include 'email:'
     end
+
+    it 'finds missing' do
+      res = Fidor::Acl.i18n_find_missing
+    end
+
+    xit 'adds missing' do # no spec here since it could screw up our lang files
+      res = Fidor::Acl.i18n_add_missing
+    end
+
   end
 
 end
