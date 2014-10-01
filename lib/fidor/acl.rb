@@ -23,7 +23,7 @@ module Fidor
         registry.each do |permission|
           context = permission['context']
           permissions_hash[context] ||= []
-          permission['privileges'].each do |privilege|
+          permission['privileges'].present? && permission['privileges'].each do |privilege|
             (permissions_hash[context] << privilege) unless permissions_hash[context].include?(privilege)
           end
         end
@@ -84,11 +84,11 @@ module Fidor
         perms.flat_map{|i| [ "#{i['name']}:", "#{i['name']}_info:" ] }.sort
       end
 
-      # Tiny helper to generate i18n keys for all permission names and
+      # Helper to generate i18n keys for all permission names and
       # additionally an [xy_name]_info for a longer description
       def i18n_field_keys
         perms = init
-        perms.flat_map{|i| i['fields'] }.uniq.sort.map{|i| "#{i}:"}
+        perms.flat_map{|i| [*i['fields_r'], *i['fields_rw']] }.uniq.sort.map{|i| "#{i}:"}
       end
     end
   end

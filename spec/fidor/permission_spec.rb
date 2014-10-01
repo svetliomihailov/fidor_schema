@@ -13,7 +13,7 @@ describe Fidor::Permission do
     it 'includes the acls values' do
       expect(permission.name).to eq 'readwrite_sepa_credit_transfer'
 
-      ['context', 'privileges', 'fields'].each do |field|
+      ['context', 'privileges', 'fields_r', 'fields_rw'].each do |field|
         expect(permission.send(field)).to eq readwrite_transfer[field]
       end
     end
@@ -34,15 +34,20 @@ describe Fidor::Permission do
       it { should eq I18n.t('permission_names.readwrite_sepa_credit_transfer') }
     end
 
-    describe '.translated_fields' do
-      subject { permission.translated_fields }
+    describe '.translated_fields_r' do
+      subject { permission.translated_fields_r }
 
-      it { should include 'Account ID' }
+      it { should include 'Created at' }
+    end
+    describe '.translated_fields_rw' do
+      subject { permission.translated_fields_rw }
+
+      it { should include 'Amount' }
     end
   end
 
-  describe '.fields' do
-    subject { permission.fields }
+  describe '.fields_r' do
+    subject { permission.fields_r }
 
     let(:permission) { Fidor::Permission.new }
 
@@ -53,7 +58,7 @@ describe Fidor::Permission do
     end
 
     context 'with ["bar"] as value' do
-      before { permission.fields = ['bar'] }
+      before { permission.fields_r = ['bar'] }
 
       it { should eql ['bar'] }
     end
@@ -109,8 +114,8 @@ describe Fidor::Permission do
     context 'fields' do
       context 'with same fields in different order' do
         before do
-          one.fields = ['Foo', 'Bar', 'Baz']
-          two.fields = ['Bar', 'Foo', 'Baz']
+          one.fields_r = ['Foo', 'Bar', 'Baz']
+          two.fields_r = ['Bar', 'Foo', 'Baz']
         end
 
         it { should be true }
@@ -118,8 +123,8 @@ describe Fidor::Permission do
 
       context 'with different fields' do
         before do
-          one.fields = ['Foo', 'Bar', 'Baz']
-          two.fields = ['Bar', 'ZAP', 'Baz']
+          one.fields_rw = ['Foo', 'Bar', 'Baz']
+          two.fields_rw = ['Bar', 'ZAP', 'Baz']
         end
 
         it { should be false }

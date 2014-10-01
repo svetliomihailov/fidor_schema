@@ -32,21 +32,20 @@ describe Fidor::Acl do
     before do
       SchemaTools.schema_path = Fidor::Schema.path
       @schemas = SchemaTools::Reader.read_all Fidor::Schema.path
-      Fidor::Acl.init
+      Fidor::Acl.init_objects
     end
 
     it 'contains only fields defined in schema' do
-      Fidor::Acl.registry.each do |permission|
+      Fidor::Acl.object_registry.each do |permission|
         # find matching json schema
-        schema = @schemas.detect{|schema| schema['name'] == permission['context'].singularize }
+        schema = @schemas.detect{|schema| schema['name'] == permission.context.singularize }
         unless schema
-          expect(schema).to be, "Field validation failed! Schema for #{permission['context']} could not be found"
+          expect(schema).to be, "Field validation failed! Schema for #{permission.context} could not be found"
           next
         end
         schema_fields = schema['properties'].keys
-
-        permission['fields'].each do |permission_field|
-          expect(schema_fields).to include(permission_field), "expected schema '#{schema['name']}' to have a '#{permission_field}' property in permission: '#{permission['name']}'.\nAvailable #{schema['name']} fields:\n#{schema_fields}\n Please check the field-names in #{schema['name']}.json"
+        permission.fields.each do |perm_field|
+          expect(schema_fields).to include(perm_field), "expected schema '#{schema['name']}' to have a '#{perm_field}' property in permission: '#{permission.name}'.\nAvailable #{schema['name']} fields:\n#{schema_fields}\n Please check the field-names in #{schema['name']}.json"
         end
 
       end
@@ -54,10 +53,10 @@ describe Fidor::Acl do
 
     it 'uses all schema properties' do
       context_fields = {}  # all fields used in a context
-      Fidor::Acl.registry.each do |permission|
-        context_name = permission['context'].singularize
+      Fidor::Acl.object_registry.each do |permission|
+        context_name = permission.context.singularize
         context_fields[ context_name ] ||= []
-        context_fields[ context_name ] += permission['fields']
+        context_fields[ context_name ] += permission.fields # use all fields
         context_fields[ context_name ].uniq!
       end
 
@@ -76,30 +75,30 @@ describe Fidor::Acl do
 
     before do
       @schemas = SchemaTools::Reader.read_all(Fidor::Schema.path)
-      Fidor::Acl.init
+      Fidor::Acl.init_objects
     end
 
     it 'contains only privileges/routes defined in schema' do
-      Fidor::Acl.registry.each do |permission|
+      Fidor::Acl.object_registry.each do |permission|
         # find matching json schema
-        schema = @schemas.detect{|schema| schema['name'] == permission['context'].singularize }
+        schema = @schemas.detect{|schema| schema['name'] == permission.context.singularize }
         next unless schema
         schema_privs = schema['links'].map{|i| i['rel']}
         # index => instances
         # show => self
         # destroy => destroy
         # create => create
-        permission['privileges'].each do |permission_priv|
-          link_rel = case permission_priv
+        permission.privileges.each do |privilege|
+          link_rel = case privilege
                        when 'index'
                          'instances'
                        when 'show'
                          'self'
                        when 'create', 'update', 'destroy', 'current'
-                         permission_priv
+                         privilege
                      end
 
-          expect(schema_privs).to include(link_rel), "expected schema '#{schema['name']}' to have a link with rel '#{link_rel}'. Used in permission '#{permission['name']}'.\nAvailable #{schema['name']} links:\n#{schema_privs}\n "
+          expect(schema_privs).to include(link_rel), "expected schema '#{schema['name']}' to have a link with rel '#{link_rel}'. Used in permission '#{permission.name}'.\nAvailable #{schema['name']} links:\n#{schema_privs}\n "
         end
 
       end

@@ -23,7 +23,8 @@ module Fidor
       perm.name = opts['name']
       perm.context = opts['context']
       perm.privileges = opts['privileges']
-      perm.fields = opts['fields']
+      perm.fields_r = opts['fields_r']
+      perm.fields_rw = opts['fields_rw']
       perm
     end
 
@@ -31,7 +32,8 @@ module Fidor
       name == other.name &&
       context == other.context &&
       privileges.sort == other.privileges.sort &&
-      fields.sort == other.fields.sort
+      fields_r.sort == other.fields_r.sort &&
+      fields_rw.sort == other.fields_rw.sort
     end
 
     def <=>(other)
@@ -55,32 +57,59 @@ module Fidor
         'name' => name,
         'context' => context,
         'privileges' => privileges,
-        'fields' => fields
+        'fields_r' => fields_r,
+        'fields_rw' => fields_rw
       }
     end
+
     # @return [String]
     def translated_name
       I18n.t(self.name, scope: :permission_names)
     end
 
-    def translated_fields
-      fields.map{|i| I18n.t(i, scope: :permission_field_names) }.sort
+    def translated_fields_r
+      fields_r.map{|i| I18n.t(i, scope: :permission_field_names) }.sort
+    end
+    def translated_fields_rw
+      fields_rw.map{|i| I18n.t(i, scope: :permission_field_names) }.sort
     end
 
     def privileges
       @privileges || []
     end
 
-    def fields
-      @fields || []
-    end
-
+    # @param [Array<String>] privileges list e.g index,show which map to controller actions
     def privileges=(privileges)
       @privileges = privileges
     end
 
-    def fields=(fields)
-      @fields = fields
+    # @return [Array<String>] all fields r+rw
+    def fields
+      res = []
+      res += fields_r
+      res += fields_rw
+      res
     end
+
+    # @return [Array<String>] all read-only fields
+    def fields_r
+      @fields_r || []
+    end
+
+    # @return [Array<String>] all read/write fields
+    def fields_rw
+      @fields_rw || []
+    end
+
+    # @param [Array<String>] fields set as read-only
+    def fields_r=(fields)
+      @fields_r = fields
+    end
+
+    # @param [Array<String>] fields set as read/write
+    def fields_rw=(fields)
+      @fields_rw = fields
+    end
+
   end
 end
