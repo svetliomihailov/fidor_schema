@@ -1,0 +1,118 @@
+{
+  "type"        : "object",
+  "title"       : "Account",
+  "name"        : "account",
+  "description" : "A fidor bank account.",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
+    },
+    "account_number" : {
+      "description" : "The bank account number.",
+      "type"        : "string",
+      "maxLength"   : 10,
+      "readonly"    : true
+    },
+    "iban" : {
+      "$ref"     : "./base_types/base_types.json#definitions/iban",
+      "readonly" : true
+    },
+    "balance" : {
+      "description" : "Account balance",
+      "type"        : "number",
+      "readonly"    : true
+    },
+    "balance_available" : {
+      "description" : "Available account balance.",
+      "type"        : "number",
+      "readonly"    : true
+    },
+    "overdraft" : {
+      "description" : "Available account overdraft",
+      "type"        : "number",
+      "readonly"    : true
+    },
+    "preauth_amount" : {
+      "description" : "Amount available for pre-authorization.",
+      "type"        : "number",
+      "readonly"    : true
+    },
+    "cash_flow_per_year" : {
+      "description" : "Amount available for yearly cash flow. This is the limit of funds an account holder has at their disposal without fulfilling Germany KYC requirements.",
+      "type"        : "number",
+      "readonly"    : true
+    },
+    "is_debit_note_enabled" : {
+      "description" : "Whether this account is authorized to initiate direct debit transactions.",
+      "type"        : "boolean",
+      "default"     : false,
+      "readonly"    : true
+    },
+    "is_trusted" : {
+      "description" : "Indicates if this is an escrow account",
+      "type"        : "boolean",
+      "default"     : false,
+      "readonly"    : true
+    },
+    "is_locked" : {
+      "description" : "Indicates whether the account is locked",
+      "type"        : "boolean",
+      "readonly"    : true
+    },
+    "currency" : {
+      "$ref"     : "./base_types/base_types.json#definitions/currency",
+      "readonly" : true
+    },
+    "customers" : {
+      "description" : "The owners of the account",
+      "type"        : "array",
+      "items"       : {
+        "type"       : "object",
+        "properties" : {
+          "$ref" : "./customer.json#properties"
+        }
+      },
+      "readonly" : true
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "accounts/{id}"
+    },
+    {
+      "rel"  : "instances",
+      "href" : "accounts"
+    },
+    {
+      "rel"  : "transactions",
+      "href" : "accounts/{id}/transactions"
+    },
+    {
+      "rel"  : "internal_transfers",
+      "href" : "accounts/{id}/internal_transfers"
+    },
+    {
+      "rel"  : "sepa_credit_transfers",
+      "href" : "accounts/{id}/sepa_credit_transfers"
+    },
+    {
+      "rel"  : "sepa_direct_debits",
+      "href" : "accounts/{id}/sepa_direct_debits"
+    },
+    {
+      "rel"  : "batch_transfers",
+      "href" : "accounts/{id}/batch_transfers"
+    },
+    {
+      "rel"  : "batch_direct_debit",
+      "href" : "accounts/{id}/batch_direct_debits"
+    }
+  ]
+}

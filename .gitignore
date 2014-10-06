@@ -1,0 +1,8 @@
+coverage/*
+rdoc/*
+pkg/*
+Gemfile.lock
+.ruby-version
+.ruby-gemset
+*.swp
+.idea
