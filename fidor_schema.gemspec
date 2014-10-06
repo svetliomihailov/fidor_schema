@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name = 'fidor_schema'
   spec.version = Fidor::Schema::VERSION
   spec.authors = ['Georg Leciejewski']
-  spec.email = 'dev@fidortecs.de'
+  spec.email = 'dev@fidor.de'
   spec.summary = 'Fidor API - JSON Schema'
-  spec.description = %q{Fidor JSON Schema describes our API in terms of available objects, their fields and resource links.}
-  spec.homepage = 'http://www.fidortecs.de'
+  spec.description = %q{Fidor API description. Using JSON Schema to describe the available objects, their fields and resource links.}
+  spec.homepage = 'https://www.fidor.de'
   spec.license = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject{|i| i[/^docs\//] }

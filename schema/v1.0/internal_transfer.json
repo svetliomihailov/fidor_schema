@@ -24,7 +24,6 @@
     "receiver" : {
       "description" : "The transaction's receiver can be defined as a numerical fidor account id, a twitter name, an email or a phone number.",
       "required"    : true,
-      "TODO"        : "we have to check whether multiple type with multiple formats are valid. Or if we define custom formats",
       "oneOf"       : [
         {
           "$ref" : "./base_types/base_types.json#definitions/account_id"

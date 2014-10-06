@@ -89,13 +89,13 @@
     "subject" : {
       "description" : "Transfer subject (reference)",
       "type"        : "string",
-      "pattern"     : "^[A-Za-z0-9_\\.\\, &\\-\\/\\+\\*\\$\\%@üöäÜÖÄß€]*$",
-      "TODO"        : "precise charset description..."
+      "pattern"     : "^[A-Za-z0-9_\\.\\, &\\-\\/\\+\\*\\$\\%@üöäÜÖÄß€]*$"
     },
     "amount" : {
-      "_comment"    : "must be greater than 0 e.g. > 0",
-      "description" : "The transferred amount in account currency, two decimal places",
-      "type"        : "number"
+      "description" : "The transferred amount in account currency, two decimal places. Must be greater than 0 e.g. > 0",
+      "type"        : "number",
+      "exclusiveMinimum" : true,
+      "minimum" : 0
     },
     "transaction_type" : {
       "description" : "Type of the transaction",
