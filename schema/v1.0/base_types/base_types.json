@@ -63,7 +63,7 @@
     "bic" : {
       "description" : "BIC / Swift code of bank",
       "type"        : "string",
-      "pattern"     : "^([A-Z0-9]{8}|[A-Z0-9]{8})$",
+      "pattern"     : "^[A-Z0-9]{8,11}$",
       "maxLength"   : 11
     },
     "eref" : {
