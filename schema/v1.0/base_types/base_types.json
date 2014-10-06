@@ -8,14 +8,12 @@
     },
     "account_id" : {
       "description" : "Fidor account the transaction belongs to.",
-      "type"        : "string",
-      "pattern"     : "\\d{8}"
+      "type"        : "string"
     },
     "user_id" : {
       "description" : "Identifies the user who created this object",
       "readonly"    : true,
-      "type"        : "string",
-      "pattern"     : "\\d{8}"
+      "type"        : "string"
     },
     "transaction_id" : {
       "description" : "Identifies a reference to a corresponding transaction",
