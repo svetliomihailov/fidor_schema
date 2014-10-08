@@ -1,0 +1,19 @@
+{
+  "type"        : "object",
+  "title"       : "Sepa Mandates",
+  "name"        : "sepa_mandates",
+  "description" : "A paginated list of Sepa Mandate objects",
+  "properties"  : {
+    "sepa_mandates" : {
+      "type"  : "array",
+      "items" : {
+        "$ref" : "../sepa_mandate.json"
+      }
+    },
+    "links"      : {},
+    "collection" : {
+     "$ref" : "collection.json" 
+    }
+  }
+}
+

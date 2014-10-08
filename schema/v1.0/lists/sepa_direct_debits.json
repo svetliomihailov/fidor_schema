@@ -1,0 +1,19 @@
+{
+  "type"        : "object",
+  "title"       : "Sepa Direct Debits",
+  "name"        : "sepa_direct_debits",
+  "description" : "A paginated list of Sepa Direct Debit objects",
+  "properties"  : {
+    "sepa_direct_debits" : {
+      "type"  : "array",
+      "items" : {
+        "$ref" : "../sepa_direct_debit.json"
+      }
+    },
+    "links"      : {},
+    "collection" : {
+     "$ref" : "collection.json" 
+    }
+  }
+}
+
