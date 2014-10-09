@@ -7,8 +7,8 @@ This gem(besides the schema) provides a single utility method: the path to the
 json files.
 
     gem install fidor_schema
+    
     require 'fidor_schema'
-
     Fidor::Schema.path
 
 Other languages can take advantage of the raw json files.
