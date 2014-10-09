@@ -193,12 +193,18 @@
       "href" : "customers/{id}"
     },
     {
-      "rel"  : "instances",
-      "href" : "customers"
+      "rel"          : "instances",
+      "href"         : "customers",
+      "targetSchema" : {
+        "$ref" : "./lists/customers.json#"
+      }
     },
     {
-      "rel"  : "accounts",
-      "href" : "customers/{id}/accounts"
+      "rel"          : "accounts",
+      "href"         : "customers/{id}/accounts",
+      "targetSchema" : {
+        "$ref" : "./lists/accounts.json#"
+      }
     }
   ]
 }

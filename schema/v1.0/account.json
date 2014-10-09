@@ -87,32 +87,39 @@
       "href" : "accounts/{id}"
     },
     {
-      "rel"  : "instances",
-      "href" : "accounts"
+      "rel"          : "instances",
+      "href"         : "accounts",
+      "targetSchema" : {
+        "$ref" : "./lists/accounts.json#"
+      }
     },
     {
-      "rel"  : "transactions",
-      "href" : "accounts/{id}/transactions"
+      "rel"          : "transactions",
+      "href"         : "accounts/{id}/transactions",
+      "targetSchema" : {
+        "$ref" : "./lists/transactions.json#"
+      }
     },
     {
-      "rel"  : "internal_transfers",
-      "href" : "accounts/{id}/internal_transfers"
+      "rel"          : "internal_transfers",
+      "href"         : "accounts/{id}/internal_transfers",
+      "targetSchema" : {
+        "$ref" : "./lists/internal_transfers.json#"
+      }
     },
     {
-      "rel"  : "sepa_credit_transfers",
-      "href" : "accounts/{id}/sepa_credit_transfers"
+      "rel"          : "sepa_credit_transfers",
+      "href"         : "accounts/{id}/sepa_credit_transfers",
+      "targetSchema" : {
+        "$ref" : "./lists/sepa_credit_transfers.json#"
+      }
     },
     {
-      "rel"  : "sepa_direct_debits",
-      "href" : "accounts/{id}/sepa_direct_debits"
-    },
-    {
-      "rel"  : "batch_transfers",
-      "href" : "accounts/{id}/batch_transfers"
-    },
-    {
-      "rel"  : "batch_direct_debit",
-      "href" : "accounts/{id}/batch_direct_debits"
+      "rel"          : "sepa_direct_debits",
+      "href"         : "accounts/{id}/sepa_direct_debits",
+      "targetSchema" : {
+        "$ref" : "./lists/sepa_direct_debits.json#"
+      }
     }
   ]
 }

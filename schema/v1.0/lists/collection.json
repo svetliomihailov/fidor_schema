@@ -4,9 +4,17 @@
   "name"        : "collection",
   "description" : "Pagination information for a list of returned object (not standalone)",
   "properties"  : {
-    "current_page" : { "type" : "integer" },
-    "per_page"     : { "type" : "integer" },
-    "total_entries": { "type" : "integer" },
-    "total_pages"  : { "type" : "integer" }
+    "current_page" : {
+      "type" : "integer"
+    },
+    "per_page" : {
+      "type" : "integer"
+    },
+    "total_entries" : {
+      "type" : "integer"
+    },
+    "total_pages" : {
+      "type" : "integer"
+    }
   }
 }
