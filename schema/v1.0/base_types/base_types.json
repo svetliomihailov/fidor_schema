@@ -8,14 +8,12 @@
     },
     "account_id" : {
       "description" : "Fidor account the transaction belongs to.",
-      "type"        : "string",
-      "pattern"     : "\\d{8}"
+      "type"        : "string"
     },
     "user_id" : {
       "description" : "Identifies the user who created this object",
       "readonly"    : true,
-      "type"        : "string",
-      "pattern"     : "\\d{8}"
+      "type"        : "string"
     },
     "transaction_id" : {
       "description" : "Identifies a reference to a corresponding transaction",
@@ -65,7 +63,7 @@
     "bic" : {
       "description" : "BIC / Swift code of bank",
       "type"        : "string",
-      "pattern"     : "^([A-Z0-9]{8}|[A-Z0-9]{8})$",
+      "pattern"     : "^[A-Z0-9]{8,11}$",
       "maxLength"   : 11
     },
     "eref" : {

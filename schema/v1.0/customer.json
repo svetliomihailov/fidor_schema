@@ -114,7 +114,7 @@
     "birthday" : {
       "description" : "Date of birth",
       "type"        : "string",
-      "format"      : "date-time",
+      "format"      : "date",
       "readonly"    : true
     },
     "is_verified" : {
