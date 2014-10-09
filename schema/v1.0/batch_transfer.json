@@ -1,4 +1,6 @@
 {
+  "NOTE"        : "THIS OBJECT IS NOT SUPPORTED IN THE CURRENT API VERSION",
+  "note"        : "this file is for future reference only!",
   "type"        : "object",
   "title"       : "Batch Transfer",
   "name"        : "batch_transfer",
