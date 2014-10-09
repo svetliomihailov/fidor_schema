@@ -4,7 +4,7 @@
       "description" : "Unique identifier of the object",
       "identity"    : true,
       "readonly"    : true,
-      "type"        : "integer"
+      "type"        : "string"
     },
     "account_id" : {
       "description" : "Fidor account the transaction belongs to.",
