@@ -7,12 +7,12 @@
     "transactions" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../transaction.json"
+        "$ref" : "../transaction.json#"
       }
     },
     "links"      : {},
     "collection" : {
-     "$ref" : "collection.json" 
+     "$ref" : "./collection.json#" 
     }
   }
 }

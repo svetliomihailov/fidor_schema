@@ -7,12 +7,12 @@
     "sepa_direct_debits" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../sepa_direct_debit.json"
+        "$ref" : "../sepa_direct_debit.json#"
       }
     },
     "links"      : {},
     "collection" : {
-     "$ref" : "collection.json" 
+     "$ref" : "./collection.json#" 
     }
   }
 }

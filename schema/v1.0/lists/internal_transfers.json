@@ -7,12 +7,12 @@
     "internal_transfers" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../internal_transfer.json"
+        "$ref" : "../internal_transfer.json#"
       }
     },
     "links"      : {},
     "collection" : {
-     "$ref" : "collection.json" 
+     "$ref" : "./collection.json#" 
     }
   }
 }

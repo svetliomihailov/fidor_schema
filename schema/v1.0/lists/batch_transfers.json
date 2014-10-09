@@ -7,12 +7,12 @@
     "batch_transfers" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../batch_transfer.json"
+        "$ref" : "../batch_transfer.json#"
       }
     },
     "links"      : {},
     "collection" : {
-     "$ref" : "collection.json" 
+     "$ref" : "./collection.json#" 
     }
   }
 }

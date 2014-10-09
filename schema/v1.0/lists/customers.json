@@ -7,12 +7,12 @@
     "customers" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../customer.json"
+        "$ref" : "../customer.json#"
       }
     },
     "links"      : {},
     "collection" : {
-     "$ref" : "collection.json" 
+     "$ref" : "./collection.json#" 
     }
   }
 }

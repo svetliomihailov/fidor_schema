@@ -7,12 +7,12 @@
     "sepa_credit_transfers" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../sepa_credit_transfer.json"
+        "$ref" : "../sepa_credit_transfer.json#"
       }
     },
     "links"      : {},
     "collection" : {
-     "$ref" : "collection.json" 
+     "$ref" : "./collection.json#" 
     }
   }
 }
