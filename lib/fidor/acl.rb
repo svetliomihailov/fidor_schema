@@ -96,6 +96,8 @@ module Fidor
         perms.flat_map{|i| [*i['fields_r'], *i['fields_rw']] }.uniq.sort.map{|i| "#{i}:"}
       end
 
+      # Find missing translation keys
+      # @return [Hash{new_fields:<Array>, new_perms:<Array>, }]
       def i18n_find_missing
         perm_keys = i18n_permission_keys.map{|i| i.gsub(':', '')}
         field_keys = i18n_field_keys.map{|i| i.gsub(':', '')}
@@ -117,9 +119,9 @@ module Fidor
         res
       end
 
+      # add missing I18n keys and write yaml files. Used in rake task
       def i18n_add_missing
         new_keys = i18n_find_missing
-        # add missing keys and write yaml files
         existing = {}
         i18n_files.each { |file| existing.merge!(YAML.load_file file) }
         existing.each do |lang, transl|

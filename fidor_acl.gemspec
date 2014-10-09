@@ -25,5 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'activesupport'
   spec.add_development_dependency 'json_schema_tools'
   spec.add_development_dependency 'activemodel' # required by above
-  # spec.add_development_dependency 'fidor_schema'
+  spec.add_development_dependency 'fidor_schema'
 end

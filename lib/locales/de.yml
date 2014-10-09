@@ -39,8 +39,8 @@ de:
     read_user_email_info:
     read_user_full: Alle Nutzerdaten lesen
     read_user_full_info:
-    read_user_last_login_at: Nutzer zuletzt eingeloggt
-    read_user_last_login_at_info:
+    read_user_last_sign_in_at: Nutzer zuletzt eingeloggt
+    read_user_last_sign_in_at_info:
     readwrite_batch_direct_debit: "Batch Lastschrifteinzug erstellen und lesen"
     readwrite_batch_direct_debit_info:
     readwrite_batch_transfer: "Batch Überweisungen erstellen und lesen"
@@ -102,7 +102,7 @@ de:
     is_trusted:
     is_verified: Verifizierungstatus
     kind: Typ
-    last_login_at:
+    last_sign_in_at: Zuletzt gesehen am
     last_name: Nachname
     maiden_name:
     mandate_id: Mandats ID

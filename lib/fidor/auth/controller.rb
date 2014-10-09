@@ -1,4 +1,4 @@
-require 'king_auth/guard'
+# require 'guard'
 module Fidor::Auth
   # Controller Mixin to allow role-based access to restricted controller/method
   # combinations. Your controller gains the following instance variable:
