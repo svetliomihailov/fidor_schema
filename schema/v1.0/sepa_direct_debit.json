@@ -114,6 +114,9 @@
           "description" : "Sort the results in ASC or DESC",
           "type"        : "string"
         }
+      },
+      "targetSchema" : {
+        "$ref" : "./lists/sepa_direct_debits.json#"
       }
     },
     {

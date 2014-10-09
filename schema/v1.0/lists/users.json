@@ -1,0 +1,18 @@
+{
+  "type"        : "object",
+  "title"       : "Users",
+  "name"        : "users",
+  "description" : "A paginated list of User objects",
+  "properties"  : {
+    "users" : {
+      "type"  : "array",
+      "items" : {
+        "$ref" : "../user.json#"
+      }
+    },
+    "links"      : {},
+    "collection" : {
+      "$ref" : "./collection.json#"
+    }
+  }
+}

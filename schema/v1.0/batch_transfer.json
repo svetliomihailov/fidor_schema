@@ -1,4 +1,6 @@
 {
+  "NOTE"        : "THIS OBJECT IS NOT SUPPORTED IN THE CURRENT API VERSION",
+  "note"        : "this file is for future reference only!",
   "type"        : "object",
   "title"       : "Batch Transfer",
   "name"        : "batch_transfer",
@@ -87,7 +89,7 @@
         }
       }
     },
-    "number_of_transfers" : {
+    "transfer_count" : {
       "description" : "count of transfers (internal and sepa) transactions received in this batch",
       "readonly"    : true,
       "type"        : "integer"

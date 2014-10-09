@@ -1,4 +1,6 @@
 {
+  "NOTE"        : "THIS OBJECT IS NOT SUPPORTED IN THE CURRENT API VERSION",
+  "note"        : "this file is for future reference only!",
   "type"        : "object",
   "title"       : "Batch Direct Debit",
   "name"        : "batch_direct_debit",
@@ -53,7 +55,7 @@
         }
       }
     },
-    "number_of_debits" : {
+    "debit_count" : {
       "description" : "count of debits transactions received in this batch",
       "readonly"    : true,
       "type"        : "integer"
