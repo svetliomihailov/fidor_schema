@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version = Fidor::Schema::VERSION
   spec.authors = ['Georg Leciejewski']
   spec.email = 'dev@fidor.de'
-  spec.summary = 'Fidor API - JSON Schema'
-  spec.description = %q{Fidor API description. Using JSON Schema to describe the available objects, their fields and resource links.}
+  spec.summary = 'BETA Fidor API - JSON Schema'
+  spec.description = %q{Fidor API description. Using JSON Schema to describe the available objects, their fields and resource links. Beware of the BETA status, as things can change slightly}
   spec.homepage = 'https://www.fidor.de'
   spec.license = 'MIT'
 
