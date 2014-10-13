@@ -13,7 +13,7 @@
     },
     "customer_id" : {
       "description" : "Customer for which this mandate is valid.",
-      "type"        : "integer",
+      "type"        : "string",
       "required"    : true
     },
     "user_id" : {

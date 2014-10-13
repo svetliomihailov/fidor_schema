@@ -62,7 +62,7 @@
     "return_transaction_id" : {
       "description" : "If the transaction was marked for return, this references the new return transaction.",
       "readonly"    : true,
-      "type"        : "integer"
+      "type"        : "string"
     },
     "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"
