@@ -37,7 +37,7 @@
       "readonly" : true
     },
     "title" : {
-      "description" : "Title or salutation e.g Dr. Prof.",
+      "description" : "Salutation e.g Mr. or Ms./Mrs.",
       "type"        : "string",
       "required"    : true,
       "maxLength"   : 30,
