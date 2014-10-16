@@ -6,7 +6,7 @@
     "fields_r" : ["id","state","created_at", "updated_at", "user_id",
                   "sepa_credit_transfer_ids", "internal_transfer_ids",
                   "sepa_credit_transfer_errors", "internal_transfer_errors",
-                  "number_of_transfers"],
+                  "transfers_count"],
     "fields_rw" : ["external_uid", "account_id", "sepa_credit_transfers",
                     "internal_transfers", "success_url"]
 

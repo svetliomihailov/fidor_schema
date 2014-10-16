@@ -3,7 +3,7 @@
     "name" : "readwrite_batch_direct_debit",
     "context" : "batch_direct_debits",
     "privileges" : ["index", "show", "create"],
-    "fields_r" : ["id","user_id", "sepa_direct_debit_ids", "state", "number_of_debits",
+    "fields_r" : ["id","user_id", "sepa_direct_debit_ids", "state", "debits_count",
                   "sepa_direct_debit_errors",  "created_at","updated_at"],
     "fields_rw" : ["external_uid", "account_id","user_id", "sepa_direct_debits",
                     "success_url"]
