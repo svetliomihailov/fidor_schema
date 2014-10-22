@@ -78,10 +78,9 @@
       "maxLength"   : 2
     },
     "currency" : {
-      "description" : "Account currency. ISO 4217 alpha-3 - 3 letter upcase e.g EUR",
+      "description" : "Currency of Account or Amount. ISO 4217 alpha-3 - 3 letter upcase e.g EUR",
       "type"        : "string",
-      "maxLength"   : 3,
-      "minLength"   : 3,
+      "enum"        : ["EUR"],
       "default"     : "EUR"
     },
     "subject" : {
@@ -90,10 +89,10 @@
       "pattern"     : "^[A-Za-z0-9_\\.\\, &\\-\\/\\+\\*\\$\\%@üöäÜÖÄß€]*$"
     },
     "amount" : {
-      "description"      : "The transferred amount in account currency, two decimal places. Must be greater than 0 e.g. > 0",
-      "type"             : "number",
+      "description"      : "The transferred amount in account currency, in minor units, e.g. 1EUR is represented as 100. Must be greater than 0 e.g. > 0",
+      "type"             : "integer",
       "exclusiveMinimum" : true,
-      "minimum"          : 0
+      "minimum"          : 1
     },
     "transaction_type" : {
       "description" : "Type of the transaction",
