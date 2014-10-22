@@ -1,4 +1,4 @@
-# Fidor API Schema
+# Fidor API Schema - BETA
 
 The Fidor API is described with [JSON Schema](http://json-schema.org), which serves
 as a public contract about available API resources and object internals.

@@ -4,4 +4,4 @@ A more detailed view of the changes can be found in the [commit messages](https:
 
 **2014-10**
 
-  * initial public release - ALPHA
+* initial public release - ALPHA

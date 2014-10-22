@@ -4,7 +4,7 @@
   "type"        : "object",
   "title"       : "Batch Direct Debit",
   "name"        : "batch_direct_debit",
-  "description" : "A direct debit batch contains multiple direct debits which are processed asynchronously.",
+  "description" : "PREVIEW: A direct debit batch contains multiple direct debits which are processed asynchronously.",
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -56,7 +56,7 @@
       }
     },
     "debit_count" : {
-      "description" : "count of debits transactions received in this batch",
+      "description" : "count of debit transactions received in this batch",
       "readonly"    : true,
       "type"        : "integer"
     },
