@@ -1,0 +1,23 @@
+{
+  "type"        : "object",
+  "title"       : "Rate limit",
+  "name"        : "rate_limit",
+  "description" : "Overall, remaining rate limits and the time frame until the reset.",
+  "properties"  : {
+    "limit" : {
+      "description" : "An overall number of allowed calls",
+      "type"        : "integer",
+      "readonly"    : true
+    },
+    "remaining" : {
+      "description" : "Remaining number of calls",
+      "type"        : "integer",
+      "readonly"    : true
+    },
+    "reset" : {
+      "description" : "Time until the next reset",
+      "type"        : "integer",
+      "readonly"    : true
+    }
+  }
+}
