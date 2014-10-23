@@ -1,13 +1,16 @@
 {
   "type"        : "object",
-  "title"       : "Batch Transfers",
+  "title"       : "Batch_transfers",
   "name"        : "batch_transfers",
-  "description" : "A paginated list of Batch Transfer objects",
+  "description" : "A paginated list of Batch_transfer objects",
   "properties"  : {
     "batch_transfers" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../batch_transfer.json#"
+        "type"       : "object",
+        "properties" : {
+          "$ref" : "../batch_transfer.json#properties"
+        }
       }
     },
     "links"      : {},
@@ -16,3 +19,4 @@
     }
   }
 }
+

@@ -1,13 +1,16 @@
 {
   "type"        : "object",
-  "title"       : "Batch Direct Debits",
+  "title"       : "Batch_direct_debits",
   "name"        : "batch_direct_debits",
-  "description" : "A paginated list of Batch Direct Debit objects",
+  "description" : "A paginated list of Batch_direct_debit objects",
   "properties"  : {
     "batch_direct_debits" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../batch_direct_debit.json#"
+        "type"       : "object",
+        "properties" : {
+          "$ref" : "../batch_direct_debit.json#properties"
+        }
       }
     },
     "links"      : {},
@@ -16,3 +19,4 @@
     }
   }
 }
+

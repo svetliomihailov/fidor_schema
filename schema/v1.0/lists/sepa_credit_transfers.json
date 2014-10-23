@@ -1,13 +1,16 @@
 {
   "type"        : "object",
-  "title"       : "Sepa Credit Transfers",
+  "title"       : "Sepa_credit_transfers",
   "name"        : "sepa_credit_transfers",
-  "description" : "A paginated list of Sepa Credit Transfer objects",
+  "description" : "A paginated list of Sepa_credit_transfer objects",
   "properties"  : {
     "sepa_credit_transfers" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../sepa_credit_transfer.json#"
+        "type"       : "object",
+        "properties" : {
+          "$ref" : "../sepa_credit_transfer.json#properties"
+        }
       }
     },
     "links"      : {},
@@ -16,3 +19,4 @@
     }
   }
 }
+

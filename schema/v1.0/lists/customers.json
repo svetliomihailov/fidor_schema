@@ -7,7 +7,10 @@
     "customers" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../customer.json#"
+        "type"       : "object",
+        "properties" : {
+          "$ref" : "../customer.json#properties"
+        }
       }
     },
     "links"      : {},
@@ -16,3 +19,4 @@
     }
   }
 }
+

@@ -1,13 +1,16 @@
 {
   "type"        : "object",
-  "title"       : "Internal Transfers",
+  "title"       : "Internal_transfers",
   "name"        : "internal_transfers",
-  "description" : "A paginated list of Internal Transfer objects",
+  "description" : "A paginated list of Internal_transfer objects",
   "properties"  : {
     "internal_transfers" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../internal_transfer.json#"
+        "type"       : "object",
+        "properties" : {
+          "$ref" : "../internal_transfer.json#properties"
+        }
       }
     },
     "links"      : {},
@@ -16,3 +19,4 @@
     }
   }
 }
+

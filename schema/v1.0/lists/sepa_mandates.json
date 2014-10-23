@@ -1,13 +1,16 @@
 {
   "type"        : "object",
-  "title"       : "Sepa Mandates",
+  "title"       : "Sepa_mandates",
   "name"        : "sepa_mandates",
-  "description" : "A paginated list of Sepa Mandate objects",
+  "description" : "A paginated list of Sepa_mandate objects",
   "properties"  : {
     "sepa_mandates" : {
       "type"  : "array",
       "items" : {
-        "$ref" : "../sepa_mandate.json#"
+        "type"       : "object",
+        "properties" : {
+          "$ref" : "../sepa_mandate.json#properties"
+        }
       }
     },
     "links"      : {},
@@ -16,3 +19,4 @@
     }
   }
 }
+
