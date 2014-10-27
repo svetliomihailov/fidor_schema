@@ -89,7 +89,7 @@
         }
       }
     },
-    "transfer_count" : {
+    "transfers_count" : {
       "description" : "count of transfers (internal and sepa) transactions received in this batch",
       "readonly"    : true,
       "type"        : "integer"

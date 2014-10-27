@@ -55,7 +55,7 @@
         }
       }
     },
-    "debit_count" : {
+    "debits_count" : {
       "description" : "count of debit transactions received in this batch",
       "readonly"    : true,
       "type"        : "integer"
