@@ -27,7 +27,7 @@
   },
   "links" : [
     {
-      "rel"  : "self",
+      "rel"  : "current",
       "href" : "users/current"
     }
   ]
