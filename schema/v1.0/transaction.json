@@ -131,9 +131,6 @@
           ],
           "description" : "Sort the results in ASC or DESC",
           "type"        : "string"
-        },
-        "targetSchema" : {
-          "$ref" : "./lists/transactions.json#"
         }
       }
     }

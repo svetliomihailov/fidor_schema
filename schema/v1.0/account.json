@@ -88,10 +88,7 @@
     },
     {
       "rel"          : "instances",
-      "href"         : "accounts",
-      "targetSchema" : {
-        "$ref" : "./lists/accounts.json#"
-      }
+      "href"         : "accounts"
     },
     {
       "rel"          : "transactions",
@@ -102,24 +99,15 @@
     },
     {
       "rel"          : "internal_transfers",
-      "href"         : "accounts/{id}/internal_transfers",
-      "targetSchema" : {
-        "$ref" : "./lists/internal_transfers.json#"
-      }
+      "href"         : "accounts/{id}/internal_transfers"
     },
     {
       "rel"          : "sepa_credit_transfers",
-      "href"         : "accounts/{id}/sepa_credit_transfers",
-      "targetSchema" : {
-        "$ref" : "./lists/sepa_credit_transfers.json#"
-      }
+      "href"         : "accounts/{id}/sepa_credit_transfers"
     },
     {
       "rel"          : "sepa_direct_debits",
-      "href"         : "accounts/{id}/sepa_direct_debits",
-      "targetSchema" : {
-        "$ref" : "./lists/sepa_direct_debits.json#"
-      }
+      "href"         : "accounts/{id}/sepa_direct_debits"
     }
   ]
 }
