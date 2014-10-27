@@ -2,19 +2,19 @@
   {
     "name" : "read_user_full",
     "context" : "users",
-    "privileges" : ["show"],
+    "privileges" : ["current"],
     "fields_r" : ["id", "email", "last_sign_in_at", "created_at", "updated_at"]
   },
   {
     "name" : "read_user_email",
     "context" : "users",
-    "privileges" : ["show"],
+    "privileges" : ["current"],
     "fields_r" : ["email"]
   },
   {
     "name" : "read_user_last_sign_in_at",
     "context" : "users",
-    "privileges" : ["show"],
+    "privileges" : ["current"],
     "fields_r" : ["last_sign_in_at"]
   }
 ]

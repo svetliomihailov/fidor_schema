@@ -81,8 +81,9 @@ en:
     cc_type: CC Type
     collection_date:
     created_at: Created at
-    currency:
+    currency: Currency
     customers:
+    debits_count:
     email: Email
     eref:
     external_ref: external ref
@@ -103,16 +104,14 @@ en:
     is_trusted:
     is_verified: Verification status
     kind: Kind
-    last_sign_in_at:
     last_name: Lastname
+    last_sign_in_at:
     maiden_name:
     mandate_id:
     marital_status:
     nationality: Nationality
     nick: Nickname
     number: Number
-    number_of_debits:
-    number_of_transfers:
     overdraft:
     preauth_amount: Preauthorisation amount
     receiver:
@@ -138,6 +137,7 @@ en:
     transaction_type:
     transaction_type_details:
     transfer_id: Transfer ID
+    transfers_count:
     updated_at: Updated at
     user_id: User ID
     value_date: Value date

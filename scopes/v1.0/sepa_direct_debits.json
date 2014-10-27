@@ -3,7 +3,7 @@
     "name" : "readwrite_sepa_direct_debit",
     "context" : "sepa_direct_debits",
     "privileges" : ["index", "show", "create"],
-    "fields_r" : ["id", "user_id","state","created_at", "updated_at"],
+    "fields_r" : ["id", "user_id","state","created_at", "updated_at", "currency"],
     "fields_rw" : ["external_uid", "account_id","mandate_id", "collection_date",
                     "eref","amount", "subject"]
   }

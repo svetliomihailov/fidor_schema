@@ -3,7 +3,7 @@
     "name" : "readwrite_sepa_credit_transfer",
     "context" : "sepa_credit_transfers",
     "privileges" : ["index", "show", "create"],
-    "fields_r" : ["id","user_id","transaction_id","state","created_at","updated_at"],
+    "fields_r" : ["id","user_id","transaction_id","state","created_at","updated_at", "currency"],
     "fields_rw" : ["account_id", "external_uid", "subject","amount","remote_name",
                   "remote_iban","remote_bic"]
   }//,
