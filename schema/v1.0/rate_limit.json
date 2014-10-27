@@ -5,17 +5,17 @@
   "description" : "Overall, remaining rate limits and the time frame until the reset.",
   "properties"  : {
     "limit" : {
-      "description" : "An overall number of allowed calls",
+      "description" : "The rate limit ceiling for the given request in a [time window]",
       "type"        : "integer",
       "readonly"    : true
     },
     "remaining" : {
-      "description" : "Remaining number of calls",
+      "description" : "The number of requests left for the [time window]",
       "type"        : "integer",
       "readonly"    : true
     },
     "reset" : {
-      "description" : "Time until the next reset",
+      "description" : "The remaining window before the rate limit resets in e.g. UTC epoch seconds",
       "type"        : "integer",
       "readonly"    : true
     }
