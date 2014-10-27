@@ -17,4 +17,25 @@ describe Fidor::Schema do
     end
 
   end
+
+  context 'resolves $refs' do
+
+    it 'in single schema' do
+      SchemaTools.schema_path = Fidor::Schema.path
+      schema = SchemaTools::Reader.read('accounts').to_h
+      expect(schema['properties']['accounts']['items']['properties']['id']['type']).to eq 'string'
+
+    end
+
+    it 'should resolve all' do
+      SchemaTools.schema_path = Fidor::Schema.path
+      SchemaTools::Reader.read_all
+      out = []
+      SchemaTools::Reader.registry.each{|n, i|
+        out << "#{i.to_h}"
+      }
+      expect(out).to_not include('$ref')
+    end
+
+  end
 end
