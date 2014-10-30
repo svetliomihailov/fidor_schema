@@ -53,6 +53,8 @@ de:
     readwrite_sepa_credit_transfer_mtan_info:
     readwrite_sepa_direct_debit: Lastschrifteinzug erstellen und lesen
     readwrite_sepa_direct_debit_info:
+    readwrite_sepa_mandates: Sepa Mandate
+    readwrite_sepa_mandates_info: Ein Mandat wird für den Lastschriteinzug benötigt
   permission_field_names:
     account_id: Kontonummer
     account_number: Kontonummer
@@ -79,8 +81,10 @@ de:
     cc_merchant_name: Kreditkarten Verkäufername
     cc_type: Kreditkartentyp
     collection_date:
+    cor1_option:
     created_at: Erstellt am
     currency: Währung
+    customer_id: Kunden ID
     customers: Kontoinhaber
     debits_count:
     email: Email
@@ -88,7 +92,7 @@ de:
     external_ref: Externe Referenz
     external_uid: Externe UniqueID
     first_name: Vorname
-    gender:
+    gender: Geschlecht
     iban: IBAN
     id: ID
     id_card_number: Ausweisnummer
@@ -107,6 +111,7 @@ de:
     last_sign_in_at: Zuletzt gesehen am
     maiden_name:
     mandate_id: Mandats ID
+    mandate_reference: Mandatsreferenz
     marital_status:
     nationality: Nationalität
     nick: Nickname
@@ -115,10 +120,17 @@ de:
     preauth_amount:
     receiver: Empfänger
     religion: Religion
+    remote_address_line1:
+    remote_address_line2:
     remote_bic: Empfänger BIC
+    remote_country:
+    remote_email:
     remote_fidor_id: Empfänger Fidor ID
     remote_iban: Empfänger IBAN
     remote_name: Empfänger Name
+    remote_signature_location:
+    remote_title:
+    remote_ultimate_name:
     return_transaction_id:
     sepa_credit_transfer_errors:
     sepa_credit_transfer_ids:
@@ -127,16 +139,19 @@ de:
     sepa_direct_debit_ids:
     sepa_direct_debits:
     sepa_eref: SEPA EndToEnd Referenz
+    sequence: Einzugssequenz
+    signature_date:
     state: Status
     subject: Verwendungszweck
     success_url:
     title: Titel
     transaction: Transaktion
-    transaction_id:
+    transaction_id: Transaktion ID
     transaction_type: Transaktion Typ
     transaction_type_details:
     transfer_id: "Überweisung ID"
-    transfers_count:
+    transfers_count: Anzahl Überweisungen
     updated_at: Aktualisiert am
     user_id: Benutzer ID
+    valid_from_date: Gültig ab Datum
     value_date: Tag der Wertstellung

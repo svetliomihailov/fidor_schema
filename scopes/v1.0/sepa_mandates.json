@@ -1,0 +1,13 @@
+[
+  {
+    "name" : "readwrite_sepa_mandates",
+    "context" : "sepa_mandates",
+    "privileges" : ["index", "show", "create"],
+    "fields_r" : ["id", "user_id"],
+    "fields_rw" : ["external_uid", "customer_id", "mandate_reference", "sequence",
+                  "cor1_option", "remote_title", "remote_name", "remote_email",
+                  "remote_address_line1", "remote_address_line2", "remote_country",
+                  "remote_iban", "remote_bic", "remote_ultimate_name",
+                  "remote_signature_location", "signature_date", "valid_from_date"]
+  }
+]
