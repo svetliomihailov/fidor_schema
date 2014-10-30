@@ -53,7 +53,7 @@ de:
     readwrite_sepa_credit_transfer_mtan_info:
     readwrite_sepa_direct_debit: Lastschrifteinzug erstellen und lesen
     readwrite_sepa_direct_debit_info:
-    readwrite_sepa_mandates: Sepa Mandate
+    readwrite_sepa_mandates: Sepa Mandate erstellen und lesen
     readwrite_sepa_mandates_info: Ein Mandat wird für den Lastschriteinzug benötigt
   permission_field_names:
     account_id: Kontonummer
