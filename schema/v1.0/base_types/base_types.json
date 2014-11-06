@@ -37,13 +37,13 @@
       "pattern"     : "^@(\\w){1,15}$"
     },
     "created_at" : {
-      "description" : "Creation date-time, never changes.",
+      "description" : "Creation date-time, never changes. ISO 8601 Date-Time",
       "format"      : "date-time",
       "type"        : "string",
       "readonly"    : true
     },
     "updated_at" : {
-      "description" : "Last update date-time.",
+      "description" : "Last update date-time. ISO 8601 Date-Time",
       "format"      : "date-time",
       "type"        : "string",
       "readonly"    : true

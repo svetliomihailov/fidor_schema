@@ -47,13 +47,13 @@
       "readonly" : true
     },
     "booking_date" : {
-      "description" : "Date the transaction was booked.",
-      "format"      : "date-time",
+      "description" : "Date the transaction was booked. ISO 8601 Date",
+      "format"      : "date",
       "readonly"    : true,
       "type"        : "string"
     },
     "value_date" : {
-      "description" : "Date the amount was credited to the account (Wertstellung).",
+      "description" : "Date the amount was credited to the account. ISO 8601 Date",
       "format"      : "date",
       "readonly"    : true,
       "type"        : "string"
@@ -100,13 +100,13 @@
           "type"   : "string"
         },
         "filter[booking_date_from]" : {
-          "title"  : "Date filter from >= date",
-          "format" : "date-time",
+          "title"  : "Date filter from >= date. ISO 8601 Date",
+          "format" : "date",
           "type"   : "string"
         },
         "filter[booking_date_to]" : {
-          "title"  : "Date filter to <= date",
-          "format" : "date-time",
+          "title"  : "Date filter to <= date. ISO 8601 Date",
+          "format" : "date",
           "type"   : "string"
         },
         "filter[kinds]" : {
