@@ -66,6 +66,11 @@ module Fidor
     def translated_name
       I18n.t(self.name, scope: :permission_names)
     end
+    # @return [String|nil]
+    def translated_info
+      res = I18n.t("#{self.name}_info", scope: :permission_names)
+      res[/translation missing:/] ? nil : res
+    end
 
     def translated_fields_r
       fields_r.map{|i| I18n.t(i, scope: :permission_field_names) }.sort

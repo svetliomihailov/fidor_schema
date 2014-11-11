@@ -19,7 +19,7 @@ describe Fidor::Permission do
     end
   end
 
-  describe '.to_json' do
+  describe '#to_json' do
     subject { JSON.parse permission.to_json }
 
     let(:expectation) { { 'name' => 'readwrite_transfer' }.merge readwrite_transfer }
@@ -28,25 +28,36 @@ describe Fidor::Permission do
   end
 
   describe 'translation' do
-    describe '.translated_name' do
+    describe '#translated_name' do
       subject { permission.translated_name }
 
       it { should eq I18n.t('permission_names.readwrite_sepa_credit_transfer') }
     end
 
-    describe '.translated_fields_r' do
+    describe '#translated_info' do
+      subject { permission.translated_info }
+
+      it { should eq I18n.t('permission_names.readwrite_sepa_credit_transfer_info') }
+
+      it 'be nil if translation is missing' do
+        p = Fidor::Permission.from_hash(Fidor::Acl['read_account_full'])
+        expect(p.translated_info).to eq nil
+      end
+    end
+
+    describe '#translated_fields_r' do
       subject { permission.translated_fields_r }
 
       it { should include 'Created at' }
     end
-    describe '.translated_fields_rw' do
+    describe '#translated_fields_rw' do
       subject { permission.translated_fields_rw }
 
       it { should include 'Amount' }
     end
   end
 
-  describe '.fields_r' do
+  describe '#fields_r' do
     subject { permission.fields_r }
 
     let(:permission) { Fidor::Permission.new }
@@ -64,7 +75,7 @@ describe Fidor::Permission do
     end
   end
 
-  describe '.privileges' do
+  describe '#privileges' do
     subject { permission.privileges }
 
     let(:permission) { Fidor::Permission.new }
