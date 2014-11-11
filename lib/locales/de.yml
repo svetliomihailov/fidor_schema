@@ -71,8 +71,6 @@ de:
     balance: Kontostand
     balance_available: Verfügungsrahmen
     birthday: Geburtstag
-    book_code: Buchungs Code
-    book_date: Buchungsdatum
     booking_code: Buchungs Code
     booking_date: Buchungsdatum
     cash_flow_per_year: CashFlow/Jahr
@@ -80,13 +78,13 @@ de:
     cc_merchant_category: Kreditkarten Händler Kategorie
     cc_merchant_name: Kreditkarten Verkäufername
     cc_type: Kreditkartentyp
-    collection_date:
-    cor1_option:
+    collection_date: Einzugsdatum
+    cor1_option: COR1 Option
     created_at: Erstellt am
     currency: Währung
     customer_id: Kunden ID
     customers: Kontoinhaber
-    debits_count:
+    debits_count: Lastschriften Anzahl
     email: Email
     eref: EndeZuEnde Referenz
     external_ref: Externe Referenz
@@ -98,52 +96,51 @@ de:
     id_card_number: Ausweisnummer
     id_card_registration_city: Ausweis Stadt
     id_card_valid_until: Ausweis Gültigkeit
-    internal_transfer_errors:
-    internal_transfer_ids:
-    internal_transfers:
-    is_debit_note_enabled:
-    is_locked: Ist gesperrt
-    is_trust: Ist trust
-    is_trusted:
+    internal_transfer_errors: Interne Überweisungsfehler
+    internal_transfer_ids: Interne Überweisung IDs
+    internal_transfers: Interne Überweisungen
+    is_debit_note_enabled: Lastschrifterlaubniss
+    is_locked: Sperrungsstatus
+    is_trusted: Vertrauenswürdigkeitsstatus
     is_verified: Verifizierungstatus
     kind: Typ
     last_name: Nachname
     last_sign_in_at: Zuletzt gesehen am
-    maiden_name:
+    maiden_name: Geburtsname
     mandate_id: Mandats ID
     mandate_reference: Mandatsreferenz
-    marital_status:
+    marital_status: Familienstand
     nationality: Nationalität
     nick: Nickname
     number: Nummer
-    overdraft:
-    preauth_amount:
+    overdraft: Kontoüberziehung
+    preauth_amount: Vorautorisierungsbetrag
     receiver: Empfänger
     religion: Religion
-    remote_address_line1:
-    remote_address_line2:
-    remote_bic: Empfänger BIC
-    remote_country:
-    remote_email:
-    remote_fidor_id: Empfänger Fidor ID
-    remote_iban: Empfänger IBAN
-    remote_name: Empfänger Name
-    remote_signature_location:
-    remote_title:
-    remote_ultimate_name:
+    remote_address_line1: Adresse
+    remote_address_line2: Adresszusatz
+    remote_bic: BIC
+    remote_country: Land
+    remote_email: Email
+    remote_fidor_id: Fidor ID
+    remote_iban: IBAN
+    remote_name: Name
+    remote_signature_location: Ort der Signatur
+    remote_title: Empfänger Titel
+    remote_ultimate_name: Voller Name
     return_transaction_id:
-    sepa_credit_transfer_errors:
-    sepa_credit_transfer_ids:
-    sepa_credit_transfers:
-    sepa_direct_debit_errors:
-    sepa_direct_debit_ids:
-    sepa_direct_debits:
+    sepa_credit_transfer_errors: Sepa Überweisungsfehler
+    sepa_credit_transfer_ids: Sepa Überweisung Ids
+    sepa_credit_transfers: Sepa Überweisungen
+    sepa_direct_debit_errors: Sepa Lastschrift Fehler
+    sepa_direct_debit_ids: Sepa Lastschrift IDs
+    sepa_direct_debits: Sepa Lastschriften
     sepa_eref: SEPA EndToEnd Referenz
     sequence: Einzugssequenz
-    signature_date:
+    signature_date: Signatur Datum
     state: Status
     subject: Verwendungszweck
-    success_url:
+    success_url: Sucess URL
     title: Titel
     transaction: Transaktion
     transaction_id: Transaktion ID
