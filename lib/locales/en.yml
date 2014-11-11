@@ -44,12 +44,11 @@ en:
     readwrite_batch_direct_debit: Read and create batch direct debits
     readwrite_batch_direct_debit_info:
     readwrite_batch_transfer: Read and create batch transfers
-    readwrite_batch_transfer_info:
+    readwrite_batch_transfer_info: "Risk Warning: transfer API calls with outgoing money transfers are not protected by mTAN or FIN. This causes a higher risk. Consider the associated risks and obligations, particularly as described in paragraph 5 of the Developer Terms."
     readwrite_internal_transfer: Read and create Fidor internal transfers
-    readwrite_internal_transfer_info:
+    readwrite_internal_transfer_info: "Risk Warning: transfer API calls with outgoing money transfers are not protected by mTAN or FIN. This causes a higher risk. Consider the associated risks and obligations, particularly as described in paragraph 5 of the Developer Terms."
     readwrite_sepa_credit_transfer: Read and create transfers
-    readwrite_sepa_credit_transfer_info: The app has full access to create new transfers
-      and read existing ones.
+    readwrite_sepa_credit_transfer_info: "Risk Warning: transfer API calls with outgoing money transfers are not protected by mTAN or FIN. This causes a higher risk. Consider the associated risks and obligations, particularly as described in paragraph 5 of the Developer Terms."
     readwrite_sepa_credit_transfer_mtan: Read and create transfers via mTan
     readwrite_sepa_credit_transfer_mtan_info:
     readwrite_sepa_direct_debit: Read and create sepa direct debits

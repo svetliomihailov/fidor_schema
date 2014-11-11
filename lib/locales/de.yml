@@ -44,11 +44,11 @@ de:
     readwrite_batch_direct_debit: Batch Lastschrifteinzug erstellen und lesen
     readwrite_batch_direct_debit_info:
     readwrite_batch_transfer: Batch Überweisungen erstellen und lesen
-    readwrite_batch_transfer_info:
+    readwrite_batch_transfer_info: "Risikohinweis: API Transfer-Aufrufe mit ausgehenden Geldtransfers sind nicht durch eine MTAN oder FIN geschützt und es besteht ein erhöhtes Risiko. Beachten Sie die damit verbundenen Risiken und Pflichten, insbesondere wie in Paragraph 5 der Developer AGB beschrieben."
     readwrite_internal_transfer: Fidor interne Überweisungen erstellen und lesen
-    readwrite_internal_transfer_info:
+    readwrite_internal_transfer_info: "Risikohinweis: API Transfer-Aufrufe mit ausgehenden Geldtransfers sind nicht durch eine MTAN oder FIN geschützt und es besteht ein erhöhtes Risiko. Beachten Sie die damit verbundenen Risiken und Pflichten, insbesondere wie in Paragraph 5 der Developer AGB beschrieben."
     readwrite_sepa_credit_transfer: "Überweisungen erstellen und lesen"
-    readwrite_sepa_credit_transfer_info: Voller Zugriff auf Überweisungen.
+    readwrite_sepa_credit_transfer_info: "Risikohinweis: API Transfer-Aufrufe mit ausgehenden Geldtransfers sind nicht durch eine MTAN oder FIN geschützt und es besteht ein erhöhtes Risiko. Beachten Sie die damit verbundenen Risiken und Pflichten, insbesondere wie in Paragraph 5 der Developer AGB beschrieben."
     readwrite_sepa_credit_transfer_mtan: "Überweisung via mTan erstellen und lesen"
     readwrite_sepa_credit_transfer_mtan_info:
     readwrite_sepa_direct_debit: Lastschrifteinzug erstellen und lesen
