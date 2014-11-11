@@ -2,7 +2,7 @@
   {
     "name" : "read_customer_full",
     "context" : "customers",
-    "privileges" : ["show"],
+    "privileges" : ["show", "index"],
     "fields_r" : ["id","email","first_name","last_name","gender","title","nick", "maiden_name",
         "adr_street", "adr_street_number", "adr_post_code", "adr_city", "adr_country",
         "adr_phone", "adr_mobile", "adr_fax","adr_businessphone", "birthday", "is_verified",
@@ -12,56 +12,56 @@
   {
     "name" : "read_customer_name",
     "context" : "customers",
-    "privileges" : ["show"],
+    "privileges" : ["show", "index"],
     "fields_r" : ["title", "first_name","last_name"]
   },
 
   {
     "name" : "read_customer_nick",
     "context" : "customers",
-    "privileges" : ["show"],
+    "privileges" : ["show", "index"],
     "fields_r" : ["nick"]
   },
 
   {
     "name": "read_customer_address",
     "context": "customers",
-    "privileges": ["show"],
+    "privileges": ["show", "index"],
     "fields_r": ["adr_street", "adr_street_number", "adr_city", "adr_country"]
   },
 
   {
     "name": "read_customer_phone",
     "context": "customers",
-    "privileges": ["show"],
+    "privileges": ["show", "index"],
     "fields_r": ["adr_phone", "adr_mobile", "adr_businessphone"]
   },
 
    {
     "name": "read_customer_birthday",
     "context": "customers",
-    "privileges": ["show"],
+    "privileges": ["show", "index"],
     "fields_r": ["birthday"]
   },
 
-   {
+  {
     "name": "read_customer_is_verified",
     "context": "customers",
-    "privileges": ["show"],
+    "privileges": ["show", "index"],
     "fields_r": ["is_verified"]
   },
 
   {
     "name": "read_customer_nationality",
     "context": "customers",
-    "privileges": ["show"],
+    "privileges": ["show", "index"],
     "fields_r": ["nationality"]
   },
 
   {
     "name": "read_customer_kyc_information",
     "context": "customers",
-    "privileges": ["show"],
+    "privileges": ["show", "index"],
     "fields_r": ["nationality", "id_card_registration_city", "id_card_number", "id_card_valid_until", "birthday"]
   }
 
