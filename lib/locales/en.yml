@@ -8,7 +8,7 @@ en:
     read_account_number: Read account number/iban
     read_account_number_info:
     read_account_state: Read account state
-    read_account_state_info: Wether an account is locked or trusted
+    read_account_state_info: Whether an account is locked or trusted
     read_customer_address: Read customer address
     read_customer_address_info: Read all address related fields
     read_customer_birthday: Read customer birthday
