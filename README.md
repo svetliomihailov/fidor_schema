@@ -63,6 +63,7 @@ Convert a permission from hash
 Translations are kept in lib/locales and there are helper methods for a permission to use them:
 
     permission.translated_name
+    permission.translated_info       #=> if there is a NAME_info present returns it, else nil
     permission.translated_fields_r   #=> read-only fields sorted in the current language 
     permission.translated_fields_rw  #=> read/write fields  
 
