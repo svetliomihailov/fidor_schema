@@ -1,0 +1,23 @@
+{
+  "type"        : "object",
+  "title"       : "Rate limit",
+  "name"        : "rate_limit",
+  "description" : "Overall, remaining rate limits and the time frame until the reset.",
+  "properties"  : {
+    "limit" : {
+      "description" : "The rate limit ceiling for the given request in a [time window]",
+      "type"        : "integer",
+      "readonly"    : true
+    },
+    "remaining" : {
+      "description" : "The number of requests left for the [time window]",
+      "type"        : "integer",
+      "readonly"    : true
+    },
+    "reset" : {
+      "description" : "The remaining window before the rate limit resets in e.g. UTC epoch seconds",
+      "type"        : "integer",
+      "readonly"    : true
+    }
+  }
+}
