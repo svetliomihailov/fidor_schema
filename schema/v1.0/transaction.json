@@ -39,7 +39,8 @@
       "readonly" : true
     },
     "amount" : {
-      "$ref"     : "./base_types/base_types.json#definitions/amount",
+      "description"      : "The transferred amount in account currency, in minor units, e.g. 1EUR is represented as 100. Can be negative e.g. if something was withdrawn from an account.",
+      "type"             : "integer",
       "readonly" : true
     },
     "currency" : {
