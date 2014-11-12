@@ -19,5 +19,11 @@
       "type"        : "integer",
       "readonly"    : true
     }
-  }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "rate_limit"
+    }
+  ]
 }
