@@ -19,7 +19,7 @@
     },
     "mandate_id" : {
       "description" : "The sepa mandate used by the debit",
-      "type"        : "number",
+      "type"        : "string",
       "required"    : true
     },
     "amount" : {
