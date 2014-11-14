@@ -22,6 +22,11 @@
       "type"        : "string",
       "required"    : true
     },
+    "creditor_identifier" : {
+      "description" : "Creditor Identifier",
+      "type"        : "string",
+      "readonly"    : true
+    },
     "amount" : {
       "$ref"     : "./base_types/base_types.json#definitions/amount",
       "required" : true
