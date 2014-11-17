@@ -27,6 +27,8 @@ en:
     read_customer_nick_info:
     read_customer_phone: Read customer phone numbers
     read_customer_phone_info:
+    read_rate_limit: Read API-Request Limits
+    read_rate_limit_info: The right to read API-Request limits are automatically added.
     read_transaction_credit_card: Read transaction caredit card information
     read_transaction_credit_card_info:
     read_transaction_full: Read transactions with all fields
@@ -44,11 +46,20 @@ en:
     readwrite_batch_direct_debit: Read and create batch direct debits
     readwrite_batch_direct_debit_info:
     readwrite_batch_transfer: Read and create batch transfers
-    readwrite_batch_transfer_info: "Risk Warning: transfer API calls with outgoing money transfers are not protected by mTAN or FIN. This causes a higher risk. Consider the associated risks and obligations, particularly as described in paragraph 5 of the Developer Terms."
+    readwrite_batch_transfer_info: 'Risk Warning: transfer API calls with outgoing
+      money transfers are not protected by mTAN or FIN. This causes a higher risk.
+      Consider the associated risks and obligations, particularly as described in
+      paragraph 5 of the Developer Terms.'
     readwrite_internal_transfer: Read and create Fidor internal transfers
-    readwrite_internal_transfer_info: "Risk Warning: transfer API calls with outgoing money transfers are not protected by mTAN or FIN. This causes a higher risk. Consider the associated risks and obligations, particularly as described in paragraph 5 of the Developer Terms."
+    readwrite_internal_transfer_info: 'Risk Warning: transfer API calls with outgoing
+      money transfers are not protected by mTAN or FIN. This causes a higher risk.
+      Consider the associated risks and obligations, particularly as described in
+      paragraph 5 of the Developer Terms.'
     readwrite_sepa_credit_transfer: Read and create transfers
-    readwrite_sepa_credit_transfer_info: "Risk Warning: transfer API calls with outgoing money transfers are not protected by mTAN or FIN. This causes a higher risk. Consider the associated risks and obligations, particularly as described in paragraph 5 of the Developer Terms."
+    readwrite_sepa_credit_transfer_info: 'Risk Warning: transfer API calls with outgoing
+      money transfers are not protected by mTAN or FIN. This causes a higher risk.
+      Consider the associated risks and obligations, particularly as described in
+      paragraph 5 of the Developer Terms.'
     readwrite_sepa_credit_transfer_mtan: Read and create transfers via mTan
     readwrite_sepa_credit_transfer_mtan_info:
     readwrite_sepa_direct_debit: Read and create sepa direct debits
@@ -106,6 +117,7 @@ en:
     kind: Kind
     last_name: Lastname
     last_sign_in_at:
+    limit:
     maiden_name: Maiden name
     mandate_id: Mandate ID
     mandate_reference: Mandate reference
@@ -117,6 +129,7 @@ en:
     preauth_amount: Preauthorisation amount
     receiver: Receiver
     religion: Religion
+    remaining:
     remote_address_line1:
     remote_address_line2:
     remote_bic: Remote BIC
@@ -128,6 +141,7 @@ en:
     remote_signature_location: Remote signature location
     remote_title: Remote title
     remote_ultimate_name: Remote ultimate name
+    reset:
     return_transaction_id: Returned transaction id
     sepa_credit_transfer_errors: Sepa credit transfer errors
     sepa_credit_transfer_ids: Sepa credit transfer ids

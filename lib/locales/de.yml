@@ -27,6 +27,8 @@ de:
     read_customer_nick_info:
     read_customer_phone: Kunden Telefonnummern
     read_customer_phone_info:
+    read_rate_limit: API-Anfrage Limit
+    read_rate_limit_info: Das Recht zum Abfragen des API-Anfragen-Limit werden automatisch hinzugfügt
     read_transaction_credit_card: Transaktion Kreditkartendaten
     read_transaction_credit_card_info:
     read_transaction_full: Transaktion alle Daten
@@ -44,11 +46,20 @@ de:
     readwrite_batch_direct_debit: Batch Lastschrifteinzug erstellen und lesen
     readwrite_batch_direct_debit_info:
     readwrite_batch_transfer: Batch Überweisungen erstellen und lesen
-    readwrite_batch_transfer_info: "Risikohinweis: API Transfer-Aufrufe mit ausgehenden Geldtransfers sind nicht durch eine MTAN oder FIN geschützt und es besteht ein erhöhtes Risiko. Beachten Sie die damit verbundenen Risiken und Pflichten, insbesondere wie in Paragraph 5 der Developer AGB beschrieben."
+    readwrite_batch_transfer_info: 'Risikohinweis: API Transfer-Aufrufe mit ausgehenden
+      Geldtransfers sind nicht durch eine MTAN oder FIN geschützt und es besteht ein
+      erhöhtes Risiko. Beachten Sie die damit verbundenen Risiken und Pflichten, insbesondere
+      wie in Paragraph 5 der Developer AGB beschrieben.'
     readwrite_internal_transfer: Fidor interne Überweisungen erstellen und lesen
-    readwrite_internal_transfer_info: "Risikohinweis: API Transfer-Aufrufe mit ausgehenden Geldtransfers sind nicht durch eine MTAN oder FIN geschützt und es besteht ein erhöhtes Risiko. Beachten Sie die damit verbundenen Risiken und Pflichten, insbesondere wie in Paragraph 5 der Developer AGB beschrieben."
+    readwrite_internal_transfer_info: 'Risikohinweis: API Transfer-Aufrufe mit ausgehenden
+      Geldtransfers sind nicht durch eine MTAN oder FIN geschützt und es besteht ein
+      erhöhtes Risiko. Beachten Sie die damit verbundenen Risiken und Pflichten, insbesondere
+      wie in Paragraph 5 der Developer AGB beschrieben.'
     readwrite_sepa_credit_transfer: "Überweisungen erstellen und lesen"
-    readwrite_sepa_credit_transfer_info: "Risikohinweis: API Transfer-Aufrufe mit ausgehenden Geldtransfers sind nicht durch eine MTAN oder FIN geschützt und es besteht ein erhöhtes Risiko. Beachten Sie die damit verbundenen Risiken und Pflichten, insbesondere wie in Paragraph 5 der Developer AGB beschrieben."
+    readwrite_sepa_credit_transfer_info: 'Risikohinweis: API Transfer-Aufrufe mit
+      ausgehenden Geldtransfers sind nicht durch eine MTAN oder FIN geschützt und
+      es besteht ein erhöhtes Risiko. Beachten Sie die damit verbundenen Risiken und
+      Pflichten, insbesondere wie in Paragraph 5 der Developer AGB beschrieben.'
     readwrite_sepa_credit_transfer_mtan: "Überweisung via mTan erstellen und lesen"
     readwrite_sepa_credit_transfer_mtan_info:
     readwrite_sepa_direct_debit: Lastschrifteinzug erstellen und lesen
@@ -106,6 +117,7 @@ de:
     kind: Typ
     last_name: Nachname
     last_sign_in_at: Zuletzt gesehen am
+    limit: Anfragelimit
     maiden_name: Geburtsname
     mandate_id: Mandats ID
     mandate_reference: Mandatsreferenz
@@ -117,6 +129,7 @@ de:
     preauth_amount: Vorautorisierungsbetrag
     receiver: Empfänger
     religion: Religion
+    remaining: Verbleibende Anfragen
     remote_address_line1: Adresse
     remote_address_line2: Adresszusatz
     remote_bic: BIC
@@ -128,6 +141,7 @@ de:
     remote_signature_location: Ort der Signatur
     remote_title: Empfänger Titel
     remote_ultimate_name: Voller Name
+    reset: Verbleibende Zeit bis zum zurücksetzen
     return_transaction_id:
     sepa_credit_transfer_errors: Sepa Überweisungsfehler
     sepa_credit_transfer_ids: Sepa Überweisung Ids

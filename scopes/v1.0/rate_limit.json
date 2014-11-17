@@ -1,0 +1,8 @@
+[
+  {
+    "name" : "read_rate_limit",
+    "context" : "rate_limit",
+    "privileges" : ["show"],
+    "fields_r" : ["limit", "remaining", "reset"]
+  }
+]
