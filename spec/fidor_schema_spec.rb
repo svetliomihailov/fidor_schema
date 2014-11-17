@@ -22,8 +22,8 @@ describe Fidor::Schema do
 
     it 'in single schema' do
       SchemaTools.schema_path = Fidor::Schema.path
-      schema = SchemaTools::Reader.read('accounts').to_h
-      expect(schema['properties']['accounts']['items']['properties']['id']['type']).to eq 'string'
+      schema = SchemaTools::Reader.read('account').to_h
+      expect(schema['properties']['customers']['items']['properties']['id']['type']).to eq 'string'
 
     end
 

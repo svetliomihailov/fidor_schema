@@ -92,10 +92,7 @@
     },
     {
       "rel"          : "transactions",
-      "href"         : "accounts/{id}/transactions",
-      "targetSchema" : {
-        "$ref" : "./lists/transactions.json#"
-      }
+      "href"         : "accounts/{id}/transactions"
     },
     {
       "rel"          : "internal_transfers",

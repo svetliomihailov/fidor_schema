@@ -4,6 +4,7 @@ A more detailed view of the changes can be found in the [commit messages](https:
 
 ##2014-11
 
+* Lists of any object type are now returned under the generic 'data' key
 * Transaction clarify nested transaction_type_details
 * Transaction amount can be negative
 * add rate_limit endpoint
