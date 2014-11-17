@@ -27,8 +27,8 @@ de:
     read_customer_nick_info:
     read_customer_phone: Kunden Telefonnummern
     read_customer_phone_info:
-    read_rate_limit: API-Anfrage Limit
-    read_rate_limit_info: Das Recht zum Abfragen des API-Anfragen-Limit werden automatisch hinzugfügt
+    read_rate_limit: API-Anfragen Limit lesen
+    read_rate_limit_info:
     read_transaction_credit_card: Transaktion Kreditkartendaten
     read_transaction_credit_card_info:
     read_transaction_full: Transaktion alle Daten
@@ -129,7 +129,7 @@ de:
     preauth_amount: Vorautorisierungsbetrag
     receiver: Empfänger
     religion: Religion
-    remaining: Verbleibende Anfragen
+    remaining: Verbleibende API-Anfragen
     remote_address_line1: Adresse
     remote_address_line2: Adresszusatz
     remote_bic: BIC
@@ -141,7 +141,7 @@ de:
     remote_signature_location: Ort der Signatur
     remote_title: Empfänger Titel
     remote_ultimate_name: Voller Name
-    reset: Verbleibende Zeit bis zum zurücksetzen
+    reset: Verbleibende Zeit bis zum Zurücksetzen der API-Anfrage Limits
     return_transaction_id:
     sepa_credit_transfer_errors: Sepa Überweisungsfehler
     sepa_credit_transfer_ids: Sepa Überweisung Ids

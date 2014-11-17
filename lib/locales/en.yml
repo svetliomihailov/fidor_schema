@@ -28,7 +28,7 @@ en:
     read_customer_phone: Read customer phone numbers
     read_customer_phone_info:
     read_rate_limit: Read API-Request Limits
-    read_rate_limit_info: The right to read API-Request limits are automatically added.
+    read_rate_limit_info:
     read_transaction_credit_card: Read transaction caredit card information
     read_transaction_credit_card_info:
     read_transaction_full: Read transactions with all fields
@@ -117,7 +117,7 @@ en:
     kind: Kind
     last_name: Lastname
     last_sign_in_at:
-    limit:
+    limit: API-Request limit
     maiden_name: Maiden name
     mandate_id: Mandate ID
     mandate_reference: Mandate reference
@@ -129,7 +129,7 @@ en:
     preauth_amount: Preauthorisation amount
     receiver: Receiver
     religion: Religion
-    remaining:
+    remaining: Remain API-Requests
     remote_address_line1:
     remote_address_line2:
     remote_bic: Remote BIC
@@ -141,7 +141,7 @@ en:
     remote_signature_location: Remote signature location
     remote_title: Remote title
     remote_ultimate_name: Remote ultimate name
-    reset:
+    reset: Remaining API-Limit reset time
     return_transaction_id: Returned transaction id
     sepa_credit_transfer_errors: Sepa credit transfer errors
     sepa_credit_transfer_ids: Sepa credit transfer ids
