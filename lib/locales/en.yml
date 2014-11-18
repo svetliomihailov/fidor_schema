@@ -92,6 +92,7 @@ en:
     collection_date: Collection date
     cor1_option: COR1 option
     created_at: Created at
+    creditor_identifier: Creditor Identifier
     currency: Currency
     customer_id: Customer ID
     customers: Customers

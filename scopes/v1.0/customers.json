@@ -3,11 +3,13 @@
     "name" : "read_customer_full",
     "context" : "customers",
     "privileges" : ["show", "index"],
-    "fields_r" : ["id","email","first_name","last_name","gender","title","nick", "maiden_name",
-        "adr_street", "adr_street_number", "adr_post_code", "adr_city", "adr_country",
-        "adr_phone", "adr_mobile", "adr_fax","adr_businessphone", "birthday", "is_verified",
-        "nationality", "marital_status", "religion", "id_card_registration_city",
-        "id_card_number", "id_card_valid_until", "created_at", "updated_at"]
+    "fields_r" : ["id","email","first_name","last_name","gender","title","nick",
+                  "maiden_name", "adr_street", "adr_street_number", "adr_post_code",
+                  "adr_city", "adr_country", "adr_phone", "adr_mobile", "adr_fax",
+                  "adr_businessphone", "birthday", "is_verified", "nationality",
+                  "marital_status", "religion", "id_card_registration_city",
+                  "id_card_number", "id_card_valid_until", "created_at", "updated_at",
+                  "creditor_identifier"]
   },
   {
     "name" : "read_customer_name",

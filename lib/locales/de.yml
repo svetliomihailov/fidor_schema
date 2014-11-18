@@ -92,6 +92,7 @@ de:
     collection_date: Einzugsdatum
     cor1_option: COR1 Option
     created_at: Erstellt am
+    creditor_identifier: Gläubiger-Identifikationsnummer
     currency: Währung
     customer_id: Kunden ID
     customers: Kontoinhaber
