@@ -2,6 +2,10 @@
 
 A more detailed view of the changes can be found in the [commit messages](https://github.com/fidor/fidor_schema/commits/)
 
+##2014-12
+
+* be explicit for number fields, now defined as integers
+
 ##2014-11
 
 * Customer/Sepa direct debit add creditor_identifier field

@@ -19,27 +19,27 @@
     },
     "balance" : {
       "description" : "Account balance",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "balance_available" : {
       "description" : "Available account balance.",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "overdraft" : {
       "description" : "Available account overdraft",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "preauth_amount" : {
       "description" : "Amount available for pre-authorization.",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "cash_flow_per_year" : {
       "description" : "Amount available for yearly cash flow. This is the limit of funds an account holder has at their disposal without fulfilling Germany KYC requirements.",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "is_debit_note_enabled" : {

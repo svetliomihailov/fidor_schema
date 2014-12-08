@@ -13,7 +13,7 @@
     "code" : {
       "description" : "a numeric code identifying the error",
       "required"    : false,
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "errors" : {
