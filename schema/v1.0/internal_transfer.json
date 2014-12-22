@@ -136,6 +136,25 @@
       "rel"    : "create",
       "href"   : "internal_transfers",
       "method" : "POST"
+    },
+    {
+      "rel"  : "mtan",
+      "href" : "internal_transfers/{id}/mtan",
+      "method" : "GET"
+    },
+    {
+      "rel"  : "mtan",
+      "href" : "internal_transfers/{id}/mtan",
+      "title" : "Confirm the transfer with the mtan send to the user",
+      "method" : "PUT",
+      "properties" : {
+        "mtan" : {
+          "title"  : "The mtan received by the user",
+          "required"   : true,
+          "type"   : "string"
+        }
+      }
+
     }
   ]
 }

@@ -1,0 +1,29 @@
+{
+  "type"        : "object",
+  "title"       : "mTan",
+  "name"        : "mtan",
+  "description" : "",
+  "properties"  : {
+    "mtan" : {
+      "description" : "The mtan",
+      "type"        : "string",
+      "readonly"    : true
+    },
+    "related_object_type" : {
+      "description" : "Enum of valid object classes",
+      "type"        : "string",
+      "readonly"    : true
+    },
+    "related_object_id" : {
+      "description" : "",
+      "type"        : "string",
+      "readonly"    : true
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "mtan"
+    }
+  ]
+}

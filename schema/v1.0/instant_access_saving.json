@@ -1,0 +1,10 @@
+{
+  "type"        : "object",
+  "title"       : "Instant Access Saving",
+  "name"        : "instant_access_saving",
+  "description" : "",
+  "properties"  : {
+
+  },
+  "links" : []
+}

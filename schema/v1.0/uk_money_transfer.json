@@ -1,0 +1,10 @@
+{
+  "type"        : "object",
+  "title"       : "UK Money Transfer",
+  "name"        : "uk_money_transfer",
+  "description" : "",
+  "properties"  : {
+
+  },
+  "links" : []
+}
