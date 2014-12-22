@@ -19,27 +19,27 @@
     },
     "balance" : {
       "description" : "Account balance",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "balance_available" : {
       "description" : "Available account balance.",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "overdraft" : {
       "description" : "Available account overdraft",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "preauth_amount" : {
       "description" : "Amount available for pre-authorization.",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "cash_flow_per_year" : {
       "description" : "Amount available for yearly cash flow. This is the limit of funds an account holder has at their disposal without fulfilling Germany KYC requirements.",
-      "type"        : "number",
+      "type"        : "integer",
       "readonly"    : true
     },
     "is_debit_note_enabled" : {
@@ -88,38 +88,23 @@
     },
     {
       "rel"          : "instances",
-      "href"         : "accounts",
-      "targetSchema" : {
-        "$ref" : "./lists/accounts.json#"
-      }
+      "href"         : "accounts"
     },
     {
       "rel"          : "transactions",
-      "href"         : "accounts/{id}/transactions",
-      "targetSchema" : {
-        "$ref" : "./lists/transactions.json#"
-      }
+      "href"         : "accounts/{id}/transactions"
     },
     {
       "rel"          : "internal_transfers",
-      "href"         : "accounts/{id}/internal_transfers",
-      "targetSchema" : {
-        "$ref" : "./lists/internal_transfers.json#"
-      }
+      "href"         : "accounts/{id}/internal_transfers"
     },
     {
       "rel"          : "sepa_credit_transfers",
-      "href"         : "accounts/{id}/sepa_credit_transfers",
-      "targetSchema" : {
-        "$ref" : "./lists/sepa_credit_transfers.json#"
-      }
+      "href"         : "accounts/{id}/sepa_credit_transfers"
     },
     {
       "rel"          : "sepa_direct_debits",
-      "href"         : "accounts/{id}/sepa_direct_debits",
-      "targetSchema" : {
-        "$ref" : "./lists/sepa_direct_debits.json#"
-      }
+      "href"         : "accounts/{id}/sepa_direct_debits"
     }
   ]
 }

@@ -21,16 +21,28 @@
       "type"        : "object",
       "oneOf"       : [
         {
-          "$ref" : "./transaction_type_details/credit_card_details.json#properties"
+          "name"        : "credit_card_details",
+          "properties" : {
+            "$ref" : "./transaction_type_details/credit_card_details.json#properties"
+          }
         },
         {
-          "$ref" : "./transaction_type_details/internal_transfer_details.json#properties"
+          "name"        : "internal_transfer_details",
+          "properties" : {
+            "$ref" : "./transaction_type_details/internal_transfer_details.json#properties"
+          }
         },
         {
-          "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#properties"
+          "name"        : "sepa_credit_transfer_details",
+          "properties" : {
+            "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#properties"
+          }
         },
         {
-          "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#properties"
+          "name"        : "sepa_direct_debit_details",
+          "properties" : {
+            "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#properties"
+          }
         }
       ]
     },
@@ -39,17 +51,22 @@
       "readonly" : true
     },
     "amount" : {
-      "$ref"     : "./base_types/base_types.json#definitions/amount",
+      "description"      : "The transferred amount in account currency, in minor units, e.g. 1EUR is represented as 100. Can be negative e.g. if something was withdrawn from an account.",
+      "type"             : "integer",
+      "readonly" : true
+    },
+    "currency" : {
+      "$ref"     : "./base_types/base_types.json#definitions/currency",
       "readonly" : true
     },
     "booking_date" : {
-      "description" : "Date the transaction was booked.",
-      "format"      : "date-time",
+      "description" : "Date the transaction was booked. ISO 8601 Date",
+      "format"      : "date",
       "readonly"    : true,
       "type"        : "string"
     },
     "value_date" : {
-      "description" : "Date the amount was credited to the account (Wertstellung).",
+      "description" : "Date the amount was credited to the account. ISO 8601 Date",
       "format"      : "date",
       "readonly"    : true,
       "type"        : "string"
@@ -62,7 +79,7 @@
     "return_transaction_id" : {
       "description" : "If the transaction was marked for return, this references the new return transaction.",
       "readonly"    : true,
-      "type"        : "integer"
+      "type"        : "string"
     },
     "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"
@@ -96,28 +113,28 @@
           "type"   : "string"
         },
         "filter[booking_date_from]" : {
-          "title"  : "Date filter from >= date",
-          "format" : "date-time",
+          "title"  : "Date filter from >= date. ISO 8601 Date",
+          "format" : "date",
           "type"   : "string"
         },
         "filter[booking_date_to]" : {
-          "title"  : "Date filter to <= date",
-          "format" : "date-time",
+          "title"  : "Date filter to <= date. ISO 8601 Date",
+          "format" : "date",
           "type"   : "string"
         },
-        "filter[kinds]" : {
+        "filter[transaction_types]" : {
           "$ref"  : "./base_types/base_types.json#definitions/transaction_type",
           "title" : "By transaction types"
         },
         "page" : {
           "title"       : "Page",
           "description" : "In paginated results set the page to look for",
-          "type"        : "number"
+          "type"        : "integer"
         },
         "per_page" : {
           "title"       : "Per page",
           "description" : "Results per page. Default is 10, max is 100",
-          "type"        : "number"
+          "type"        : "integer"
         },
         "sort" : {
           "title" : "Sort",
@@ -127,9 +144,6 @@
           ],
           "description" : "Sort the results in ASC or DESC",
           "type"        : "string"
-        },
-        "targetSchema" : {
-          "$ref" : "./lists/transactions.json#"
         }
       }
     }

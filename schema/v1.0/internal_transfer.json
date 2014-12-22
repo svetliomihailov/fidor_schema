@@ -43,6 +43,10 @@
       "$ref"     : "./base_types/base_types.json#definitions/amount",
       "required" : true
     },
+    "currency" : {
+      "$ref"     : "./base_types/base_types.json#definitions/currency",
+      "readonly" : true
+    },
     "subject" : {
       "$ref"      : "./base_types/base_types.json#definitions/subject",
       "maxLength" : 300
@@ -110,12 +114,12 @@
         "page" : {
           "title"       : "Page",
           "description" : "In paginated results set the page to look for",
-          "type"        : "number"
+          "type"        : "integer"
         },
         "per_page" : {
           "title"       : "Per page",
           "description" : "Results per page. Default is 10, max is 100",
-          "type"        : "number"
+          "type"        : "integer"
         },
         "sort" : {
           "title" : "Sort",
@@ -126,9 +130,6 @@
           "description" : "Sort the results in ASC or DESC",
           "type"        : "string"
         }
-      },
-      "targetSchema" : {
-        "$ref" : "./lists/internal_transfers.json#"
       }
     },
     {

@@ -117,6 +117,11 @@
       "format"      : "date",
       "readonly"    : true
     },
+    "creditor_identifier" : {
+      "description" : "Creditor Identifier ID set if the customer wants to create direct debits.",
+      "type"        : "string",
+      "readonly"    : true
+    },
     "is_verified" : {
       "description" : "Indicates whether KYC has been performed.",
       "type"        : "boolean",
@@ -194,17 +199,11 @@
     },
     {
       "rel"          : "instances",
-      "href"         : "customers",
-      "targetSchema" : {
-        "$ref" : "./lists/customers.json#"
-      }
+      "href"         : "customers"
     },
     {
       "rel"          : "accounts",
-      "href"         : "customers/{id}/accounts",
-      "targetSchema" : {
-        "$ref" : "./lists/accounts.json#"
-      }
+      "href"         : "customers/{id}/accounts"
     }
   ]
 }

@@ -4,7 +4,7 @@
   "type"        : "object",
   "title"       : "Batch Transfer",
   "name"        : "batch_transfer",
-  "description" : "A transfer batch contains multiple transfers which are processed asynchronously.",
+  "description" : "PREVIEW: A transfer batch contains multiple transfers which are processed asynchronously.",
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -89,7 +89,7 @@
         }
       }
     },
-    "transfer_count" : {
+    "transfers_count" : {
       "description" : "count of transfers (internal and sepa) transactions received in this batch",
       "readonly"    : true,
       "type"        : "integer"
@@ -154,12 +154,12 @@
         "page" : {
           "title"       : "Page",
           "description" : "In paginated results set the page to look for",
-          "type"        : "number"
+          "type"        : "integer"
         },
         "per_page" : {
           "title"       : "Per page",
           "description" : "Results per page. Default is 10, max is 100",
-          "type"        : "number"
+          "type"        : "integer"
         },
         "sort" : {
           "title" : "Sort",

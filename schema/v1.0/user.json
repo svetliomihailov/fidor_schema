@@ -13,7 +13,7 @@
       "readonly" : true
     },
     "last_sign_in_at" : {
-      "description" : "Last time the user accessed fidor.",
+      "description" : "Last time the user accessed fidor. ISO 8601 Date-Time",
       "format"      : "date-time",
       "readonly"    : true,
       "type"        : "string"
@@ -27,7 +27,7 @@
   },
   "links" : [
     {
-      "rel"  : "self",
+      "rel"  : "current",
       "href" : "users/current"
     }
   ]

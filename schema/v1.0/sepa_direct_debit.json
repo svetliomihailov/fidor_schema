@@ -19,12 +19,21 @@
     },
     "mandate_id" : {
       "description" : "The sepa mandate used by the debit",
-      "type"        : "number",
+      "type"        : "string",
       "required"    : true
+    },
+    "creditor_identifier" : {
+      "description" : "Creditor Identifier",
+      "type"        : "string",
+      "readonly"    : true
     },
     "amount" : {
       "$ref"     : "./base_types/base_types.json#definitions/amount",
       "required" : true
+    },
+    "currency" : {
+      "$ref"     : "./base_types/base_types.json#definitions/currency",
+      "readonly" : true
     },
     "eref" : {
       "$ref" : "./base_types/base_types.json#definitions/eref"
@@ -98,12 +107,12 @@
         "page" : {
           "title"       : "Page",
           "description" : "In paginated results set the page to retrieve",
-          "type"        : "number"
+          "type"        : "integer"
         },
         "per_page" : {
           "title"       : "Per page",
           "description" : "Results per page. Default is 10, max is 100",
-          "type"        : "number"
+          "type"        : "integer"
         },
         "sort" : {
           "title" : "Sort",
@@ -114,9 +123,6 @@
           "description" : "Sort the results in ASC or DESC",
           "type"        : "string"
         }
-      },
-      "targetSchema" : {
-        "$ref" : "./lists/sepa_direct_debits.json#"
       }
     },
     {
