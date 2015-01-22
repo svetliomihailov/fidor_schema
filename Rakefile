@@ -6,3 +6,10 @@ require 'rspec/core/rake_task'
 desc 'Run specs'
 RSpec::Core::RakeTask.new
 task :default => :spec
+
+
+require 'validate/validate'
+
+task :validate_schema do
+  Fidor::SchemaValidation.main
+end
