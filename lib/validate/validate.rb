@@ -9,35 +9,78 @@
 # https://github.com/brandur/json_schema (note the underscore!)
 # https://github.com/Soylent/jschema
 #
+# These are the three currently available ruby validators that
+# support draft-4. (According to json-schema.org). 
+#
+# Each has their quirks, we'll try to:
+#    * use each to validate each fidor schema against the json-schema meta-schema
+#    * try to load each fidor schema as a schema for validation.
+#
 require 'pathname'
 require 'json-schema'
 require 'json_schema'
 
 module Fidor
   module SchemaValidation
-    class Validator
+    
+    class Validator # Base
       def validate_all
          @files_to_validate.each do |file|
           schema = File.read file
-          puts "validating: #{file}"
+          puts "\nvalidating: #{file}"
           validate schema
+          puts "\nusing #{file} for validation."
+          use_for_validation schema
         end
       end
     end
+    
+    # https://github.com/ruby-json-schema/json-schema
     class JsonDashSchemaValidator < Validator
       def initialize files_to_validate
         @files_to_validate = files_to_validate
         @meta_schema_fn    = "#{File.dirname(__FILE__)}/schema.json"
+
+        # need to know the base dir of the schema to resolve relative uris.
+        # see below.
+        @schemadir = File.dirname(@files_to_validate[0])
+      
         validate_all
       end # init
+
       def validate schema
         begin
-          JSON::Validator.validate!(@meta_schema_fn, schema, :strict => true)
+          results = JSON::Validator.fully_validate(@meta_schema_fn, schema)
+          if !results || results.length == 0 
+            puts "Passed!"
+          else
+            puts "Failed!"
+            puts results
+          end
         rescue
+          puts "Failed! Error..."
           puts $!
-          puts "Failed!"
-        else
-          puts "Passed"
+          puts $!.backtrace
+        end
+      end
+
+      def use_for_validation schema
+        # json-schema resolves relatives path relative to it's own "."
+        # not relative to the file containing the reference ...
+        baseDirectory = Dir.pwd
+
+        begin
+          Dir.chdir @schemadir
+          data = {}
+          results = JSON::Validator.fully_validate(schema, data)
+          if !results || results.length == 0 
+            puts "Passed!"
+          else
+            puts "Failed!"
+            puts results
+          end
+        ensure
+          Dir.chdir baseDirectory
         end
       end
     end
@@ -53,10 +96,10 @@ module Fidor
 
       def validate schema
         begin
-                schema_to_test = JSON.parse(schema)
-                @schema.validate! schema_to_test
-                puts "Passed validation against meta-schema!"
-                JsonSchema.parse!(schema_to_test)
+          schema_to_test = JSON.parse(schema)
+          @schema.validate! schema_to_test
+          puts "Passed validation against meta-schema!"
+          JsonSchema.parse!(schema_to_test)
         rescue
           puts $!
           puts "Failed!"
@@ -64,8 +107,19 @@ module Fidor
           puts "Passed!"
         end
       end
+      def use_for_validation schema
+        begin
+         schema_to_test = JSON.parse(schema)
+         JsonSchema.parse!(schema_to_test)
+        rescue
+          puts $!
+          puts "Failed"
+        else
+          puts "Passed!"
+        end
+      end 
     end
-     
+    
     def self.find_all_schema
       # asssume we're running from rake and
       # pwd is project root ...
@@ -76,11 +130,19 @@ module Fidor
     end
     
 
-    def self.main
+    def self.main validator
+      case validator
+        when :underscore
+          JsonUnderscoreSchemaValidator.new find_all_schema
+        when :dash
+          JsonDashSchemaValidator.new find_all_schema
+        else
+          puts "Unknown validator: #{validator}"
+      end
       puts "JSON-Schema"
       JsonDashSchemaValidator.new find_all_schema
       puts "JSON_Schema"
-      JsonUnderscoreSchemaValidator.new find_all_schema
+      
     end
   end
 end

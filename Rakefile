@@ -10,6 +10,15 @@ task :default => :spec
 
 require 'validate/validate'
 
-task :validate_schema do
-  Fidor::SchemaValidation.main
+
+task :validate_dash do
+  Fidor::SchemaValidation.main :dash
+end
+
+task :validate_underscore do
+  Fidor::SchemaValidation.main :underscore
+end
+
+task :validate_schema => [:validate_dash, :validate_underscore] do
+  
 end
