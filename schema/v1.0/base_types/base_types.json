@@ -18,7 +18,7 @@
     "transaction_id" : {
       "description" : "Identifies a reference to a corresponding transaction",
       "readonly"    : true,
-      "type"        : "integer"
+      "type"        : "string"
     },
     "phone" : {
       "description" : "A phone or fax number, formatted with country code: +49 123 1233213",
