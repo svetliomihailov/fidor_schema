@@ -19,6 +19,10 @@ task :validate_underscore do
   Fidor::SchemaValidation.main :underscore
 end
 
-task :validate_schema => [:validate_dash, :validate_underscore] do
+task :validate_jschema do
+  Fidor::SchemaValidation.main :jschema
+end
+
+task :validate_schema => [:validate_dash, :validate_underscore, :validate_jschema] do
   
 end

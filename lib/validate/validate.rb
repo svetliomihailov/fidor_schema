@@ -19,6 +19,7 @@
 require 'pathname'
 require 'json-schema'
 require 'json_schema'
+require 'jschema'
 
 module Fidor
   module SchemaValidation
@@ -119,6 +120,38 @@ module Fidor
         end
       end 
     end
+
+    class JSchemaValidator < Validator
+      def initialize files_to_validate
+        @files_to_validate = files_to_validate
+        schema_data = File.read("#{File.dirname(__FILE__)}/schema.json")
+        schema_json = JSON.parse(schema_data)
+        @schema = JSchema.build(schema_json)
+        validate_all
+      end
+      def validate schema
+        schema_to_test = JSON.parse(schema)
+        results = @schema.validate schema_to_test
+        if !results || results.length == 0 
+          puts "Passed!"
+        else
+          puts "Failed!"
+          puts results
+        end
+      end
+      def use_for_validation schema
+        schema_to_test = JSON.parse(schema)
+        begin
+         JSchema.build(schema_to_test)
+        rescue
+          puts "Failed!"
+          puts $!
+          # puts $!.backtrace
+        else
+          puts "Passed!"
+        end
+      end
+    end
     
     def self.find_all_schema
       # asssume we're running from rake and
@@ -133,15 +166,17 @@ module Fidor
     def self.main validator
       case validator
         when :underscore
+          puts "Running validation with JSON_Schema"
           JsonUnderscoreSchemaValidator.new find_all_schema
         when :dash
+          puts "Running validation with JSON-Schema"
           JsonDashSchemaValidator.new find_all_schema
+        when :jschema
+          puts "Running validation with JSchema"
+          JSchemaValidator.new find_all_schema
         else
           puts "Unknown validator: #{validator}"
       end
-      puts "JSON-Schema"
-      JsonDashSchemaValidator.new find_all_schema
-      puts "JSON_Schema"
       
     end
   end
