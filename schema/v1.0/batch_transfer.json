@@ -5,6 +5,7 @@
   "title"       : "Batch Transfer",
   "name"        : "batch_transfer",
   "description" : "PREVIEW: A transfer batch contains multiple transfers which are processed asynchronously.",
+  "required"    : ["account_id", "external_uid"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -13,8 +14,7 @@
       "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
     "account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/account_id"
     },
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"

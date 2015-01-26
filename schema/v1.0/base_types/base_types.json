@@ -50,8 +50,7 @@
     },
     "external_uid" : {
       "description" : "Unique ID of the creator of the transaction. In case a uid is reused for a transaction, it is not executed, this mechanism can be used to prevent double bookings in case of network failure or similar event where transaction status is unknown",
-      "type"        : "string",
-      "required"    : true
+      "type"        : "string"
     },
     "iban" : {
       "description" : "IBAN",

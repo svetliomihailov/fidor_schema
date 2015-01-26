@@ -3,6 +3,7 @@
   "title"       : "Sepa Direct Debit",
   "name"        : "sepa_direct_debit",
   "description" : "A direct debit can only be performed with a valid sepa mandate, authorizing access to the debtor's account.",
+  "required"    : ["account_id", "mandate_id", "amount", "collection_date", "external_uid"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -11,16 +12,14 @@
       "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
     "account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/account_id"
     },
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
     },
     "mandate_id" : {
       "description" : "The sepa mandate used by the debit",
-      "type"        : "string",
-      "required"    : true
+      "type"        : "string"
     },
     "creditor_identifier" : {
       "description" : "Creditor Identifier",
@@ -28,8 +27,7 @@
       "readonly"    : true
     },
     "amount" : {
-      "$ref"     : "./base_types/base_types.json#definitions/amount",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/amount"
     },
     "currency" : {
       "$ref"     : "./base_types/base_types.json#definitions/currency",
@@ -44,8 +42,7 @@
     },
     "collection_date" : {
       "description" : "Requested date for the debit to be withdrawn from the foreign account.",
-      "format"      : "date",
-      "required"    : true,
+      "format"      : "date-time",
       "type"        : "string"
     },
     "state" : {

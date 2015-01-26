@@ -5,6 +5,7 @@
   "title"       : "Batch Direct Debit",
   "name"        : "batch_direct_debit",
   "description" : "PREVIEW: A direct debit batch contains multiple direct debits which are processed asynchronously.",
+  "required"    : ["account_id", "external_uid"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -13,8 +14,7 @@
       "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
     "account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/account_id"
     },
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
@@ -22,7 +22,6 @@
     "sepa_direct_debits" : {
       "description" : "The direct_debits to process.",
       "type"        : "array",
-      "required"    : false,
       "items"       : {
         "type"       : "object",
         "properties" : {
