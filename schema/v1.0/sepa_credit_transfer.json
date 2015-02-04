@@ -72,22 +72,22 @@
       "href"       : "sepa_credit_transfers",
       "properties" : {
         "filter[account_ids]" : {
-          "title"  : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "description"  : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
           "format" : "date",
           "type"   : "string"
         },
         "filter[created_at_from]" : {
-          "title"  : "Creation date filter from >= date",
+          "description"  : "Creation date filter from >= date",
           "format" : "date",
           "type"   : "string"
         },
         "filter[created_at_to]" : {
-          "title"  : "Creation date filter to <= date",
+          "description"  : "Creation date filter to <= date",
           "format" : "date",
           "type"   : "string"
         },
         "filter[states]" : {
-          "title" : "Filter by single or multiple csv delimited states",
+          "description" : "Filter by single or multiple csv delimited states",
           "enum"  : [
             "received",
             "mobile_tan_sent",
