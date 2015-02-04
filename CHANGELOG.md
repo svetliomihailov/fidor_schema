@@ -2,6 +2,10 @@
 
 A more detailed view of the changes can be found in the [commit messages](https://github.com/fidor/fidor_schema/commits/)
 
+##2015-02
+
+* SepaMandates filter by multiple references and ibans
+
 ##2014-12
 
 * be explicit for number fields, now defined as integers

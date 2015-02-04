@@ -118,14 +118,14 @@
       "rel"        : "instances",
       "href"       : "sepa_mandates",
       "properties" : {
-        "filter[mandate_reference]" : {
+        "filter[mandate_references]" : {
           "title"       : "Search",
-          "description" : "Search by mandate reference",
+          "description" : "Search by mandate reference, add multiple comma separated",
           "type"        : "string"
         },
-        "filter[remote_iban]" : {
+        "filter[remote_ibans]" : {
           "title"       : "Search",
-          "description" : "Search by remote iban",
+          "description" : "Search by remote iban, add multiple comma separated",
           "type"        : "string"
         },
         "page" : {
