@@ -1,0 +1,72 @@
+{
+  "type"        : "object",
+  "title"       : "Ebox Message",
+  "name"        : "ebox_message",
+  "description" : "An ebox message object",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
+    },
+    "account_id" : {
+      "$ref"     : "./base_types/base_types.json#definitions/account_id",
+    },
+    
+    "resource_id" : {
+      "description" : "I don't think we have to provide this internal information",
+      "readonly" : true
+    },
+    "resource_type" : {
+      "description" : "I don't think we have to provide this internal information",
+      "readonly" : true
+    },
+    "subject" : {
+      "description" : "Subject of the ebox message",
+      "$ref"     : "./base_types/base_types.json#definitions/subject",
+      "readonly" : true
+    },
+    "type" : { #kind
+      "description" : "",
+      
+    },
+    "size" : { ???
+      
+    },
+    
+    "opened_at" : {
+      
+    },
+    "archived_at" : {
+      
+    },
+    "hidden_at" : {
+      
+    },
+    "category" : { #category_name
+      "description" : "Ebox message category",
+      "type" : "string",
+      "readonly" : true # can I add categories?
+    },
+    
+
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "ebox_messages/{id}"
+    },
+    {
+      "rel"          : "instances",
+      "href"         : "ebox_messages"
+    },
+    {
+      "rel"          : "documents",
+      "href"         : "ebox_messages/{id}/documents"
+    }
+  ]
+}
