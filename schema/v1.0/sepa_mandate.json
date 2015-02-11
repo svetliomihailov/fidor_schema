@@ -107,6 +107,12 @@
       "description" : "Date the mandate started to be valid.",
       "format"      : "date",
       "type"        : "string"
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
     }
   },
   "links" : [
