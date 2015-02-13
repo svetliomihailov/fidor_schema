@@ -1,0 +1,114 @@
+{
+  "type"        : "object",
+  "title"       : "Mobile Tan",
+  "name"        : "mobile_tan",
+  "description" : "A mobile tan object",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
+    },
+    "account_id" : {
+      "$ref"     : "./base_types/base_types.json#definitions/account_id",
+    },
+    "external_uid" : {
+      "$ref"     : "./base_types/base_types.json#definitions/external_uid",
+    },
+    "tan" : {
+      "description" : "A mobile TAN for verification of the action",
+      "type" : "string",
+      "readonly" : true
+    },
+    "state" : {
+      "description" : "State of the mobile TAN. | sent - mobile TAN was sent | failed - sending failed | used - correct TAN entered | suspended - wrong TAN entry",
+      "enum"        : [
+        "sent",
+        "failed",
+        "used",
+        "suspended"
+      ],
+      "readonly" : true,
+      "type"     : "string"
+    },
+    "used_at" : {
+      "description" : "A date the mobile tan has been used on",
+      "$ref"     : "./base_types/base_types.json#definitions/date_id",
+    },
+    "wrong_inputs" : {
+      "description" : "Number of wrong inputs",
+      "type" : "integer",
+      "readonly" : true
+    },
+    "suspended" : {
+      "description" : "Identifies whether the tan has been suspended or not",
+      "type" : "boolean",
+      "default" : false
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "mobile_tans/{id}"
+    },
+    {
+      "rel"        : "instances",
+      "href"       : "mobile_tans",
+      "properties" : {
+        "filter[account_ids]" : {
+          "title"  : "Find mobile TANs to the given account ids. Single id or multiple ids comma-separated.",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "filter[external_uids]" : {
+          "title"  : "Find mobile TANs belonging to the given external ids. Single id or multiple ids comma-separated.",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "filter[created_at_from]" : {
+          "title"  : "Creation date filter from >= date",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "filter[created_at_to]" : {
+          "title"  : "Creation date filter to <= date",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "filter[states]" : {
+          "title" : "Filter by single or multiple csv delimited states",
+          "enum"  : [
+            "sent",
+            "failed",
+            "used",
+            "suspended"
+          ],
+          "type" : "string"
+        },
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "integer"
+        },
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "integer"
+        },
+        "sort" : {
+          "title" : "Sort",
+          "enum"  : [
+            "ASC",
+            "DESC"
+          ],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
+        }
+      }
+    }
+  ]
+}
