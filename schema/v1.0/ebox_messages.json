@@ -62,8 +62,55 @@
     {
       "rel"  : "self",
       "href" : "ebox_messages/{id}"
+    },
+    {
+      "rel"        : "instances",
+      "href"       : "ebox_messages",
+      "properties" : {
+        "filter[account_ids]" : {
+          "title"  : "Find internal transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "filter[created_at_from]" : {
+          "title"  : "Creation date filter from >= date",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "filter[created_at_to]" : {
+          "title"  : "Creation date filter to <= date",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "filter[types]" : {
+          "title" : "Filter by single or multiple csv delimited states",
+          "enum"  : [
+            "information",
+            "advantage_offer",
+            "document"
+          ],
+          "type" : "string"
+        },
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "integer"
+        },
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "integer"
+        },
+        "sort" : {
+          "title" : "Sort",
+          "enum"  : [
+            "ASC",
+            "DESC"
+          ],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
+        }
+      }
     }
-    
-    
   ]
 }
