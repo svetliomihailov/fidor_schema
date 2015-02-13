@@ -10,15 +10,6 @@
     "account_id" : {
       "$ref"     : "./base_types/base_types.json#definitions/account_id",
     },
-    
-    "resource_id" : {
-      "description" : "I don't think we have to provide this internal information",
-      "readonly" : true
-    },
-    "resource_type" : {
-      "description" : "I don't think we have to provide this internal information",
-      "readonly" : true
-    },
     "subject" : {
       "description" : "Subject of the ebox message",
       "$ref"     : "./base_types/base_types.json#definitions/subject",
@@ -45,7 +36,7 @@
     },
     "size" : {
       "description" : "Size of the document in kB",
-      "type" : "string",
+      "type" : "integer",
       "readonly" : true
     },
     "opened_at" : {
@@ -71,14 +62,8 @@
     {
       "rel"  : "self",
       "href" : "ebox_messages/{id}"
-    },
-    {
-      "rel"          : "instances",
-      "href"         : "ebox_messages"
-    },
-    {
-      "rel"          : "documents",
-      "href"         : "ebox_messages/{id}/documents"
     }
+    
+    
   ]
 }
