@@ -68,7 +68,7 @@
       "href"       : "ebox_messages",
       "properties" : {
         "filter[account_ids]" : {
-          "title"  : "Find internal transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "title"  : "Find ebox messages belonging to the given account ids. Single id or multiple ids comma-separated.",
           "format" : "date",
           "type"   : "string"
         },
