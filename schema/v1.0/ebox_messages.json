@@ -25,29 +25,41 @@
       "readonly" : true
     },
     "type" : { #kind
-      "description" : "",
-      
-    },
-    "size" : { ???
-      
-    },
-    
-    "opened_at" : {
-      
-    },
-    "archived_at" : {
-      
-    },
-    "hidden_at" : {
-      
+      "description" : "Type of the Ebox Message",
+      "enum"        : [
+        "information",
+        "advantage_offer",
+        "document"
+      ],
+      "readonly" : true,
+      "type"     : "string"
     },
     "category" : { #category_name
       "description" : "Ebox message category",
-      "type" : "string",
-      "readonly" : true # can I add categories?
+      "enum"        : [
+        "bank_statement",
+        "miscellaneous"
+      ],
+      "readonly" : true,
+      "type"     : "string"
     },
-    
-
+    "size" : {
+      "description" : "Size of the document in kB",
+      "type" : "string",
+      "readonly" : true
+    },
+    "opened_at" : {
+      "description" : "A date the message has been opened on",
+      "$ref"     : "./base_types/base_types.json#definitions/date_id",
+    },
+    "archived_at" : {
+      "description" : "A date the message has been opened on",
+      "$ref"     : "./base_types/base_types.json#definitions/date_id",
+    },
+    "hidden_at" : {
+      "description" : "A date the message has been hidden on",
+      "$ref"     : "./base_types/base_types.json#definitions/date_id",
+    },
     "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"
     },
