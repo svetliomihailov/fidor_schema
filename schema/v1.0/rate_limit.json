@@ -7,17 +7,17 @@
     "limit" : {
       "description" : "The rate limit ceiling for the given request in a [time window]",
       "type"        : "integer",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "remaining" : {
       "description" : "The number of requests left for the [time window]",
       "type"        : "integer",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "reset" : {
       "description" : "The remaining window before the rate limit resets in e.g. UTC epoch seconds",
       "type"        : "integer",
-      "readonly"    : true
+      "readOnly"    : true
     }
   },
   "links" : [

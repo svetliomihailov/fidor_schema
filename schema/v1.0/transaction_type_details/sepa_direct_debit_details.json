@@ -6,20 +6,20 @@
   "properties"  : {
     "remote_iban" : {
       "$ref"     : "../base_types/base_types.json#definitions/iban",
-      "readonly" : true
+      "readOnly" : true
     },
     "remote_bic" : {
       "$ref"     : "../base_types/base_types.json#definitions/bic",
-      "readonly" : true
+      "readOnly" : true
     },
     "mandate_id" : {
       "description" : "The sepa mandate used by the debit",
       "type"        : "string",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "eref" : {
       "$ref"     : "../base_types/base_types.json#definitions/eref",
-      "readonly" : true
+      "readOnly" : true
     }
   }
 }

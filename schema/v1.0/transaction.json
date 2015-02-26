@@ -9,15 +9,15 @@
     },
     "account_id" : {
       "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "readonly" : true
+      "readOnly" : true
     },
     "transaction_type" : {
       "$ref"     : "./base_types/base_types.json#definitions/transaction_type",
-      "readonly" : true
+      "readOnly" : true
     },
     "transaction_type_details" : {
       "description" : "Details specific to this transaction type are collected here.",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "object",
       "oneOf"       : [
         {
@@ -48,37 +48,37 @@
     },
     "subject" : {
       "$ref"     : "./base_types/base_types.json#definitions/subject",
-      "readonly" : true
+      "readOnly" : true
     },
     "amount" : {
       "description"      : "The transferred amount in account currency, in minor units, e.g. 1EUR is represented as 100. Can be negative e.g. if something was withdrawn from an account.",
       "type"             : "integer",
-      "readonly" : true
+      "readOnly" : true
     },
     "currency" : {
       "$ref"     : "./base_types/base_types.json#definitions/currency",
-      "readonly" : true
+      "readOnly" : true
     },
     "booking_date" : {
       "description" : "Date the transaction was booked. ISO 8601 Date",
       "format"      : "date-time",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "value_date" : {
       "description" : "Date the amount was credited to the account. ISO 8601 Date",
       "format"      : "date-time",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "booking_code" : {
       "description" : "Accounting transaction code in the central banking system",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "return_transaction_id" : {
       "description" : "If the transaction was marked for return, this references the new return transaction.",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "created_at" : {

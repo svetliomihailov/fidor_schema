@@ -10,19 +10,19 @@
     },
     "email" : {
       "$ref"     : "./base_types/base_types.json#definitions/email",
-      "readonly" : true
+      "readOnly" : true
     },
     "first_name" : {
       "description" : "The given name of the customer",
       "type"        : "string",
       "maxLength"   : 30,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "last_name" : {
       "description" : "The family name of the customer",
       "type"        : "string",
       "maxLength"   : 30,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "gender" : {
       "description" : "The gender of the customer",
@@ -31,100 +31,100 @@
         "f"
       ],
       "type"     : "string",
-      "readonly" : true
+      "readOnly" : true
     },
     "title" : {
       "description" : "Salutation e.g Mr. or Ms./Mrs.",
       "type"        : "string",
       "maxLength"   : 30,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "nick" : {
       "description" : "Nickname used in community.",
       "type"        : "string",
       "maxLength"   : 40,
       "minLength"   : 2,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "maiden_name" : {
       "description" : "Name at birth, maiden name.",
       "type"        : "string",
       "maxLength"   : 30,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "adr_street" : {
       "description" : "Address street",
       "type"        : "string",
       "maxLength"   : 100,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "adr_street_number" : {
       "description" : "Address street number",
       "type"        : "string",
       "maxLength"   : 10,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "adr_post_code" : {
       "description" : "Address post code",
       "type"        : "string",
       "maxLength"   : 10,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "adr_city" : {
       "description" : "Address City",
       "type"        : "string",
       "maxLength"   : 100,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "adr_country" : {
       "description" : "Address Country",
       "type"        : "string",
       "maxLength"   : 100,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "adr_phone" : {
       "description" : "Phone home",
       "type"        : "string",
       "maxLength"   : 30,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "adr_mobile" : {
       "description" : "Phone mobile",
       "type"        : "string",
       "maxLength"   : 30,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "adr_fax" : {
       "description" : "Phone fax",
       "type"        : "string",
       "maxLength"   : 30,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "adr_businessphone" : {
       "description" : "Phone business",
       "type"        : "string",
       "maxLength"   : 30,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "birthday" : {
       "description" : "Date of birth",
       "type"        : "string",
       "format"      : "date-time",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "creditor_identifier" : {
       "description" : "Creditor Identifier ID set if the customer wants to create direct debits.",
       "type"        : "string",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "is_verified" : {
       "description" : "Indicates whether KYC has been performed.",
       "type"        : "boolean",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "nationality" : {
       "$ref"     : "./base_types/base_types.json#definitions/country",
-      "readonly" : true
+      "readOnly" : true
     },
     "marital_status" : {
       "description" : "1: single, 2: married, 3: widowed, 4: divorced, 5: seperated, 6: de facto",
@@ -137,7 +137,7 @@
         6
       ],
       "type"     : "integer",
-      "readonly" : true
+      "readOnly" : true
     },
     "religion" : {
       "description" : "Denomination for tax reasons. 0: no information, 1: no denomination, 2: Protestant, 3: Roman-Catholic, 4-18: Other denominations",
@@ -162,23 +162,23 @@
         18
       ],
       "type"     : "integer",
-      "readonly" : true
+      "readOnly" : true
     },
     "id_card_registration_city" : {
       "description" : "City where the id card is registered.",
       "type"        : "string",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "id_card_number" : {
       "description" : "ID card number",
       "type"        : "string",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "id_card_valid_until" : {
       "description" : "Expiration date of id card",
       "format"      : "date-time",
       "type"        : "string",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"

@@ -24,14 +24,14 @@
     "creditor_identifier" : {
       "description" : "Creditor Identifier",
       "type"        : "string",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "amount" : {
       "$ref"     : "./base_types/base_types.json#definitions/amount"
     },
     "currency" : {
       "$ref"     : "./base_types/base_types.json#definitions/currency",
-      "readonly" : true
+      "readOnly" : true
     },
     "eref" : {
       "$ref" : "./base_types/base_types.json#definitions/eref"
@@ -53,7 +53,7 @@
         "success",
         "failure"
       ],
-      "readonly" : true,
+      "readOnly" : true,
       "type"     : "string"
     },
     "created_at" : {

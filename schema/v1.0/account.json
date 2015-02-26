@@ -11,57 +11,57 @@
       "description" : "The bank account number.",
       "type"        : "string",
       "maxLength"   : 10,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "iban" : {
       "$ref"     : "./base_types/base_types.json#definitions/iban",
-      "readonly" : true
+      "readOnly" : true
     },
     "balance" : {
       "description" : "Account balance",
       "type"        : "integer",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "balance_available" : {
       "description" : "Available account balance.",
       "type"        : "integer",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "overdraft" : {
       "description" : "Available account overdraft",
       "type"        : "integer",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "preauth_amount" : {
       "description" : "Amount available for pre-authorization.",
       "type"        : "integer",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "cash_flow_per_year" : {
       "description" : "Amount available for yearly cash flow. This is the limit of funds an account holder has at their disposal without fulfilling Germany KYC requirements.",
       "type"        : "integer",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "is_debit_note_enabled" : {
       "description" : "Whether this account is authorized to initiate direct debit transactions.",
       "type"        : "boolean",
       "default"     : false,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "is_trusted" : {
       "description" : "Indicates if this is an escrow account",
       "type"        : "boolean",
       "default"     : false,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "is_locked" : {
       "description" : "Indicates whether the account is locked",
       "type"        : "boolean",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "currency" : {
       "$ref"     : "./base_types/base_types.json#definitions/currency",
-      "readonly" : true
+      "readOnly" : true
     },
     "customers" : {
       "description" : "The owners of the account",
@@ -72,7 +72,7 @@
           "$ref" : "./customer.json#properties"
         }
       },
-      "readonly" : true
+      "readOnly" : true
     },
     "created_at" : {
       "$ref" : "./base_types/base_types.json#definitions/created_at"

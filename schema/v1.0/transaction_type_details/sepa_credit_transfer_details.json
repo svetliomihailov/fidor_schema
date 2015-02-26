@@ -6,22 +6,22 @@
   "properties"  : {
     "sepa_credit_transfer_id" : {
       "description" : "Id of transfer if transaction was created by a transfer. Refunded transactions have no id",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "remote_name" : {
       "description" : "Receiving/Sending account holder name",
       "type"        : "string",
-      "readonly"    : true,
+      "readOnly"    : true,
       "maxLength"   : 70
     },
     "remote_iban" : {
       "$ref"     : "../base_types/base_types.json#definitions/iban",
-      "readonly" : true
+      "readOnly" : true
     },
     "remote_bic" : {
       "$ref"     : "../base_types/base_types.json#definitions/bic",
-      "readonly" : true
+      "readOnly" : true
     }
   }
 }

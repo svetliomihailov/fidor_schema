@@ -8,25 +8,25 @@
       "description" : "CreditCard merchant initiating the transaction",
       "type"        : "string",
       "maxLength"   : 255,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "cc_merchant_category" : {
       "description" : "Category given by the merchant",
       "type"        : "string",
       "maxLength"   : 255,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "cc_type" : {
       "description" : "CreditCard type",
       "type"        : "string",
       "maxLength"   : 255,
-      "readonly"    : true
+      "readOnly"    : true
     },
     "cc_category" : {
       "description" : "CreditCard category",
       "type"        : "string",
       "maxLength"   : 255,
-      "readonly"    : true
+      "readOnly"    : true
     }
   }
 }

@@ -91,7 +91,7 @@
     },
     "transfers_count" : {
       "description" : "count of transfers (internal and sepa) transactions received in this batch",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "integer"
     },
     "state" : {
@@ -102,7 +102,7 @@
         "success",
         "failure"
       ],
-      "readonly" : true,
+      "readOnly" : true,
       "type"     : "string"
     },
     "success_url" : {
