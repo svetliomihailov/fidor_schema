@@ -109,7 +109,7 @@
     "birthday" : {
       "description" : "Date of birth",
       "type"        : "string",
-      "format"      : "date",
+      "format"      : "date-time",
       "readonly"    : true
     },
     "creditor_identifier" : {
@@ -176,7 +176,7 @@
     },
     "id_card_valid_until" : {
       "description" : "Expiration date of id card",
-      "format"      : "date",
+      "format"      : "date-time",
       "type"        : "string",
       "readonly"    : true
     },

@@ -93,12 +93,12 @@
       "properties" : {
         "filter[created_at_from]" : {
           "title"  : "Creation date filter from >= date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[created_at_to]" : {
           "title"  : "Creation date filter to <= date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[states]" : {

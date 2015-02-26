@@ -5,6 +5,8 @@ A more detailed view of the changes can be found in the [commit messages](https:
 ##2015-02
 
 * SepaMandates filter by multiple references and ibans
+* move required markup into 'required' array on top-level of an object
+* change date field format to 'date-time' since date-only values are also valid in terms of http://tools.ietf.org/html/rfc3339#section-5.6
 
 ##2014-12
 
