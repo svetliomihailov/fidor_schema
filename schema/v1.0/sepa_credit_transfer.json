@@ -3,6 +3,7 @@
   "title"       : "Sepa Credit Transfer",
   "name"        : "sepa_credit_transfer",
   "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
+  "required"    : ["account_id", "amount", "external_uid"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -11,8 +12,7 @@
       "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
     "account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/account_id"
     },
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
@@ -25,8 +25,7 @@
       "maxLength" : 140
     },
     "amount" : {
-      "$ref"     : "./base_types/base_types.json#definitions/amount",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/amount"
     },
     "currency" : {
       "$ref"     : "./base_types/base_types.json#definitions/currency",

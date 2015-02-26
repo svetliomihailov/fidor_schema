@@ -3,18 +3,19 @@
   "title"       : "Sepa Mandate",
   "name"        : "sepa_mandate",
   "description" : "A mandate object authorizing debits from an account.",
+  "required"    : ["external_uid", "customer_id", "mandate_reference", "remote_title", "remote_name", "remote_email",
+                   "remote_address_line1", "remote_address_line2", "remote_country", "remote_iban", "remote_bic",
+                   "signature_date" ],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "external_uid" : {
-      "$ref"     : "./base_types/base_types.json#definitions/external_uid",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/external_uid"
     },
     "customer_id" : {
       "description" : "Customer for which this mandate is valid.",
-      "type"        : "string",
-      "required"    : true
+      "type"        : "string"
     },
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
@@ -22,7 +23,6 @@
     "mandate_reference" : {
       "description" : "Unique reference of the mandate.",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 35
     },
     "sequence" : {
@@ -46,46 +46,38 @@
     "remote_title" : {
       "description" : "Title of the debtor e.g Dr. Prof.",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 35
     },
     "remote_name" : {
       "description" : "Full name of debtor",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 70
     },
     "remote_email" : {
       "description" : "Debtor's email",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 70
     },
     "remote_address_line1" : {
       "description" : "Address street.",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 35
     },
     "remote_address_line2" : {
       "description" : "ZIP and City",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 70
     },
     "remote_country" : {
       "description" : "2 digit country code, ISO 3166",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 2
     },
     "remote_iban" : {
-      "$ref"     : "./base_types/base_types.json#definitions/iban",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/iban"
     },
     "remote_bic" : {
-      "$ref"     : "./base_types/base_types.json#definitions/bic",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/bic"
     },
     "remote_ultimate_name" : {
       "description" : "Ultimate name",
@@ -99,13 +91,12 @@
     },
     "signature_date" : {
       "description" : "Date the mandate was signed of by the debtor.",
-      "format"      : "date",
-      "required"    : true,
+      "format"      : "date-time",
       "type"        : "string"
     },
     "valid_from_date" : {
       "description" : "Date the mandate started to be valid.",
-      "format"      : "date",
+      "format"      : "date-time",
       "type"        : "string"
     }
   },

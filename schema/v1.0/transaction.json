@@ -61,13 +61,13 @@
     },
     "booking_date" : {
       "description" : "Date the transaction was booked. ISO 8601 Date",
-      "format"      : "date",
+      "format"      : "date-time",
       "readonly"    : true,
       "type"        : "string"
     },
     "value_date" : {
       "description" : "Date the amount was credited to the account. ISO 8601 Date",
-      "format"      : "date",
+      "format"      : "date-time",
       "readonly"    : true,
       "type"        : "string"
     },
@@ -99,7 +99,7 @@
       "properties" : {
         "filter[account_ids]" : {
           "title"  : "Find transactions belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[id_from]" : {
@@ -114,12 +114,12 @@
         },
         "filter[booking_date_from]" : {
           "title"  : "Date filter from >= date. ISO 8601 Date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[booking_date_to]" : {
           "title"  : "Date filter to <= date. ISO 8601 Date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[transaction_types]" : {

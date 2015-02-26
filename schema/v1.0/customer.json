@@ -3,26 +3,24 @@
   "title"       : "Customer",
   "name"        : "customer",
   "description" : "",
+  "required"    : ["email", "first_name", "last_name", "gender", "title", "nick"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "email" : {
       "$ref"     : "./base_types/base_types.json#definitions/email",
-      "required" : true,
       "readonly" : true
     },
     "first_name" : {
       "description" : "The given name of the customer",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 30,
       "readonly"    : true
     },
     "last_name" : {
       "description" : "The family name of the customer",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 30,
       "readonly"    : true
     },
@@ -33,20 +31,17 @@
         "f"
       ],
       "type"     : "string",
-      "required" : true,
       "readonly" : true
     },
     "title" : {
       "description" : "Salutation e.g Mr. or Ms./Mrs.",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 30,
       "readonly"    : true
     },
     "nick" : {
       "description" : "Nickname used in community.",
       "type"        : "string",
-      "required"    : true,
       "maxLength"   : 40,
       "minLength"   : 2,
       "readonly"    : true

@@ -3,13 +3,13 @@
   "title"       : "User",
   "name"        : "user",
   "description" : "",
+  "required"    : ["email"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "email" : {
       "$ref"     : "./base_types/base_types.json#definitions/email",
-      "required" : true,
       "readonly" : true
     },
     "last_sign_in_at" : {
