@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "Transaction",
-  "name"        : "transaction",
+  "title"       : "transaction",
   "description" : "A transaction is the result of a successful transfer or debit.",
   "properties"  : {
     "id" : {
@@ -21,25 +20,25 @@
       "type"        : "object",
       "oneOf"       : [
         {
-          "name"        : "credit_card_details",
+          "title"      : "credit_card_details",
           "properties" : {
             "$ref" : "./transaction_type_details/credit_card_details.json#properties"
           }
         },
         {
-          "name"        : "internal_transfer_details",
+          "title"      : "internal_transfer_details",
           "properties" : {
             "$ref" : "./transaction_type_details/internal_transfer_details.json#properties"
           }
         },
         {
-          "name"        : "sepa_credit_transfer_details",
+          "title"      : "sepa_credit_transfer_details",
           "properties" : {
             "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#properties"
           }
         },
         {
-          "name"        : "sepa_direct_debit_details",
+          "title"      : "sepa_direct_debit_details",
           "properties" : {
             "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#properties"
           }

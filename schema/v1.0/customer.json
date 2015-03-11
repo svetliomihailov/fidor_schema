@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "Customer",
-  "name"        : "customer",
+  "title"       : "customer",
   "description" : "",
   "required"    : ["email", "first_name", "last_name", "gender", "title", "nick"],
   "properties"  : {
@@ -193,12 +192,12 @@
       "href" : "customers/{id}"
     },
     {
-      "rel"          : "instances",
-      "href"         : "customers"
+      "rel"  : "instances",
+      "href" : "customers"
     },
     {
-      "rel"          : "accounts",
-      "href"         : "customers/{id}/accounts"
+      "rel"  : "accounts",
+      "href" : "customers/{id}/accounts"
     }
   ]
 }

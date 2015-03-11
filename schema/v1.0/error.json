@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "Error",
-  "name"        : "error",
+  "title"       : "error",
   "description" : "A standard error object",
   "required"    : ["message", "code", "errors"],
   "properties"  : {

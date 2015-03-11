@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "Credit Card Details",
-  "name"        : "credit_card_details",
+  "title"       : "credit_card_details",
   "description" : "Credit card information available in a CreditCard transaction",
   "properties"  : {
     "cc_merchant_name" : {

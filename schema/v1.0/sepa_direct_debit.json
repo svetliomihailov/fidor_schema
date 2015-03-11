@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "Sepa Direct Debit",
-  "name"        : "sepa_direct_debit",
+  "title"       : "sepa_direct_debit",
   "description" : "A direct debit can only be performed with a valid sepa mandate, authorizing access to the debtor's account.",
   "required"    : ["account_id", "mandate_id", "amount", "collection_date", "external_uid"],
   "properties"  : {

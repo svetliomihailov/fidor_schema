@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "Sepa Direct Debit Details",
-  "name"        : "sepa_direct_debit_details",
+  "title"       : "sepa_direct_debit_details",
   "description" : "Remote account information for a SEPA direct debit",
   "properties"  : {
     "remote_iban" : {

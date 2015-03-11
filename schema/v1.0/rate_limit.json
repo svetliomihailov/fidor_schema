@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "Rate limit",
-  "name"        : "rate_limit",
+  "title"       : "rate_limit",
   "description" : "Overall, remaining rate limits and the time frame until the reset.",
   "properties"  : {
     "limit" : {

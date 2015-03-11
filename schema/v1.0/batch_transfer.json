@@ -2,8 +2,7 @@
   "NOTE"        : "THIS OBJECT IS NOT SUPPORTED IN THE CURRENT API VERSION",
   "note"        : "this file is for future reference only!",
   "type"        : "object",
-  "title"       : "Batch Transfer",
-  "name"        : "batch_transfer",
+  "title"       : "batch_transfer",
   "description" : "PREVIEW: A transfer batch contains multiple transfers which are processed asynchronously.",
   "required"    : ["account_id", "external_uid"],
   "properties"  : {

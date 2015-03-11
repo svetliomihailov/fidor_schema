@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "User",
-  "name"        : "user",
+  "title"       : "user",
   "description" : "",
   "required"    : ["email"],
   "properties"  : {

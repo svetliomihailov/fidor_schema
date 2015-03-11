@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "Internal Transfer",
-  "name"        : "internal_transfer",
+  "title"       : "internal_transfer",
   "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
   "required"    : ["account_id", "receiver", "amount", "external_uid"],
   "properties"  : {

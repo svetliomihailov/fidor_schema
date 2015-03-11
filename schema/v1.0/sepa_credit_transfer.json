@@ -1,7 +1,6 @@
 {
   "type"        : "object",
-  "title"       : "Sepa Credit Transfer",
-  "name"        : "sepa_credit_transfer",
+  "title"       : "sepa_credit_transfer",
   "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
   "required"    : ["account_id", "amount", "external_uid"],
   "properties"  : {
