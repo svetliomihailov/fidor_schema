@@ -24,5 +24,13 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'json_schema_tools', '>=0.3.3'
   spec.add_development_dependency 'activemodel' # required by above
   spec.add_development_dependency 'rake'
+  # schema validation gems, for now all of them. must see which one is the most valid ;-)
+
+  # most downloads on rubygems, last updated feb 2015
+  spec.add_development_dependency 'json-schema'
+  # 2nd most downloads on rubygems, last updated March 2015
+  spec.add_development_dependency 'json_schema'
+  # pretty new , last udpate sep 2014
+  spec.add_development_dependency 'jschema'
 
 end
