@@ -8,7 +8,7 @@ describe Validator::JSchema do
     v = Validator::JSchema.new files
     v.validate_schemas
     expect(v.log[0]).to include('validate schema')
-    # expect(v.errors).to be_empty
+    expect(v.errors).to be_empty
   end
 
   it 'validates schemas against blank data' do

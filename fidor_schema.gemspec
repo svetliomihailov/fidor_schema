@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.5'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'activesupport'
-  spec.add_development_dependency 'json_schema_tools', '>=0.3.3'
+  spec.add_development_dependency 'json_schema_tools', '>=0.6.1'
   spec.add_development_dependency 'activemodel' # required by above
   spec.add_development_dependency 'rake'
   # schema validation gems, for now all of them. must see which one is the most valid ;-)

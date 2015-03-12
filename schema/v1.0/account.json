@@ -67,9 +67,12 @@
       "type"        : "array",
       "items"       : {
         "type"       : "object",
-        "properties" : {
-          "$ref" : "./customer.json#properties"
-        }
+        "$ref" : "./customer.json"
+//        "items"       : {
+//        "type"       : "object",
+//        "properties" : {
+//          "$ref" : "./customer.json#properties"
+//        }
       },
       "readOnly" : true
     },

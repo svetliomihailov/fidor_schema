@@ -2,6 +2,12 @@
 
 A more detailed view of the changes can be found in the [commit messages](https://github.com/fidor/fidor_schema/commits/)
 
+##2015-03
+
+* remove name attribute in favour of title
+* remove nested $refs pointing to properties in favour of direct link to the related schema
+* validate the schema files against three different ruby validators
+
 ##2015-02
 
 * SepaMandates filter by multiple references and ibans

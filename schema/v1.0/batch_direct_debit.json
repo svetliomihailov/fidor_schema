@@ -22,9 +22,7 @@
       "type"        : "array",
       "items"       : {
         "type"       : "object",
-        "properties" : {
-          "$ref" : "./sepa_direct_debit.json#properties"
-        }
+        "$ref" : "./sepa_direct_debit.json"
       }
     },
     "sepa_direct_debit_ids" : {
@@ -45,9 +43,7 @@
           },
           "error" : {
             "type"       : "object",
-            "properties" : {
-              "$ref" : "./error.json#properties"
-            }
+            "$ref" : "./error.json"
           }
         }
       }

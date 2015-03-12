@@ -23,9 +23,7 @@
       "type"        : "array",
       "items"       : {
         "type"       : "object",
-        "properties" : {
-          "$ref" : "./sepa_credit_transfer.json#properties"
-        }
+        "$ref" : "./sepa_credit_transfer.json"
       }
     },
     "internal_transfers" : {
@@ -33,9 +31,7 @@
       "type"        : "array",
       "items"       : {
         "type"       : "object",
-        "properties" : {
-          "$ref" : "./internal_transfer.json#properties"
-        }
+        "$ref" : "./internal_transfer.json"
       }
     },
     "sepa_credit_transfer_ids" : {
@@ -63,9 +59,7 @@
           },
           "error" : {
             "type"       : "object",
-            "properties" : {
-              "$ref" : "./error.json#properties"
-            }
+            "$ref" : "./error.json"
           }
         }
       }
@@ -81,9 +75,7 @@
           },
           "error" : {
             "type"       : "object",
-            "properties" : {
-              "$ref" : "./error.json#properties"
-            }
+            "$ref" : "./error.json"
           }
         }
       }
