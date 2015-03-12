@@ -1,4 +1,5 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
   "title"       : "transaction",
   "description" : "A transaction is the result of a successful transfer or debit.",
@@ -21,27 +22,19 @@
       "oneOf"       : [
         {
           "title"      : "credit_card_details",
-          "properties" : {
-            "$ref" : "./transaction_type_details/credit_card_details.json#properties"
-          }
+          "$ref" : "./transaction_type_details/credit_card_details.json#"
         },
         {
           "title"      : "internal_transfer_details",
-          "properties" : {
-            "$ref" : "./transaction_type_details/internal_transfer_details.json#properties"
-          }
+          "$ref" : "./transaction_type_details/internal_transfer_details.json#"
         },
         {
           "title"      : "sepa_credit_transfer_details",
-          "properties" : {
-            "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#properties"
-          }
+          "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#"
         },
         {
           "title"      : "sepa_direct_debit_details",
-          "properties" : {
-            "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#properties"
-          }
+          "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#"
         }
       ]
     },

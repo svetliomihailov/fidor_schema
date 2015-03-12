@@ -1,4 +1,5 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
   "title"       : "credit_card_details",
   "description" : "Credit card information available in a CreditCard transaction",

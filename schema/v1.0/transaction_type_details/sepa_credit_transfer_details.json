@@ -1,4 +1,5 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
   "title"       : "sepa_credit_transfer_details",
   "description" : "Remote account information available in a SEPA credit transfer",
