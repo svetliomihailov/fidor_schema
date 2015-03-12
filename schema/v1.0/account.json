@@ -1,4 +1,5 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
   "title"       : "account",
   "description" : "A fidor bank account.",
@@ -67,7 +68,7 @@
       "type"        : "array",
       "items"       : {
         "type"       : "object",
-        "$ref" : "./customer.json"
+        "$ref" : "./customer.json#"
 //        "items"       : {
 //        "type"       : "object",
 //        "properties" : {

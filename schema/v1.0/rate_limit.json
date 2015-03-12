@@ -1,4 +1,5 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
   "title"       : "rate_limit",
   "description" : "Overall, remaining rate limits and the time frame until the reset.",

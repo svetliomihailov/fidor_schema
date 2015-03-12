@@ -1,4 +1,5 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "NOTE"        : "THIS OBJECT IS NOT SUPPORTED IN THE CURRENT API VERSION, this file is for future reference only!",
   "type"        : "object",
   "title"       : "batch_direct_debit",
@@ -22,7 +23,7 @@
       "type"        : "array",
       "items"       : {
         "type"       : "object",
-        "$ref" : "./sepa_direct_debit.json"
+        "$ref" : "./sepa_direct_debit.json#"
       }
     },
     "sepa_direct_debit_ids" : {
@@ -43,7 +44,7 @@
           },
           "error" : {
             "type"       : "object",
-            "$ref" : "./error.json"
+            "$ref" : "./error.json#"
           }
         }
       }

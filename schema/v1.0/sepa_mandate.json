@@ -1,4 +1,5 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
   "title"       : "sepa_mandate",
   "description" : "A mandate object authorizing debits from an account.",

@@ -1,4 +1,5 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
   "title"       : "sepa_direct_debit",
   "description" : "A direct debit can only be performed with a valid sepa mandate, authorizing access to the debtor's account.",
