@@ -7,6 +7,7 @@ A more detailed view of the changes can be found in the [commit messages](https:
 * remove name attribute in favour of title
 * remove nested $refs pointing to properties in favour of direct link to the related schema
 * validate the schema files against three different ruby validators
+* add $schema version to each file
 
 ##2015-02
 
