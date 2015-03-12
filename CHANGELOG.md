@@ -8,6 +8,7 @@ A more detailed view of the changes can be found in the [commit messages](https:
 * remove nested $refs pointing to properties in favour of direct link to the related schema
 * validate the schema files against three different ruby validators
 * add $schema version to each file
+* SepaCreditTransfer requires remote_iban
 
 ##2015-02
 

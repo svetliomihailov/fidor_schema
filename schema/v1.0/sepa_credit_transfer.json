@@ -3,7 +3,7 @@
   "type"        : "object",
   "title"       : "sepa_credit_transfer",
   "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
-  "required"    : ["account_id", "amount", "external_uid"],
+  "required"    : ["account_id", "amount", "external_uid", "remote_iban"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
