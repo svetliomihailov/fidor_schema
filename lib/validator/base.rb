@@ -20,15 +20,64 @@ require 'pathname'
 
 module Validator
   class Base
+    # @return [Array<String>] file paths
+    attr_accessor :files_to_validate
+
+    # Run the given validator with all schema files
+    def self.run(files)
+      puts "Running validation with #{name} for #{files.length} schemas"
+      v = new(files)
+      v.validate_all
+      puts v.log_fmt
+      v
+    end
+
     def validate_all
-       @files_to_validate.each do |file|
+      validate_schemas
+      validate_data
+    end
+
+    def validate_schemas
+      files_to_validate.each do |file|
         schema = File.read file
-        puts "\nvalidating: #{file}"
+        log << "validate schema: #{file}"
         validate schema
-        puts "\nusing #{file} for validation."
+      end
+    end
+
+    def validate_data
+      files_to_validate.each do |file|
+        schema = File.read file
+        log << "validate data against: #{file}"
         use_for_validation schema
       end
     end
+
+
+    # Joins the logs before display
+    def log_fmt
+      res = []
+      if errors.length > 0
+        res << "#{errors.join("\n\n")}"
+        res << "="*50
+        res << "#{errors.length} with errors"
+      end
+      res << "#{success.uniq.length} Schemas passed"
+      res.join("\n")
+    end
+    # @return [Array<String>] error schemas
+    def errors
+      @errors ||= []
+    end
+    # @return [Array<String>] test log
+    def log
+      @log ||= []
+    end
+    # @return [Array<String>] successfull schema titles
+    def success
+      @success ||= []
+    end
+
   end
 
   def self.find_all_schema
@@ -36,21 +85,19 @@ module Validator
     this_dir = File.dirname(__FILE__)
     repo_dir = Pathname.new(this_dir+"/../..").cleanpath.to_s
 
-    Dir.glob("#{repo_dir}/schema/*/*.json")
+    Dir.glob("#{repo_dir}/schema/**/*.json")
   end
 
 
-  def self.main validator
+  # @param [Symbol] validator to use
+  def self.run(validator)
     case validator
       when :underscore
-        puts "Running validation with JSON_Schema"
-        Json_Schema.new find_all_schema
+        Json_Schema.run find_all_schema
       when :dash
-        puts "Running validation with JSON-Schema"
-        JsonSchema.new find_all_schema
+        JsonSchema.run find_all_schema
       when :jschema
-        puts "Running validation with JSchema"
-        JSchema.new find_all_schema
+        JSchema.run find_all_schema
       else
         puts "Unknown validator: #{validator}"
     end

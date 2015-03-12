@@ -12,15 +12,15 @@ require 'validator'
 
 
 task :validate_dash do
-  Validator.main :dash
+  Validator.run :dash
 end
 
 task :validate_underscore do
-  Validator.main :underscore
+  Validator.run :underscore
 end
 
 task :validate_jschema do
-  Validator.main :jschema
+  Validator.run :jschema
 end
 
 task :validate_schema => [:validate_dash, :validate_underscore, :validate_jschema] do

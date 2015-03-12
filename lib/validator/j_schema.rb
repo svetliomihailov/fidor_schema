@@ -2,35 +2,32 @@ require 'jschema'
 module Validator
   class JSchema < Base
 
-    def initialize files_to_validate
+    def initialize(files_to_validate)
       @files_to_validate = files_to_validate
       schema_data = File.read("#{File.dirname(__FILE__)}/schema.json")
       schema_json = JSON.parse(schema_data)
-      @schema = JSchema.build(schema_json)
-      validate_all
+      @meta_schema = ::JSchema.build(schema_json)
     end
 
-    def validate schema
+    def validate(schema)
       schema_to_test = JSON.parse(schema)
-      results = @schema.validate schema_to_test
-      if !results || results.length == 0
-        puts "Passed!"
+      result = @meta_schema.validate schema_to_test
+      if !result || result.length == 0
+        success << schema_to_test['title'] || schema_to_test.keys[0]
       else
-        puts "Failed!"
-        puts results
+        errors << "Schema validation failed: #{schema_to_test['title']}\n#{result.join("\n")}"
       end
     end
 
-    def use_for_validation schema
+    def use_for_validation(schema)
       schema_to_test = JSON.parse(schema)
       begin
-       JSchema.build(schema_to_test)
+       ::JSchema.build(schema_to_test)
       rescue
-        puts "Failed!"
-        puts $!
+        errors << "Data validation failed: #{schema_to_test['title']}\n#{$!}"
         # puts $!.backtrace
       else
-        puts "Passed!"
+        success << schema_to_test['title'] || schema_to_test.keys[0]
       end
     end
   end

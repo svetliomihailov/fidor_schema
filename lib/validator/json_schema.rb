@@ -1,7 +1,6 @@
 require 'json_schema'
 module Validator
   class Json_Schema < Base
-    attr_accessor :errors, :success
 
     def initialize files_to_validate
       @files_to_validate = files_to_validate
@@ -9,33 +8,30 @@ module Validator
       schema_json = JSON.parse(schema_data)
       @schema = ::JsonSchema.parse!(schema_json)
       @errors, @success = [], []
-      validate_all
     end
 
-    def validate schema
+    # @param [String] schema to test against the meta schema
+    def validate(schema)
+      schema_to_test = JSON.parse(schema)
       begin
-        schema_to_test = JSON.parse(schema)
         @schema.validate! schema_to_test
-        # puts "Passed validation against meta-schema!"
-        ::JsonSchema.parse!(schema_to_test)
       rescue
-        puts $!
-        puts "Failed!"
+        errors << "Schema validation failed: #{schema_to_test['title']}\n#{$!}"
       else
-        @success << '.'
+        success << File.basename(schema)
       end
     end
 
-    def use_for_validation schema
-      begin
+    def use_for_validation(schema)
        schema_to_test = JSON.parse(schema)
+      begin
        ::JsonSchema.parse!(schema_to_test)
       rescue
-        puts $!
-        puts "Failed"
+        errors << "Data validation failed: #{schema_to_test['title']}\n#{$!}"
       else
-        @success << '.'
+        success << schema_to_test['title']
       end
     end
+
   end
 end
