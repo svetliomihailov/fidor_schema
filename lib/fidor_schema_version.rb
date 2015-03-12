@@ -1,5 +1,5 @@
 module Fidor
   class Schema
-    VERSION='0.4.2'
+    VERSION='0.6.0'
   end
 end

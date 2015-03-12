@@ -1,9 +1,10 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "definitions" : {
     "id" : {
       "description" : "Unique identifier of the object",
       "identity"    : true,
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "account_id" : {
@@ -12,13 +13,13 @@
     },
     "user_id" : {
       "description" : "Identifies the user who created this object",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "transaction_id" : {
       "description" : "Identifies a reference to a corresponding transaction",
-      "readonly"    : true,
-      "type"        : "integer"
+      "readOnly"    : true,
+      "type"        : "string"
     },
     "phone" : {
       "description" : "A phone or fax number, formatted with country code: +49 123 1233213",
@@ -40,18 +41,17 @@
       "description" : "Creation date-time, never changes. ISO 8601 Date-Time",
       "format"      : "date-time",
       "type"        : "string",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "updated_at" : {
       "description" : "Last update date-time. ISO 8601 Date-Time",
       "format"      : "date-time",
       "type"        : "string",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "external_uid" : {
       "description" : "Unique ID of the creator of the transaction. In case a uid is reused for a transaction, it is not executed, this mechanism can be used to prevent double bookings in case of network failure or similar event where transaction status is unknown",
-      "type"        : "string",
-      "required"    : true
+      "type"        : "string"
     },
     "iban" : {
       "description" : "IBAN",

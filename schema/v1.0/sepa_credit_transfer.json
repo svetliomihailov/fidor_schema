@@ -1,8 +1,9 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
-  "title"       : "Sepa Credit Transfer",
-  "name"        : "sepa_credit_transfer",
+  "title"       : "sepa_credit_transfer",
   "description" : "A transfer initiates a transaction e.g get / send money. If the transfer fails no transaction is created!",
+  "required"    : ["account_id", "amount", "external_uid", "remote_iban"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -11,8 +12,7 @@
       "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
     "account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/account_id"
     },
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
@@ -25,12 +25,11 @@
       "maxLength" : 140
     },
     "amount" : {
-      "$ref"     : "./base_types/base_types.json#definitions/amount",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/amount"
     },
     "currency" : {
       "$ref"     : "./base_types/base_types.json#definitions/currency",
-      "readonly" : true
+      "readOnly" : true
     },
     "remote_name" : {
       "description" : "Receiving account holder name",
@@ -52,7 +51,7 @@
         "expired",
         "failure"
       ],
-      "readonly" : true,
+      "readOnly" : true,
       "type"     : "string"
     },
     "created_at" : {
@@ -72,22 +71,22 @@
       "href"       : "sepa_credit_transfers",
       "properties" : {
         "filter[account_ids]" : {
-          "title"  : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date",
+          "description"  : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[created_at_from]" : {
-          "title"  : "Creation date filter from >= date",
-          "format" : "date",
+          "description"  : "Creation date filter from >= date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[created_at_to]" : {
-          "title"  : "Creation date filter to <= date",
-          "format" : "date",
+          "description"  : "Creation date filter to <= date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[states]" : {
-          "title" : "Filter by single or multiple csv delimited states",
+          "description" : "Filter by single or multiple csv delimited states",
           "enum"  : [
             "received",
             "mobile_tan_sent",

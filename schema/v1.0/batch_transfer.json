@@ -2,9 +2,9 @@
   "NOTE"        : "THIS OBJECT IS NOT SUPPORTED IN THE CURRENT API VERSION",
   "note"        : "this file is for future reference only!",
   "type"        : "object",
-  "title"       : "Batch Transfer",
-  "name"        : "batch_transfer",
+  "title"       : "batch_transfer",
   "description" : "PREVIEW: A transfer batch contains multiple transfers which are processed asynchronously.",
+  "required"    : ["account_id", "external_uid"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -13,8 +13,7 @@
       "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
     "account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/account_id"
     },
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
@@ -24,9 +23,7 @@
       "type"        : "array",
       "items"       : {
         "type"       : "object",
-        "properties" : {
-          "$ref" : "./sepa_credit_transfer.json#properties"
-        }
+        "$ref" : "./sepa_credit_transfer.json#"
       }
     },
     "internal_transfers" : {
@@ -34,9 +31,7 @@
       "type"        : "array",
       "items"       : {
         "type"       : "object",
-        "properties" : {
-          "$ref" : "./internal_transfer.json#properties"
-        }
+        "$ref" : "./internal_transfer.json#"
       }
     },
     "sepa_credit_transfer_ids" : {
@@ -64,9 +59,7 @@
           },
           "error" : {
             "type"       : "object",
-            "properties" : {
-              "$ref" : "./error.json#properties"
-            }
+            "$ref" : "./error.json#"
           }
         }
       }
@@ -82,16 +75,14 @@
           },
           "error" : {
             "type"       : "object",
-            "properties" : {
-              "$ref" : "./error.json#properties"
-            }
+            "$ref" : "./error.json#"
           }
         }
       }
     },
     "transfers_count" : {
       "description" : "count of transfers (internal and sepa) transactions received in this batch",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "integer"
     },
     "state" : {
@@ -102,7 +93,7 @@
         "success",
         "failure"
       ],
-      "readonly" : true,
+      "readOnly" : true,
       "type"     : "string"
     },
     "success_url" : {
@@ -128,17 +119,17 @@
       "properties" : {
         "filter[account_ids]" : {
           "title"  : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[created_at_from]" : {
           "title"  : "Creation date filter from >= date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[created_at_to]" : {
           "title"  : "Creation date filter to <= date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[states]" : {

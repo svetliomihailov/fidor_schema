@@ -1,7 +1,7 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
-  "title"       : "Transaction",
-  "name"        : "transaction",
+  "title"       : "transaction",
   "description" : "A transaction is the result of a successful transfer or debit.",
   "properties"  : {
     "id" : {
@@ -9,76 +9,68 @@
     },
     "account_id" : {
       "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "readonly" : true
+      "readOnly" : true
     },
     "transaction_type" : {
       "$ref"     : "./base_types/base_types.json#definitions/transaction_type",
-      "readonly" : true
+      "readOnly" : true
     },
     "transaction_type_details" : {
       "description" : "Details specific to this transaction type are collected here.",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "object",
       "oneOf"       : [
         {
-          "name"        : "credit_card_details",
-          "properties" : {
-            "$ref" : "./transaction_type_details/credit_card_details.json#properties"
-          }
+          "title"      : "credit_card_details",
+          "$ref" : "./transaction_type_details/credit_card_details.json#"
         },
         {
-          "name"        : "internal_transfer_details",
-          "properties" : {
-            "$ref" : "./transaction_type_details/internal_transfer_details.json#properties"
-          }
+          "title"      : "internal_transfer_details",
+          "$ref" : "./transaction_type_details/internal_transfer_details.json#"
         },
         {
-          "name"        : "sepa_credit_transfer_details",
-          "properties" : {
-            "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#properties"
-          }
+          "title"      : "sepa_credit_transfer_details",
+          "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#"
         },
         {
-          "name"        : "sepa_direct_debit_details",
-          "properties" : {
-            "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#properties"
-          }
+          "title"      : "sepa_direct_debit_details",
+          "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#"
         }
       ]
     },
     "subject" : {
       "$ref"     : "./base_types/base_types.json#definitions/subject",
-      "readonly" : true
+      "readOnly" : true
     },
     "amount" : {
       "description"      : "The transferred amount in account currency, in minor units, e.g. 1EUR is represented as 100. Can be negative e.g. if something was withdrawn from an account.",
       "type"             : "integer",
-      "readonly" : true
+      "readOnly" : true
     },
     "currency" : {
       "$ref"     : "./base_types/base_types.json#definitions/currency",
-      "readonly" : true
+      "readOnly" : true
     },
     "booking_date" : {
       "description" : "Date the transaction was booked. ISO 8601 Date",
-      "format"      : "date",
-      "readonly"    : true,
+      "format"      : "date-time",
+      "readOnly"    : true,
       "type"        : "string"
     },
     "value_date" : {
       "description" : "Date the amount was credited to the account. ISO 8601 Date",
-      "format"      : "date",
-      "readonly"    : true,
+      "format"      : "date-time",
+      "readOnly"    : true,
       "type"        : "string"
     },
     "booking_code" : {
       "description" : "Accounting transaction code in the central banking system",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "return_transaction_id" : {
       "description" : "If the transaction was marked for return, this references the new return transaction.",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "created_at" : {
@@ -99,7 +91,7 @@
       "properties" : {
         "filter[account_ids]" : {
           "title"  : "Find transactions belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[id_from]" : {
@@ -114,12 +106,12 @@
         },
         "filter[booking_date_from]" : {
           "title"  : "Date filter from >= date. ISO 8601 Date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[booking_date_to]" : {
           "title"  : "Date filter to <= date. ISO 8601 Date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[transaction_types]" : {

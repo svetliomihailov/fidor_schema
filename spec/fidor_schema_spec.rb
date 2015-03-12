@@ -24,7 +24,6 @@ describe Fidor::Schema do
       SchemaTools.schema_path = Fidor::Schema.path
       schema = SchemaTools::Reader.read('account').to_h
       expect(schema['properties']['customers']['items']['properties']['id']['type']).to eq 'string'
-
     end
 
     it 'should resolve all' do

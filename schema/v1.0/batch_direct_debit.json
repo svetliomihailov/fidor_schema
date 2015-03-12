@@ -1,10 +1,10 @@
 {
-  "NOTE"        : "THIS OBJECT IS NOT SUPPORTED IN THE CURRENT API VERSION",
-  "note"        : "this file is for future reference only!",
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
+  "NOTE"        : "THIS OBJECT IS NOT SUPPORTED IN THE CURRENT API VERSION, this file is for future reference only!",
   "type"        : "object",
-  "title"       : "Batch Direct Debit",
-  "name"        : "batch_direct_debit",
+  "title"       : "batch_direct_debit",
   "description" : "PREVIEW: A direct debit batch contains multiple direct debits which are processed asynchronously.",
+  "required"    : ["account_id", "external_uid"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -13,8 +13,7 @@
       "$ref" : "./base_types/base_types.json#definitions/external_uid"
     },
     "account_id" : {
-      "$ref"     : "./base_types/base_types.json#definitions/account_id",
-      "required" : true
+      "$ref"     : "./base_types/base_types.json#definitions/account_id"
     },
     "user_id" : {
       "$ref" : "./base_types/base_types.json#definitions/user_id"
@@ -22,12 +21,9 @@
     "sepa_direct_debits" : {
       "description" : "The direct_debits to process.",
       "type"        : "array",
-      "required"    : false,
       "items"       : {
         "type"       : "object",
-        "properties" : {
-          "$ref" : "./sepa_direct_debit.json#properties"
-        }
+        "$ref" : "./sepa_direct_debit.json#"
       }
     },
     "sepa_direct_debit_ids" : {
@@ -48,16 +44,14 @@
           },
           "error" : {
             "type"       : "object",
-            "properties" : {
-              "$ref" : "./error.json#properties"
-            }
+            "$ref" : "./error.json#"
           }
         }
       }
     },
     "debits_count" : {
       "description" : "count of debit transactions received in this batch",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "integer"
     },
     "state" : {
@@ -68,7 +62,7 @@
         "success",
         "failure"
       ],
-      "readonly" : true,
+      "readOnly" : true,
       "type"     : "string"
     },
     "success_url" : {
@@ -94,12 +88,12 @@
       "properties" : {
         "filter[created_at_from]" : {
           "title"  : "Creation date filter from >= date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[created_at_to]" : {
           "title"  : "Creation date filter to <= date",
-          "format" : "date",
+          "format" : "date-time",
           "type"   : "string"
         },
         "filter[states]" : {

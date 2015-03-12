@@ -1,25 +1,25 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
-  "title"       : "Sepa Direct Debit Details",
-  "name"        : "sepa_direct_debit_details",
+  "title"       : "sepa_direct_debit_details",
   "description" : "Remote account information for a SEPA direct debit",
   "properties"  : {
     "remote_iban" : {
       "$ref"     : "../base_types/base_types.json#definitions/iban",
-      "readonly" : true
+      "readOnly" : true
     },
     "remote_bic" : {
       "$ref"     : "../base_types/base_types.json#definitions/bic",
-      "readonly" : true
+      "readOnly" : true
     },
     "mandate_id" : {
       "description" : "The sepa mandate used by the debit",
       "type"        : "string",
-      "readonly"    : true
+      "readOnly"    : true
     },
     "eref" : {
       "$ref"     : "../base_types/base_types.json#definitions/eref",
-      "readonly" : true
+      "readOnly" : true
     }
   }
 }

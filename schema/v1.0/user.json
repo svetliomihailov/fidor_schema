@@ -1,21 +1,21 @@
 {
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
-  "title"       : "User",
-  "name"        : "user",
+  "title"       : "user",
   "description" : "",
+  "required"    : ["email"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "email" : {
       "$ref"     : "./base_types/base_types.json#definitions/email",
-      "required" : true,
-      "readonly" : true
+      "readOnly" : true
     },
     "last_sign_in_at" : {
       "description" : "Last time the user accessed fidor. ISO 8601 Date-Time",
       "format"      : "date-time",
-      "readonly"    : true,
+      "readOnly"    : true,
       "type"        : "string"
     },
     "created_at" : {
