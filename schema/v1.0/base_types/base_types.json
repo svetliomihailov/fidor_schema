@@ -96,23 +96,19 @@
     "transaction_type" : {
       "description" : "Type of the transaction",
       "enum"        : [
-        "payin_giropay",
-        "payin_paymentnetwork",
-        "payin_credit_note",
-        "payin_debit_note_eze",
-        "payin_debit_note_aba",
-        "payin_credit_note_sepa",
-        "payin_debit_note_sepa_core",
-        "payin_debit_note_sepa_b2b",
-        "payin_fidorpay",
-        "payout_ogone",
-        "payout_paymentnetwork",
-        "payout_credit_note",
-        "payout_debit_note_eze",
-        "payout_credit_note_sepa",
-        "payout_fidorpay",
-        "payout_creditcard",
-        "payout_fee"
+        "payout",
+        "creditcard_payout",
+        "creditcard_authorization",
+        "creditcard_cancellation",
+        "fee",
+        "sepa_payin",
+        "sepa_core_direct_debit",
+        "sepa_b2b_direct_debit",
+        "fidor_payin",
+        "fidor_payout",
+        "sepa_authorization",
+        "emoney_payin",
+        "gmt_payout"
       ],
       "type" : "string"
     }
