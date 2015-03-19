@@ -5,7 +5,7 @@
   "description" : "A mandate object authorizing debits from an account.",
   "required"    : ["external_uid", "customer_id", "mandate_reference", "remote_title", "remote_name", "remote_email",
                    "remote_address_line1", "remote_address_line2", "remote_country", "remote_iban", "remote_bic",
-                   "signature_date" ],
+                   "signature_date", "creditor_identity_id"],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -17,8 +17,9 @@
       "description" : "Customer for which this mandate is valid.",
       "type"        : "string"
     },
-    "user_id" : {
-      "$ref" : "./base_types/base_types.json#definitions/user_id"
+    "creditor_identity_id" : {
+      "description" : "The identifier of the creditor, who created the sepa mandate",
+      "type" : "string"
     },
     "mandate_reference" : {
       "description" : "Unique reference of the mandate.",
