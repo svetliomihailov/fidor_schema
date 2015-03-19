@@ -1,0 +1,49 @@
+{
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
+  "type"        : "object",
+  "title"       : "creditor_identity",
+  "description" : "Information about creditor identity. You have to provide the credidor identity you want to create a sepa mandate with",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
+    },
+    "account_id" : {
+      "description" : "An account creditor identities belong to",
+      "$ref"        : "./base_types/base_types.json#definitions/account_id",
+      "readonly"    : true
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "creditor_identities/{id}"
+    },
+    {
+      "rel"        : "instances",
+      "href"       : "transactions",
+      "properties" : {
+        "filter[account_ids]" : {
+          "title"  : "Find creditor identities belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "integer"
+        },
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "integer"
+        }
+      }
+    }
+  ]
+}
