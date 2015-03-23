@@ -9,6 +9,7 @@ A more detailed view of the changes can be found in the [commit messages](https:
 * validate the schema files against three different ruby validators
 * add $schema version to each file
 * SepaCreditTransfer requires remote_iban
+* add CreditorIdentity object
 
 ##2015-02
 
