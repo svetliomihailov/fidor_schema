@@ -17,9 +17,6 @@
       "description" : "Customer for which this mandate is valid.",
       "type"        : "string"
     },
-    "user_id" : {
-      "$ref" : "./base_types/base_types.json#definitions/user_id"
-    },
     "mandate_reference" : {
       "description" : "Unique reference of the mandate.",
       "type"        : "string",
