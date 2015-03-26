@@ -6,3 +6,4 @@ Gemfile.lock
 .ruby-gemset
 *.swp
 .idea
+.DS_Store
