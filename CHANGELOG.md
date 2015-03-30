@@ -10,6 +10,7 @@ A more detailed view of the changes can be found in the [commit messages](https:
 * add $schema version to each file
 * SepaCreditTransfer requires remote_iban
 * add CreditorIdentity object
+* RateLimit endpoint changed to /rate_limits returning an array, to align with other resources
 
 ##2015-02
 

@@ -2,7 +2,7 @@
   "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
   "title"       : "rate_limit",
-  "description" : "Overall, remaining rate limits and the time frame until the reset.",
+  "description" : "Overall, remaining rate limits and the time frame until the reset. Atm. there is only one rate limit returned in the response array of the index request",
   "properties"  : {
     "limit" : {
       "description" : "The rate limit ceiling for the given request in a [time window]",
@@ -22,8 +22,8 @@
   },
   "links" : [
     {
-      "rel"  : "self",
-      "href" : "rate_limit"
+      "rel"  : "instances",
+      "href" : "rate_limits"
     }
   ]
 }
