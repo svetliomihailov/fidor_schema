@@ -91,7 +91,6 @@
       "properties" : {
         "filter[account_ids]" : {
           "title"  : "Find transactions belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date-time",
           "type"   : "string"
         },
         "filter[id_from]" : {

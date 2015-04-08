@@ -82,7 +82,6 @@
       "properties" : {
         "filter[account_ids]" : {
           "title"  : "Find internal transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date-time",
           "type"   : "string"
         },
         "filter[created_at_from]" : {
