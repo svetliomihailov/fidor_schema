@@ -1,0 +1,28 @@
+{
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
+  "type"        : "object",
+  "title"       : "bonus_details",
+  "description" : "Information about bonus available in a bonus transaction",
+  "properties"  : {
+    "affiliate_id" : {
+      "description" : "An affiliate identifier",
+      "type"        : "string",
+      "readOnly"    : true
+    },
+    "affiliate_name" : {
+      "description" : "Name of the affiliate",
+      "type"        : "string",
+      "readOnly"    : true
+    },
+    "affiliate_transaction_type_id" : {
+      "description" : "Identifier of the transaction type",
+      "type"        : "string",
+      "readOnly"    : true
+    },
+    "affiliate_transaction_type_name" : {
+      "description" : "The name of the transaction type",
+      "type"        : "string",
+      "readOnly"    : true
+    }
+  }
+}
