@@ -23,6 +23,11 @@
       "description" : "The name of the transaction type",
       "type"        : "string",
       "readOnly"    : true
+    },
+    "affiliate_transaction_type_category" : {
+      "description" : "The category of the transaction type, e.g. Community, Banking, Bonusprogramm",
+      "type"        : "string",
+      "readOnly"    : true
     }
   }
 }
