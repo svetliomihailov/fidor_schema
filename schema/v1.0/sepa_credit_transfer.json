@@ -33,7 +33,8 @@
     },
     "fee_amount" : {
       "$ref"     : "./base_types/base_types.json#definitions/amount",
-      "readOnly" : true
+      "readOnly" : true,
+      "minimum"  : 0
     },
     "remote_name" : {
       "description" : "Receiving account holder name",
