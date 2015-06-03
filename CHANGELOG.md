@@ -2,6 +2,13 @@
 
 A more detailed view of the changes can be found in the [commit messages](https://github.com/fidor/fidor_schema/commits/)
 
+##2015-06
+* add BIC to account
+
+##2015-05
+* add transaction_type_details for bonus transactions
+* enhance internal_transfer_details with more fields
+
 ##2015-04
 * Transaction update transaction types
 
