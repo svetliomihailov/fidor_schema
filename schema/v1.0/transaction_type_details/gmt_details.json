@@ -23,7 +23,7 @@
       "readOnly"    : true
     },
     "fee_transaction_id" : {
-      "description" : "",
+      "description" : "A unique identifier of the fee transaction that belongs to the gmt transaction",
       "type"        : "string",
       "readOnly"    : true
     }
