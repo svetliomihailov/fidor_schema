@@ -12,12 +12,7 @@
       "$ref"        : "../base_types/base_types.json#definitions/currency",
       "readOnly"    : true
     },
-    "transferred_amount" : {
-      "description" : "Amount transferred in the source currency", 
-      "$ref"        : "../base_types/base_types.json#definitions/amount",
-      "readOnly"    : true
-    },
-    "transferred_amount_in_destination_currency" : {
+    "amount_in_destination_currency" : {
       "description" : "Amount transferred in the destination currency",
       "$ref"        : "../base_types/base_types.json#definitions/amount",
       "readOnly"    : true
@@ -25,6 +20,11 @@
     "exchange_rate" : {
       "description" : "Exchange rate valid at the time the transfer has been performed",
       "type"        : "number",
+      "readOnly"    : true
+    },
+    "fee_transaction_id" : {
+      "description" : "",
+      "type"        : "string",
       "readOnly"    : true
     }
   }
