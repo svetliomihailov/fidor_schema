@@ -1,0 +1,23 @@
+{
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
+  "type"        : "object",
+  "title"       : "mobile_topup_details",
+  "description" : "Information about mobile topup",
+  "properties"  : {
+    "provider" : {
+      "description" : "The name of the mobile network operator",
+      "type"        : "string",
+      "readOnly"    : true
+    },
+    "phone_number" : {
+      "description" : "Mobile phone number user for topup",
+      "type"        : "string",
+      "readOnly"    : true
+    },
+    "topup_subject" : {
+      "description" : "Subject of the mobile topup",
+      "type"        : "string",
+      "readOnly"    : true
+    }
+  }
+}
