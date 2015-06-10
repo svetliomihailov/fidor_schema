@@ -27,6 +27,13 @@
       "type"        : "string",
       "maxLength"   : 255,
       "readOnly"    : true
+    },
+    "cc_sequence" : {
+      "description" : "Sequence links all belonging together transactions",
+      "type"        : "string",
+      "maxLength"   : 255,
+      "readOnly"    : true
     }
   }
 }
+
