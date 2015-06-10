@@ -3,6 +3,9 @@
 A more detailed view of the changes can be found in the [commit messages](https://github.com/fidor/fidor_schema/commits/)
 
 ##2015-06
+
+* add mobile topup transaction details
+* add global money transfer(gmt) transaction details
 * add sepa_credit_transfer.fee_amount
 * add BIC to account
 
