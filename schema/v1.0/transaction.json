@@ -125,6 +125,16 @@
           "format" : "date-time",
           "type"   : "string"
         },
+        "filter[value_date_from]" : {
+          "title"  : "Date filter from >= date. ISO 8601 Date",
+          "format" : "date-time",
+          "type"   : "string"
+        },
+        "filter[value_date_to]" : {
+          "title"  : "Date filter to <= date. ISO 8601 Date",
+          "format" : "date-time",
+          "type"   : "string"
+        },
         "filter[transaction_types]" : {
           "$ref"  : "./base_types/base_types.json#definitions/transaction_type",
           "title" : "By transaction types"
