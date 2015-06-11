@@ -27,6 +27,12 @@
       "type"        : "string",
       "maxLength"   : 255,
       "readOnly"    : true
+    },
+    "cc_sequence" : {
+      "description" : "The CC sequence is the same for all related transactions",
+      "type"        : "string",
+      "maxLength"   : 255,
+      "readOnly"    : true
     }
   }
 }
