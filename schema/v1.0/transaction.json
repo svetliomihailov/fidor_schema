@@ -21,20 +21,32 @@
       "type"        : "object",
       "oneOf"       : [
         {
-          "title"      : "credit_card_details",
+          "title": "credit_card_details",
           "$ref" : "./transaction_type_details/credit_card_details.json#"
         },
         {
-          "title"      : "internal_transfer_details",
+          "title": "internal_transfer_details",
           "$ref" : "./transaction_type_details/internal_transfer_details.json#"
         },
         {
-          "title"      : "sepa_credit_transfer_details",
+          "title": "sepa_credit_transfer_details",
           "$ref" : "./transaction_type_details/sepa_credit_transfer_details.json#"
         },
         {
-          "title"      : "sepa_direct_debit_details",
+          "title": "sepa_direct_debit_details",
           "$ref" : "./transaction_type_details/sepa_direct_debit_details.json#"
+        },
+        {
+          "title": "gmt_details",
+          "$ref" : "./transaction_type_details/gmt_details.json#"
+        },
+        {
+          "title": "bonus_details",
+          "$ref" : "./transaction_type_details/bonus_details.json#"
+        },
+        {
+          "title": "mobile_topup_details",
+          "$ref" : "./transaction_type_details/mobile_topup_details.json#"
         }
       ]
     },
