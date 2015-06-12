@@ -92,33 +92,6 @@
       "description"      : "The transferred amount in account currency, in minor units, e.g. 1EUR is represented as 100. Must be greater than 0 e.g. at least one cent in EUR",
       "type"             : "integer",
       "minimum"          : 1
-    },
-    "transaction_type" : {
-      "description" : "Type of the transaction",
-      "enum"        : [
-        "fidor_payin",
-        "fidor_payout",
-        "sepa_payin",
-        "payout",
-        "emoney_payin",
-        "fee",
-        "gmt_payout",
-        "creditcard_annual_fee",
-        "creditcard_atm_fee",
-        "creditcard_preauth",
-        "creditcard_payin",
-        "creditcard_payout",
-        "creditcard_foreign_exchange_fee",
-        "creditcard_notification_fee",
-        "creditcard_order_cancellation",
-        "creditcard_order_fee",
-        "creditcard_release",
-        "creditcard_order_withdrawal_fee",
-        "sepa_authorization",
-        "sepa_core_direct_debit",
-        "sepa_b2b_direct_debit"        
-      ],
-      "type" : "string"
     }
   }
 }
