@@ -21,8 +21,8 @@
       "description" : "The sepa mandate used by the debit",
       "type"        : "string"
     },
-    "creditor_identifier" : {
-      "description" : "Creditor Identifier",
+    "creditor_identity_id" : {
+      "description" : "Unique identifier of the creditor sepa mandate has been created with",
       "type"        : "string",
       "readOnly"    : true
     },
