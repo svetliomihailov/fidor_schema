@@ -127,6 +127,11 @@
       "description"      : "The transferred amount in account currency, in minor units, e.g. 1EUR is represented as 100. Must be greater than 0 e.g. at least one cent in EUR",
       "type"             : "integer",
       "minimum"          : 1
+    },
+    "fee" : {
+      "description"      : "A fee amount in account currency, in minor units, e.g. 1EUR is represented as 100.",
+      "type"             : "integer",
+      "minimum"          : 0
     }
   }
 }
