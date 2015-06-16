@@ -92,29 +92,6 @@
       "description"      : "The transferred amount in account currency, in minor units, e.g. 1EUR is represented as 100. Must be greater than 0 e.g. at least one cent in EUR",
       "type"             : "integer",
       "minimum"          : 1
-    },
-    "transaction_type" : {
-      "description" : "Type of the transaction",
-      "enum"        : [
-        "payin_giropay",
-        "payin_paymentnetwork",
-        "payin_credit_note",
-        "payin_debit_note_eze",
-        "payin_debit_note_aba",
-        "payin_credit_note_sepa",
-        "payin_debit_note_sepa_core",
-        "payin_debit_note_sepa_b2b",
-        "payin_fidorpay",
-        "payout_ogone",
-        "payout_paymentnetwork",
-        "payout_credit_note",
-        "payout_debit_note_eze",
-        "payout_credit_note_sepa",
-        "payout_fidorpay",
-        "payout_creditcard",
-        "payout_fee"
-      ],
-      "type" : "string"
     }
   }
 }
