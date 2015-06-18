@@ -1,0 +1,48 @@
+{
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
+  "type"        : "object",
+  "title"       : "overdraft",
+  "description" : "This feature allows customers that are considered trustworthy to use more money than they actually have, based on some criteria",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
+    },
+    "account_id" : {
+      "description" : "The external account id.",
+      "type"        : "string",
+      "maxLength"   : 8,
+      "readOnly"    : true
+    },
+    "line" : {
+      "description" : "Overdraft line",
+      "type"        : "integer",
+      "readOnly"    : true
+    },
+    "interest_rate" : {
+      "description" : "Interest based on the balance of the account",
+      "type"        : "number",
+      "readOnly"    : true
+    },
+    "active" : {
+      "description" : "",
+      "type"        : "boolean",
+      "readOnly"    : true
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    },
+    "currency" : {
+      "$ref"     : "./base_types/base_types.json#definitions/currency",
+      "readOnly" : true
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "overdrafts/{id}"
+    }
+  ]
+}
