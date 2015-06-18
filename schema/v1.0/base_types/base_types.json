@@ -84,6 +84,18 @@
       "type"        : "string",
       "readOnly"    : true
     },
+    "approved_at" : {
+      "description" : "Approval date-time, never changes. ISO 8601 Date-Time",
+      "format"      : "date-time",
+      "type"        : "string",
+      "readOnly"    : true
+    },
+    "rejected_at" : {
+      "description" : "Rejection update date-time. ISO 8601 Date-Time",
+      "format"      : "date-time",
+      "type"        : "string",
+      "readOnly"    : true
+    },
     "external_uid" : {
       "description" : "Unique ID of the creator of the transaction. In case a uid is reused for a transaction, it is not executed, this mechanism can be used to prevent double bookings in case of network failure or similar event where transaction status is unknown",
       "type"        : "string"

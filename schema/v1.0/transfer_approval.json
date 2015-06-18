@@ -1,0 +1,114 @@
+{
+  "$schema"     : "http://json-schema.org/draft-04/schema#",
+  "type"        : "object",
+  "title"       : "transfer_approval",
+  "description" : "A transfer approval is created each time when transfer is being initiated from an escrow (trust) account",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
+    },
+    "transfer_id" : {
+      "description" : "The unique identifier of the tranfer, once it has been approved",
+      "type"        : "string",
+      "readOnly"    : true
+    },
+    "transfer_type" : {
+      "description" : "The type of the transfer",
+      "type"        : "integer",
+      "readOnly"    : true
+    },
+    "state" : {
+      "description" : "State of the transfer approval. pending: We received you approval request | approved: Your transfer has been approved | rejected: Your transfer has been rejected | uninitiated: Transfer couldn't not be created | invalid : Something went wrong",
+      "enum"  : [
+        "pending",
+        "approved",
+        "rejected",
+        "uninitiated",
+        "invalid"
+      ],
+      "type" : "string",
+      "readOnly" : true
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    },
+    "approved_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/approved_at"
+    },
+    "rejected_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/rejected_at"
+    },
+    "transfer_details" : {
+      "type": "object",
+      "oneOf": [
+        {
+          "title" : "internal_transfer",
+          "$ref": "./internal_transfer.json" 
+        },
+        { 
+          "title" : "sepa_credit_transfer",
+          "$ref": "./sepa_credit_transfer.json" 
+        }
+      ]
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "transfer_approvals/{id}"
+    },
+    {
+      "rel"        : "instances",
+      "href"       : "transfer_approvals",
+      "properties" : {
+        "filter[transfer_ids]" : {
+          "title"  : "Find transfer approvals belonging to the given transfer ids. Single id or multiple ids comma-separated.",
+          "type"   : "string"
+        },
+        "filter[created_at_from]" : {
+          "title"  : "Creation date filter from >= date",
+          "format" : "date-time",
+          "type"   : "string"
+        },
+        "filter[created_at_to]" : {
+          "title"  : "Creation date filter to <= date",
+          "format" : "date-time",
+          "type"   : "string"
+        },
+        "filter[states]" : {
+          "title" : "Filter by single or multiple csv delimited states",
+          "enum"  : [
+            "pending",
+            "approved",
+            "rejected",
+            "uninitiated",
+            "invalid"
+          ],
+          "type" : "string"
+        },
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "integer"
+        },
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "integer"
+        },
+        "sort" : {
+          "title" : "Sort",
+          "enum"  : [
+            "ASC",
+            "DESC"
+          ],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
+        }
+      }
+    }
+  ]
+}
