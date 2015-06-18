@@ -36,10 +36,16 @@
       "$ref" : "./base_types/base_types.json#definitions/updated_at"
     },
     "approved_at" : {
-      "$ref" : "./base_types/base_types.json#definitions/approved_at"
+      "description" : "Approval date-time, never changes. ISO 8601 Date-Time",
+      "format"      : "date-time",
+      "type"        : "string",
+      "readOnly"    : true
     },
     "rejected_at" : {
-      "$ref" : "./base_types/base_types.json#definitions/rejected_at"
+      "description" : "Rejection update date-time. ISO 8601 Date-Time",
+      "format"      : "date-time",
+      "type"        : "string",
+      "readOnly"    : true
     },
     "transfer_details" : {
       "type": "object",
