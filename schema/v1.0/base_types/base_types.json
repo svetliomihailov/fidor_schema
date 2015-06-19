@@ -115,7 +115,7 @@
     "currency" : {
       "description" : "Currency of Account or Amount. ISO 4217 alpha-3 - 3 letter upcase e.g EUR",
       "type"        : "string",
-      "enum"        : ["EUR"],
+      "enum"        : ["EUR", "GBP"],
       "default"     : "EUR"
     },
     "subject" : {
