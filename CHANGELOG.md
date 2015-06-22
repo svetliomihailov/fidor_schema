@@ -4,10 +4,12 @@ A more detailed view of the changes can be found in the [commit messages](https:
 
 ##2015-06
 
+* add transfer_approval resource
 * add mobile topup transaction details
 * add global money transfer(gmt) transaction details
 * add sepa_credit_transfer.fee_amount
 * add BIC to account
+* change creditor_identifier to creditor_identity_id for sepa_direct_debit
 
 ##2015-05
 * add transaction_type_details for bonus transactions
