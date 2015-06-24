@@ -25,6 +25,7 @@
       "description" : "Type of the transaction",
       "enum"        : [
         "bonus",
+        "capital_gains_tax",
         "credit_interest",
         "creditcard_annual_fee",
         "creditcard_atm_fee",
@@ -51,6 +52,7 @@
         "sepa_b2b_direct_debit",
         "sepa_core_direct_debit",
         "sepa_payin",
+        "solidarity_tax",
         "unknown"
       ],
       "type" : "string",
