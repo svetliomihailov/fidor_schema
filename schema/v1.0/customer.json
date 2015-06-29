@@ -112,11 +112,6 @@
       "format"      : "date-time",
       "readOnly"    : true
     },
-    "creditor_identifier" : {
-      "description" : "Creditor Identifier ID set if the customer wants to create direct debits.",
-      "type"        : "string",
-      "readOnly"    : true
-    },
     "is_verified" : {
       "description" : "Indicates whether KYC has been performed.",
       "type"        : "boolean",
