@@ -2,7 +2,7 @@
   "$schema"     : "http://json-schema.org/draft-04/schema#",
   "type"        : "object",
   "title"       : "creditor_identity",
-  "description" : "Information about creditor identity. You have to provide the credidor identity you want to create a sepa mandate with",
+  "description" : "Information about creditor identity. You have to provide the creditor identity you want to create a sepa mandate with",
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -30,7 +30,6 @@
       "properties" : {
         "filter[account_ids]" : {
           "title"  : "Find creditor identities belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date",
           "type"   : "string"
         },
         "page" : {

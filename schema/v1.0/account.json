@@ -17,6 +17,10 @@
       "$ref"     : "./base_types/base_types.json#definitions/iban",
       "readOnly" : true
     },
+    "bic" : {
+      "$ref"     : "./base_types/base_types.json#definitions/bic",
+      "readOnly" : true
+    },
     "balance" : {
       "description" : "Account balance",
       "type"        : "integer",
@@ -69,11 +73,6 @@
       "items"       : {
         "type"       : "object",
         "$ref" : "./customer.json#"
-//        "items"       : {
-//        "type"       : "object",
-//        "properties" : {
-//          "$ref" : "./customer.json#properties"
-//        }
       },
       "readOnly" : true
     },

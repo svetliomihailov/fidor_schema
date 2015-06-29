@@ -21,6 +21,43 @@
       "readOnly"    : true,
       "type"        : "string"
     },
+    "transaction_type" : {
+      "description" : "Type of the transaction",
+      "enum"        : [
+        "bonus",
+        "capital_gains_tax",
+        "credit_interest",
+        "creditcard_annual_fee",
+        "creditcard_atm_fee",
+        "creditcard_foreign_exchange_fee",
+        "creditcard_notification_fee",
+        "creditcard_order_cancellation",
+        "creditcard_order_fee",
+        "creditcard_order_withdrawal_fee",
+        "creditcard_payin",
+        "creditcard_payout",
+        "creditcard_preauth",
+        "creditcard_release",
+        "debit_interest",
+        "emoney_payin",
+        "fee",
+        "fidor_payin",
+        "fidor_payout",
+        "gmt_fee",
+        "gmt_refund",
+        "gmt_payout",
+        "payout",
+        "prepaid_mobile_topup",
+        "sepa_authorization",
+        "sepa_b2b_direct_debit",
+        "sepa_core_direct_debit",
+        "sepa_payin",
+        "solidarity_tax",
+        "unknown"
+      ],
+      "type" : "string",
+      "maxLength"   : 255
+    },
     "phone" : {
       "description" : "A phone or fax number, formatted with country code: +49 123 1233213",
       "type"        : "string",
@@ -92,6 +129,11 @@
       "description"      : "The transferred amount in account currency, in minor units, e.g. 1EUR is represented as 100. Must be greater than 0 e.g. at least one cent in EUR",
       "type"             : "integer",
       "minimum"          : 1
+    },
+    "fee" : {
+      "description"      : "A fee amount in account currency, in minor units, e.g. 1EUR is represented as 100.",
+      "type"             : "integer",
+      "minimum"          : 0
     }
   }
 }

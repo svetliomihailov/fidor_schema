@@ -74,7 +74,6 @@
       "properties" : {
         "filter[account_ids]" : {
           "title"  : "Find direct debits belonging to the given account ids. Single id or multiple ids comma-separated.",
-          "format" : "date-time",
           "type"   : "string"
         },
         "filter[created_at_from]" : {

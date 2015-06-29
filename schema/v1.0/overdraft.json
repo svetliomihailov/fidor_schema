@@ -5,8 +5,7 @@
   "description" : "This feature allows customers that are considered trustworthy to use more money than they actually have, based on some criteria",
   "properties"  : {
     "id" : {
-      "type" : "integer",
-      "readOnly"    : true
+      "$ref" : "./base_types/base_types.json#definitions/id"
     },
     "account_id" : {
       "description" : "The external account id.",
