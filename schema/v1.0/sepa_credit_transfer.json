@@ -32,7 +32,7 @@
       "readOnly" : true
     },
     "fee_amount" : {
-      "$ref"     : "./base_types/base_types.json#definitions/amount",
+      "$ref"     : "./base_types/base_types.json#definitions/fee",
       "readOnly" : true
     },
     "remote_name" : {
