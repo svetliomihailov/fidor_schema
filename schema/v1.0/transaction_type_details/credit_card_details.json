@@ -29,7 +29,7 @@
       "readOnly"    : true
     },
     "cc_sequence" : {
-      "description" : "Sequence links all belonging together transactions",
+      "description" : "CreditCard sequence identifier, identical for all related transactions",
       "type"        : "string",
       "maxLength"   : 255,
       "readOnly"    : true
