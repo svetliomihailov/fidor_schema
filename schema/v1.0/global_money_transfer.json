@@ -1,0 +1,193 @@
+{
+  "type"        : "object",
+  "title"       : "Global Money Transfer",
+  "name"        : "global_money_transfer",
+  "TODO"        : "Nested country specific fields",
+  "description" : "A transfer around the world",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
+    },
+    "receiver_details" : {
+      "TODO" : "dynamic, since fields can change ad-hoc",
+      "TODO" : "Array of field descriptions? like a meta-schema",
+      "one-of" : ["ReceiverDetailsUS","ReceiverDetailsRU", "Array of Detail object types"],
+      "type" : "object",
+      "extends" : "http://url.to-specific schema",
+      "properties" : {
+        "field_name" : {
+          "type" : "string"
+        }
+      }
+      /* TODO
+      ReceiverDetailsUS : account_number, aba, beneficiary_type,beneficiary_first / lastname,
+      beneficiary_company, account_type, address city, postcode state
+      */
+    },
+    "source_amount" : {
+      "$ref"     : "./base_types/base_types.json#definitions/amount",
+      "required" : true,
+      "type" : "integer"
+    },
+    "target_amount" : {
+      "description" : "Exchanged target amount. if present for new transfers, the source amount is being recalculated",
+      "$ref"     : "./base_types/base_types.json#definitions/amount",
+      "readonly" : true
+    },
+    "target_currency" : {
+      "description" : "The currency of the receiving country",
+      "$ref"     : "./base_types/base_types.json#definitions/currency",
+      "required" : true
+    },
+    "target_country" : {
+      "description" : "The receiving country code",
+      "required" : true
+    },
+    "exchange_rate" : {
+      "description" : "Exchange rate from source to target.",
+      "TODO" : "check how to format exponenets",
+      "type" : "integer",
+      "readonly" : true
+    },
+    "currency" : {
+      "$ref"     : "./base_types/base_types.json#definitions/currency",
+      "readonly" : true
+    },
+    "fee" : {
+      "description" : "Fee in source currency, to be paid by sender.",
+      "type" : "integer",
+      "readonly" : true
+    },
+    "external_uid" : {
+      "$ref" : "./base_types/base_types.json#definitions/external_uid"
+    },
+    "account_id" : {
+      "$ref"     : "./base_types/base_types.json#definitions/account_id",
+      "required" : true
+    },
+    "user_id" : {
+      "$ref" : "./base_types/base_types.json#definitions/user_id"
+    },
+    "transaction_id" : {
+      "$ref" : "./base_types/base_types.json#definitions/transaction_id"
+    },
+    "subject" : {
+      "$ref"      : "./base_types/base_types.json#definitions/subject",
+      "TODO" : "Country length, allowed chars, not available for all countries",
+      "maxLength" : 140
+    },
+    "notify_email" : {
+      "description" : "If set the email will receive a notification about the transfer",
+      "type" : "string",
+      "format" : "email",
+      "maxLength" : 140
+    },
+    "state" : {
+      "description" : "State of the transfer. received: Order was accepted by the system | processing: Order is being processed | mobile_tan_sent: awaiting tan entry | expired : mtan entry expired | failure: transfer could not be completed | success: transfer successfully executed",
+      "enum"        : [
+        "received",
+        "mobile_tan_sent",
+        "success",
+        "expired",
+        "failure"
+      ],
+      "readonly" : true,
+      "type"     : "string"
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "self",
+      "href" : "global_money_transfers/{id}"
+    },
+    {
+      "rel"  : "country_currencies",
+      "TODO" : "Naming ?? Actually is just an options list used in new/create country currency fields",
+      "href" : "global_money_transfers/country_currencies",
+      "properties" : {
+              "countries" : {
+                "title"  : "Find currencies for thsi country ",
+                "format" : "date",
+                "type"   : "string"
+        }
+      },
+      "targetSchema" : {
+        "properties" : {
+          "country": {
+            "type" : "String"
+          },
+          "currencies": {
+            "type" : "array"
+            // ["EUR", "USD"]
+          }
+        }
+      }
+    },
+    {
+      "rel"        : "instances",
+      "href"       : "global_money_transfers",
+      "properties" : {
+        "filter[account_ids]" : {
+          "title"  : "Find transfers belonging to the given account ids. Single id or multiple ids comma-separated.",
+          "format" : "date",
+          "type"   : "string"
+        },
+        "page" : {
+          "title"       : "Page",
+          "description" : "In paginated results set the page to look for",
+          "type"        : "integer"
+        },
+        "per_page" : {
+          "title"       : "Per page",
+          "description" : "Results per page. Default is 10, max is 100",
+          "type"        : "integer"
+        },
+        "sort" : {
+          "title" : "Sort",
+          "enum"  : [
+            "ASC",
+            "DESC"
+          ],
+          "description" : "Sort the results in ASC or DESC",
+          "type"        : "string"
+        }
+      }
+    },
+    {
+      "rel"    : "new",
+      "title"  : "Convenience returns a new object with receiver fields for the given information. ",
+      "href"   : "global_money_transfers",
+      "method" : "GET",
+      "properties" : {
+         "target_currency" : {
+           "title" : "currency",
+           "required" : true
+         },
+         "target_country" : {
+           "type"  : "string",
+           "required" : true
+         },
+         "source_amount" : {
+           "type"  : "integer"
+         }
+       }
+    },
+    {
+      "rel"    : "fidor_products",
+      "title"    : "Show information baout the product in relation to the current-user, availablity, pricing, meta data..",
+      "href"   : "fidor_products/global_money_transfer",
+      "method" : "GET"
+    },
+    {
+      "rel"    : "create",
+      "href"   : "global_money_transfers",
+      "method" : "POST"
+    }
+  ]
+}

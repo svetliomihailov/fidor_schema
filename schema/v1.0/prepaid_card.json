@@ -1,0 +1,10 @@
+{
+  "type"        : "object",
+  "title"       : "Prepaid Card",
+  "name"        : "prepaid card",
+  "description" : "",
+  "properties"  : {
+
+  },
+  "links" : []
+}

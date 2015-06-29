@@ -20,7 +20,7 @@
     },
     "interest_rate" : {
       "description" : "Interest based on the balance of the account",
-      "type"        : "number",
+      "type"        : "decimal",
       "readOnly"    : true
     },
     "active" : {

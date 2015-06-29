@@ -1,0 +1,91 @@
+{
+  "type"        : "object",
+  "title"       : "Fidor Product",
+  "name"        : "fidor_product",
+  "description" : "",
+  "properties"  : {
+    "id" : {
+      "$ref" : "./base_types/base_types.json#definitions/id"
+    },
+    "name" : {
+      "type" : "string"
+    },
+    "description" : {
+      "type" : "string"
+    },
+    "customer_prerequisite" : {
+      "description" : "Field values of the customer which must match",
+      "type"        : "array"
+//     [
+//        {
+//        "field": "kyc_status",
+//        "value": "full",
+//        },
+//        {
+//         "field": "country",
+//         "value": "DE",
+//       }
+//      ]
+    },
+    "account_prerequisite" : {
+      "description": "Field values of the customer which must match",
+      "type": "array"
+      //     [
+      //        {
+      //        "field": "balance_available",
+      //        "field": "min_balance_available",
+      //        "value": ">1000",
+      //        "compare": ">",
+      //        },
+      //        {
+      //         "field": "country",
+      //         "value": "DE",
+      //       }
+      //      ]
+    },
+    "minimum_amount" : {
+      "description" : "The minimum required amount for an order",
+      "type"        : "integer"
+    },
+    "maximum_amount" : {
+      "description" : "The maximum amount allowed for an order",
+      "type"        : "integer"
+    },
+    "fee_fix" : {
+      "description" : "Fix amount to pay per order",
+      "type"        : "integer"
+    },
+    "fee_min" : {
+      "description" : "Minimum amount to pay per order",
+      "type"        : "integer"
+    },
+    "fee_max" : {
+      "description" : "Maximum amount to pay per order",
+      "type"        : "integer"
+    },
+    "fee_percent" : {
+      "description" : "Percentage of order amount to pay per order. e. 1900 for 19%",
+      "type"        : "integer"
+    },
+    "interest_rate" : {
+      "description" : "",
+      "type"        : "integer"
+    },
+    "created_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/created_at"
+    },
+    "updated_at" : {
+      "$ref" : "./base_types/base_types.json#definitions/updated_at"
+    }
+  },
+  "links" : [
+    {
+      "rel"  : "instances",
+      "href" : "fidor_products"
+    },
+    {
+      "rel"  : "self",
+      "href" : "fidor_products/{id}"
+    }
+  ]
+}

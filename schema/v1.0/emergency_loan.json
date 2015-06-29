@@ -1,0 +1,10 @@
+{
+  "type"        : "object",
+  "title"       : "Emergency Loan",
+  "name"        : "emergency_loan",
+  "description" : "",
+  "properties"  : {
+
+  },
+  "links" : []
+}

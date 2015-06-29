@@ -29,10 +29,11 @@
       "readOnly"    : true
     },
     "cc_sequence" : {
-      "description" : "The CC sequence is the same for all related transactions",
+      "description" : "Sequence links all belonging together transactions",
       "type"        : "string",
       "maxLength"   : 255,
       "readOnly"    : true
     }
   }
 }
+
