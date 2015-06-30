@@ -13,6 +13,7 @@
     },
     "transaction_type" : {
       "$ref"  : "./base_types/base_types.json#definitions/transaction_type",
+      "readOnly" : true
     },
     "transaction_type_details" : {
       "description" : "Details specific to this transaction type are collected here.",
