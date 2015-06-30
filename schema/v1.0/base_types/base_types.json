@@ -131,8 +131,7 @@
         "unknown"
       ],
       "type" : "string",
-      "maxLength"   : 255,
-      "readOnly" : true
+      "maxLength"   : 255
     }
   }
 }
