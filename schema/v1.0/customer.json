@@ -161,18 +161,18 @@
     },
     "id_card_registration_city" : {
       "description" : "City where the id card is registered.",
-      "type"        : ["string", null],
+      "type"        : ["string", "null"],
       "readOnly"    : true
     },
     "id_card_number" : {
       "description" : "ID card number",
-      "type"        : ["string", null],
+      "type"        : ["string", "null"],
       "readOnly"    : true
     },
     "id_card_valid_until" : {
       "description" : "Expiration date of id card",
       "format"      : "date-time",
-      "type"        : ["string", null],
+      "type"        : ["string", "null"],
       "readOnly"    : true
     },
     "created_at" : {
