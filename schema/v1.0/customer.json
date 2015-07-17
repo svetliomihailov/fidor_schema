@@ -3,7 +3,16 @@
   "type"        : "object",
   "title"       : "customer",
   "description" : "",
-  "required"    : ["email", "first_name", "last_name", "gender", "title", "nick"],
+  "required"    : [
+                    "email",
+                    "first_name",
+                    "last_name",
+                    "gender",
+                    "title",
+                    "adr_mobile",
+                    "password",
+                    "password_confirmation"
+                  ],
   "properties"  : {
     "id" : {
       "$ref" : "./base_types/base_types.json#definitions/id"
@@ -41,7 +50,7 @@
     },
     "nick" : {
       "description" : "Nickname used in community.",
-      "type"        : "string",
+      "type"        : ["string", null],
       "maxLength"   : 40,
       "minLength"   : 2,
       "readOnly"    : true
@@ -159,20 +168,30 @@
       "type"     : "integer",
       "readOnly" : true
     },
+    "password" : {
+      "description" : "The customer's login password",
+      "type"        : ["string", null],
+      "minLength"   : 8
+    },
+    "password_confirmation" : {
+      "description" : "The customer's login password confirmation",
+      "type"        : ["string", null],
+      "minLength"   : 8
+    },
     "id_card_registration_city" : {
       "description" : "City where the id card is registered.",
-      "type"        : ["string", "null"],
+      "type"        : ["string", null],
       "readOnly"    : true
     },
     "id_card_number" : {
       "description" : "ID card number",
-      "type"        : ["string", "null"],
+      "type"        : ["string", null],
       "readOnly"    : true
     },
     "id_card_valid_until" : {
       "description" : "Expiration date of id card",
       "format"      : "date-time",
-      "type"        : ["string", "null"],
+      "type"        : ["string", null],
       "readOnly"    : true
     },
     "created_at" : {
