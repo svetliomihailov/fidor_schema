@@ -35,9 +35,7 @@
     },
     "title" : {
       "description" : "Salutation e.g Mr. or Ms./Mrs.",
-      "type"        : "string",
-      "maxLength"   : 30,
-      "readOnly"    : true
+      "enum"        : ["Mr.", "Mrs."]
     },
     "nick" : {
       "description" : "Nickname used in community.",
